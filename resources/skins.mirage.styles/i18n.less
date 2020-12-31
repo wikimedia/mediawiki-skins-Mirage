@@ -1,0 +1,66 @@
+// This file contains all direction related stylings.
+// Most of the contents of this file should be integrated into core.
+
+// These classes are used for text depending on the content direction.
+// Content stuff like editsection, ul/ol and TOC depend on this.
+.mw-content-ltr,
+textarea[ dir='ltr' ],
+input[ dir='ltr' ],
+.sitedir-ltr textarea,
+.sitedir-ltr input {
+	/* @noflip */
+	direction: ltr;
+}
+
+.mw-content-rtl,
+textarea[ dir='rtl' ],
+input[ dir='rtl' ],
+.sitedir-rtl textarea,
+.sitedir-rtl input {
+	/* @noflip */
+	direction: rtl;
+}
+
+// Input types that should follow user direction, like buttons.
+input[ type='submit' ],
+input[ type='button' ],
+input[ type='reset' ],
+input[ type='file' ],
+#mw-revision-info,
+#mw-revision-info-current,
+#mw-revision-nav {
+	direction: ltr;
+}
+
+#mw-clearyourcache,
+#mw-sitecsspreview,
+#mw-sitejspreview,
+#mw-usercsspreview,
+#mw-userjspreview {
+	direction: ltr;
+	unicode-bidi: embed;
+}
+
+/* @noflip */
+div.tright,
+div.floatright,
+table.floatright {
+	clear: right;
+	float: right;
+}
+
+/* @noflip */
+div.tleft,
+div.floatleft,
+table.floatleft {
+	float: left;
+	clear: left;
+}
+
+a:lang( ar ),
+a:lang( kk-arab ),
+a:lang( mzn ),
+a:lang( ps ),
+a:lang( ur ) {
+	text-decoration: none;
+}

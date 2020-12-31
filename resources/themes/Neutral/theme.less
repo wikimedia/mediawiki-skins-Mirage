@@ -1,0 +1,27 @@
+// Stylings for the Neutral theme of Mirage.
+// This theme makes Mirage look a bit less like the Wikimedia Design Guide.
+@import '../../mirage.less/mirage.variables';
+
+blockquote {
+	border-left: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-style: normal;
+	font-family: @mirage-content-font-family;
+
+	& > cite {
+		display: inline;
+		font-size: 1rem;
+		margin: 0;
+	}
+}
+
+h1,
+h2,
+.right-rail-module h3 {
+	border-bottom: 1px solid @wmui-color-base70;
+}
+
+hr {
+	border: 1px solid @wmui-color-base70;
+}

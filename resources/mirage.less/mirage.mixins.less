@@ -1,0 +1,34 @@
+// This file contains all shared mixins used in the stylesheets used by Mirage.
+@import 'mirage.variables';
+
+.border-radius( @radius ) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.default-border() {
+	border: @default-border;
+	.border-radius( @border-radius-base );
+}
+
+.user-select-none() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.center-flex() {
+	.flex-display();
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+// word-wrap is the old legacy name for overflow-wrap.
+.overflow-wrap( @value ) {
+	word-wrap: @value;
+	overflow-wrap: @value;
+}

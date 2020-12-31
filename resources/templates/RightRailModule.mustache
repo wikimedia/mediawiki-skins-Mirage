@@ -1,0 +1,15 @@
+<section class="right-rail-module portlet {{& html-additional-classes }}" id="p-{{& html-module-id }}"
+		 aria-labelledby="{{& html-module-id }}-label"
+		 {{# html-role }}role="{{ . }}"{{/ html-role }}>
+	{{# html-header }}
+		<h3 id="p-{{& html-module-id }}-label" {{& html-user-language-attributes }}>{{& . }}</h3>
+	{{/ html-header }}
+	<div class="module-body">
+		{{& html-body-content }}
+	</div>
+	{{# html-after-module }}
+		<div class="after-portlet after-portlet-{{& html-module-id }}">
+			{{& . }}
+		</div>
+	{{/ html-after-module }}
+</section>

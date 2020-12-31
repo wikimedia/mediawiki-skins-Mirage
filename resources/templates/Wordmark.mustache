@@ -1,0 +1,17 @@
+<a href="{{ link-mainpage }}" class="mw-logo">
+	{{# icon }}
+		{{! The alt is required for valid HTML, but because aria-hidden is given, not actually needed. }}
+		<img class="mw-logo-icon" src="{{& . }}" alt="" aria-hidden="true">
+	{{/ icon }}
+	<span class="mw-wordmark-container">
+		{{# wordmark }}
+			<img class="mw-logo-wordmark" alt="{{ sitename }}" src="{{& src }}" width="{{ width }}" height="{{ height }}">
+		{{/ wordmark }}
+		{{^ wordmark }}
+			<span class="mw-logo-wordmark">{{ sitename }}</span>
+		{{/ wordmark }}
+		{{# tagline }}
+			<img class="mw-logo-tagline" alt="{{ msg-sitesubtitle }}" src="{{& src }}" width="{{ width }}" height="{{ height }}">
+		{{/ tagline }}
+	</span>
+</a>

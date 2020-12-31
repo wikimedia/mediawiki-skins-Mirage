@@ -1,0 +1,363 @@
+{
+	"name": "Mirage",
+	"author": "Mainframe98",
+	"url": "https://www.mediawiki.org/wiki/Skin:Mirage",
+	"descriptionmsg": "mirage-skin-desc",
+	"namemsg": "skinname-mirage",
+	"license-name": "MIT",
+	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.36.0"
+	},
+	"ValidSkinNames": {
+		"mirage": {
+			"displayname": "Mirage",
+			"class": "MediaWiki\\Skins\\Mirage\\SkinMirage",
+			"services": [
+				"LinkRenderer",
+				"ObjectFactory",
+				"LocalServerObjectCache",
+				"MirageWordmarkLookup",
+				"TitleFactory",
+				"ConfigFactory",
+				"MainWANObjectCache",
+				"MessageCache",
+				"HookContainer"
+			],
+			"args": [
+				{
+					"name": "mirage",
+					"styles": [
+						"skins.mirage.styles",
+						"skin.mirage.icons",
+						"skin.mirage.indicators"
+					],
+					"scripts": [
+						"skins.mirage.scripts"
+					],
+					"template": "Main",
+					"messages": [
+						"mirage-footer-info",
+						"mirage-jumptonavigation",
+						"mirage-jumptocontent",
+						"mirage-no-new-messages",
+						"mirage-page-actions",
+						"navigation-heading",
+						"notloggedin",
+						"tagline",
+						"personaltools"
+					]
+				}
+			]
+		}
+	},
+	"MessagesDirs": {
+		"Mirage": "i18n"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Skins\\Mirage\\Hook\\Handler",
+			"services": [
+				"TitleFactory",
+				"UserOptionsLookup",
+				"ConfigFactory"
+			]
+		}
+	},
+	"Hooks": {
+		"AlternateEditPreview": {
+			"handler": "main"
+		},
+		"GetPreferences": {
+			"handler": "main"
+		},
+		"MirageGetExtraIcons": {
+			"handler": "main"
+		},
+		"ResourceLoaderRegisterModules": {
+			"handler": "main"
+		},
+		"OutputPageBodyAttributes": {
+			"handler": "main"
+		}
+	},
+	"ServiceWiringFiles": [
+		"src/ServiceWiring.php"
+	],
+	"ConfigRegistry": {
+		"Mirage": "GlobalVarConfig::newInstance"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Skins\\Mirage\\": "src/"
+	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Skins\\Mirage\\Tests\\": "tests/phpunit/"
+	},
+	"ResourceModules": {
+		"skins.mirage.styles": {
+			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageResourceLoaderModule",
+			"features": [
+				"normalize",
+				"i18n-ordered-lists",
+				"i18n-all-lists-margins",
+				"i18n-headings",
+				"toc",
+				"content-media",
+				"interface"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"styles": {
+				"skins.mirage.styles/common.less": {
+					"media": "screen"
+				},
+				"skins.mirage.styles/icons.less": {
+					"media": "screen"
+				},
+				"skins.mirage.styles/desktop-small.less": {
+					"media": "screen and (min-width: 1024px) and (max-width: 1279px)"
+				},
+				"skins.mirage.styles/desktop.less": {
+					"media": "screen and (min-width: 1024px)"
+				},
+				"skins.mirage.styles/mobile.less": {
+					"media": "screen and (max-width: 1023px)"
+				},
+				"skins.mirage.styles/mobile-small.less": {
+					"media": "screen and (max-width: 720px)"
+				},
+				"skins.mirage.styles/print.less": {
+					"media": "print"
+				}
+			}
+		},
+		"skins.mirage.scripts": {
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"scripts": [
+				"skins.mirage.scripts/mirage.js"
+			]
+		},
+		"skin.mirage.icons": {
+			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageIconResourceLoaderModule",
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"defaultColor": "#000",
+			"selectorWithoutVariant": ".mirage-ooui-icon-{name}:before",
+			"selectorWithVariant": ".mirage-ooui-icon-{name}-{variant}:before",
+			"variants": {
+				"default": {
+					"invert": {
+						"color": "#fff",
+						"global": true
+					},
+					"progressive": {
+						"color": "#36a",
+						"global": false
+					},
+					"destructive": {
+						"color": "#d33",
+						"global": false
+					}
+				}
+			},
+			"icons": {
+				"bell": {},
+				"close": {
+					"selectorWithoutVariant": [
+						".mw-dismissable-notice-close"
+					]
+				},
+				"die": {},
+				"edit": {},
+				"ellipsis": {},
+				"expand": {},
+				"halfStar": {
+					"selectorWithVariant": {
+						"invert": "#ca-unwatch.mw-watchlink-temp a:before"
+					}
+				},
+				"history": {},
+				"linkExternal": {
+					"selectorWithVariant": {
+						"progressive": [
+							".mw-parser-output a.external",
+							".link-https"
+						]
+					},
+					"variants": [
+						"progressive"
+					]
+				},
+				"lock": {},
+				"logIn": {},
+				"logOut": {},
+				"message": {
+					"selectorWithVariant": {
+						"progressive": [
+							".mw-parser-output a.external[ href^='mailto:' ]",
+							".link-mailto"
+						]
+					},
+					"variants": [
+						"progressive"
+					]
+				},
+				"next": {},
+				"printer": {},
+				"recentChanges": {},
+				"search": {
+					"selectorWithoutVariant": [
+						"#simpleSearch .searchButton"
+					]
+				},
+				"settings": {},
+				"specialPages": {},
+				"speechBubble": {
+					"selectorWithVariant": {
+						"progressive": [
+							".mw-parser-output a.external[ href^='irc://' ]",
+							".mw-parser-output a.external[ href^='ircs://' ]",
+							".link-irc"
+						]
+					},
+					"variants": [
+						"progressive"
+					]
+				},
+				"speechBubbleAdd": {},
+				"star": {
+					"selectorWithVariant": {
+						"invert": "#ca-watch a:before"
+					}
+				},
+				"trash": {},
+				"unLock": {},
+				"unStar": {
+					"selectorWithVariant": {
+						"invert": "#ca-unwatch a:before"
+					}
+				},
+				"unTrash": {},
+				"upload": {},
+				"userAdd": {},
+				"userAvatar": {
+					"selectorWithVariant": {
+						"destructive": [
+							"#pt-userpage a.new:before"
+						]
+					},
+					"variants": [
+						"destructive"
+					]
+				},
+				"userContributions": {},
+				"userTalk": {
+					"selectorWithVariant": {
+						"destructive": [
+							"#pt-mytalk a.new:before",
+							"#pt-anontalk a.new:before"
+						]
+					},
+					"variants": [
+						"destructive"
+					]
+				},
+				"volumeUp": {
+					"selectorWithVariant": {
+						"progressive": [
+							".mw-parser-output a.external[ href$='.ogg' ]",
+							".mw-parser-output a.external[ href$='.OGG' ]",
+							".mw-parser-output a.external[ href$='.mid' ]",
+							".mw-parser-output a.external[ href$='.MID' ]",
+							".mw-parser-output a.external[ href$='.midi' ]",
+							".mw-parser-output a.external[ href$='.MIDI' ]",
+							".mw-parser-output a.external[ href$='.mp3' ]",
+							".mw-parser-output a.external[ href$='.MP3' ]",
+							".mw-parser-output a.external[ href$='.wav' ]",
+							".mw-parser-output a.external[ href$='.WAV' ]",
+							".mw-parser-output a.external[ href$='.wma' ]",
+							".mw-parser-output a.external[ href$='.WMA' ]",
+							".link-audio"
+						]
+					},
+					"variants": [
+						"progressive"
+					]
+				}
+			}
+		},
+		"skin.mirage.indicators": {
+			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageIndicatorResourceLoaderModule",
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"defaultColor": "#000",
+			"selectorWithoutVariant": ".mirage-ooui-icon-indicator-{name}:before",
+			"selectorWithVariant": ".mirage-ooui-icon-indicator-{name}-{variant}:before",
+			"themeImages": "indicators"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteSkinPath": "Mirage/resources"
+	},
+	"ResourceModuleSkinStyles": {
+		"mirage": {
+			"+mediawiki.debug": "skinStyles/mediawiki.debug.less",
+			"+mediawiki.action.edit.styles": "skinStyles/mediawiki.action.edit.styles.less",
+			"+mediawiki.action.view.filepage": "skinStyles/mediawiki.action.view.filepage.less",
+			"+mediawiki.action.view.postEdit": "skinStyles/mediawiki.action.view.postEdit.less",
+			"+mediawiki.action.view.redirectPage": "skinStyles/mediawiki.action.view.redirectPage.less",
+			"+mediawiki.editfont.styles": "skinStyles/mediawiki.editfont.styles.less",
+			"+mediawiki.notification": "skinStyles/mediawiki.notification.less",
+			"+mediawiki.page.gallery.styles": "skinStyles/mediawiki.page.gallery.styles.less",
+			"+mediawiki.searchSuggest": "skinStyles/mediawiki.searchSuggest.less",
+			"+mediawiki.special.changeslist": "skinStyles/mediawiki.special.changeslist.less",
+			"+ext.echo.styles.badge": "skinStyles/ext.echo.styles.badge.less",
+			"+ext.flow.board.styles": "skinStyles/ext.flow.board.styles.less",
+			"+ext.translate": "skinStyles/ext.translate.less",
+			"+ext.uls.common": "skinStyles/ext.uls.common.less",
+			"+ext.uls.pt": "skinStyles/ext.uls.pt.less",
+			"+ext.visualEditor.core": "skinStyles/ext.VisualEditor.core.less"
+		}
+	},
+	"DefaultUserOptions": {
+		"mirage-max-width": 1
+	},
+	"SkinLessImportPaths": {
+		"mirage": "resources/mediawiki.less"
+	},
+	"config": {
+		"MirageEnableImageWordmark": {
+			"value": true
+		},
+		"MirageTheme": {
+			"value": false
+		},
+		"MirageForceTemplateRecompilation": {
+			"value": false
+		},
+		"MirageHiddenRightRailModules": {
+			"value": []
+		}
+	},
+	"attributes": {
+		"Theme": {
+			"Modules": {
+				"mirage": [
+					"neutral",
+					"darkmirage"
+				]
+			}
+		}
+	},
+	"manifest_version": 2
+}

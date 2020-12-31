@@ -1,0 +1,223 @@
+// Stylings for the DarkMirage theme of Mirage.
+// Basically: dark mode, but not as convenient as a real dark mode.
+@import 'mediawiki.mixins';
+@import '../../mirage.less/mirage.variables';
+
+@default-border-color-dark: @wmui-color-base30;
+@default-border-dark:  @border-width-base solid @default-border-color-dark;
+@header-underline-dark: 3px solid @wmui-color-base20;
+@wmui-color-base90--lighten: #dedfe0;
+
+blockquote {
+	border-left: 3px solid @wmui-color-base30;
+}
+
+body {
+	background-color: @wmui-color-base0;
+}
+
+pre,
+code,
+.mw-code {
+	background-color: @wmui-color-base10;
+	color: @wmui-color-base100;
+	border: @default-border;
+}
+
+#mirage-fixed-header {
+	background-color: @wmui-color-base10;
+	.box-shadow( 1px 1px 3px @wmui-color-base30 );
+}
+
+#mirage-top-header {
+	background-color: @wmui-color-base10--lighten;
+	.box-shadow( 1px 0 3px @wmui-color-base30 );
+}
+
+.mirage-content-container {
+	background-color: @wmui-color-base10;
+	.box-shadow( 1px 1px 3px @wmui-color-base30 );
+}
+
+footer.mw-footer {
+	background-color: @wmui-color-base10;
+	.box-shadow( 0 -1px 3px @wmui-color-base30 );
+}
+
+.mw-wordmark-container .mw-logo-wordmark {
+	color: @wmui-color-base100;
+}
+
+.dropdown-list {
+	background-color: @wmui-color-base10;
+	.box-shadow( 0 2px 2px 0 rgba( 0, 0, 0, 0.75 ) );
+
+	.dropdown-list-anchor {
+		&:before {
+			border-bottom-color: @wmui-color-base70;
+		}
+
+		&:after {
+			border-bottom-color: @wmui-color-base10;
+		}
+	}
+
+	li {
+		&:hover {
+			& > *:not( .dropdown-list ),
+			& > a:focus {
+				background: @wmui-color-base20;
+			}
+		}
+
+		& > a:not( .new ) {
+			color: @wmui-color-base90;
+
+			&:active {
+				color: @wmui-color-base100;
+			}
+		}
+	}
+}
+
+#contentSub,
+#contentSub2 {
+	color: @wmui-color-base80;
+}
+
+.toc,
+.toccolours,
+#filetoc {
+	border: 1px solid @default-border-color-dark;
+	background-color: @wmui-color-base10--lighten;
+}
+
+#module-site-tools {
+	& > ul > li {
+		border: 1px solid @wmui-color-base90;
+		border-right: 0;
+
+		& > :not( .mirage-ooui-icon-no-label ) {
+			color: @wmui-color-base90;
+		}
+
+		&:hover {
+			background-color: rgba( 255, 255, 255, 0.15 );
+			border: 1px solid @wmui-color-base90--lighten;
+			border-right: 0;
+
+			& > :not( .mirage-ooui-icon-no-label ) {
+				color: @wmui-color-base90--lighten;
+			}
+		}
+
+		&:active {
+			border: 1px solid @wmui-color-base100;
+
+			& > :not( .mirage-ooui-icon-no-label ) {
+				color: @wmui-color-base100;
+			}
+		}
+
+		&:last-child {
+			border-right: 1px solid @wmui-color-base90;
+
+			&:hover {
+				border-right: 1px solid @wmui-color-base90--lighten;
+			}
+		}
+	}
+}
+
+// Data table style.
+.mw-datatable {
+	th,
+	tr:hover td {
+		background-color: @wmui-color-base10--lighten;
+	}
+
+	td {
+		background-color: @wmui-color-base0;
+	}
+}
+
+.wikitable {
+	background-color: @wmui-color-base10;
+	color: @wmui-color-base90;
+
+	tr {
+		th,
+		td {
+			border-right: @default-border-dark;
+			border-bottom: @default-border-dark;
+
+			&:first-child {
+				border-left: @default-border-dark;
+			}
+		}
+
+		&:first-child {
+			th,
+			td {
+				border-top: @default-border-dark;
+			}
+		}
+	}
+
+	& > tr > th,
+	& > * > tr > th {
+		background-color: @wmui-color-base20;
+	}
+}
+
+.messagebox,
+.errorbox,
+.warningbox,
+.successbox {
+	color: @wmui-color-base100;
+}
+
+.messagebox {
+	background-color: @wmui-color-base20;
+}
+
+// From legacy.less
+li span.deleted,
+span.history-deleted {
+	color: @wmui-color-base70;
+}
+
+// From typography.less
+html,
+body {
+	color: @wmui-color-base90;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: @wmui-color-base100;
+}
+
+h1,
+h2,
+.right-rail-module h3 {
+	border-bottom: @header-underline-dark;
+}
+
+hr {
+	border: @header-underline-dark;
+}
+
+figcaption,
+.thumbinner .thumbcaption {
+	color: @wmui-color-base70;
+}
+
+// For search.less
+#searchform #simpleSearch #searchInput {
+	background-color: @wmui-color-base10;
+}

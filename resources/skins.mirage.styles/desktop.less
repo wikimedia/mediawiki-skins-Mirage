@@ -1,0 +1,45 @@
+@import '../mirage.less/mirage.variables';
+
+.mirage-limit-content-width {
+	#mw-navigation,
+	.mirage-content-container {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.mirage-page-with-right-rail {
+		#mw-navigation,
+		.mirage-content-container {
+			max-width: @max-content-width-with-right-rail;
+		}
+	}
+}
+
+#mirage-right-rail {
+	// Align the right rail with the h1, which differs once pixel, regardless of the value of 1rem.
+	margin-top: ~'calc( 1rem + 1px )';
+	width: @right-rail-space;
+	float: left;
+	top: @fixed-header-content-height;
+	position: -webkit-sticky;
+	position: sticky;
+	// Hide the right rail by default, unless the page has a right rail.
+	display: none;
+}
+
+.mirage-page-with-right-rail {
+	#mirage-right-rail {
+		display: block;
+	}
+
+	#content {
+		margin-right: @right-rail-space + @standard-margin;
+		padding-right: 1rem;
+	}
+
+	.mediawiki-content-container {
+		margin-right: -@right-rail-space - @standard-margin;
+		float: left;
+		width: 100%;
+	}
+}

@@ -1,0 +1,29 @@
+// This file contains all shared variables used in the stylesheets used by Mirage.
+@import 'mediawiki.skin.variables';
+
+@mirage-serif: @font-family-serif;
+@mirage-sans: @font-family-sans;
+@mirage-header-font-family: @mirage-serif;
+@mirage-content-font-family: @mirage-sans;
+@default-border-color: @wmui-color-base70;
+@default-border: @border-width-base solid @default-border-color;
+@header-underline: 3px solid @wmui-color-base80;
+@standard-margin: 1rem;
+
+@right-rail-space: 20rem;
+@fixed-header-content-height: 3.5rem;
+// This is 959px with 1rem = 14px, and 1096px with 1rem = 16px, ensuring the effective
+// content width is the same no matter the font-size used.
+@max-content-width: 68.5rem;
+@max-content-width-with-right-rail: @max-content-width + @standard-margin + @right-rail-space;
+
+@size-icon-small: 16px;
+@size-icon-medium: @size-icon;
+
+// Keep this synchronized with skin.json!
+@width-breakpoint-mirage-desktop-small: 1280px;
+// This is overridden in mediawiki.skin.variables.less to be 1024px.
+@width-breakpoint-mirage-mobile: @width-breakpoint-desktop;
+// Mirage considers anything below the tablet width to be a mobile phone, assuming the portrait
+// orientation.
+@width-breakpoint-mirage-mobile-small: @width-breakpoint-tablet;

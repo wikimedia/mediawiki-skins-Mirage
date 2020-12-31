@@ -1,0 +1,13 @@
+<div id="p-search" role="search" aria-labelledby="p-search-label">
+	<h3 id="p-search-label" {{& html-user-language-attributes }}>
+		<label for="searchInput">{{ msg-search }}</label>
+	</h3>
+	<form id="searchform" action="{{& form-action }}">
+		<div id="simpleSearch">
+			{{& html-input }}
+			{{& html-button-search }}
+			{{& html-button-search-fallback }}
+			<input name="title" type="hidden" value="{{& page-title }}">
+		</div>
+	</form>
+</div>

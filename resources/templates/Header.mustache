@@ -1,0 +1,72 @@
+<header id="mw-navigation">
+	<h2>{{ msg-navigation-heading }}</h2>
+	<a class="mw-jump-link" href="#content">{{ msg-mirage-jumptocontent }}</a>
+	<div id="mirage-fixed-header">
+		<div id="mirage-sitename">
+			{{# data-logos }}
+				{{> Wordmark }}
+			{{/ data-logos }}
+		</div>
+		{{# data-search-box }}
+			{{> Search }}
+		{{/ data-search-box }}
+		{{# data-personal-tools }}
+			{{> PersonalTools }}
+		{{/ data-personal-tools }}
+	</div>
+	<div class="mw-notification-area" data-mw="interface"></div>
+	<div id="mirage-top-header">
+		<div id="mirage-navigation-header">
+			<div id="mirage-logo">
+				{{# has-mirage-wordmark }}
+					<a href="{{ link-mainpage }}" id="mirage-wordmark"></a>
+				{{/ has-mirage-wordmark }}
+				{{^ has-mirage-wordmark }}
+					{{# data-logos }}
+						{{> Wordmark }}
+					{{/ data-logos }}
+				{{/ has-mirage-wordmark }}
+			</div>
+			<div id="module-site-tools">
+				<ul class="horizontally-oriented-list">
+					{{# array-site-tools }}
+						{{& . }}
+					{{/ array-site-tools }}
+					{{# site-tools-dropdown }}
+						<li class="mirage-dropdown-container">
+							{{& html-dropdown-icon }}
+							<div class="dropdown-list dropdown-hide">
+								<ul>
+									{{# array-dropdown-items }}
+										{{& . }}
+									{{/ array-dropdown-items }}
+								</ul>
+								<div class="dropdown-list-anchor"></div>
+							</div>
+						</li>
+					{{/ site-tools-dropdown }}
+				</ul>
+			</div>
+			<div id="module-site-navigation">
+				{{# array-navigation-modules }}
+					{{> SiteNavigationMenu }}
+				{{/ array-navigation-modules }}
+			</div>
+		</div>
+		<div id="module-page-navigation">
+			<div id="left-navigation">
+				{{# data-page-namespaces }}
+					{{> Tabs }}
+				{{/ data-page-namespaces }}
+				{{# data-page-variants }}
+					{{> Tabs }}
+				{{/ data-page-variants }}
+			</div>
+			<div id="right-navigation">
+				{{# data-page-actions }}
+					{{> EditButton }}
+				{{/ data-page-actions }}
+			</div>
+		</div>
+	</div>
+</header>

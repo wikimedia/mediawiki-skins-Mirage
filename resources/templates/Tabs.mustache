@@ -1,0 +1,10 @@
+<nav id="{{& html-id }}" aria-labelledby="{{& html-id }}-label">
+	<h3 id="{{& html-id }}-label" {{& html-user-language-attributes }}>
+		{{ msg-header }}
+	</h3>
+	<ul class="horizontally-oriented-list mirage-tabs" role="tablist">
+		{{# array-tabs }}
+			{{& . }}
+		{{/ array-tabs }}
+	</ul>
+</nav>

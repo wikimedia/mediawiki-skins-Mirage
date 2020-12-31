@@ -1,0 +1,39 @@
+body {
+	font-size: 0.875rem;
+}
+
+// Certain elements are scaled on the root font-size, but they end up too small. Resize them back.
+code {
+	font-size: 1rem;
+}
+
+.mw-editsection,
+.mw-editsection-like {
+	font-size: small;
+}
+
+#left-navigation {
+	margin-bottom: -1px;
+}
+
+#p-personal .dropdown-list-anchor {
+	right: 15px;
+}
+
+#mirage-edit-button .dropdown-list-anchor {
+	right: 16px;
+}
+
+// FIXME: using px is bad (why?), but using em is impossible because 14 is dividing by 7.
+blockquote {
+	font-size: 18px;
+
+	cite {
+		font-size: 13px;
+	}
+}
+
+figcaption,
+.thumbinner .thumbcaption {
+	font-size: 94%;
+}

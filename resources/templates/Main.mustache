@@ -1,0 +1,38 @@
+<div class="mirage-visible-content">
+	<div class="mirage-main-container">
+		{{# data-header }}
+			{{> Header }}
+		{{/ data-header }}
+		<div class="mirage-content-container">
+			{{# html-site-notice }}
+				<div id="siteNotice" class="mw-body-content">{{& . }}</div>
+			{{/ html-site-notice }}
+			<div class="mediawiki-content-container">
+				{{! This specifies role="main" for IE compatibility. }}
+				<main id="content" class="mw-body" role="main">
+					<a id="top"></a>
+					{{> Indicators }}
+					<h1 id="firstHeading" class="firstHeading" lang="{{ page-langcode }}">{{& html-title }}</h1>
+					<div id="bodyContent" class="mw-body-content">
+						{{# page-isarticle }}<div id="siteSub" class="noprint">{{ msg-tagline }}</div>{{/ page-isarticle }}
+						<div id="contentSub" {{& html-user-language-attributes }}>{{& html-subtitle }}</div>
+						{{# html-undelete-link }}<div id="contentSub2">{{& . }}</div>{{/ html-undelete-link }}
+						<a class="mw-jump-link" href="#mw-navigation">{{ msg-mirage-jumptonavigation }}</a>
+						{{& html-body-content }}
+					</div>
+					{{& html-after-content }}
+				</main>
+			</div>
+			{{# array-right-rail }}
+				<div id="mirage-right-rail">
+					{{# array-right-rail-modules }}
+						{{> RightRailModule }}
+					{{/ array-right-rail-modules }}
+				</div>
+			{{/ array-right-rail }}
+		</div>
+	</div>
+	{{# data-footer }}
+		{{> Footer }}
+	{{/ data-footer }}
+</div>

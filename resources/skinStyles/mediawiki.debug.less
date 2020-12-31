@@ -1,0 +1,23 @@
+@import '../mirage.less/mirage.variables';
+
+#mw-debug-toolbar {
+	background-color: @wmui-color-base100;
+	border-top: @default-border;
+
+	.mw-debug-panelink {
+		background-color: @wmui-color-base100;
+		border-right: @default-border;
+
+		&:first-child {
+			border-left: @default-border;
+		}
+	}
+}
+
+#mw-debug-pane-debuglog {
+	ul {
+		list-style: none none;
+		padding: 0;
+		margin: 0;
+	}
+}

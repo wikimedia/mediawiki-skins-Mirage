@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"skinname-mirage": "{{name}}",
+	"mirage-skin-desc": "{{desc|what=skin|name=Mirage|url=https://www.mediawiki.org/wiki/Skin:Mirage}}",
+	"mirage-navigation": "{{notranslate}}",
+	"mirage.css": "{{optional}}",
+	"mirage.js": "{{optional}}",
+	"mirage-community-messages-header": "Header for the community messages module.",
+	"mirage-community-messages": "{{notranslate}}",
+	"mirage-interface-messages-module-edit-this-message": "Text used for the edit link to edit the community messages module content. It is only shown to users who actually can edit the message.",
+	"mirage-page-actions": "Header for the page actions in the right rail. This header is for screen readers and won't be shown to regular users.",
+	"mirage-jumptonavigation": "Accessibility link for jumping to the navigation. Hidden by default, but visible when focussed on.\n\nSee also\n* {{msg-mw|mirage-jumptocontent}}\n{{Identical|Jumptonavigation}}",
+	"mirage-jumptocontent": "Accessibility link for jumping to the page content. Hidden by default, but visible when focussed on.\n\nSee also\n* {{msg-mw|mirage-jumptonavigation}}",
+	"mirage-action-addsection": "Button label for the edit button when viewing a talk page the user can edit.\n{{Identical|Add topic}}",
+	"mirage-page-variants": "Button label for the language variants button.\n{{Identical|Variants}}",
+	"mirage-userpage": "Label used for the personal tools link to the user page.\n{{Identical|User page}}\nParameters:\n* $1 - username, used for GENDER",
+	"mirage-footer-places": "Header for the places category of the footer. It contains links to the privacy policy, about page and the disclaimer.",
+	"mirage-footer-feeds": "Header for the feeds category of the footer. It contains links to the RSS feeds for the page.",
+	"mirage-footer-info": "Header for the footer icons. This header is for screen readers and won't be shown to regular users.",
+	"mirage-expand-submenu": "Display text for the sub menu icon in the site navigation. This message is for screen readers and won't be shown to regular users.",
+	"mirage-talkpage": "Text used for the link to the user's talk page.",
+	"mirage-user-tools": "Header for the right rail module containing all user toolbox links.",
+	"mirage-no-new-messages": "Message shown when the user has no new messages.",
+	"mirage-notifications": "Display text for the notifications icon displayed when [[mw:Extension:Echo]] is not available. This message is for screen readers and won't be shown to regular users.\n{{Identical|Notification}}",
+	"mirage-page-tools": "Header for the right rail module with the toolbox tools for the current page.",
+	"mirage-hidden-categories": "Header for the list with hidden categories in the right rail module with categories.\nSee also\n*{{msg-mw|hidden-category-category}}",
+	"mirage-recent-changes-module": "Header for the right rail module with a small list of recent changes\n{{Identical|Recent changes}}",
+	"mirage-more": "Button label for the edit button dropdown. This message is for screen readers and won't be shown to regular users.\n{{Identical|More}}",
+	"mirage-more-recent-changes": "Text used for the link to Special:RecentChanges in the recent changes right rail module.",
+	"prefs-mirage-max-width-label": "Label for the radiobuttons that control the limit on the width of the content.",
+	"prefs-mirage-max-width": "Label for the option to always limit the width of the content.",
+	"prefs-mirage-partial-max-width": "Label for the option to only limit the width of the content of articles",
+	"prefs-mirage-no-max-width": "Label for the option to never limit the width of the content."
+}

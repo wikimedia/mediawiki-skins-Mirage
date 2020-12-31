@@ -1,0 +1,39 @@
+@import '../mirage.less/mirage.variables';
+
+.skin-mirage .mw-echo-ui-overlay {
+	z-index: 10;
+	font-size: inherit;
+}
+
+.mirage-echo-wrapper {
+	#pt-notifications-alert,
+	#pt-notifications-notice {
+		.mw-echo-notifications-badge {
+			top: 0;
+
+			&.mw-echo-notifications-badge-all-read {
+				opacity: 1;
+			}
+		}
+	}
+
+	ul {
+		position: relative;
+		top: 25%;
+		display: inline-block;
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 0.5rem;
+		// 9 pixels shifts the dropdown down far enough to make it sit flush against the bottom of the fixed header.
+		padding-bottom: 9px;
+	}
+}
+
+@media screen and ( min-width: @width-breakpoint-mirage-mobile ),
+screen and ( max-width: @width-breakpoint-mirage-desktop-small - 1px ) {
+	.mirage-echo-wrapper li {
+		padding-bottom: 5px;
+	}
+}

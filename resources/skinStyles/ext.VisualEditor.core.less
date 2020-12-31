@@ -1,0 +1,31 @@
+@import '../mirage.less/mirage.variables';
+
+.ve-active #content {
+	padding: 0;
+}
+
+#firstHeading {
+	margin-top: 0.5rem;
+}
+
+.ve-ui-debugBar {
+	border-top: @default-border;
+	box-shadow: 0 10px 10px -10px rgba( 0, 0, 0, 0.15 ) inset;
+}
+
+.ve-init-mw-desktopArticleTarget {
+	.ve-init-mw-desktopArticleTarget-originalContent {
+		padding: 0 1.5rem 1.5rem;
+	}
+
+	.ve-init-mw-target-surface {
+		& > .ve-ui-debugBar {
+			padding: 1rem 1rem 0;
+			margin: 0 -1.3rem;
+		}
+	}
+}
+
+#mirage-right-rail {
+	margin-top: 0;
+}

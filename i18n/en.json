@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"skinname-mirage": "Mirage",
+	"mirage-skin-desc": "Mirage is a responsive skin that focuses on displaying content with a rail on the right",
+	"mirage-navigation": "-",
+	"mirage.css": "/* CSS placed here will affect users of the Mirage skin */",
+	"mirage.js": "/* Any JavaScript here will be loaded for users using the Mirage skin */",
+	"mirage-community-messages-header": "Community messages",
+	"mirage-community-messages": "-",
+	"mirage-interface-messages-module-edit-this-message": "Edit this message",
+	"mirage-page-actions": "Page actions",
+	"mirage-jumptonavigation": "Jump to navigation",
+	"mirage-jumptocontent": "Jump to content",
+	"mirage-action-addsection": "Add topic",
+	"mirage-page-variants": "Variants",
+	"mirage-userpage": "{{GENDER:$1|User}} page",
+	"mirage-footer-places": "Places",
+	"mirage-footer-feeds": "Feeds",
+	"mirage-footer-info": "Page information",
+	"mirage-expand-submenu": "Show the entries for the sub menu",
+	"mirage-talkpage": "Talk page",
+	"mirage-user-tools": "User tools",
+	"mirage-no-new-messages": "You have no new messages.",
+	"mirage-notifications": "Notifications",
+	"mirage-page-tools": "Page tools",
+	"mirage-hidden-categories": "Hidden categories",
+	"mirage-recent-changes-module": "Recent changes",
+	"mirage-more": "More",
+	"mirage-more-recent-changes": "See more changes",
+	"prefs-mirage-max-width-label": "Mirage content width:",
+	"prefs-mirage-max-width": "Always apply the maximum page width",
+	"prefs-mirage-partial-max-width": "Apply the maximum page width only to articles",
+	"prefs-mirage-no-max-width": "Disable the maximum page width"
+}

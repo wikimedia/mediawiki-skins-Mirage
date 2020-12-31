@@ -1,0 +1,331 @@
+@import 'mediawiki.mixins';
+@import '../mirage.less/mirage.variables';
+@import '../mirage.less/wikimedia-ui-base';
+
+@print-border: 2px solid @wmui-color-base0;
+
+body {
+	line-height: @line-height-base;
+	background: @wmui-color-base100;
+	color: @wmui-color-base0;
+	font-family: @font-family-serif;
+	padding: 0;
+}
+
+.unstyled-list {
+	list-style: none none;
+	padding: 0;
+	margin: 0;
+}
+
+.center {
+	width: 100%;
+	text-align: center;
+}
+
+small,
+.small {
+	font-size: 0.9rem;
+}
+
+a {
+	// stylelint-disable-next-line declaration-no-important
+	background: none !important;
+	// stylelint-disable-next-line declaration-no-important
+	padding: 0 !important;
+	// stylelint-disable-next-line declaration-no-important
+	color: inherit !important;
+	// stylelint-disable-next-line declaration-no-important
+	text-decoration: inherit !important;
+
+	&:not( .image ) {
+		border-bottom: 1px solid @wmui-color-base50;
+	}
+}
+
+.mw-parser-output {
+	// Expand URLs for printing.
+	a.external.text:after,
+	.mw-parser-output a.external.autonumber:after {
+		content: ' (' attr( href ) ')';
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+
+	// Expand protocol-relative URLs for printing.
+	a.external.text[ href^='//' ]:after,
+	.mw-parser-output a.external.autonumber[ href^='//' ]:after {
+		content: ' (https:' attr( href ) ')';
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0;
+	font-weight: bold;
+	// Pagination.
+	page-break-after: avoid;
+	page-break-before: avoid;
+}
+
+h1,
+h2 {
+	border-bottom: @print-border;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0.25rem;
+}
+
+blockquote {
+	border-left: @print-border;
+	padding: 0.1rem 0 0.1rem 1rem;
+	font-style: italic;
+	font-size: 1.25rem;
+
+	p {
+		margin: 0.5em 0;
+	}
+
+	cite {
+		display: block;
+		margin-top: 0.5rem;
+		margin-left: 0.5rem;
+		font-style: normal;
+		font-size: 1rem;
+	}
+}
+
+p {
+	margin: 1rem 0;
+	// Pagination.
+	orphans: 3;
+	widows: 3;
+}
+
+img,
+figure,
+.wikitable,
+.thumb {
+	// Pagination.
+	page-break-inside: avoid;
+}
+
+img {
+	vertical-align: middle;
+}
+
+code,
+samp,
+kbd,
+tt {
+	font-size: 1.25rem;
+}
+
+.mw-body {
+	background: @wmui-color-base100;
+	color: @wmui-color-base0;
+	// stylelint-disable-next-line declaration-no-important
+	border: 0 !important;
+	// stylelint-disable-next-line declaration-no-important
+	padding: 0 !important;
+	// stylelint-disable-next-line declaration-no-important
+	margin: 0 !important;
+
+	& h1,
+	&-content h1,
+	&-content h2 {
+		font-family: @font-family-serif;
+	}
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: 0.1rem;
+}
+
+ul {
+	list-style: disc;
+}
+
+ul,
+ol {
+	margin: 0.5rem 0;
+}
+
+.toc {
+	display: table;
+	background-color: @wmui-color-base90;
+	border: 1pt solid @wmui-color-base50;
+	padding: 7px;
+
+	h2 {
+		display: inline;
+		font-size: 100%;
+	}
+
+	ul {
+		list-style: none none;
+		padding: 0;
+		margin: 0.5rem 0.5rem 0;
+
+		ul {
+			margin: 0.5rem 0.5rem 0 1.5rem;
+		}
+	}
+}
+
+.noprint,
+.mw-editsection,
+.mw-indicators,
+.mw-redirectedfrom,
+.patrollink,
+.mw-jump-link,
+#mw-navigation,
+#mirage-head-base,
+#toc .tocnumber,
+#siteNotice,
+#mirage-right-rail,
+#footer-info h3,
+#footer-links,
+#footer-icons {
+	display: none;
+}
+
+.printfooter {
+	clear: both;
+	border-top: @print-border;
+	margin-top: 0.5rem;
+}
+
+pre,
+.mw-code {
+	background: @wmui-color-base100;
+	color: @wmui-color-base0;
+	border: 1pt dashed @wmui-color-base0;
+	padding: 1rem;
+	white-space: pre-wrap;
+	// Create a new block formatting context.
+	overflow-x: hidden;
+	// Break really long words when they overflow to the next line.
+	word-wrap: break-word;
+}
+
+// Tables. Keep in sync with common.less.
+.wikitable,
+.mw_metadata {
+	background: @wmui-color-base100;
+	margin: 1rem 0;
+	border: 1pt solid @wmui-color-base50;
+	border-collapse: collapse;
+}
+
+.wikitable > caption,
+.mw_metadata caption {
+	padding: 5px;
+}
+
+.wikitable > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > th,
+.wikitable > * > tr > td,
+.mw_metadata th,
+.mw_metadata td {
+	// Important is required to override any inline styles provided by editors.
+	// stylelint-disable-next-line declaration-no-important
+	background: @wmui-color-base100 !important;
+	// We need to also set color in case editors applied a light text color.
+	// stylelint-disable-next-line declaration-no-important
+	color: @wmui-color-base0 !important;
+	border: 1pt solid @wmui-color-base50;
+	padding: 0.4rem 0.6rem;
+}
+
+.wikitable > tr > th,
+.wikitable > * > tr > th,
+.mw_metadata th {
+	text-align: center;
+}
+
+table.listing {
+	&,
+	& td {
+		border: 1pt @border-style-base @wmui-color-base0;
+		border-collapse: collapse;
+	}
+}
+
+// Floating divs (and thumbnails)
+/* @noflip */
+table.floatright,
+div.floatright,
+div.tright {
+	float: right;
+	clear: right;
+}
+
+/* @noflip */
+table.floatleft,
+div.floatleft,
+div.tleft {
+	float: left;
+	clear: left;
+}
+
+/* @noflip */
+div.tleft {
+	margin: 0.5rem 1.4rem 1.3rem 0;
+}
+
+/* @noflip */
+div.tright {
+	margin: 0.5rem 0 1.3rem 1.4rem;
+}
+
+/* @noflip */
+table.floatright,
+div.floatright {
+	margin: 0 0 0.5rem 0.5rem;
+	border: 0;
+}
+
+/* @noflip */
+table.floatleft,
+div.floatleft {
+	margin: 0 0.5rem 0.5rem 0;
+	border: 0;
+}
+
+// Thumbnails.
+div.thumb {
+	background-color: transparent;
+	width: auto;
+
+	a {
+		border-bottom: 0;
+	}
+
+	.thumbinner {
+		background-color: @wmui-color-base100;
+		border: 0;
+		padding: 5px;
+		color: @wmui-color-base20;
+		text-align: center;
+		// New block formatting context, to clear background from floating content.
+		overflow: hidden;
+		min-width: 100px;
+
+		.thumbcaption {
+			text-align: left;
+			line-height: 1.4;
+			padding: 3px;
+		}
+	}
+}

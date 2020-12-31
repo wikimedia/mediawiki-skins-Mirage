@@ -1,0 +1,17 @@
+@import '../mirage.less/mirage.mixins';
+
+li.gallerybox div.thumb {
+	.border-radius( @border-radius-base );
+}
+
+div.gallerytext {
+	// Keep this synchronized with the definition of figcaption in typography.less.
+	font-size: 0.875rem;
+}
+
+@media screen and ( min-width: @width-breakpoint-mirage-mobile ),
+screen and ( max-width: @width-breakpoint-mirage-desktop-small - 1px ) {
+	div.gallerytext {
+		font-size: 94%;
+	}
+}

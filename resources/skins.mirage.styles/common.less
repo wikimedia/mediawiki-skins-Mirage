@@ -1,0 +1,735 @@
+@import 'mediawiki.mixins';
+@import 'mediawiki.mixins.rotation';
+@import '../mirage.less/mirage.mixins';
+@import '../mirage.less/mirage.variables';
+@import 'animations.less';
+@import 'i18n.less';
+@import 'layout.less';
+@import 'legacy.less';
+@import 'legacy-compatibility.less';
+@import 'typography.less';
+@import 'search.less';
+
+.dropdown-hide {
+	display: none;
+}
+
+textarea {
+	// Enforce a consistent border around text areas.
+	// This border is the same as the one for .editOptions.
+	border: @default-border;
+	padding: 0.1rem;
+	.box-sizing( border-box );
+}
+
+fieldset {
+	.default-border();
+	margin: 1rem 0;
+	padding: 0 1rem 1rem;
+}
+
+legend {
+	padding: 0.5rem;
+}
+
+form {
+	border: 0;
+	margin: 0;
+}
+
+table.small {
+	font-size: 100%;
+}
+
+a {
+	&.mw-selflink {
+		&,
+		&:hover,
+		&:focus,
+		&:active,
+		&:visited {
+			color: inherit;
+			cursor: inherit;
+			text-decoration: inherit;
+			font-weight: bold;
+		}
+	}
+
+	&.external.free {
+		word-wrap: break-word;
+	}
+}
+
+// Plainlinks - this can be used to switch off special external link styling.
+.plainlinks a.external {
+	// stylelint-disable-next-line declaration-no-important
+	background: none !important;
+	// stylelint-disable-next-line declaration-no-important
+	padding: 0 !important;
+}
+
+.not-patrolled {
+	background-color: @background-color-base--hover;
+}
+
+img {
+	vertical-align: middle;
+}
+
+blockquote {
+	border-left: 3px solid @wmui-color-base70;
+	padding: 0.1rem 0 0.1rem 1.5rem;
+
+	cite {
+		margin-top: 0.5rem;
+		margin-left: 0.5rem;
+	}
+}
+
+pre,
+code,
+.mw-code {
+	background-color: @background-color-code;
+	border: @default-border;
+}
+
+code {
+	padding: 0.1rem 0.3rem;
+}
+
+pre,
+.mw-code {
+	padding: 0.75rem 1.25rem;
+	// Wrap lines in overflow. See T2260, T103780.
+	white-space: pre-wrap;
+	// Create a new block formatting context.
+	overflow-x: hidden;
+	// Break really long words when they overflow to the next line.
+	word-wrap: break-word;
+}
+
+body {
+	background-color: @wmui-color-base80;
+}
+
+#mirage-fixed-header {
+	background-color: @background-color-base;
+	.box-shadow( 1px 1px 3px @wmui-color-base70 );
+}
+
+#mirage-sitename a {
+	text-decoration: none;
+}
+
+// Word-break overlong user names, see T237230.
+.mirage-username,
+.mirage-dropdown-username,
+.mw-userlink {
+	.hyphens( auto );
+	unicode-bidi: embed;
+}
+
+#p-personal {
+	.personaltools-dropdown {
+		h4 {
+			.user-select-none();
+		}
+
+		// Set a 5px margin, identical to mirage-ooui-icon, to make the distance between
+		// the indicator and the user name the same as the icon and the user name.
+		.mirage-username {
+			margin-right: 5px;
+		}
+
+		.mirage-dropdown-username {
+			padding: 0 0.75rem 0.25rem;
+
+			span {
+				padding: 0.75rem 0 0 0.75rem;
+				border-bottom: @header-underline;
+				font-family: @mirage-serif;
+				font-weight: bold;
+				cursor: auto;
+			}
+
+			&:hover,
+			&:focus {
+				span {
+					background: inherit;
+				}
+			}
+		}
+	}
+
+	.dropdown-list-anchor {
+		// Align the anchor with the dropdown indicator.
+		right: 1rem;
+	}
+
+	.mirage-notifications-wrapper {
+		cursor: pointer;
+
+		.mirage-talk-page-icon-link.mirage-user-has-messages {
+			.animation-bell-ring();
+		}
+
+		.mirage-no-new-messages {
+			.user-select-none();
+			cursor: default;
+		}
+
+		// Remove legacy stylings.
+		.usermessage {
+			background-color: inherit;
+			border: inherit;
+			color: inherit;
+			margin: 0;
+			padding: 0;
+			font-weight: normal;
+		}
+	}
+}
+
+#mirage-top-header {
+	background-color: @wmui-color-base70;
+	.box-shadow( 1px 0 3px @wmui-color-base70 );
+	.border-radius( @border-radius-base @border-radius-base 0 0 );
+}
+
+.mirage-content-container {
+	background-color: @background-color-base;
+	.box-shadow( 1px 1px 3px @wmui-color-base70 );
+	.border-radius( 0 0 @border-radius-base @border-radius-base );
+}
+
+footer.mw-footer {
+	background-color: @background-color-base;
+	.box-shadow( 0 -1px 3px @wmui-color-base70 );
+}
+
+.mw-body {
+	padding: 1.25rem 1.5rem 1.5rem;
+
+	&-content h2 {
+		margin-top: 1rem;
+	}
+}
+
+.mw-wordmark-container .mw-logo-wordmark {
+	color: @wmui-color-base0;
+}
+
+.dropdown-list {
+	background-color: @wmui-color-base100;
+	border: @border-base;
+	.border-radius( 0 0 @border-radius-base @border-radius-base );
+	.box-shadow( @box-shadow-menu );
+
+	.dropdown-list-anchor {
+		&:before {
+			border-bottom-color: @wmui-color-base30;
+		}
+
+		&:after {
+			border-bottom-color: @wmui-color-base100;
+		}
+	}
+
+	li {
+		&:hover {
+			& > *:not( .dropdown-list ),
+			& > a:focus {
+				background: @background-color-base--hover;
+			}
+		}
+
+		// Only apply padding and block styling to first level children, as these represent an individual entry.
+		& > *:not( .dropdown-list ) {
+			padding: 0.75rem;
+			display: block;
+			.transition( ~'background-color 100ms, color 100ms' );
+		}
+
+		& > a {
+			text-decoration: none;
+
+			&:not( .new ) {
+				color: @color-base;
+
+				&:active {
+					color: @color-base--active;
+				}
+			}
+		}
+	}
+}
+
+.mirage-tabs {
+	a {
+		text-decoration: none;
+		padding: 0.5rem;
+		font-weight: @font-weight-bold;
+		.box-shadow( inset 0 0 0 0 @color-primary );
+		.transition( ~'color 100ms, box-shadow 100ms' );
+
+		&.selected {
+			.box-shadow( inset 0 -2px 0 0 @color-primary );
+
+			&.new {
+				.box-shadow( inset 0 -2px 0 0 @color-destructive );
+			}
+		}
+
+		&:hover,
+		&:focus {
+			.box-shadow( inset 0 -2px 0 0 @color-primary--hover );
+		}
+
+		// Duplicate rule to allow Internet Explorer to be usable.
+		&:focus-within {
+			.box-shadow( inset 0 -2px 0 0 @color-primary--hover );
+		}
+
+		&:active {
+			.box-shadow( inset 0 -2px 0 0 @color-primary--active );
+		}
+
+		&.new {
+			&:hover,
+			&:focus {
+				.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
+			}
+
+			// Duplicate rule to allow Internet Explorer to be usable.
+			&:focus-within {
+				.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
+			}
+
+			&:active {
+				.box-shadow( inset 0 -2px 0 0 @color-destructive--active );
+			}
+		}
+	}
+
+	li {
+		margin: 0.25rem;
+	}
+}
+
+#contentSub,
+#contentSub2 {
+	margin: 0 0 0.75rem 0.75rem;
+	font-size: 100%;
+}
+
+.toc {
+	padding: 0.5rem 1rem 0.5rem 0.5rem;
+
+	ul {
+		list-style: none none;
+		padding: 0;
+		margin: 0 0.5rem 0 1.5rem;
+	}
+
+	& > ul {
+		margin-top: 0.5rem;
+	}
+
+	.toctitle .toctogglespan {
+		float: right;
+		margin-left: 0.25rem;
+
+		&:before,
+		&:after {
+			content: '';
+		}
+	}
+}
+
+.toctitle {
+	margin-left: 0.75rem;
+}
+
+.toc,
+#filetoc {
+	margin: 1rem 0;
+}
+
+.toc,
+.toccolours,
+#filetoc {
+	.default-border();
+	background-color: @wmui-color-base90;
+}
+
+.mirage-dropdown-container {
+	cursor: pointer;
+
+	.dropdown-indicator {
+		vertical-align: middle;
+	}
+
+	&:hover,
+	&:focus {
+		& > .dropdown-list {
+			display: block;
+		}
+
+		.dropdown-indicator {
+			.transform-rotate( 180deg );
+		}
+
+		.entry-with-sub-list {
+			&:hover,
+			&:focus {
+				& > .dropdown-sub-list {
+					display: block;
+				}
+			}
+
+			// Duplicate rule to allow Internet Explorer to be usable.
+			&:focus-within > .dropdown-sub-list {
+				display: block;
+			}
+		}
+	}
+
+	// Duplicate rule to allow Internet Explorer to be usable.
+	&:focus-within {
+		& > .dropdown-list {
+			display: block;
+		}
+
+		.dropdown-indicator {
+			.transform-rotate( 180deg );
+		}
+
+		.entry-with-sub-list {
+			&:hover,
+			&:focus {
+				& > .dropdown-sub-list {
+					display: block;
+				}
+			}
+
+			// Duplicate rule to allow Internet Explorer to be usable.
+			&:focus-within > .dropdown-sub-list {
+				display: block;
+			}
+		}
+	}
+}
+
+#module-site-tools {
+	a {
+		&,
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+
+	& > ul {
+		// Set to relative position to allow the absolute positioned
+		// dropdown menu to align with the button.
+		position: relative;
+
+		& > li {
+			border: 1px solid @color-base;
+			border-right: 0;
+			.transition( ~'background-color 100ms, border 100ms, color 100ms, opacity 100ms' );
+
+			& > :not( .dropdown-list ) {
+				font-weight: @font-weight-bold;
+			}
+
+			& > :not( .mirage-ooui-icon-no-label ) {
+				color: @color-base;
+			}
+
+			&:hover {
+				background-color: rgba( 255, 255, 255, 0.15 );
+				border: 1px solid @color-base--hover;
+				border-right: 0;
+
+				& > :not( .mirage-ooui-icon-no-label ) {
+					color: @color-base--hover;
+				}
+
+				& > .mirage-ooui-icon:before {
+					opacity: @opacity-icon-base--hover;
+				}
+			}
+
+			&:active {
+				background-color: transparent;
+				border: 1px solid @color-base--active;
+				border-right: 0;
+
+				& > :not( .mirage-ooui-icon-no-label ) {
+					color: @color-base--active;
+				}
+
+				& > .mirage-ooui-icon:before {
+					opacity: @opacity-base;
+				}
+			}
+
+			& > a,
+			& > span {
+				display: block;
+				padding: 0.25rem 0.5rem;
+			}
+
+			&:first-child {
+				border-top-left-radius: @border-radius-base;
+				border-bottom-left-radius: @border-radius-base;
+			}
+
+			&:last-child {
+				border-right: 1px solid @color-base;
+				border-top-right-radius: @border-radius-base;
+				border-bottom-right-radius: @border-radius-base;
+
+				&:hover {
+					border-right: 1px solid @color-base--hover;
+				}
+			}
+		}
+	}
+}
+
+#mirage-edit-button {
+	.mw-watchlink .loading:before {
+		.rotation( 700ms );
+		outline: 0;
+		cursor: default;
+		pointer-events: none;
+		.transform-origin( 50% 50% );
+	}
+
+	> li {
+		border-top: 1px solid @color-primary;
+		border-bottom: 1px solid @color-primary;
+		background-color: @color-primary;
+		.transition( ~'background-color 100ms, border 100ms' );
+
+		&:first-child a {
+			// If there isn't an icon, don't render a placeholder.
+			&.mirage-ooui-icon-placeholder-invert:before {
+				display: none;
+			}
+
+			&,
+			&:hover,
+			&:focus {
+				color: @wmui-color-base100;
+				text-decoration: none;
+			}
+		}
+
+		&:focus {
+			.box-shadow( inset 0 0 0 2px @wmui-color-base100 );
+			outline: 1px solid transparent;
+		}
+
+		&:hover {
+			background-color: @color-primary--hover;
+			border-top: 1px solid @color-primary--hover;
+			border-bottom: 1px solid @color-primary--hover;
+		}
+
+		&:active {
+			background-color: @color-primary--active;
+			border-top: 1px solid @color-primary--active;
+			border-bottom: 1px solid @color-primary--active;
+		}
+
+		> a,
+		.dropdown-indicator {
+			font-weight: @font-weight-bold;
+			display: block;
+			padding: 0.25rem 0.5rem;
+		}
+
+		& + li {
+			border-left: 1px solid @wmui-color-base100;
+		}
+
+		&:first-child {
+			border-left: 1px solid @color-primary;
+			border-top-left-radius: @border-radius-base;
+			border-bottom-left-radius: @border-radius-base;
+
+			&:hover {
+				border-left: 1px solid @color-primary--hover;
+			}
+
+			&:active {
+				border-left: 1px solid @color-primary--active;
+			}
+		}
+
+		&:last-child {
+			border-right: 1px solid @color-primary;
+			border-top-right-radius: @border-radius-base;
+			border-bottom-right-radius: @border-radius-base;
+
+			&:hover {
+				border-right: 1px solid @color-primary--hover;
+			}
+
+			&:active {
+				border-right: 1px solid @color-primary--active;
+			}
+		}
+	}
+
+	.dropdown-list-anchor {
+		// Align the anchor with the dropdown indicator.
+		right: 17px;
+	}
+}
+
+#p-categories {
+	// Ignore the default category links styling for the right rail module.
+	&.catlinks {
+		border: 0;
+		background-color: inherit;
+	}
+
+	// Make redirect categories distinct.
+	a.mw-redirect {
+		font-style: italic;
+	}
+}
+
+#p-recentchanges {
+	li {
+		line-height: 1.3;
+
+		& + li {
+			margin-top: 0.75rem;
+		}
+	}
+
+	.mirage-recent-changes-module-timestamp:before {
+		content: '\2022';
+		margin: 0 0.25rem;
+	}
+}
+
+figcaption,
+.thumbinner .thumbcaption {
+	margin: 0.25rem 0.25rem 0;
+}
+
+// Data table style.
+.mw-datatable {
+	border-collapse: collapse;
+
+	td,
+	th {
+		border: @border-width-base @border-style-base @wmui-color-base50;
+		padding: 0.2rem 0.4rem;
+	}
+
+	th,
+	tr:hover td {
+		background-color: @wmui-color-accent90;
+	}
+
+	td {
+		background-color: @wmui-color-base100;
+	}
+}
+
+// Traditional wiki table.
+// Keep in sync with print.less.
+.wikitable {
+	background-color: @wmui-color-base90;
+	margin: 1rem 0;
+	border-collapse: collapse;
+
+	th,
+	td {
+		border: @default-border;
+	}
+
+	& > tr > th,
+	& > tr > td,
+	& > * > tr > th,
+	& > * > tr > td {
+		padding: 0.2rem 0.4rem;
+	}
+
+	& > tr > th,
+	& > * > tr > th {
+		background-color: @wmui-color-base80;
+		text-align: center;
+	}
+
+	& > caption {
+		font-weight: bold;
+	}
+}
+
+.thumb {
+	margin: 0.5rem 0;
+
+	&.tright {
+		/* @noflip */
+		margin-left: 1rem;
+	}
+
+	&.tleft {
+		/* @noflip */
+		margin-right: 1rem;
+	}
+}
+
+// Site notice.
+#siteNotice {
+	overflow: auto;
+	// Make the site notice use the same padding as the content.
+	padding: 0 1.5rem;
+
+	// When multiple notices exist, space them apart a little.
+	// This assumes they're all divs.
+	div + div {
+		margin-top: 0.5rem;
+	}
+}
+
+// Site notices are spaced apart already, don't add more margin.
+#localNotice {
+	margin: 0;
+}
+
+.mw-dismissable-notice {
+	position: relative;
+
+	.mw-dismissable-notice-close {
+		// Icon styling
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: @size-icon-medium;
+		height: @size-icon-medium;
+		overflow: hidden;
+		white-space: nowrap;
+		.user-select-none();
+		cursor: pointer;
+
+		// Vertical positioning
+		position: absolute;
+		right: 0;
+		top: 50%;
+		margin-top: @size-icon-medium / -2;
+
+		&,
+		& a {
+			color: transparent;
+		}
+	}
+}

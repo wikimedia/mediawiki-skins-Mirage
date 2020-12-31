@@ -1,0 +1,20 @@
+@import '../mirage.less/mirage.variables';
+
+#pt-uls .uls-trigger {
+	// stylelint-disable-next-line declaration-no-important
+	padding: 0.75rem !important;
+	display: block;
+
+	// Style the icon similar to the other icons in the drop down.
+	&:before {
+		height: @size-icon-medium;
+		width: @size-icon-medium;
+		display: inline-block;
+		margin-right: 5px;
+		opacity: inherit;
+		vertical-align: sub;
+		background-size: auto;
+		background-position: top left;
+		padding: 0;
+	}
+}

@@ -1,0 +1,513 @@
+// This file specifies the default layout of Mirage.
+// It contains the styling that places elements in the appropriate places.
+// It should contain almost no stylings, except where required for properly
+// displaying elements. In other words: This file controls placement, not looks.
+// Screen dependent styles go in the the respective files.
+@import 'mediawiki.mixins';
+@import '../mirage.less/mirage.variables';
+@import '../mirage.less/mirage.mixins';
+
+.mw-jump-link:not( :focus ),
+#mw-navigation h2,
+#mirage-fixed-header h3,
+#module-page-navigation h3 {
+	.mixin-screen-reader-text();
+}
+
+.unstyled-list {
+	list-style: none none;
+	padding: 0;
+	margin: 0;
+}
+
+.horizontally-oriented-list {
+	.unstyled-list;
+
+	> li {
+		float: left;
+	}
+}
+
+.dropdown-list {
+	position: absolute;
+	white-space: nowrap;
+	right: 0;
+	// Stretch with the intent to fill all available width.
+	// Older browsers do not support stretch at all, falling back to 100%.
+	min-width: 100%;
+	// Old name.
+	min-width: -webkit-fill-available;
+	min-width: -moz-available;
+	min-width: fill-available;
+	// New name.
+	min-width: -webkit-stretch;
+	min-width: stretch;
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		margin: 0;
+		display: block;
+		position: relative;
+	}
+
+	.dropdown-list-anchor {
+		position: absolute;
+		top: -10px;
+		right: 18px;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-top: 0;
+			border-style: solid;
+			border-color: transparent;
+		}
+
+		&:before {
+			bottom: -10px;
+			left: -9px;
+			border-width: 10px;
+		}
+
+		&:after {
+			bottom: -10px;
+			left: -8px;
+			border-width: 9px;
+		}
+	}
+}
+
+// Ensure that Xdebug errors show on top, and not half behind the page.
+// These errors are dumped right after <body> and don't have any identifier.
+.xdebug-error {
+	// Using relative positioning is ugly, but so are Xdebug errors.
+	// At least this way all notices are visible without overlapping.
+	position: relative;
+	z-index: 99;
+}
+
+textarea {
+	width: 100%;
+	// Don't allow sizing the edit area into the right rail.
+	max-width: 100%;
+	display: block;
+}
+
+footer,
+.mw-body-content,
+#mw-content-text,
+.mirage-content-container,
+#module-page-navigation,
+.right-rail-module .module-body {
+	.mixin-clearfix();
+}
+
+*.center * {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center {
+	width: 100%;
+	text-align: center;
+}
+
+html,
+body,
+.mirage-visible-content {
+	height: 100%;
+}
+
+.mirage-visible-content {
+	// Used to make the footer stick to the bottom of the page.
+	display: table;
+	width: 100%;
+}
+
+.mirage-main-container {
+	margin: 0 @standard-margin @standard-margin;
+}
+
+#mw-navigation {
+	margin-top: @fixed-header-content-height + @standard-margin + 0.25rem;
+	margin-bottom: 0;
+}
+
+.mirage-limit-content-width {
+	#mw-navigation,
+	.mirage-content-container {
+		max-width: @max-content-width;
+	}
+
+	&-selectively {
+		&.ns-special,
+		&.action-history {
+			#mw-navigation,
+			.mirage-content-container {
+				max-width: none;
+			}
+		}
+	}
+}
+
+.mw-parser-output {
+	overflow-x: auto;
+}
+
+.mirage-content-container {
+	margin-top: 0;
+}
+
+.toc {
+	display: table;
+
+	h2 {
+		display: inline;
+	}
+}
+
+#mirage-fixed-header {
+	position: fixed;
+	.center-flex();
+	justify-content: space-between;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding: 0 1rem;
+	z-index: 10;
+	height: @fixed-header-content-height;
+}
+
+#mw-html-debug-log {
+	padding: 1rem;
+	background-color: @wmui-color-base100;
+
+	ul {
+		// Apply margin around content,
+		// plus half more to make it look like a proper list without wasting a lot of space.
+		padding-inline-start: 1.5rem;
+		// Long lines overflow into the right rail.
+		// This keeps them visible without scrolling.
+		.overflow-wrap( break-word );
+	}
+}
+
+.mw-logo {
+	.center-flex();
+}
+
+.mw-logo-icon {
+	margin-right: 0.25rem;
+	height: 3rem;
+	width: 3rem;
+}
+
+.mw-logo-wordmark {
+	font-size: 2rem;
+}
+
+#mirage-sitename {
+	.flex( @grow: 0, @shrink: 0 );
+	margin-right: 1rem;
+}
+
+#mirage-logo {
+	float: left;
+	margin-right: 1rem;
+
+	#mirage-wordmark {
+		width: 250px;
+		height: 65px;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: left center;
+		-moz-background-size: contain;
+		-webkit-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+	}
+}
+
+#mirage-navigation-header {
+	min-height: 65px;
+	// Using a margin here results in the margin folding into the margin of it's parent.
+	padding: @standard-margin @standard-margin 0;
+}
+
+#mirage-right-rail {
+	margin: @standard-margin 0;
+}
+
+#p-search {
+	.flex();
+
+	#searchInput {
+		width: 100%;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	.searchButton {
+		width: 2.25rem;
+		height: 2.25rem;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	#simpleSearch {
+		position: relative;
+	}
+}
+
+#p-personal {
+	.flex( @grow: 0, @shrink: 0 );
+	margin-left: 0.5rem;
+
+	.dropdown-list {
+		z-index: 10;
+		top: @fixed-header-content-height;
+	}
+
+	.personaltools-dropdown {
+		position: relative;
+		display: inline-block;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		height: @fixed-header-content-height;
+
+		h4 {
+			// Place the dropdown directly against the header.
+			position: relative;
+			top: 50%;
+			margin-top: -@fixed-header-content-height / 2;
+			padding: 0;
+			vertical-align: middle;
+		}
+	}
+
+	.mirage-notifications-area {
+		height: @fixed-header-content-height;
+		display: inline-block;
+	}
+
+	.mirage-notifications-wrapper {
+		position: relative;
+
+		.mirage-notifications-icon {
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			top: 50%;
+			margin-top: -@fixed-header-content-height / 2;
+		}
+
+		.mirage-talk-page-icon-link {
+			line-height: inherit;
+			float: left;
+			margin-right: 0.5rem;
+		}
+
+		.dropdown-list {
+			right: -0.5rem;
+		}
+	}
+}
+
+#module-site-tools {
+	float: right;
+
+	.dropdown-list {
+		margin-top: 1px;
+		z-index: 9;
+	}
+}
+
+#module-site-navigation {
+	display: inline-block;
+	float: left;
+	// Ensure the navigation doesn't fold into the site tools.
+	clear: right;
+
+	h3 {
+		cursor: pointer;
+		.user-select-none();
+		// Place the dropdown directly against the header.
+		margin: 0;
+		padding: 0;
+		line-height: 2.5rem;
+	}
+
+	.navigation-entry-item {
+		float: left;
+		position: relative;
+
+		+ .navigation-entry-item {
+			margin-left: 1rem;
+		}
+
+		li {
+			// Items without a link shouldn't look like they are.
+			& > span {
+				cursor: default;
+			}
+
+			&.entry-with-sub-list {
+				margin-right: 0;
+				padding-right: 1.5rem;
+
+				& > a {
+					padding-right: 0;
+				}
+			}
+		}
+
+		.dropdown-list {
+			left: 0;
+			right: auto;
+			z-index: 9;
+			min-width: 8.5rem;
+
+			&-anchor {
+				left: 50%;
+				right: 0;
+			}
+		}
+
+		.mirage-sub-list-icon {
+			position: absolute;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: transparent;
+			right: 0;
+			top: 0;
+			width: 1rem;
+			padding-left: 0;
+
+			&:before {
+				vertical-align: text-top;
+			}
+		}
+
+		.dropdown-sub-list {
+			top: -1px;
+			left: 100%;
+		}
+	}
+}
+
+#module-page-navigation {
+	margin: 0 0.25rem 0 @standard-margin;
+	// Don't let the the wiki-wordmark get in the way of the page navigation.
+	clear: both;
+	// Place the page navigation on top. This affects the edit button drop down and the bottom border
+	// of the namespace and variant tabs.
+	z-index: 8;
+	position: relative;
+}
+
+#left-navigation {
+	// Ensure that the tab underline is on top of the content border by moving the element 2 pixels into the content.
+	margin: 0.5rem 0 -2px;
+
+	&,
+	nav {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+#right-navigation {
+	float: right;
+}
+
+#mirage-edit-button {
+	position: relative;
+
+	.dropdown-indicator:before {
+		display: inline-block;
+		vertical-align: text-bottom;
+	}
+}
+
+.mw-body {
+	.firstHeading {
+		// Change the default from mediawiki.skinning CSS to let indicators float into heading area.
+		overflow: visible;
+	}
+
+	.mw-indicator {
+		display: inline-block;
+	}
+
+	.mw-indicators {
+		float: right;
+		line-height: @line-height-base;
+		// Ensure that this is displayed on top of .mw-body-content and clickable.
+		position: relative;
+		z-index: 1;
+	}
+}
+
+// Align the pencil icon in the edit section link to match the margin of the text.
+.mw-editsection {
+	.user-select-none();
+
+	a:before {
+		margin-right: 0;
+		position: relative;
+		bottom: 0.2rem;
+	}
+}
+
+.mirage-footer-wrapper {
+	// This doesn't affect the height of the footer, but makes it sit against the bottom of the screen.
+	height: 1px;
+	display: table-row;
+}
+
+footer.mw-footer {
+	padding: 1rem 1.25rem;
+
+	li {
+		line-height: 2rem;
+	}
+
+	#footer-icons {
+		float: right;
+		padding: 0 0.5rem 0.5rem 0;
+
+		li {
+			float: left;
+			margin-left: 0.5rem;
+			text-align: right;
+		}
+	}
+
+	#footer-links {
+		div {
+			display: inline-block;
+			padding: 0.5rem;
+			vertical-align: top;
+		}
+
+		h3 {
+			margin-bottom: 0;
+			padding-top: 0;
+		}
+
+		ul {
+			margin-left: 0.5rem;
+		}
+	}
+}

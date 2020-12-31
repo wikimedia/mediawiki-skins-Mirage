@@ -1,0 +1,54 @@
+// This file styles the search bar.
+// Its positioning is handled in layout.less.
+@import '../mirage.less/mirage.mixins';
+
+#searchform {
+	#searchInput {
+		border: @border-width-base solid @wmui-color-base50;
+		.border-radius( @border-radius-base );
+		padding: 0.25rem 2.25rem 0.25rem 0.5rem;
+		appearance: none;
+		height: 2.25rem;
+		font-family: @mirage-content-font-family;
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+
+		// Keep the two definitions separate: https://stackoverflow.com/a/57701803/6422957.
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	.searchButton {
+		appearance: none;
+		border: 0;
+		.user-select-none();
+		background-color: transparent;
+		color: transparent;
+		overflow: hidden;
+		white-space: nowrap;
+		background-position: center center;
+		background-repeat: no-repeat;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	// The search buttons are displayed overlaid on each other.
+	// When both are present the fulltext search one obscures the 'Go' one.
+	// JavaScript will remove the fulltext button, but until then,
+	// hide the icon shown on the fallback search button.
+	// Both icons stacked on top looks terrible.
+	.mw-fallbackSearchButton {
+		background: none;
+	}
+}

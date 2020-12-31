@@ -1,0 +1,262 @@
+// This file contains all styles related to typography.
+// The style is based on the Wikimedia UI typography styles, specified
+// in the Wikimedia Design Style Guide.
+// See https://design.wikimedia.org/style-guide/visual-style_typography.html
+@import '../mirage.less/mirage.variables';
+
+html,
+body {
+	line-height: @line-height-base;
+	font-family: @mirage-content-font-family;
+	color: @color-base;
+}
+
+/* stylelint-disable selector-no-vendor-prefix */
+::-webkit-input-placeholder,
+::-ms-input-placeholder,
+::-moz-placeholder,
+/* stylelint-enable selector-no-vendor-prefix */
+::placeholder {
+	font-size: 1rem;
+	color: @color-placeholder;
+}
+
+// The `outline` for focus styles on certain browsers is more prominent than others.
+// See T245887.
+:focus {
+	outline-color: @color-primary;
+}
+
+a {
+	text-decoration: none;
+	background: none;
+
+	&,
+	&:visited {
+		color: @color-primary;
+	}
+
+	&:hover {
+		color: @color-primary--hover;
+	}
+
+	&:active {
+		color: @color-primary--active;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: underline;
+	}
+
+	&.new {
+		&,
+		&:visited {
+			color: @color-destructive;
+		}
+
+		&:hover {
+			color: @color-destructive--hover;
+		}
+
+		&:active {
+			color: @color-destructive--active;
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	background: none;
+	margin: 0;
+	overflow: hidden;
+	padding-top: 0.5em;
+	padding-bottom: 0.17em;
+	font-weight: normal;
+	color: @wmui-color-base0;
+}
+
+h1,
+h2 {
+	margin-bottom: 0.25rem;
+	padding: 0;
+	line-height: @line-height-heading;
+	font-family: @font-family-heading-main;
+	border-bottom: @header-underline;
+
+	// Fallback heading font for scripts which render poorly in `@font-family-serif`.
+	// See T73240.
+	&:lang( ja ), /* See T65817 */
+	&:lang( he ), /* See T65843 and T65844 */
+	&:lang( ko ) { /* See T65827 */
+		font-family: @font-family-sans--fallback;
+	}
+
+	// Burmese (Myanmar) language headlines would be cropped with set `line-height`.
+	// See T193270.
+	&:lang( my ) {
+		line-height: normal;
+	}
+}
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	padding-bottom: 2px;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1.125rem;
+}
+
+h5,
+h6 {
+	font-size: 1rem;
+}
+
+h3,
+h4,
+h5 {
+	font-weight: @font-weight-semi-bold;
+}
+
+hr {
+	border: @header-underline;
+	margin: 0.8rem 0;
+}
+
+p {
+	margin: 0.4rem 0 0.5rem 0;
+
+	// Convenience links to edit delete and protect reasons.
+	&.mw-protect-editreasons,
+	&.mw-filedelete-editreasons,
+	&.mw-delete-editreasons {
+		margin: 0;
+		font-size: 90%;
+		text-align: right;
+		font-style: italic;
+	}
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: 0.1rem;
+}
+
+dd {
+	margin-bottom: 0.1rem;
+}
+
+dl {
+	margin-top: 0.2rem;
+	margin-bottom: 0.5rem;
+}
+
+pre,
+code,
+.mw-code {
+	font-family: @font-family-monospace;
+	font-size: 0.875rem;
+	color: @wmui-color-base0;
+}
+
+tt,
+kbd,
+samp {
+	font-family: @font-family-monospace--fallback;
+}
+
+blockquote {
+	font-family: @mirage-serif;
+	font-size: 1.25rem;
+	font-style: italic;
+
+	cite {
+		display: block;
+		font-style: normal;
+		font-size: 0.8125rem;
+	}
+}
+
+small,
+.small {
+	font-size: 0.8125rem;
+}
+
+figcaption,
+.thumbinner .thumbcaption {
+	color: @color-base--subtle;
+	font-style: italic;
+	// The style guide specifies the caption as 0.8125rem (13px), but that is too small,
+	// especially compared against the font-size of gallery captions.
+	// 0.875rem equals 14px.
+	font-size: 0.875rem;
+}
+
+// Ensure toc header is styled to match body appearance,
+// instead of looking like an actual h2 header.
+.mw-body-content .toc h2 {
+	font-size: 100%; /* (reset) */
+	font-family: inherit;
+	font-weight: bold;
+	border: 0;
+}
+
+// Allow edit sections outside of mw-body-content (T160269).
+.mw-editsection,
+.mw-editsection-like {
+	font-family: @mirage-content-font-family;
+	font-size: 0.875rem;
+	margin-left: 0.5rem;
+}
+
+.right-rail-module {
+	h3 {
+		border-bottom: @header-underline;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+
+	h4,
+	h5,
+	h6 {
+		margin-top: 0.3em;
+		margin-bottom: 0;
+	}
+
+	&.styled-right-rail-module {
+		padding: 0.75em;
+
+		.module-body {
+			margin-top: 0.5em;
+			padding: 0 0.5em;
+		}
+	}
+
+	.mirage-right-rail-module-bottom-link {
+		margin-top: 0.5rem;
+		font-size: 0.875rem;
+		float: right;
+		font-style: italic;
+	}
+}

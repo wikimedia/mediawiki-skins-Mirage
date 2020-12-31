@@ -1,0 +1,22 @@
+<nav id="p-views" aria-labelledby="p-views-label">
+	<h3 id="p-views-label" {{& html-user-language-attributes }}>
+		{{ msg-mirage-page-actions }}
+	</h3>
+	<ul id="mirage-edit-button" class="horizontally-oriented-list">
+		{{& html-edit-button }}
+		{{& html-watch-button }}
+		{{# html-edit-button-dropdown }}
+			<li id="p-cactions" class="mirage-dropdown-container">
+				{{& html-dropdown-indicator }}
+				<div class="dropdown-list dropdown-hide">
+					<ul>
+						{{# array-dropdown-items }}
+							{{& . }}
+						{{/ array-dropdown-items }}
+					</ul>
+					<div class="dropdown-list-anchor"></div>
+				</div>
+			</li>
+		{{/ html-edit-button-dropdown }}
+	</ul>
+</nav>

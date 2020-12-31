@@ -1,0 +1,31 @@
+@import 'mediawiki.mixins';
+@import '../mirage.less/mirage.variables';
+
+.suggestions {
+	.suggestions-result,
+	.suggestions-special {
+		padding: 0.5rem 0.75rem;
+		.transition( ~'background-color 100ms, color 100ms' );
+	}
+
+	.suggestions-result-current {
+		background-color: @background-color-base--hover;
+		color: inherit;
+	}
+
+	.suggestions-special {
+		border-bottom-left-radius: @border-radius-base;
+		border-bottom-right-radius: @border-radius-base;
+
+		&.suggestions-result-current {
+			.special-label,
+			.special-query {
+				color: inherit;
+			}
+		}
+
+		.special-query {
+			padding-left: 0.5rem;
+		}
+	}
+}

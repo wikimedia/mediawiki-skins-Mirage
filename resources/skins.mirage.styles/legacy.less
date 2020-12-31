@@ -1,0 +1,141 @@
+@import '../mirage.less/mirage.variables';
+// This file contains legacy MediaWiki styles that users expect to be present.
+// They are provided by MediaWiki through the legacy feature, but that also imports loads
+// of obsolete or redundant stylings.
+// Note: This file should only contain styles that are direct copies from mediawiki.skinning/legacy.less!
+// Styles that are from that file but can be placed in a dedicated skinStyles file should go there instead.
+
+.mw-underline-always a {
+	text-decoration: underline;
+}
+
+.mw-underline-never a {
+	text-decoration: none;
+}
+
+// External URLs should always be treated as LTR (T6330).
+/* @noflip */
+.rtl a.external {
+	&.free,
+	&.autonumber {
+		direction: ltr;
+		unicode-bidi: embed;
+	}
+}
+
+// T14205.
+#mw-credits a {
+	unicode-bidi: embed;
+}
+
+// Mark deleted revisions clearly.
+li span.deleted,
+span.history-deleted {
+	text-decoration: line-through;
+	color: @wmui-color-base30;
+	font-style: italic;
+}
+
+// The auto-generated edit comments.
+.autocomment {
+	&,
+	& a,
+	& a:visited {
+		color: @color-base--disabled;
+	}
+}
+
+.error {
+	color: @color-error;
+}
+
+.warning {
+	// @color-warning is base0, but is historically yellow.
+	color: @wmui-color-yellow50;
+}
+
+.success {
+	color: @color-success;
+}
+
+.mw-warning-with-logexcerpt {
+	clear: both;
+
+	ul li {
+		font-size: 90%;
+	}
+}
+
+// (show/hide) revision deletion links.
+span,
+strong {
+	&.mw-revdelundel-link {
+		font-size: 90%;
+	}
+}
+
+span,
+input {
+	&.mw-revdelundel-hidden {
+		visibility: hidden;
+	}
+}
+
+td,
+th {
+	&.mw-revdel-checkbox {
+		padding-right: 10px;
+		text-align: center;
+	}
+}
+
+// messageBoxes.less is a separate stylefile, but part of the legacy feature.
+// Note that these are slightly optimized variants - when removing,
+// make sure to keep annotated overrides!
+.messagebox,
+.errorbox,
+.warningbox,
+.successbox {
+	color: @color-notice;
+	.box-sizing( border-box );
+	// Adjustment: add border-radius
+	.border-radius( @border-radius-base );
+	// Make margin and padding scale with the root size.
+	margin-bottom: 1rem;
+	padding: 0.875rem 1.75rem;
+	.overflow-wrap( break-word );
+	overflow: hidden;
+
+	:only-child {
+		margin: 0;
+	}
+
+	h2 {
+		color: inherit;
+		display: inline;
+		margin: 0 0.5rem 0 0;
+		border: 0;
+		font-size: 1rem;
+		font-weight: bold;
+	}
+}
+
+.messagebox {
+	background-color: @wmui-color-base80;
+	border: @border-notice;
+}
+
+.errorbox {
+	background-color: @wmui-color-red90;
+	border: @border-error;
+}
+
+.warningbox {
+	background-color: @wmui-color-yellow90;
+	border: @border-warning;
+}
+
+.successbox {
+	background-color: @wmui-color-green90;
+	border: @border-success;
+}

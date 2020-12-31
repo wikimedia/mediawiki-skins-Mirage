@@ -1,0 +1,79 @@
+@import '../mirage.less/mirage.mixins';
+@import '../mirage.less/mirage.variables';
+
+// Basic icon styles.
+// These are loaded on all pages.
+.mirage-ooui-icon {
+	display: inline-block;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		margin-right: 5px;
+		vertical-align: sub;
+	}
+
+	&.mirage-ooui-icon-small:before {
+		width: @size-icon-small;
+		height: @size-icon-small;
+	}
+
+	&.mirage-ooui-icon-medium:before {
+		width: @size-icon-medium;
+		height: @size-icon-medium;
+	}
+
+	&.mirage-ooui-icon-no-label {
+		overflow: hidden;
+		white-space: nowrap;
+		color: transparent;
+		.user-select-none();
+
+		&:before {
+			margin-right: 0;
+		}
+
+		&.mirage-ooui-icon-small {
+			width: @size-icon-small;
+		}
+
+		&.mirage-ooui-icon-medium {
+			width: @size-icon-medium;
+		}
+	}
+}
+
+.mirage-ooui-indicator {
+	&:before {
+		display: block;
+	}
+}
+
+.mw-parser-output a.external,
+.link-https,
+.mw-parser-output a.external[ href^='mailto:' ],
+.link-mailto,
+.mw-parser-output a.external[ href^='irc://' ],
+.mw-parser-output a.external[ href^='ircs://' ],
+.link-irc,
+.mw-parser-output a.external[ href$='.ogg' ],
+.mw-parser-output a.external[ href$='.OGG' ],
+.mw-parser-output a.external[ href$='.mid' ],
+.mw-parser-output a.external[ href$='.MID' ],
+.mw-parser-output a.external[ href$='.midi' ],
+.mw-parser-output a.external[ href$='.MIDI' ],
+.mw-parser-output a.external[ href$='.mp3' ],
+.mw-parser-output a.external[ href$='.MP3' ],
+.mw-parser-output a.external[ href$='.wav' ],
+.mw-parser-output a.external[ href$='.WAV' ],
+.mw-parser-output a.external[ href$='.wma' ],
+.mw-parser-output a.external[ href$='.WMA' ],
+.link-audio {
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-size: 0.875rem;
+	padding-right: 1rem;
+}

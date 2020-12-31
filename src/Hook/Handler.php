@@ -1,0 +1,257 @@
+<?php
+
+namespace MediaWiki\Skins\Mirage\Hook;
+
+use Config;
+use ConfigFactory;
+use Content;
+use EditPage;
+use ExtensionRegistry;
+use Html;
+use MediaWiki\Hook\AlternateEditPreviewHook;
+use MediaWiki\Hook\OutputPageBodyAttributesHook;
+use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
+use MediaWiki\Skins\Mirage\MirageIndicator;
+use MediaWiki\Skins\Mirage\MirageNavigationExtractor;
+use MediaWiki\Skins\Mirage\SkinMirage;
+use MediaWiki\Skins\Mirage\ThemeRegistry;
+use MediaWiki\User\UserOptionsLookup;
+use OutputPage;
+use ParserOutput;
+use ResourceLoader;
+use Skin;
+use TitleFactory;
+use TitleValue;
+use User;
+use WikitextContent;
+use Xml;
+use function array_keys;
+use function array_search;
+use function array_slice;
+use const NS_MEDIAWIKI;
+
+class Handler implements
+	AlternateEditPreviewHook,
+	GetPreferencesHook,
+	MirageGetExtraIconsHook,
+	ResourceLoaderRegisterModulesHook,
+	OutputPageBodyAttributesHook
+{
+	public const MIRAGE_MAX_WIDTH = 0;
+	public const MIRAGE_PARTIAL_MAX_WIDTH = 1;
+	public const MIRAGE_NO_MAX_WIDTH = 2;
+
+	/** @var TitleFactory */
+	private $titleFactory;
+
+	/** @var UserOptionsLookup */
+	private $optionsLookup;
+
+	/** @var Config */
+	private $config;
+
+	/**
+	 * @codeCoverageIgnore
+	 *
+	 * @param TitleFactory $titleFactory
+	 * @param UserOptionsLookup $optionsLookup
+	 * @param ConfigFactory $configFactory
+	 */
+	public function __construct(
+		TitleFactory $titleFactory,
+		UserOptionsLookup $optionsLookup,
+		ConfigFactory $configFactory
+	) {
+		$this->titleFactory = $titleFactory;
+		$this->optionsLookup = $optionsLookup;
+		$this->config = $configFactory->makeConfig( 'Mirage' );
+	}
+
+	/**
+	 * @inheritDoc
+	 *
+	 * @param EditPage $editPage
+	 * @param Content &$content
+	 * @param string &$previewHTML
+	 * @param ParserOutput &$parserOutput
+	 * @return bool
+	 */
+	public function onAlternateEditPreview(
+		$editPage,
+		&$content,
+		&$previewHTML,
+		&$parserOutput
+	) : bool {
+		$context = $editPage->getContext();
+		$skin = $context->getSkin();
+		$out = $context->getOutput();
+
+		if (
+			!( $skin instanceof SkinMirage ) ||
+			!( $content instanceof WikitextContent ) ||
+			!$editPage->getTitle()->equals( new TitleValue( NS_MEDIAWIKI, 'Mirage-navigation' ) )
+		) {
+			return true;
+		}
+
+		$pageText = trim( $content->getText() );
+
+		// Don't try and render a preview when disabling, just render the regular page.
+		if ( $pageText === '' || $pageText === '-' ) {
+			return true;
+		}
+
+		$out->enableOOUI();
+
+		if ( $editPage->isConflict ) {
+			$conflict = Html::rawElement(
+				'div',
+				[
+					'id' => 'mw-previewconflict',
+					'class' => 'warningbox'
+				],
+				$context->msg( 'previewconflict' )->escaped()
+			);
+		} else {
+			$conflict = '';
+		}
+
+		$note = $context->msg( 'previewnote' )->plain() .
+			' <span class="mw-continue-editing">' .
+			'[[#' . EditPage::EDITFORM_ID . '|' .
+			$context->getLanguage()->getArrow() . ' ' .
+			$context->msg( 'continue-editing' )->text() . ']]</span>';
+
+		$previewhead = Html::rawElement(
+			'div',
+			[ 'class' => 'previewnote' ],
+			Html::rawElement(
+				'h2',
+				[ 'id' => 'mw-previewheader' ],
+				$context->msg( 'preview' )->escaped()
+			) .
+			Html::rawElement(
+				'div',
+				[ 'class' => 'warningbox' ],
+				$out->parseAsInterface( $note )
+			) . $conflict
+		);
+
+		$navigationExtractor = new MirageNavigationExtractor(
+			$this->titleFactory,
+			$context
+		);
+
+		$templateParameters = [
+			'array-navigation-modules' => $skin->buildNavigationParameters(
+				$navigationExtractor->extract( $pageText )
+			),
+			'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
+				->setClasses( 'dropdown-indicator' ),
+			// SkinTemplate::prepareUserLanguageAttributes is protected and final,
+			// so just fill in the user language code and direction unconditionally.
+			'html-user-language-attributes' => Xml::expandAttributes( [
+				'lang' => $context->getLanguage()->getHtmlCode(),
+				'dir' => $context->getLanguage()->getDir()
+			] )
+		];
+
+		$previewHTML = $previewhead . $skin->getTemplateParser()->processTemplate(
+			'SiteNavigationPreview',
+			$templateParameters
+		);
+
+		return false;
+	}
+
+	/**
+	 * @inheritDoc
+	 *
+	 * @param User $user
+	 * @param array $preferences
+	 */
+	public function onGetPreferences( $user, &$preferences ) : void {
+		$miragePreferences = [
+			'mirage-max-width' => [
+				'type' => 'radio',
+				'options-messages' => [
+					'prefs-mirage-max-width' => self::MIRAGE_MAX_WIDTH,
+					'prefs-mirage-partial-max-width' => self::MIRAGE_PARTIAL_MAX_WIDTH,
+					'prefs-mirage-no-max-width' => self::MIRAGE_NO_MAX_WIDTH,
+				],
+				'label-message' => 'prefs-mirage-max-width-label',
+				'section' => 'rendering/skin/skin-prefs',
+				'hide-if' => [ '!==', 'wpskin', 'mirage' ]
+			]
+		];
+
+		// Find the skin preference section to add the Mirage preference below it.
+		// This pattern is used in both Vector and Popups (T246162).
+		$skinSectionIndex = array_search( 'skin', array_keys( $preferences ), true );
+		if ( $skinSectionIndex !== false ) {
+			$mirageSectionIndex = $skinSectionIndex + 1;
+			$preferences = array_slice( $preferences, 0, $mirageSectionIndex, true )
+				 + $miragePreferences
+				 + array_slice( $preferences, $mirageSectionIndex, null, true );
+		} else {
+			$preferences += $miragePreferences;
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 *
+	 * Ideally, WikiLove would implement this hook itself.
+	 *
+	 * @param array $icons
+	 */
+	public function onMirageGetExtraIcons( array &$icons ) : void {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiLove' ) ) {
+			$icons['heart'] = [
+				'selectorWithVariant' => [
+					'destructive' => '#ca-wikilove.icon a:before'
+				],
+				'variants' => [
+					'destructive'
+				]
+			];
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onResourceLoaderRegisterModules( ResourceLoader $rl ) : void {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Theme' ) ) {
+			$rl->register(
+				( new ThemeRegistry( $this->config ) )->buildResourceLoaderModuleDefinitions()
+			);
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 *
+	 * @param OutputPage $out
+	 * @param Skin $sk
+	 * @param string[] &$bodyAttrs
+	 */
+	public function onOutputPageBodyAttributes( $out, $sk, &$bodyAttrs ) : void {
+		if ( !( $sk instanceof SkinMirage ) ) {
+			return;
+		}
+
+		switch ( $this->optionsLookup->getIntOption( $sk->getUser(), 'mirage-max-width' ) ) {
+			case self::MIRAGE_NO_MAX_WIDTH:
+				return;
+			case self::MIRAGE_MAX_WIDTH:
+				$bodyAttrs['class'] .= ' mirage-limit-content-width';
+				break;
+			case self::MIRAGE_PARTIAL_MAX_WIDTH:
+			default:
+				$bodyAttrs['class'] .= ' mirage-limit-content-width-selectively';
+				break;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+@import '../mirage.less/mirage.mixins';
+
+.edit-font() {
+	.mw-editfont-monospace,
+	.mw-editfont-sans-serif,
+	.mw-editfont-serif {
+		&,
+		&.oo-ui-textInputWidget > .oo-ui-inputWidget-input {
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and ( max-width: @width-breakpoint-mirage-mobile ) {
+	.edit-font();
+}
+
+@media screen and ( min-width: @width-breakpoint-mirage-desktop-small ) {
+	.edit-font();
+}
