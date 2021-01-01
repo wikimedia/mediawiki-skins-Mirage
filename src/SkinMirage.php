@@ -201,7 +201,7 @@ class SkinMirage extends SkinMustache {
 		$indicatorIcon = MirageIcon::small( 'next' )
 			->setContent( $this->msg( 'mirage-expand-submenu' )->plain() )
 			->hideLabel()
-			->setClasses( 'mirage-sub-list-icon' );
+			->setClasses( 'skin-mirage-mirage-sub-list-icon' );
 
 		foreach ( $sidebar as $name => $values ) {
 			if ( !is_array( $values ) || $values === [] ) {
@@ -297,7 +297,7 @@ class SkinMirage extends SkinMustache {
 		$rightRailModules = $rightRailBuilder->buildModules();
 
 		if ( $rightRailModules ) {
-			$out->addBodyClasses( 'mirage-page-with-right-rail' );
+			$out->addBodyClasses( 'skin-mirage-page-with-right-rail' );
 		}
 
 		return [
@@ -305,7 +305,7 @@ class SkinMirage extends SkinMustache {
 			'page-isarticle' => (bool)$out->isArticle(),
 			'data-header' => [
 				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
-					->setClasses( 'dropdown-indicator' ),
+					->setClasses( 'skin-mirage-dropdown-indicator' ),
 
 				'sitename' => $this->getConfig()->get( 'Sitename' ),
 				'has-mirage-wordmark' => $this->wordmarkLookup->getWordmarkUrl() !== null,
@@ -434,7 +434,7 @@ class SkinMirage extends SkinMustache {
 				'array-dropdown-items' => $dropdownItems,
 				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
 					->setContent( $this->msg( 'mirage-more' )->plain() )
-					->setClasses( 'dropdown-indicator' )
+					->setClasses( 'skin-mirage-dropdown-indicator' )
 					->setVariant( 'invert' )
 			] : null
 		];

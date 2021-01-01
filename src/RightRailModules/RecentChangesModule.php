@@ -80,12 +80,12 @@ class RecentChangesModule extends RightRailModule {
 	 * @inheritDoc
 	 */
 	protected function getBodyContent() : string {
-		$html = Html::openElement( 'ul', [ 'class' => 'unstyled-list' ] );
+		$html = Html::openElement( 'ul', [ 'class' => 'skin-mirage-unstyled-list' ] );
 
 		foreach ( $this->res as $row ) {
 			$html .= Html::rawElement(
 				'li',
-				[ 'class' => 'mirage-recent-changes-module-rc-row' ],
+				[ 'class' => 'skin-mirage-recent-changes-module-rc-row' ],
 				$this->renderRecentChange( $row )
 			);
 		}
@@ -102,7 +102,7 @@ class RecentChangesModule extends RightRailModule {
 
 		return $html . Html::rawElement(
 			'span',
-			[ 'class' => 'mirage-right-rail-module-bottom-link' ],
+			[ 'class' => 'skin-mirage-right-rail-module-bottom-link' ],
 			$recentChangesLink
 		);
 	}
@@ -120,7 +120,7 @@ class RecentChangesModule extends RightRailModule {
 	private function renderRecentChange( stdClass $row ) : string {
 		$html = Html::rawElement(
 			'div',
-			[ 'class' => 'mirage-recent-changes-module-page' ],
+			[ 'class' => 'skin-mirage-recent-changes-module-page' ],
 			$this->linkRenderer->makeKnownLink(
 				new TitleValue( (int)$row->rc_namespace, $row->rc_title )
 			)
@@ -144,10 +144,10 @@ class RecentChangesModule extends RightRailModule {
 
 		$html .= Html::rawElement(
 			'div',
-			[ 'class' => 'mirage-recent-changes-module-performer-and-time' ],
+			[ 'class' => 'skin-mirage-recent-changes-module-performer-and-time' ],
 			$userLink . Html::element(
 				'span',
-				[ 'class' => 'mirage-recent-changes-module-timestamp' ],
+				[ 'class' => 'skin-mirage-recent-changes-module-timestamp' ],
 				$this->getSkin()->getLanguage()->getHumanTimestamp(
 					MWTimestamp::getInstance( $row->rc_timestamp )
 				)

@@ -83,7 +83,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 * @return array
 	 */
 	protected function getAdditionalModuleClasses() : array {
-		return [ 'styled-right-rail-module' ];
+		return [ 'skin-mirage-styled-right-rail-module' ];
 	}
 
 	/**

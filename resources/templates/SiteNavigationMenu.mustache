@@ -1,16 +1,16 @@
-<nav id="{{& html-id }}" class="mirage-dropdown-container navigation-entry-item" aria-labelledby="{{& html-id }}-label" {{& html-tooltip }} aria-haspopup="true" tabindex="0">
-	<h3 id="{{& html-id }}-label" {{& html-user-language-attributes }} class="dropdown-header">
+<nav id="{{& html-id }}" class="skin-mirage-dropdown-container navigation-entry-item" aria-labelledby="{{& html-id }}-label" {{& html-tooltip }} aria-haspopup="true" tabindex="0">
+	<h3 id="{{& html-id }}-label" {{& html-user-language-attributes }} class="skin-mirage-dropdown-header">
 		{{ header-text }}
 		{{& html-dropdown-indicator }}
 	</h3>
-	<div class="dropdown-list dropdown-hide">
+	<div class="skin-mirage-dropdown-list skin-mirage-dropdown-hide">
 		<ul aria-label="submenu">
 			{{# array-links }}
-				<li id="{{& html-id }}"{{# array-sub-links }} class="entry-with-sub-list" aria-haspopup="true"{{/ array-sub-links }}>
+				<li id="{{& html-id }}"{{# array-sub-links }} class="skin-mirage-entry-with-sub-list" aria-haspopup="true"{{/ array-sub-links }}>
 					{{& html-link }}
 					{{# array-sub-links }}
 						{{& html-extend-indicator }}
-						<ul class="dropdown-list dropdown-sub-list dropdown-hide" aria-label="submenu">
+						<ul class="skin-mirage-dropdown-list skin-mirage-dropdown-sub-list skin-mirage-dropdown-hide" aria-label="submenu">
 							{{# array-links }}
 								<li id="{{& html-id }}">
 									{{& html-link }}
@@ -21,6 +21,6 @@
 				</li>
 			{{/ array-links }}
 		</ul>
-		<div class="dropdown-list-anchor"></div>
+		<div class="skin-mirage-dropdown-list-anchor"></div>
 	</div>
 </nav>

@@ -149,8 +149,8 @@
 				"mobile"
 			],
 			"defaultColor": "#000",
-			"selectorWithoutVariant": ".mirage-ooui-icon-{name}:before",
-			"selectorWithVariant": ".mirage-ooui-icon-{name}-{variant}:before",
+			"selectorWithoutVariant": ".skin-mirage-ooui-icon-{name}:before",
+			"selectorWithVariant": ".skin-mirage-ooui-icon-{name}-{variant}:before",
 			"variants": {
 				"default": {
 					"invert": {
@@ -300,8 +300,8 @@
 				"mobile"
 			],
 			"defaultColor": "#000",
-			"selectorWithoutVariant": ".mirage-ooui-icon-indicator-{name}:before",
-			"selectorWithVariant": ".mirage-ooui-icon-indicator-{name}-{variant}:before",
+			"selectorWithoutVariant": ".skin-mirage-ooui-icon-indicator-{name}:before",
+			"selectorWithVariant": ".skin-mirage-ooui-icon-indicator-{name}-{variant}:before",
 			"themeImages": "indicators"
 		}
 	},

@@ -1,49 +1,46 @@
 $( function () {
-	var $dropdowns = $( '.mirage-dropdown-container' );
+	var $dropdowns = $( '.skin-mirage-dropdown-container' );
 
 	function closeAll() {
 		$dropdowns
-			.find( '.dropdown-list, .dropdown-sub-list' )
-			.addClass( 'dropdown-hide' );
+			.find( '.skin-mirage-dropdown-list, .skin-mirage-dropdown-sub-list' )
+			.addClass( 'skin-mirage-dropdown-hide' );
 		$dropdowns
-			.find( '.dropdown-indicator' )
-			.removeAttr( 'style' );
+			.find( '.skin-mirage-dropdown-indicator' )
+			.removeClass( 'skin-mirage-rotate' );
 	}
 
 	$dropdowns.on( 'click', function ( event ) {
 		var $element = $( this ),
-			$dropdown = $element.find( '.dropdown-list' ).not( '.dropdown-sub-list' );
+			$dropdown = $element.find( '.skin-mirage-dropdown-list' )
+				.not( '.skin-mirage-dropdown-sub-list' );
 
 		// Don't close the list when it is clicked.
-		if ( $( event.target ).closest( '.dropdown-list' ).length > 0 ) {
+		if ( $( event.target ).closest( '.skin-mirage-dropdown-list' ).length > 0 ) {
 			return;
 		}
 
-		if ( $dropdown.hasClass( 'dropdown-hide' ) ) {
+		if ( $dropdown.hasClass( 'skin-mirage-dropdown-hide' ) ) {
 			closeAll();
 
-			$dropdown.removeClass( 'dropdown-hide' );
-			$element.find( '.dropdown-indicator' ).css( {
-				'-webkit-transform': 'rotate( 180deg )',
-				'-moz-transform': 'rotate( 180deg )',
-				transform: 'rotate( 180deg )'
-			} );
+			$dropdown.removeClass( 'skin-mirage-dropdown-hide' );
+			$element.find( '.skin-mirage-dropdown-indicator' ).addClass( 'skin-mirage-rotate' );
 		} else {
 			closeAll();
 		}
 	} );
 
-	$dropdowns.find( '.mirage-sub-list-icon' ).on( 'click', function () {
+	$dropdowns.find( '.skin-mirage-sub-list-icon' ).on( 'click', function () {
 		var $element = $( this );
 
 		closeAll();
 
 		$element
-			.parentsUntil( '.dropdown-list' )
-			.removeClass( 'dropdown-hide' );
+			.parentsUntil( '.skin-mirage-dropdown-list' )
+			.removeClass( 'skin-mirage-dropdown-hide' );
 		$element
-			.siblings( '.dropdown-sub-list' )
-			.removeClass( 'dropdown-hide' );
+			.siblings( '.skin-mirage-dropdown-sub-list' )
+			.removeClass( 'skin-mirage-dropdown-hide' );
 	} );
 
 	$( document ).on( 'click', function ( event ) {

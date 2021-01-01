@@ -64,12 +64,12 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 */
 	public function provideOptions() : array {
 		return [
-			'No preference set' => [ null, ' mirage-limit-content-width-selectively' ],
-			'Invalid' => [ -1, ' mirage-limit-content-width-selectively' ],
-			'MIRAGE_MAX_WIDTH' => [ Handler::MIRAGE_MAX_WIDTH, ' mirage-limit-content-width' ],
+			'No preference set' => [ null, ' skin-mirage-limit-content-width-selectively' ],
+			'Invalid' => [ -1, ' skin-mirage-limit-content-width-selectively' ],
+			'MIRAGE_MAX_WIDTH' => [ Handler::MIRAGE_MAX_WIDTH, ' skin-mirage-limit-content-width' ],
 			'MIRAGE_PARTIAL_MAX_WIDTH' => [
 				Handler::MIRAGE_PARTIAL_MAX_WIDTH,
-				' mirage-limit-content-width-selectively'
+				' skin-mirage-limit-content-width-selectively'
 			],
 			'MIRAGE_NO_MAX_WIDTH' => [ Handler::MIRAGE_NO_MAX_WIDTH, '' ],
 		];

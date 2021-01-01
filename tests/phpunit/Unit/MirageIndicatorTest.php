@@ -14,7 +14,7 @@ class MirageIndicatorTest extends MediaWikiUnitTestCase {
 		$indicator = new MirageIndicator( 'test' );
 
 		static::assertStringStartsWith(
-			'mirage-ooui-indicator',
+			'skin-mirage-ooui-indicator',
 			$indicator->toClasses()
 		);
 		static::assertStringContainsString(

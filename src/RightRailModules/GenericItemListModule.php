@@ -28,7 +28,7 @@ class GenericItemListModule extends RightRailModule {
 	protected function getBodyContent() : string {
 		$skin = $this->getSkin();
 
-		$html = Html::openElement( 'ul', [ 'class' => 'unstyled-list' ] );
+		$html = Html::openElement( 'ul', [ 'class' => 'skin-mirage-unstyled-list' ] );
 
 		foreach ( $this->items as $name => $item ) {
 			$html .= $skin->makeListItem( $name, $item );

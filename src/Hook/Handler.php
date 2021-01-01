@@ -148,7 +148,7 @@ class Handler implements
 				$navigationExtractor->extract( $pageText )
 			),
 			'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
-				->setClasses( 'dropdown-indicator' ),
+				->setClasses( 'skin-mirage-dropdown-indicator' ),
 			// SkinTemplate::prepareUserLanguageAttributes is protected and final,
 			// so just fill in the user language code and direction unconditionally.
 			'html-user-language-attributes' => Xml::expandAttributes( [
@@ -246,11 +246,11 @@ class Handler implements
 			case self::MIRAGE_NO_MAX_WIDTH:
 				return;
 			case self::MIRAGE_MAX_WIDTH:
-				$bodyAttrs['class'] .= ' mirage-limit-content-width';
+				$bodyAttrs['class'] .= ' skin-mirage-limit-content-width';
 				break;
 			case self::MIRAGE_PARTIAL_MAX_WIDTH:
 			default:
-				$bodyAttrs['class'] .= ' mirage-limit-content-width-selectively';
+				$bodyAttrs['class'] .= ' skin-mirage-limit-content-width-selectively';
 				break;
 		}
 	}

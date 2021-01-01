@@ -84,7 +84,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 			->setClasses( 'test-class' );
 
 		static::assertEquals( <<<HTML
-<span class="test-class mirage-ooui-icon mirage-ooui-icon-placeholder mirage-ooui-icon-medium"></span>
+<span class="test-class skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder skin-mirage-ooui-icon-medium"></span>
 HTML
 			,
 			(string)$icon
@@ -100,7 +100,7 @@ HTML
 			->setContent( new HtmlArmor( '<script></script>' ) );
 
 		static::assertEquals( <<<HTML
-<span class="mirage-ooui-icon mirage-ooui-icon-placeholder mirage-ooui-icon-medium"><script></script></span>
+<span class="skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder skin-mirage-ooui-icon-medium"><script></script></span>
 HTML
 			,
 			(string)$icon

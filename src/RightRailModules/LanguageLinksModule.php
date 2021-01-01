@@ -32,7 +32,7 @@ class LanguageLinksModule extends RightRailModule {
 		$html = '';
 
 		if ( $this->languageLinks ) {
-			$html = Html::openElement( 'ul', [ 'class' => 'unstyled-list' ] );
+			$html = Html::openElement( 'ul', [ 'class' => 'skin-mirage-unstyled-list' ] );
 
 			foreach ( $this->languageLinks as $name => $link ) {
 				$html .= $skin->makeListItem( $name, $link );

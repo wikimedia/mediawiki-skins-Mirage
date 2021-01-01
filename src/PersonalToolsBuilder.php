@@ -73,8 +73,8 @@ class PersonalToolsBuilder {
 			->setContent( $this->skin->msg( 'mirage-notifications' )->plain() )
 			->hideLabel()
 			->setClasses(
-				'mirage-talk-page-icon-link',
-				$this->skin->getNewtalks() ? 'mirage-user-has-messages' : ''
+				'skin-mirage-talk-page-icon-link',
+				$this->skin->getNewtalks() ? 'skin-mirage-user-has-messages' : ''
 			);
 	}
 
@@ -106,7 +106,7 @@ class PersonalToolsBuilder {
 			yield $this->skin->makeListItem(
 				'username',
 				[
-					'class' => 'mirage-dropdown-username',
+					'class' => 'skin-mirage-dropdown-username',
 					'text' => $user->getName()
 				],
 				[ 'link-fallback' => 'span' ]

@@ -124,7 +124,7 @@ class CategoriesModule extends RightRailModule {
 				'class' => $id
 			] ) .
 			Html::openElement( 'ul', [
-				'class' => 'unstyled-list'
+				'class' => 'skin-mirage-unstyled-list'
 			] );
 
 		foreach ( $categories as $categoryLink ) {

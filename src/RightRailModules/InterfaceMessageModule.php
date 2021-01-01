@@ -65,7 +65,7 @@ class InterfaceMessageModule extends RightRailModule {
 		if ( $canEditMessage ) {
 			$content .= Html::rawElement(
 				'span',
-				[ 'class' => 'mirage-right-rail-module-bottom-link' ],
+				[ 'class' => 'skin-mirage-right-rail-module-bottom-link' ],
 				$this->linkRenderer->makeKnownLink(
 					$this->message->getTitle(),
 					$this->msg( 'mirage-interface-messages-module-edit-this-message' )->plain(),
@@ -98,7 +98,7 @@ class InterfaceMessageModule extends RightRailModule {
 	protected function getAdditionalModuleClasses() : array {
 		$classes = parent::getAdditionalModuleClasses();
 
-		$classes[] = 'interface-message-module';
+		$classes[] = 'skin-mirage-interface-message-module';
 
 		return $classes;
 	}

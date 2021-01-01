@@ -1,8 +1,8 @@
-<div class="mirage-footer-wrapper">
+<div class="skin-mirage-footer-wrapper">
 	{{! This specifies role="contentinfo" for IE compatibility. }}
 	<footer class="mw-footer" {{& html-user-language-attributes }} role="contentinfo">
 		{{# data-info }}
-			<ul id="footer-info" class="unstyled-list {{ className }}">
+			<ul id="footer-info" class="skin-mirage-unstyled-list {{ className }}">
 				{{# array-items }}
 					<li id="{{ id }}">{{& html }}</li>
 				{{/ array-items }}
@@ -17,7 +17,7 @@
 			{{/ array-extra-footer-links }}
 		</div>
 		{{# data-icons }}
-			<ul id="footer-icons" class="horizontally-oriented-list {{ className }}">
+			<ul id="footer-icons" class="skin-mirage-horizontally-oriented-list {{ className }}">
 				{{# array-items }}
 					<li id="{{ id }}">{{& html }}</li>
 				{{/ array-items }}

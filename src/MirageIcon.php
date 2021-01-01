@@ -118,8 +118,8 @@ class MirageIcon {
 	public function toClasses() : string {
 		$icon = $this->variant ? "$this->icon-$this->variant" : $this->icon;
 
-		return "mirage-ooui-icon mirage-ooui-icon-$icon mirage-ooui-icon-$this->size" .
-			   ( $this->hideLabel ? ' mirage-ooui-icon-no-label' : '' );
+		return "skin-mirage-ooui-icon skin-mirage-ooui-icon-$icon skin-mirage-ooui-icon-$this->size"
+			   . ( $this->hideLabel ? ' skin-mirage-ooui-icon-no-label' : '' );
 	}
 
 	/**

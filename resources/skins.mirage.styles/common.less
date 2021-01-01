@@ -10,7 +10,7 @@
 @import 'typography.less';
 @import 'search.less';
 
-.dropdown-hide {
+.skin-mirage-dropdown-hide {
 	display: none;
 }
 
@@ -122,26 +122,26 @@ body {
 }
 
 // Word-break overlong user names, see T237230.
-.mirage-username,
-.mirage-dropdown-username,
+.skin-mirage-username,
+.skin-mirage-dropdown-username,
 .mw-userlink {
 	.hyphens( auto );
 	unicode-bidi: embed;
 }
 
 #p-personal {
-	.personaltools-dropdown {
+	.skin-mirage-personaltools-dropdown {
 		h4 {
 			.user-select-none();
 		}
 
 		// Set a 5px margin, identical to mirage-ooui-icon, to make the distance between
 		// the indicator and the user name the same as the icon and the user name.
-		.mirage-username {
+		.skin-mirage-username {
 			margin-right: 5px;
 		}
 
-		.mirage-dropdown-username {
+		.skin-mirage-dropdown-username {
 			padding: 0 0.75rem 0.25rem;
 
 			span {
@@ -161,19 +161,19 @@ body {
 		}
 	}
 
-	.dropdown-list-anchor {
+	.skin-mirage-dropdown-list-anchor {
 		// Align the anchor with the dropdown indicator.
 		right: 1rem;
 	}
 
-	.mirage-notifications-wrapper {
+	.skin-mirage-notifications-wrapper {
 		cursor: pointer;
 
-		.mirage-talk-page-icon-link.mirage-user-has-messages {
+		.skin-mirage-talk-page-icon-link.skin-mirage-user-has-messages {
 			.animation-bell-ring();
 		}
 
-		.mirage-no-new-messages {
+		.skin-mirage-no-new-messages {
 			.user-select-none();
 			cursor: default;
 		}
@@ -196,7 +196,7 @@ body {
 	.border-radius( @border-radius-base @border-radius-base 0 0 );
 }
 
-.mirage-content-container {
+.skin-mirage-content-container {
 	background-color: @background-color-base;
 	.box-shadow( 1px 1px 3px @wmui-color-base70 );
 	.border-radius( 0 0 @border-radius-base @border-radius-base );
@@ -219,13 +219,13 @@ footer.mw-footer {
 	color: @wmui-color-base0;
 }
 
-.dropdown-list {
+.skin-mirage-dropdown-list {
 	background-color: @wmui-color-base100;
 	border: @border-base;
 	.border-radius( 0 0 @border-radius-base @border-radius-base );
 	.box-shadow( @box-shadow-menu );
 
-	.dropdown-list-anchor {
+	.skin-mirage-dropdown-list-anchor {
 		&:before {
 			border-bottom-color: @wmui-color-base30;
 		}
@@ -237,14 +237,14 @@ footer.mw-footer {
 
 	li {
 		&:hover {
-			& > *:not( .dropdown-list ),
+			& > *:not( .skin-mirage-dropdown-list ),
 			& > a:focus {
 				background: @background-color-base--hover;
 			}
 		}
 
 		// Only apply padding and block styling to first level children, as these represent an individual entry.
-		& > *:not( .dropdown-list ) {
+		& > *:not( .skin-mirage-dropdown-list ) {
 			padding: 0.75rem;
 			display: block;
 			.transition( ~'background-color 100ms, color 100ms' );
@@ -264,7 +264,7 @@ footer.mw-footer {
 	}
 }
 
-.mirage-tabs {
+.skin-mirage-tabs {
 	a {
 		text-decoration: none;
 		padding: 0.5rem;
@@ -362,33 +362,33 @@ footer.mw-footer {
 	background-color: @wmui-color-base90;
 }
 
-.mirage-dropdown-container {
+.skin-mirage-dropdown-container {
 	cursor: pointer;
 
-	.dropdown-indicator {
+	.skin-mirage-dropdown-indicator {
 		vertical-align: middle;
 	}
 
 	&:hover,
 	&:focus {
-		& > .dropdown-list {
+		& > .skin-mirage-dropdown-list {
 			display: block;
 		}
 
-		.dropdown-indicator {
+		.skin-mirage-dropdown-indicator {
 			.transform-rotate( 180deg );
 		}
 
-		.entry-with-sub-list {
+		.skin-mirage-entry-with-sub-list {
 			&:hover,
 			&:focus {
-				& > .dropdown-sub-list {
+				& > .skin-mirage-dropdown-sub-list {
 					display: block;
 				}
 			}
 
 			// Duplicate rule to allow Internet Explorer to be usable.
-			&:focus-within > .dropdown-sub-list {
+			&:focus-within > .skin-mirage-dropdown-sub-list {
 				display: block;
 			}
 		}
@@ -396,24 +396,24 @@ footer.mw-footer {
 
 	// Duplicate rule to allow Internet Explorer to be usable.
 	&:focus-within {
-		& > .dropdown-list {
+		& > .skin-mirage-dropdown-list {
 			display: block;
 		}
 
-		.dropdown-indicator {
+		.skin-mirage-dropdown-indicator {
 			.transform-rotate( 180deg );
 		}
 
-		.entry-with-sub-list {
+		.skin-mirage-entry-with-sub-list {
 			&:hover,
 			&:focus {
-				& > .dropdown-sub-list {
+				& > .skin-mirage-dropdown-sub-list {
 					display: block;
 				}
 			}
 
 			// Duplicate rule to allow Internet Explorer to be usable.
-			&:focus-within > .dropdown-sub-list {
+			&:focus-within > .skin-mirage-dropdown-sub-list {
 				display: block;
 			}
 		}
@@ -439,11 +439,11 @@ footer.mw-footer {
 			border-right: 0;
 			.transition( ~'background-color 100ms, border 100ms, color 100ms, opacity 100ms' );
 
-			& > :not( .dropdown-list ) {
+			& > :not( .skin-mirage-dropdown-list ) {
 				font-weight: @font-weight-bold;
 			}
 
-			& > :not( .mirage-ooui-icon-no-label ) {
+			& > :not( .skin-mirage-ooui-icon-no-label ) {
 				color: @color-base;
 			}
 
@@ -452,11 +452,11 @@ footer.mw-footer {
 				border: 1px solid @color-base--hover;
 				border-right: 0;
 
-				& > :not( .mirage-ooui-icon-no-label ) {
+				& > :not( .skin-mirage-ooui-icon-no-label ) {
 					color: @color-base--hover;
 				}
 
-				& > .mirage-ooui-icon:before {
+				& > .skin-mirage-ooui-icon:before {
 					opacity: @opacity-icon-base--hover;
 				}
 			}
@@ -466,11 +466,11 @@ footer.mw-footer {
 				border: 1px solid @color-base--active;
 				border-right: 0;
 
-				& > :not( .mirage-ooui-icon-no-label ) {
+				& > :not( .skin-mirage-ooui-icon-no-label ) {
 					color: @color-base--active;
 				}
 
-				& > .mirage-ooui-icon:before {
+				& > .skin-mirage-ooui-icon:before {
 					opacity: @opacity-base;
 				}
 			}
@@ -516,7 +516,7 @@ footer.mw-footer {
 
 		&:first-child a {
 			// If there isn't an icon, don't render a placeholder.
-			&.mirage-ooui-icon-placeholder-invert:before {
+			&.skin-mirage-ooui-icon-placeholder-invert:before {
 				display: none;
 			}
 
@@ -546,7 +546,7 @@ footer.mw-footer {
 		}
 
 		> a,
-		.dropdown-indicator {
+		.skin-mirage-dropdown-indicator {
 			font-weight: @font-weight-bold;
 			display: block;
 			padding: 0.25rem 0.5rem;
@@ -585,7 +585,7 @@ footer.mw-footer {
 		}
 	}
 
-	.dropdown-list-anchor {
+	.skin-mirage-dropdown-list-anchor {
 		// Align the anchor with the dropdown indicator.
 		right: 17px;
 	}
@@ -613,7 +613,7 @@ footer.mw-footer {
 		}
 	}
 
-	.mirage-recent-changes-module-timestamp:before {
+	.skin-mirage-recent-changes-module-timestamp:before {
 		content: '\2022';
 		margin: 0 0.25rem;
 	}
