@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
-use MediaWiki\Extensions\ConfigurationDatabase\Config\ConfigFactory;
+use ConfigFactory;
 use MediaWiki\Skins\Mirage\Hook\Handler;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\User\StaticUserOptionsLookup;

@@ -91,16 +91,19 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		$module->setConfig( new MultiConfig( [
 			new HashConfig( [
 				'Logos' => [
-					'1x' => self::WORDMARK_URL,
+					'1x' => $GLOBALS['wgLogo'],
 					'svg' => '/img.svg'
-				]
+				],
+				// Trick OutputPage::transformResourcePath into thinking this is something that
+				// cannot be transformed.
+				'ResourceBasePath' => '//'
 			] ),
 			$module->getConfig()
 		] ) );
 		$preloadLinks = $module->getPreloadLinks( $this->getResourceLoaderContext() );
 
 		static::assertArrayNotHasKey( self::WORDMARK_URL, $preloadLinks );
-		static::assertArrayHasKey( 'img.svg', $preloadLinks );
+		static::assertArrayHasKey( '/img.svg', $preloadLinks );
 	}
 
 	public function testGetStylesWithoutWordmark() : void {
