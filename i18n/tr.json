@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"MuratTheTurkish"
+		]
+	},
+	"mirage-skin-desc": "Mirage, içeriği sağda bir ray ile görüntülemeye odaklanan duyarlı bir görünümdür.",
+	"mirage-community-messages-header": "Topluluk mesajları",
+	"mirage-interface-messages-module-edit-this-message": "Bu mesajı düzenle",
+	"mirage-page-actions": "Sayfa eylemleri",
+	"mirage-jumptonavigation": "Gezinti kısmına atla",
+	"mirage-jumptocontent": "İçeriğe atla",
+	"mirage-action-addsection": "Konu ekle",
+	"mirage-page-variants": "Değişkenler",
+	"mirage-userpage": "{{GENDER:$1|Kullanıcı}} sayfası",
+	"mirage-footer-places": "Yerler",
+	"mirage-footer-feeds": "Beslemeler",
+	"mirage-footer-info": "Sayfa bilgisi",
+	"mirage-expand-submenu": "Alt menü için girişleri göster",
+	"mirage-talkpage": "Mesaj sayfası",
+	"mirage-user-tools": "Kullanıcı araçları",
+	"mirage-no-new-messages": "Yeni mesajınız yok.",
+	"mirage-notifications": "Bildirimler",
+	"mirage-page-tools": "Sayfa araçları",
+	"mirage-hidden-categories": "Gizli kategoriler",
+	"mirage-recent-changes-module": "Son değişiklikler",
+	"mirage-more": "Daha fazla",
+	"mirage-more-recent-changes": "Daha fazla değişiklik görün",
+	"prefs-mirage-max-width-label": "Mirage içerik genişliği:",
+	"prefs-mirage-max-width": "Her zaman maksimum sayfa genişliğini uygulayın",
+	"prefs-mirage-partial-max-width": "Maksimum sayfa genişliğini yalnızca maddelere uygulayın",
+	"prefs-mirage-no-max-width": "Maksimum sayfa genişliğini devre dışı bırakın"
+}

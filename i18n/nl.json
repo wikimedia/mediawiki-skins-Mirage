@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"mirage-community-messages-header": "Gemeenschapsberichten",
+	"mirage-interface-messages-module-edit-this-message": "Dit bericht bewerken",
+	"mirage-page-actions": "Pagina-acties",
+	"mirage-jumptonavigation": "Naar navigatie springen",
+	"mirage-jumptocontent": "Naar inhoud springen",
+	"mirage-action-addsection": "Onderwerp toevoegen",
+	"mirage-page-variants": "Varianten",
+	"mirage-userpage": "{{GENDER:$1|Gebruiker}}spagina",
+	"mirage-footer-places": "Plaatsen",
+	"mirage-footer-feeds": "Feeds",
+	"mirage-footer-info": "Paginagegevens",
+	"mirage-talkpage": "Overlegpagina",
+	"mirage-user-tools": "Gebruikershulpmiddelen",
+	"mirage-no-new-messages": "U hebt geen nieuwe berichten.",
+	"mirage-notifications": "Meldingen",
+	"mirage-page-tools": "Paginahulpmiddelen",
+	"mirage-hidden-categories": "Verborgen categorieën",
+	"mirage-recent-changes-module": "Recente wijzigingen",
+	"mirage-more": "Meer",
+	"mirage-more-recent-changes": "Meer wijzigingen bekijken"
+}

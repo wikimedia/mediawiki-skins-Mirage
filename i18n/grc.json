@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Michael5iLVEr"
+		]
+	},
+	"mirage-community-messages-header": "Κοινότητος ἀγγέλματα",
+	"mirage-userpage": "{{GENDER:$1|Χρωμένου}} δέλτος",
+	"mirage-footer-places": "Τόποι",
+	"mirage-footer-info": "Δέλτου πύστεις",
+	"mirage-no-new-messages": "Οὐκ ἔχεις οὐδεμίαν νέαν ἀγγελίαν.",
+	"mirage-page-tools": "Δέλτου ἐργαλεῖα",
+	"mirage-hidden-categories": "Κεκρυμμέναι κατηγορίαι",
+	"mirage-recent-changes-module": "Πρόσφατοι μεταβολαί",
+	"mirage-more": "Πλεῖω"
+}

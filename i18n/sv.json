@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sabelöga"
+		]
+	},
+	"mirage-skin-desc": "Mirage är ett responsivt utseende som fokuserar på att visa innehåll i en spalt till höger",
+	"mirage-community-messages-header": "Gemenskapsmeddelanden",
+	"mirage-interface-messages-module-edit-this-message": "Redigera det här meddelandet",
+	"mirage-page-actions": "Sidåtgärder",
+	"mirage-jumptonavigation": "Hoppa till navigering",
+	"mirage-jumptocontent": "Hoppa till innehållet",
+	"mirage-action-addsection": "Lägg till ämne",
+	"mirage-page-variants": "Varianter",
+	"mirage-userpage": "{{GENDER:$1|Användarsida}}",
+	"mirage-footer-places": "Platser",
+	"mirage-footer-feeds": "Flöden",
+	"mirage-footer-info": "Sidinformation",
+	"mirage-expand-submenu": "Visa inläggen i undermenyn",
+	"mirage-talkpage": "Diskussionssida",
+	"mirage-user-tools": "Användarverktyg",
+	"mirage-no-new-messages": "Du har inga nya meddelanden.",
+	"mirage-notifications": "Aviseringar",
+	"mirage-page-tools": "Sidverktyg",
+	"mirage-hidden-categories": "Dolda kategorier",
+	"mirage-recent-changes-module": "Senaste ändringar",
+	"mirage-more": "Mer",
+	"mirage-more-recent-changes": "Se fler ändringar",
+	"prefs-mirage-max-width-label": "Mirages innehållsbredd:",
+	"prefs-mirage-max-width": "Tillämpa alltid den högsta sidbredden",
+	"prefs-mirage-partial-max-width": "Tillämpa bara den högsta sidbredden till artiklar",
+	"prefs-mirage-no-max-width": "Avaktivera den högsta sidbredden"
+}

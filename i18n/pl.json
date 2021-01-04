@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rail"
+		]
+	},
+	"skinname-mirage": "Miraż",
+	"mirage-skin-desc": "Miraż jest responsywną skórką, która skupia się na wyświetlaniu treści z panelem po prawej stronie",
+	"mirage.css": "/* Umieszczony tutaj kod CSS wpłynie na wygląd skórki Miraż */",
+	"mirage.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Miraż */",
+	"mirage-community-messages-header": "Komunikaty społeczności",
+	"mirage-interface-messages-module-edit-this-message": "Edytuj ten komunikat",
+	"mirage-page-actions": "Opcje strony",
+	"mirage-jumptonavigation": "Przejdź do nawigacji",
+	"mirage-jumptocontent": "Przejdź do zawartości",
+	"mirage-action-addsection": "Dodaj wątek",
+	"mirage-page-variants": "Warianty",
+	"mirage-userpage": "Strona {{GENDER:$1|użytkownika|użytkowniczki}}",
+	"mirage-footer-places": "Miejsca",
+	"mirage-footer-feeds": "Kanały",
+	"mirage-footer-info": "Informacja o stronie",
+	"mirage-expand-submenu": "Pokaż pozycje w submenu",
+	"mirage-talkpage": "Strona dyskusji",
+	"mirage-user-tools": "Narzędzia użytkownika",
+	"mirage-no-new-messages": "Nie masz nowych wiadomości.",
+	"mirage-notifications": "Powiadomienia",
+	"mirage-page-tools": "Narzędzia dla stron",
+	"mirage-hidden-categories": "Ukryte kategorie",
+	"mirage-recent-changes-module": "Ostatnie zmiany",
+	"mirage-more": "Więcej",
+	"mirage-more-recent-changes": "Zobacz więcej zmian",
+	"prefs-mirage-max-width-label": "Szerokość treści mirażu:",
+	"prefs-mirage-max-width": "Zawsze stosuj maksymalną szerokość strony",
+	"prefs-mirage-partial-max-width": "Stosuj maksymalną szerokość strony tylko do artykułów",
+	"prefs-mirage-no-max-width": "Wyłącz maksymalną szerokość strony"
+}

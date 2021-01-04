@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"mirage-skin-desc": "Mirage ist ein responsiver Skin, der sich auf die Anzeige von Inhalten mit einer Leiste auf der rechten Seite konzentriert",
+	"mirage-community-messages-header": "Meldungen der Gemeinschaft",
+	"mirage-interface-messages-module-edit-this-message": "Diese Nachricht bearbeiten",
+	"mirage-page-actions": "Seitenaktionen",
+	"mirage-jumptonavigation": "Zur Navigation springen",
+	"mirage-jumptocontent": "Zum Inhalt springen",
+	"mirage-action-addsection": "Abschnitt hinzufügen",
+	"mirage-page-variants": "Varianten",
+	"mirage-userpage": "{{GENDER:$1|Benutzerseite|Benutzerinnenseite|Benutzerseite}}",
+	"mirage-footer-places": "Orte",
+	"mirage-footer-feeds": "Feed",
+	"mirage-footer-info": "Seiteninformationen",
+	"mirage-expand-submenu": "Anzeigen der Einträge für das Untermenü",
+	"mirage-talkpage": "Diskussionsseite",
+	"mirage-user-tools": "Benutzerwerkzeuge",
+	"mirage-no-new-messages": "Du hast keine neuen Nachrichten.",
+	"mirage-notifications": "Benachrichtigungen",
+	"mirage-page-tools": "Seitenwerkzeuge",
+	"mirage-hidden-categories": "Versteckte Kategorien",
+	"mirage-recent-changes-module": "Letzte Änderungen",
+	"mirage-more": "Mehr",
+	"mirage-more-recent-changes": "Weitere Änderungen ansehen",
+	"prefs-mirage-max-width-label": "Breite des Inhalts:",
+	"prefs-mirage-max-width": "Immer die maximale Seitenbreite anwenden",
+	"prefs-mirage-partial-max-width": "Die maximale Seitenbreite nur auf Artikel anwenden",
+	"prefs-mirage-no-max-width": "Deaktivieren der maximalen Seitenbreite"
+}

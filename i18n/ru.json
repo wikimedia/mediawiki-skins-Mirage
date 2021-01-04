@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "Отредактировать это сообщение",
+	"mirage-page-actions": "Действия на странице",
+	"mirage-jumptocontent": "Перейти к содержанию",
+	"mirage-action-addsection": "Добавить тему",
+	"mirage-page-variants": "Варианты",
+	"mirage-footer-places": "Места",
+	"mirage-talkpage": "Страница обсуждения",
+	"mirage-user-tools": "Пользовательские инструменты",
+	"mirage-no-new-messages": "У вас нет новых сообщений.",
+	"mirage-notifications": "Уведомления",
+	"mirage-page-tools": "Инструменты для страниц"
+}

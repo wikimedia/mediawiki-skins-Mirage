@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Verdy p"
+		]
+	},
+	"mirage-skin-desc": "Mirage est un habillage réactif qui vise à afficher le contenu avec un rail à droite",
+	"mirage-community-messages-header": "Messages de la communauté",
+	"mirage-interface-messages-module-edit-this-message": "Modifier ce message",
+	"mirage-page-actions": "Actions de page",
+	"mirage-jumptonavigation": "Sauter à la navigation",
+	"mirage-jumptocontent": "Aller au contenu",
+	"mirage-action-addsection": "Ajouter un sujet",
+	"mirage-page-variants": "Variantes",
+	"mirage-userpage": "Page de l’utilisat{{GENDER:$1|eur|rice}}",
+	"mirage-footer-places": "Lieux",
+	"mirage-footer-feeds": "Flux",
+	"mirage-footer-info": "Informations sur la page",
+	"mirage-expand-submenu": "Afficher les entrées du sous-menu",
+	"mirage-talkpage": "Page de discussion",
+	"mirage-user-tools": "Outils utilisateur",
+	"mirage-no-new-messages": "Vous n’avez aucun nouveau message.",
+	"mirage-notifications": "Notifications",
+	"mirage-page-tools": "Outils de page",
+	"mirage-hidden-categories": "Catégories cachées",
+	"mirage-recent-changes-module": "Modifications récentes",
+	"mirage-more": "Plus",
+	"mirage-more-recent-changes": "Voir plus de modifications",
+	"prefs-mirage-max-width-label": "Largeur de contenu Mirage :",
+	"prefs-mirage-max-width": "Toujours appliquer la largeur de page maximale",
+	"prefs-mirage-partial-max-width": "N’appliquer la largeur de page maximale qu’aux articles",
+	"prefs-mirage-no-max-width": "Désactiver la largeur de page maximale"
+}

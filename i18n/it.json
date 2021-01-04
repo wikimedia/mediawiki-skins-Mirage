@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "Modifica questo messaggio",
+	"mirage-page-actions": "Azioni sulla pagina",
+	"mirage-jumptonavigation": "Vai alla navigazione",
+	"mirage-jumptocontent": "Vai al contenuto",
+	"mirage-action-addsection": "Aggiungi argomento",
+	"mirage-page-variants": "Varianti",
+	"mirage-userpage": "Pagina {{GENDER:$1|utente}}",
+	"mirage-footer-places": "Luoghi",
+	"mirage-footer-info": "Informazioni pagina",
+	"mirage-talkpage": "Pagina di discussione",
+	"mirage-user-tools": "Strumenti utente",
+	"mirage-no-new-messages": "Non hai nuovi messaggi.",
+	"mirage-notifications": "Notifiche",
+	"mirage-page-tools": "Strumenti pagine",
+	"mirage-hidden-categories": "Categorie nascoste",
+	"mirage-recent-changes-module": "Ultime modifiche",
+	"mirage-more": "Altro"
+}
