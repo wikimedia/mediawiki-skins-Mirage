@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wuqianye"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "编辑留言",
+	"mirage-jumptocontent": "跳转到内容",
+	"mirage-action-addsection": "添加话题",
+	"mirage-footer-info": "页面信息",
+	"mirage-user-tools": "使用工具",
+	"mirage-notifications": "通知",
+	"mirage-page-tools": "页面工具",
+	"mirage-hidden-categories": "隐藏分类",
+	"mirage-recent-changes-module": "最近更改",
+	"mirage-more": "更多",
+	"mirage-more-recent-changes": "查看更多改动"
+}

@@ -4,5 +4,19 @@
 			"Lancine.kounfantoh.fofana"
 		]
 	},
-	"mirage-user-tools": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߌ߬ ߖߐ߯ߙߊ߲"
+	"mirage-interface-messages-module-edit-this-message": "ߗߋߛߓߍ ߣߌ߲߬ ߡߊߦߟߍ߬ߡߊ߲߬",
+	"mirage-jumptonavigation": "ߌ ߖߎߙߊ߲߫ ߛߏ߲߯ߓߊߟߌ ߘߐ߫",
+	"mirage-jumptocontent": "ߌ ߖߎߙߊ߲ ߞߣߐߘߐ ߞߊ߲߬",
+	"mirage-action-addsection": "ߥߟߊ߬ߘߊ߫ ߝߙߊ߬",
+	"mirage-userpage": "{{GENDER:$1|ߟߊ߬ߓߊ߰ߙߊ߬}} ߞߐߜߍ",
+	"mirage-footer-places": "ߘߌ߲߬ߞߌߙߊ",
+	"mirage-footer-info": "ߞߐߜߍ ߞߎ߲߬ߠߊ߬ߝߎߟߋ߲",
+	"mirage-talkpage": "ߞߎߡߊߢߐ߲߯ߦߊ߫ ߞߐߜߍ",
+	"mirage-user-tools": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߌ߬ ߖߐ߯ߙߊ߲",
+	"mirage-no-new-messages": "ߗߋߛߓߍ߫ ߞߎߘߊ߫ ߛߌ߫ ߕߴߌ ߓߟߏ߫.",
+	"mirage-page-tools": "ߞߐߜߍ ߖߐ߯ߙߊ߲ ߠߎ߬",
+	"mirage-hidden-categories": "ߞߎߡߘߊ߫ ߢߡߊߘߏ߲߰ߣߍ߲ ߠߎ߬",
+	"mirage-recent-changes-module": "ߡߊ߬ߦߟߍ߬ߡߊ߲߬ߠߌ߲߬ ߞߎߘߊ ߟߎ߬",
+	"mirage-more": "ߡߞߊ߬ߝߏ߬ ߜߘߍ߫ ߟߎ߫",
+	"mirage-more-recent-changes": "ߡߊ߬ߦߟߍ߬ߡߊ߲߬ߠߌ߲߬ ߜߘߍ߫ ߟߎ߫ ߦߋ߫"
 }

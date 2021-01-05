@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"IBDJ"
+		]
+	},
+	"mirage-skin-desc": "Mirage er et responsivt design, som fokuserer på at vise indhold i en spalte i højre side.",
+	"mirage-community-messages-header": "Fællesskabsbeskeder",
+	"mirage-interface-messages-module-edit-this-message": "Redigér denne besked",
+	"mirage-page-actions": "Sidehandlinger",
+	"mirage-jumptonavigation": "Hop til navigation",
+	"mirage-jumptocontent": "Hop til indhold",
+	"mirage-action-addsection": "Tilføj emne",
+	"mirage-page-variants": "Varianter",
+	"mirage-userpage": "{{GENDER:$1|Bruger}} side",
+	"mirage-footer-places": "Steder",
+	"mirage-footer-feeds": "Feed",
+	"mirage-footer-info": "Sideinformation",
+	"mirage-expand-submenu": "Vis indlæg i undermenuen",
+	"mirage-talkpage": "Diskussionsside",
+	"mirage-user-tools": "Brugerværktøjer",
+	"mirage-no-new-messages": "Du har ingen nye beskeder.",
+	"mirage-notifications": "Notifikationer",
+	"mirage-page-tools": "Sideværktøjer",
+	"mirage-hidden-categories": "Skjulte kategorier",
+	"mirage-recent-changes-module": "Seneste ændringer",
+	"mirage-more": "Mere",
+	"mirage-more-recent-changes": "Se flere ændringer",
+	"prefs-mirage-max-width-label": "Spejl indholdsbredde",
+	"prefs-mirage-max-width": "Brug altid maksimal sidebredde",
+	"prefs-mirage-partial-max-width": "Brug kun den maksimale sidebredde på artikler",
+	"prefs-mirage-no-max-width": "Deaktivér maksimal sidebredde"
+}
