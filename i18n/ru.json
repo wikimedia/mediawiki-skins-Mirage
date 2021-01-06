@@ -6,6 +6,7 @@
 	},
 	"mirage-interface-messages-module-edit-this-message": "Отредактировать это сообщение",
 	"mirage-page-actions": "Действия на странице",
+	"mirage-jumptonavigation": "Перейти к навигации",
 	"mirage-jumptocontent": "Перейти к содержанию",
 	"mirage-action-addsection": "Добавить тему",
 	"mirage-page-variants": "Варианты",
@@ -14,5 +15,6 @@
 	"mirage-user-tools": "Пользовательские инструменты",
 	"mirage-no-new-messages": "У вас нет новых сообщений.",
 	"mirage-notifications": "Уведомления",
-	"mirage-page-tools": "Инструменты для страниц"
+	"mirage-page-tools": "Инструменты для страниц",
+	"mirage-recent-changes-module": "Свежие правки"
 }

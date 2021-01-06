@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"mirage-community-messages-header": "Pesanan masyarakat",
+	"mirage-interface-messages-module-edit-this-message": "Sunting pesanan ini",
+	"mirage-page-actions": "Tindakan laman",
+	"mirage-action-addsection": "Tambah topik",
+	"mirage-page-variants": "Kelainan",
+	"mirage-userpage": "Laman {{GENDER:$1|pengguna}}",
+	"mirage-footer-places": "Tempat",
+	"mirage-footer-info": "Maklumat laman",
+	"mirage-talkpage": "Laman perbincangan",
+	"mirage-user-tools": "Alat pengguna",
+	"mirage-no-new-messages": "Anda tiada pesanan baru.",
+	"mirage-notifications": "Pemberitahuan",
+	"mirage-page-tools": "Alat laman",
+	"mirage-hidden-categories": "Kategori tersembunyi",
+	"mirage-recent-changes-module": "Perubahan terkini",
+	"mirage-more-recent-changes": "Lihat lebih perubahan"
+}

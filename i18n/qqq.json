@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Robby"
 		]
 	},
 	"skinname-mirage": "{{name}}",
@@ -18,7 +19,7 @@
 	"mirage-action-addsection": "Button label for the edit button when viewing a talk page the user can edit.\n{{Identical|Add topic}}",
 	"mirage-page-variants": "Button label for the language variants button.\n{{Identical|Variants}}",
 	"mirage-userpage": "Label used for the personal tools link to the user page.\n{{Identical|User page}}\nParameters:\n* $1 - username, used for GENDER",
-	"mirage-footer-places": "Header for the places category of the footer. It contains links to the privacy policy, about page and the disclaimer.",
+	"mirage-footer-places": "Header for the places category of the footer. It contains links to the privacy policy, about page and the disclaimer.\n{{identical|Place}}",
 	"mirage-footer-feeds": "Header for the feeds category of the footer. It contains links to the RSS feeds for the page.",
 	"mirage-footer-info": "Header for the footer icons. This header is for screen readers and won't be shown to regular users.",
 	"mirage-expand-submenu": "Display text for the sub menu icon in the site navigation. This message is for screen readers and won't be shown to regular users.",
