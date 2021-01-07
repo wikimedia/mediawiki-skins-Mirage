@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"mirage-skin-desc": "Mirage 是一種主要以右側面板來顯示內容的響應式外觀",
+	"mirage-community-messages-header": "社群訊息",
+	"mirage-interface-messages-module-edit-this-message": "編輯此訊息",
+	"mirage-page-actions": "頁面操作",
+	"mirage-jumptonavigation": "跳至導覽",
+	"mirage-jumptocontent": "跳至內容",
+	"mirage-action-addsection": "新增話題",
+	"mirage-page-variants": "變體",
+	"mirage-userpage": "{{GENDER:$1|使用者}}頁面",
+	"mirage-footer-places": "地點",
+	"mirage-footer-feeds": "摘要",
+	"mirage-footer-info": "頁面資訊",
+	"mirage-expand-submenu": "顯示子選單項目",
+	"mirage-talkpage": "討論頁",
+	"mirage-user-tools": "使用者工具",
+	"mirage-no-new-messages": "你沒有新訊息。",
+	"mirage-notifications": "通知",
+	"mirage-page-tools": "頁面工具",
+	"mirage-hidden-categories": "隱藏分類",
+	"mirage-recent-changes-module": "近期變更",
+	"mirage-more": "更多",
+	"mirage-more-recent-changes": "查看更多變更",
+	"prefs-mirage-max-width-label": "合併內容與：",
+	"prefs-mirage-max-width": "永遠套用最大頁面寬度",
+	"prefs-mirage-partial-max-width": "僅對條目套用最大頁面寬度",
+	"prefs-mirage-no-max-width": "停用最大頁面寬度"
+}
