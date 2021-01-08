@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dipsacus fullonum",
 			"IBDJ"
 		]
 	},
@@ -12,7 +13,7 @@
 	"mirage-jumptocontent": "Hop til indhold",
 	"mirage-action-addsection": "Tilføj emne",
 	"mirage-page-variants": "Varianter",
-	"mirage-userpage": "{{GENDER:$1|Bruger}} side",
+	"mirage-userpage": "{{GENDER:$1|Brugerside}}",
 	"mirage-footer-places": "Steder",
 	"mirage-footer-feeds": "Feed",
 	"mirage-footer-info": "Sideinformation",
