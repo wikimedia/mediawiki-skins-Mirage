@@ -141,9 +141,12 @@ body,
 }
 
 .skin-mirage-limit-content-width {
-	#mw-navigation,
-	.skin-mirage-content-container {
-		max-width: @max-content-width;
+	&,
+	&-selectively {
+		#mw-navigation,
+		.skin-mirage-content-container {
+			max-width: @max-content-width;
+		}
 	}
 
 	&-selectively {
@@ -488,9 +491,12 @@ footer.mw-footer {
 		padding: 0 0.5rem 0.5rem 0;
 
 		li {
-			float: left;
-			margin-left: 0.5rem;
 			text-align: right;
+
+			& + li,
+			a + a {
+				margin-left: 0.5rem;
+			}
 		}
 	}
 
