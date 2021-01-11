@@ -1,16 +1,19 @@
 @import '../mirage.less/mirage.variables';
 
 .skin-mirage-limit-content-width {
-	#mw-navigation,
-	.skin-mirage-content-container {
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	&.skin-mirage-page-with-right-rail {
+	&,
+	&-selectively {
 		#mw-navigation,
 		.skin-mirage-content-container {
-			max-width: @max-content-width-with-right-rail;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&.skin-mirage-page-with-right-rail {
+			#mw-navigation,
+			.skin-mirage-content-container {
+				max-width: @max-content-width-with-right-rail;
+			}
 		}
 	}
 }
