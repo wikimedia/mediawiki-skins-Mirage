@@ -321,6 +321,7 @@
 			"+mediawiki.page.gallery.styles": "skinStyles/mediawiki.page.gallery.styles.less",
 			"+mediawiki.searchSuggest": "skinStyles/mediawiki.searchSuggest.less",
 			"+mediawiki.special.changeslist": "skinStyles/mediawiki.special.changeslist.less",
+			"+ext.dismissableSiteNotice.styles": "skinStyles/ext.dismissableSiteNotice.styles.less",
 			"+ext.echo.styles.badge": "skinStyles/ext.echo.styles.badge.less",
 			"+ext.flow.board.styles": "skinStyles/ext.flow.board.styles.less",
 			"+ext.translate": "skinStyles/ext.translate.less",
