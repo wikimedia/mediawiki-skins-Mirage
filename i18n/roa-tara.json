@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"mirage-skin-desc": "Mirage jè 'nu skin responsive ca s'affisse sus 'u 'ndrucamende d'u 'u condenute cu 'nu binarie sus a destre",
+	"mirage-community-messages-header": "Messàgge d'a comunitate",
+	"mirage-interface-messages-module-edit-this-message": "Cange stu messàgge",
+	"mirage-page-actions": "Aziune sus 'a pàgene",
+	"mirage-jumptonavigation": "Zumbe sus 'a navigazzione",
+	"mirage-jumptocontent": "Zumbe a 'u condenute",
+	"mirage-action-addsection": "Aggiunge 'n'argomende",
+	"mirage-page-variants": "Variande",
+	"mirage-userpage": "Pàgene {{GENDER:$1|utende}}",
+	"mirage-footer-places": "Luèche",
+	"mirage-footer-feeds": "Feed",
+	"mirage-footer-info": "'Mbormaziune d'a pàgene",
+	"mirage-expand-submenu": "'Ndruche le vôsce d'u sotte menù",
+	"mirage-talkpage": "Pàgene de le 'ngazzaminde",
+	"mirage-user-tools": "Struminde de l'utende",
+	"mirage-no-new-messages": "Non ge tìne messàgge nuève.",
+	"mirage-notifications": "Notifeche",
+	"mirage-page-tools": "Pàgene de le struminde",
+	"mirage-hidden-categories": "Categorije scunnute",
+	"mirage-recent-changes-module": "Cangiaminde recende",
+	"mirage-more": "De cchiù",
+	"mirage-more-recent-changes": "'Ndruche cchiù cangiaminde",
+	"prefs-mirage-max-width-label": "Larghezze d'u condenute de Mirage:",
+	"prefs-mirage-max-width": "Appleche sembre 'a larghezze massime d'a pàgene",
+	"prefs-mirage-partial-max-width": "Appleche sembre 'a larghezze massime d'a pàgene sulamende a le vôsce",
+	"prefs-mirage-no-max-width": "Disabbilite 'a larghezze massime d'a pàgene"
+}
