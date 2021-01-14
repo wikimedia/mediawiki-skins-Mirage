@@ -18,6 +18,7 @@
 				"ObjectFactory",
 				"LocalServerObjectCache",
 				"MirageWordmarkLookup",
+				"MirageAvatarLookup",
 				"TitleFactory",
 				"ConfigFactory",
 				"MainWANObjectCache",
@@ -60,12 +61,16 @@
 			"services": [
 				"TitleFactory",
 				"UserOptionsLookup",
+				"MirageAvatarLookup",
 				"ConfigFactory"
 			]
 		}
 	},
 	"Hooks": {
 		"AlternateEditPreview": {
+			"handler": "main"
+		},
+		"BeforePageDisplay": {
 			"handler": "main"
 		},
 		"GetPreferences": {

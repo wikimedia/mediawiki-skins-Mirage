@@ -9,17 +9,22 @@ use EditPage;
 use ExtensionRegistry;
 use Html;
 use MediaWiki\Hook\AlternateEditPreviewHook;
+use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
+use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
+use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\MirageIndicator;
 use MediaWiki\Skins\Mirage\MirageNavigationExtractor;
+use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
 use MediaWiki\User\UserOptionsLookup;
 use OutputPage;
 use ParserOutput;
 use ResourceLoader;
+use ResourceLoaderModule;
 use Skin;
 use TitleFactory;
 use TitleValue;
@@ -33,6 +38,7 @@ use const NS_MEDIAWIKI;
 
 class Handler implements
 	AlternateEditPreviewHook,
+	BeforePageDisplayHook,
 	GetPreferencesHook,
 	MirageGetExtraIconsHook,
 	ResourceLoaderRegisterModulesHook,
@@ -48,6 +54,9 @@ class Handler implements
 	/** @var UserOptionsLookup */
 	private $optionsLookup;
 
+	/** @var AvatarLookup */
+	private $avatarLookup;
+
 	/** @var Config */
 	private $config;
 
@@ -56,15 +65,18 @@ class Handler implements
 	 *
 	 * @param TitleFactory $titleFactory
 	 * @param UserOptionsLookup $optionsLookup
+	 * @param AvatarLookup $avatarLookup
 	 * @param ConfigFactory $configFactory
 	 */
 	public function __construct(
 		TitleFactory $titleFactory,
 		UserOptionsLookup $optionsLookup,
+		AvatarLookup $avatarLookup,
 		ConfigFactory $configFactory
 	) {
 		$this->titleFactory = $titleFactory;
 		$this->optionsLookup = $optionsLookup;
+		$this->avatarLookup = $avatarLookup;
 		$this->config = $configFactory->makeConfig( 'Mirage' );
 	}
 
@@ -168,6 +180,20 @@ class Handler implements
 	/**
 	 * @inheritDoc
 	 *
+	 * @param OutputPage $out
+	 * @param Skin $skin
+	 */
+	public function onBeforePageDisplay( $out, $skin ) : void {
+		if ( !( $skin instanceof SkinMirage ) || $this->avatarLookup instanceof NullAvatarLookup ) {
+			return;
+		}
+
+		$out->addModuleStyles( 'skins.mirage.avatars.styles' );
+	}
+
+	/**
+	 * @inheritDoc
+	 *
 	 * @param User $user
 	 * @param array $preferences
 	 */
@@ -228,6 +254,33 @@ class Handler implements
 				( new ThemeRegistry( $this->config ) )->buildResourceLoaderModuleDefinitions()
 			);
 		}
+
+		if ( $this->avatarLookup instanceof NullAvatarLookup ) {
+			return;
+		}
+
+		$rl->register( 'skins.mirage.avatars.styles', [
+			'targets' => [
+				'mobile',
+				'desktop'
+			],
+			'styles' => [
+				'skins.mirage.avatars.styles/avatars.less' => [
+					'media' => 'screen'
+				]
+			],
+			'origin' => ResourceLoaderModule::ORIGIN_CORE_INDIVIDUAL,
+			'factory' => function ( array $options ) : MirageAvatarResourceLoaderModule {
+				return new MirageAvatarResourceLoaderModule(
+					$options,
+					null,
+					null,
+					$this->avatarLookup
+				);
+			},
+			'localBasePath' => __DIR__ . '/../../resources',
+			'remoteExtPath' => 'Mirage/resources'
+		] );
 	}
 
 	/**

@@ -18,13 +18,22 @@ class PersonalToolsBuilder {
 	/** @var SkinMirage */
 	private $skin;
 
+	/** @var bool */
+	private $hasAvatar;
+
 	/**
 	 * @param SkinMirage $skin
 	 * @param array $personalTools
+	 * @param bool $hasAvatar
 	 */
-	public function __construct( SkinMirage $skin, array $personalTools ) {
+	public function __construct(
+		SkinMirage $skin,
+		array $personalTools,
+		bool $hasAvatar
+	) {
 		$this->skin = $skin;
 		$this->personalTools = $personalTools;
+		$this->hasAvatar = $hasAvatar;
 
 		// Mirage doesn't use this as a personal tools item.
 		unset( $this->personalTools['anonuserpage'] );
@@ -51,9 +60,11 @@ class PersonalToolsBuilder {
 	public function getMustacheParameters() : array {
 		$user = $this->skin->getUser();
 		$hasEcho = ExtensionRegistry::getInstance()->isLoaded( 'Echo' );
+		$userAvatarIcon = MirageIcon::medium( 'userAvatar' )->toClasses();
 
 		return [
-			'html-username-icon-classes' => MirageIcon::medium( 'userAvatar' )->toClasses(),
+			'has-avatar' => $this->hasAvatar,
+			'html-username-icon-classes' => $this->hasAvatar ? null : $userAvatarIcon,
 			'is-anon' => $user->isAnon(),
 			'username' => $user->getName(),
 			'array-personal-tools' => $this->personalTools ? $this->generatePersonalTools() : null,

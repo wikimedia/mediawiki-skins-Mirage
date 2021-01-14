@@ -1,6 +1,10 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
+use MediaWiki\Skins\Mirage\Avatars\MWAvatarLookup;
+use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
+use MediaWiki\Skins\Mirage\Avatars\SocialProfileAvatarLookup;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 
 return [
@@ -10,5 +14,22 @@ return [
 			$services->getRepoGroup(),
 			$services->getConfigFactory()->makeConfig( 'Mirage' )->get( 'MirageEnableImageWordmark' )
 		);
+	},
+
+	'MirageAvatarLookup' => function ( MediaWikiServices $services ) : AvatarLookup {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Avatar' ) ) {
+			return new MWAvatarLookup();
+		// This should check against the ExtensionRegistry, but SocialProfile is not loaded
+		// through wfLoadExtension, and the avatar component is not a sub-extension.
+		} elseif ( class_exists( '\wAvatar' ) ) {
+			$mainConfig = $services->getMainConfig();
+
+			return new SocialProfileAvatarLookup(
+				$mainConfig->get( 'UploadBaseUrl' ),
+				$mainConfig->get( 'UploadPath' )
+			);
+		} else {
+			return new NullAvatarLookup();
+		}
 	}
 ];

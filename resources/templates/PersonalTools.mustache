@@ -1,6 +1,9 @@
 <nav id="p-personal" aria-labelledby="p-personal-label">
 	<h3 id="p-personal-label">{{ msg-personaltools }}</h3>
 	<div class="skin-mirage-dropdown-container skin-mirage-personaltools-dropdown" tabindex="0">
+		{{# has-avatar }}
+			<span class="skin-mirage-ooui-icon skin-mirage-avatar-holder"></span>
+		{{/ has-avatar }}
 		<h4 class="skin-mirage-dropdown-header {{ html-username-icon-classes }}">
 			<span class="skin-mirage-username">
 				{{# is-anon }}
