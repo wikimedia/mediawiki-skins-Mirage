@@ -15,7 +15,7 @@ use function wfMatchesDomainList;
 use function wfUrlProtocols;
 
 class MirageNavigationExtractor {
-	/**  @var TitleFactory */
+	/** @var TitleFactory */
 	private $titleFactory;
 
 	/** @var IContextSource */

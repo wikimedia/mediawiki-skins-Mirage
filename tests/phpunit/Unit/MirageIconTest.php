@@ -77,18 +77,18 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setClasses
+	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
 	 */
 	public function testAddClasses() : void {
 		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
 			->setClasses( 'test-class' );
 
-		static::assertEquals( <<<HTML
-<span class="test-class skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder skin-mirage-ooui-icon-medium"></span>
-HTML
-			,
-			(string)$icon
-		);
+		$expectedClasses = 'test-class skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder ' .
+						   'skin-mirage-ooui-icon-medium';
+
+		static::assertEquals( $expectedClasses, $icon->toClasses() );
+		static::assertEquals( "<span class=\"$expectedClasses\"></span>", (string)$icon );
 	}
 
 	/**
@@ -99,11 +99,9 @@ HTML
 		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
 			->setContent( new HtmlArmor( '<script></script>' ) );
 
-		static::assertEquals( <<<HTML
-<span class="skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder skin-mirage-ooui-icon-medium"><script></script></span>
-HTML
-			,
-			(string)$icon
-		);
+		$classes = 'skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder ' .
+				   'skin-mirage-ooui-icon-medium';
+
+		static::assertEquals( "<span class=\"$classes\"><script></script></span>", (string)$icon );
 	}
 }

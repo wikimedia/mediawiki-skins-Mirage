@@ -11,6 +11,8 @@ use Html;
 use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
+use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MessageCache;
 use Sanitizer;
@@ -37,6 +39,9 @@ class SkinMirage extends SkinMustache {
 	/** @var MirageWordmarkLookup */
 	private $wordmarkLookup;
 
+	/** @var AvatarLookup */
+	private $avatarLookup;
+
 	/** @var WANObjectCache */
 	private $WANObjectCache;
 
@@ -60,6 +65,7 @@ class SkinMirage extends SkinMustache {
 	 * @param ObjectFactory $objectFactory
 	 * @param BagOStuff $localServerCache
 	 * @param MirageWordmarkLookup $wordmarkLookup
+	 * @param AvatarLookup $avatarLookup
 	 * @param TitleFactory $titleFactory
 	 * @param ConfigFactory $configFactory
 	 * @param WANObjectCache $WANObjectCache
@@ -72,6 +78,7 @@ class SkinMirage extends SkinMustache {
 		ObjectFactory $objectFactory,
 		BagOStuff $localServerCache,
 		MirageWordmarkLookup $wordmarkLookup,
+		AvatarLookup $avatarLookup,
 		TitleFactory $titleFactory,
 		ConfigFactory $configFactory,
 		WANObjectCache $WANObjectCache,
@@ -85,6 +92,7 @@ class SkinMirage extends SkinMustache {
 		$this->linkRenderer = $linkRenderer;
 		$this->objectFactory = $objectFactory;
 		$this->wordmarkLookup = $wordmarkLookup;
+		$this->avatarLookup = $avatarLookup;
 		$this->WANObjectCache = $WANObjectCache;
 		$this->messageCache = $messageCache;
 		$this->hookContainer = $hookContainer;
@@ -272,7 +280,8 @@ class SkinMirage extends SkinMustache {
 		$contentNavigation = $this->buildContentNavigationUrls();
 		$personalToolsBuilder = new PersonalToolsBuilder(
 			$this,
-			$this->getPersonalToolsForMakeListItem( $this->buildPersonalUrls() )
+			$this->getPersonalToolsForMakeListItem( $this->buildPersonalUrls() ),
+			!( $this->avatarLookup instanceof NullAvatarLookup )
 		);
 		$sidebarParser = new SidebarParser(
 			$this->WANObjectCache,

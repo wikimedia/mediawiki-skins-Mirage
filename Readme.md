@@ -21,6 +21,9 @@ have a submenu.
 Community messages is a right rail module that displays the content of
 `MediaWiki:mirage-community-messages`. It only shows if that message is not disabled.
 
+### Avatars
+Mirage supports user avatars through two extensions: [SocialProfile](https://www.mediawiki.org/wiki/Extension:SocialProfile) and [MW-Avatar](https://github.com/nbdd0121/MW-Avatar).
+
 ## Themes
 Mirage supports the [Theme extension](https://www.mediawiki.org/wiki/Extension:Theme) out of the box.
 Additionally, if the Theme extension isn't installed, setting `$wgMirageTheme` to any of the

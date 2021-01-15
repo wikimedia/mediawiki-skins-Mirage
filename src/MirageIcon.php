@@ -100,12 +100,9 @@ class MirageIcon {
 	 * @return string
 	 */
 	public function __toString() : string {
-		$classes = $this->classes;
-		$classes[] = $this->toClasses();
-
 		return Html::rawElement(
 			'span',
-			[ 'class' => implode( ' ', $classes ) ],
+			[ 'class' => $this->toClasses() ],
 			HtmlArmor::getHtml( $this->content )
 		);
 	}
@@ -118,8 +115,16 @@ class MirageIcon {
 	public function toClasses() : string {
 		$icon = $this->variant ? "$this->icon-$this->variant" : $this->icon;
 
-		return "skin-mirage-ooui-icon skin-mirage-ooui-icon-$icon skin-mirage-ooui-icon-$this->size"
-			   . ( $this->hideLabel ? ' skin-mirage-ooui-icon-no-label' : '' );
+		$classes = $this->classes;
+		$classes[] = 'skin-mirage-ooui-icon';
+		$classes[] = "skin-mirage-ooui-icon-$icon";
+		$classes[] = "skin-mirage-ooui-icon-$this->size";
+
+		if ( $this->hideLabel ) {
+			$classes[] = 'skin-mirage-ooui-icon-no-label';
+		}
+
+		return implode( ' ', $classes );
 	}
 
 	/**

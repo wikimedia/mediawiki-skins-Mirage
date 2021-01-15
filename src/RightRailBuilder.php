@@ -19,7 +19,7 @@ class RightRailBuilder {
 	/** @var ObjectFactory */
 	private $objectFactory;
 
-	/** @var HookRunner*/
+	/** @var HookRunner */
 	private $hookRunner;
 
 	/** @var SidebarParser */
