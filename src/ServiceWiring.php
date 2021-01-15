@@ -16,18 +16,13 @@ return [
 		);
 	},
 
-	'MirageAvatarLookup' => function ( MediaWikiServices $services ) : AvatarLookup {
+	'MirageAvatarLookup' => function () : AvatarLookup {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Avatar' ) ) {
 			return new MWAvatarLookup();
 		// This should check against the ExtensionRegistry, but SocialProfile is not loaded
 		// through wfLoadExtension, and the avatar component is not a sub-extension.
 		} elseif ( class_exists( '\wAvatar' ) ) {
-			$mainConfig = $services->getMainConfig();
-
-			return new SocialProfileAvatarLookup(
-				$mainConfig->get( 'UploadBaseUrl' ),
-				$mainConfig->get( 'UploadPath' )
-			);
+			return new SocialProfileAvatarLookup();
 		} else {
 			return new NullAvatarLookup();
 		}

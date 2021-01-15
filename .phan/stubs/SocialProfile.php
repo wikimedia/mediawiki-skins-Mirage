@@ -5,5 +5,5 @@
 class wAvatar {
 	public function __construct( int $userId, string $size ) {}
 
-	public function getAvatarImage() : string {}
+	public function getAvatarUrlPath() : string {}
 }
