@@ -327,17 +327,7 @@ class SkinMirage extends SkinMustache {
 					$sidebarParser->getNavigationPortals()
 				),
 
-				// Page navigation.
-				'data-page-namespaces' => $this->getMirageTabNavigation(
-					$contentNavigation['namespaces'],
-					'p-namespaces',
-					'namespaces'
-				),
-				'data-page-variants' => $this->getMirageTabNavigation(
-					$contentNavigation['variants'] ?? [],
-					'p-variants',
-					'mirage-page-variants'
-				),
+				// Edit button.
 				'data-page-actions' => $this->getEditButton(
 					$contentNavigation['views'],
 					$contentNavigation['actions']
@@ -495,59 +485,6 @@ class SkinMirage extends SkinMustache {
 				->setVariant( $invert ? 'invert' : '' )
 				->toClasses()
 		];
-	}
-
-	/**
-	 * Creates the mustache parameters for the Tabs template.
-	 *
-	 * @param array $tabs
-	 * @param string $id
-	 * @param string $headerMsg
-	 * @return array|null
-	 */
-	private function getMirageTabNavigation( array $tabs, string $id, string $headerMsg ) : ?array {
-		if ( !$tabs ) {
-			return null;
-		}
-
-		$parameters = [
-			'html-id' => $id,
-			'msg-header' => $this->msg( $headerMsg )->text(),
-			'array-tabs' => []
-		];
-
-		foreach ( $tabs as $key => $value ) {
-			// Rekey this in such a way that classes etc. are applied to the <a>, not the <li>,
-			// except for the id.
-			$tab = [
-				'links' => [
-					[ 'single-id' => $value['id'] ],
-				],
-				'id' => $value['id']
-			];
-
-			if ( isset( $value['active'] ) ) {
-				$tab['active'] = $value['active'];
-			}
-
-			foreach ( [
-				'href',
-				'class',
-				'text',
-				'dir',
-				'data',
-				'exists',
-				'data-mw'
-			] as $attribute ) {
-				if ( isset( $value[$attribute] ) ) {
-					$tab['links'][0][$attribute] = $value[$attribute];
-				}
-			}
-
-			$parameters['array-tabs'][] = $this->makeListItem( $key, $tab );
-		}
-
-		return $parameters;
 	}
 
 	/**

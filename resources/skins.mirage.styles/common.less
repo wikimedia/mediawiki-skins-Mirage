@@ -264,20 +264,40 @@ footer.mw-footer {
 }
 
 .skin-mirage-tabs {
+	.selected {
+		a {
+			.box-shadow( inset 0 -2px 0 0 @color-primary );
+		}
+
+		&.new {
+			a {
+				.box-shadow( inset 0 -2px 0 0 @color-destructive );
+			}
+		}
+	}
+
+	.new a {
+		&:hover,
+		&:focus {
+			.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
+		}
+
+		// Duplicate rule to allow Internet Explorer to be usable.
+		&:focus-within {
+			.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
+		}
+
+		&:active {
+			.box-shadow( inset 0 -2px 0 0 @color-destructive--active );
+		}
+	}
+
 	a {
 		text-decoration: none;
 		padding: 0.5rem;
 		font-weight: @font-weight-bold;
 		.box-shadow( inset 0 0 0 0 @color-primary );
 		.transition( ~'color 100ms, box-shadow 100ms' );
-
-		&.selected {
-			.box-shadow( inset 0 -2px 0 0 @color-primary );
-
-			&.new {
-				.box-shadow( inset 0 -2px 0 0 @color-destructive );
-			}
-		}
 
 		&:hover,
 		&:focus {
@@ -291,22 +311,6 @@ footer.mw-footer {
 
 		&:active {
 			.box-shadow( inset 0 -2px 0 0 @color-primary--active );
-		}
-
-		&.new {
-			&:hover,
-			&:focus {
-				.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
-			}
-
-			// Duplicate rule to allow Internet Explorer to be usable.
-			&:focus-within {
-				.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
-			}
-
-			&:active {
-				.box-shadow( inset 0 -2px 0 0 @color-destructive--active );
-			}
 		}
 	}
 

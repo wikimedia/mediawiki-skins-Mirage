@@ -17,7 +17,6 @@
 	"mirage-jumptonavigation": "Accessibility link for jumping to the navigation. Hidden by default, but visible when focussed on.\n\nSee also\n* {{msg-mw|mirage-jumptocontent}}\n{{Identical|Jumptonavigation}}",
 	"mirage-jumptocontent": "Accessibility link for jumping to the page content. Hidden by default, but visible when focussed on.\n\nSee also\n* {{msg-mw|mirage-jumptonavigation}}",
 	"mirage-action-addsection": "Button label for the edit button when viewing a talk page the user can edit.\n{{Identical|Add topic}}",
-	"mirage-page-variants": "Button label for the language variants button.\n{{Identical|Variants}}",
 	"mirage-userpage": "Label used for the personal tools link to the user page.\n{{Identical|User page}}\nParameters:\n* $1 - username, used for GENDER",
 	"mirage-footer-places": "Header for the places category of the footer. It contains links to the privacy policy, about page and the disclaimer.\n{{identical|Place}}",
 	"mirage-footer-feeds": "Header for the feeds category of the footer. It contains links to the RSS feeds for the page.",

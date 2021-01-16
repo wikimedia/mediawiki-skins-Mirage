@@ -1,10 +1,8 @@
-<nav id="{{& html-id }}" aria-labelledby="{{& html-id }}-label">
-	<h3 id="{{& html-id }}-label" {{& html-user-language-attributes }}>
-		{{ msg-header }}
+<nav id="{{ id }}" class="{{& class }}" aria-labelledby="{{ id }}-label" {{& html-tooltip }} {{& html-user-language-attributes }}>
+	<h3 id="{{ id }}-label">
+		{{ label }}
 	</h3>
 	<ul class="skin-mirage-horizontally-oriented-list skin-mirage-tabs" role="tablist">
-		{{# array-tabs }}
-			{{& . }}
-		{{/ array-tabs }}
+		{{& html-items }}
 	</ul>
 </nav>

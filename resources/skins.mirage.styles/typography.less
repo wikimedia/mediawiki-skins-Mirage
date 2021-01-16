@@ -49,20 +49,22 @@ a {
 	&:active {
 		text-decoration: underline;
 	}
+}
 
-	&.new {
-		&,
-		&:visited {
-			color: @color-destructive;
-		}
+// .new can be set on the <a>, or on the parent.
+.new a,
+a.new {
+	&,
+	&:visited {
+		color: @color-destructive;
+	}
 
-		&:hover {
-			color: @color-destructive--hover;
-		}
+	&:hover {
+		color: @color-destructive--hover;
+	}
 
-		&:active {
-			color: @color-destructive--active;
-		}
+	&:active {
+		color: @color-destructive--active;
 	}
 }
 
