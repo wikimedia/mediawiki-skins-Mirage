@@ -349,7 +349,7 @@ class SkinMirage extends SkinMustache {
 	}
 
 	/**
-	 * Creates the mustache parameters for the PageNavigationMenu template, for the edit button.
+	 * Creates the mustache parameters for the EditButton template, for the edit button.
 	 *
 	 * @param array $views
 	 * @param array $actions
@@ -498,7 +498,7 @@ class SkinMirage extends SkinMustache {
 	}
 
 	/**
-	 * Creates the mustache parameters for the PageNavigationMenu template.
+	 * Creates the mustache parameters for the Tabs template.
 	 *
 	 * @param array $tabs
 	 * @param string $id
