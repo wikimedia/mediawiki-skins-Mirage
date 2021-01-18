@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"mirage-community-messages-header": "공동체 메시지",
+	"mirage-interface-messages-module-edit-this-message": "이 메시지 편집하기",
+	"mirage-jumptonavigation": "둘러보기로 이동",
+	"mirage-action-addsection": "주제 추가",
+	"mirage-userpage": "{{GENDER:$1|사용자}} 문서",
+	"mirage-footer-places": "장소",
+	"mirage-footer-feeds": "피드",
+	"mirage-footer-info": "문서 정보",
+	"mirage-expand-submenu": "하위 메뉴의 항목 표시",
+	"mirage-talkpage": "토론 문서",
+	"mirage-user-tools": "사용자 도구",
+	"mirage-no-new-messages": "새 메시지가 없습니다.",
+	"mirage-notifications": "알림",
+	"mirage-page-tools": "문서 도구",
+	"mirage-hidden-categories": "숨은 분류",
+	"mirage-recent-changes-module": "최근 바뀜",
+	"mirage-more": "더 보기",
+	"mirage-more-recent-changes": "더 많은 변경사항 보기",
+	"prefs-mirage-max-width": "최대 문서 너비 무조건 적용",
+	"prefs-mirage-partial-max-width": "본문 글에만 최대 문서 너비 적용",
+	"prefs-mirage-no-max-width": "최대 문서 너비 비활성화"
+}

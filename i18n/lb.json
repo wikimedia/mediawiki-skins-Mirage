@@ -4,11 +4,22 @@
 			"Robby"
 		]
 	},
+	"mirage-skin-desc": "Mirage ass e reaktiven Interface dee sech op d'Weise vun Inhalter mat enger Läischt op der ietser Säit konzentréiert",
+	"mirage-community-messages-header": "Message vun der Communautéit",
 	"mirage-interface-messages-module-edit-this-message": "Dëse Message änneren",
-	"mirage-page-variants": "Varianten",
+	"mirage-jumptonavigation": "Op d'Navigatioun wiesselen",
+	"mirage-jumptocontent": "Op den Inhalt sprangen",
+	"mirage-action-addsection": "Sujet dobäisetzen",
+	"mirage-userpage": "{{GENDER:$1|Benotzersäit|Benotzerinnesäit|Benotzersäit}}",
 	"mirage-footer-places": "Plazen",
+	"mirage-footer-info": "Informatiounen iwwer d'Säit",
+	"mirage-talkpage": "Diskussiounssäit",
 	"mirage-no-new-messages": "Dir hutt keng nei Messagen.",
 	"mirage-notifications": "Notifikatiounen",
+	"mirage-hidden-categories": "Verstoppt Kategorien",
+	"mirage-recent-changes-module": "Rezent Ännerungen",
 	"mirage-more": "Méi",
-	"mirage-more-recent-changes": "Méi Ännerunge weisen"
+	"mirage-more-recent-changes": "Méi Ännerunge weisen",
+	"prefs-mirage-partial-max-width": "Déi maximal Breet vun der Säit just op Artikelen applizéieren",
+	"prefs-mirage-no-max-width": "Déi maximal Säitebreet desaktivéieren"
 }

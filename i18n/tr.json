@@ -1,22 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hedda",
 			"MuratTheTurkish"
 		]
 	},
-	"mirage-skin-desc": "Mirage, içeriği sağda bir ray ile görüntülemeye odaklanan duyarlı bir görünümdür.",
+	"mirage-skin-desc": "Mirage, içeriği sağda bir ray ile görüntülemeye odaklanan duyarlı bir temadır.",
 	"mirage-community-messages-header": "Topluluk mesajları",
 	"mirage-interface-messages-module-edit-this-message": "Bu mesajı düzenle",
 	"mirage-page-actions": "Sayfa eylemleri",
-	"mirage-jumptonavigation": "Gezinti kısmına atla",
-	"mirage-jumptocontent": "İçeriğe atla",
+	"mirage-jumptonavigation": "Gezintiye git",
+	"mirage-jumptocontent": "İçeriğe git",
 	"mirage-action-addsection": "Konu ekle",
-	"mirage-page-variants": "Değişkenler",
 	"mirage-userpage": "{{GENDER:$1|Kullanıcı}} sayfası",
 	"mirage-footer-places": "Yerler",
 	"mirage-footer-feeds": "Beslemeler",
 	"mirage-footer-info": "Sayfa bilgisi",
-	"mirage-expand-submenu": "Alt menü için girişleri göster",
+	"mirage-expand-submenu": "Alt menü için girdileri göster",
 	"mirage-talkpage": "Mesaj sayfası",
 	"mirage-user-tools": "Kullanıcı araçları",
 	"mirage-no-new-messages": "Yeni mesajınız yok.",
