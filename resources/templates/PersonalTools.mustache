@@ -1,5 +1,5 @@
-<nav id="p-personal" aria-labelledby="p-personal-label">
-	<h3 id="p-personal-label">{{ msg-personaltools }}</h3>
+<nav id="{{ id }}" class="{{ class }}" aria-labelledby="{{ id }}-label" {{& html-tooltip }} {{& html-user-language-attributes }}>
+	<h3 id="{{ id }}-label">{{ label }}</h3>
 	<div class="skin-mirage-dropdown-container skin-mirage-personaltools-dropdown" tabindex="0">
 		{{# has-avatar }}
 			<span class="skin-mirage-ooui-icon skin-mirage-avatar-holder"></span>
@@ -17,41 +17,20 @@
 		</h4>
 		<div class="skin-mirage-dropdown-list skin-mirage-dropdown-hide">
 			<ul {{& html-user-language-attributes }}>
-				{{# array-personal-tools }}
-					{{& . }}
-				{{/ array-personal-tools }}
+				<li class="skin-mirage-dropdown-username">
+					<span class="skin-mirage-username">
+						{{# is-anon }}
+							{{ msg-notloggedin }}
+						{{/ is-anon }}
+						{{^ is-anon }}
+							{{ username }}
+						{{/ is-anon }}
+					</span>
+				</li>
+				{{& html-items }}
 			</ul>
 			<div class="skin-mirage-dropdown-list-anchor"></div>
 		</div>
 	</div>
-	{{# is-echo }}
-		{{^ is-anon }}
-			<div class="skin-mirage-echo-wrapper skin-mirage-notifications-area">
-				<ul class="skin-mirage-unstyled-list">
-					{{# array-echo-icons }}
-						{{& . }}
-					{{/ array-echo-icons }}
-				</ul>
-			</div>
-		{{/ is-anon }}
-	{{/ is-echo }}
-	{{^ is-echo }}
-		<div class="skin-mirage-notifications-wrapper skin-mirage-notifications-area skin-mirage-dropdown-container" tabindex="0">
-			<div class="skin-mirage-notifications-icon">
-				{{& html-notifications-icon }}
-				{{& html-dropdown-indicator }}
-			</div>
-			<div class="skin-mirage-dropdown-list skin-mirage-dropdown-hide">
-				<ul>
-					{{# html-user-message }}
-						<li>{{& . }}</li>
-					{{/ html-user-message }}
-					{{^ html-user-message }}
-						<li><div class="skin-mirage-no-new-messages">{{ msg-mirage-no-new-messages }}</div></li>
-					{{/ html-user-message }}
-				</ul>
-				<div class="skin-mirage-dropdown-list-anchor"></div>
-			</div>
-		</div>
-	{{/ is-echo }}
+	{{& html-after-portal }}
 </nav>

@@ -273,7 +273,8 @@ body,
 	}
 }
 
-#p-personal {
+#p-personal,
+#p-notifications {
 	.flex( @grow: 0, @shrink: 0 );
 	margin-left: 0.5rem;
 
@@ -281,7 +282,9 @@ body,
 		z-index: 10;
 		top: @fixed-header-content-height;
 	}
+}
 
+#p-personal {
 	.skin-mirage-personaltools-dropdown {
 		position: relative;
 		display: inline-block;
@@ -299,14 +302,17 @@ body,
 			vertical-align: middle;
 		}
 	}
+}
 
-	.skin-mirage-notifications-area {
-		height: @fixed-header-content-height;
-		display: inline-block;
-	}
+#p-notifications {
+	// Specify to override .empty-portlet, which would hide this portlet.
+	// Mirage provides a notification component in Mustache.
+	display: inline-block;
+	height: @fixed-header-content-height;
 
-	.skin-mirage-notifications-wrapper {
+	.skin-mirage-notifications {
 		position: relative;
+		height: @fixed-header-content-height;
 
 		.skin-mirage-notifications-icon {
 			display: inline-block;

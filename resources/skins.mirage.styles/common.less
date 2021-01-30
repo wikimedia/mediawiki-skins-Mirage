@@ -123,7 +123,6 @@ body {
 
 // Word-break overlong user names, see T237230.
 .skin-mirage-username,
-.skin-mirage-dropdown-username,
 .mw-userlink {
 	.hyphens( auto );
 	unicode-bidi: embed;
@@ -137,14 +136,14 @@ body {
 
 		// Set a 5px margin, identical to mirage-ooui-icon, to make the distance between
 		// the indicator and the user name the same as the icon and the user name.
-		.skin-mirage-username {
-			margin-right: 5px;
+		.skin-mirage-dropdown-indicator {
+			margin-left: 5px;
 		}
 
 		.skin-mirage-dropdown-username {
 			padding: 0 0.75rem 0.25rem;
 
-			span {
+			.skin-mirage-username {
 				padding: 0.75rem 0 0 0.75rem;
 				border-bottom: @header-underline;
 				font-family: @mirage-serif;
@@ -165,27 +164,29 @@ body {
 		// Align the anchor with the dropdown indicator.
 		right: 1rem;
 	}
+}
 
-	.skin-mirage-notifications-wrapper {
+#p-notifications {
+	.skin-mirage-talk-page-icon-link.skin-mirage-user-has-messages {
+		.animation-bell-ring();
+	}
+
+	.skin-mirage-notifications {
 		cursor: pointer;
+	}
 
-		.skin-mirage-talk-page-icon-link.skin-mirage-user-has-messages {
-			.animation-bell-ring();
-		}
+	.skin-mirage-no-new-messages {
+		.user-select-none();
+		cursor: default;
+	}
 
-		.skin-mirage-no-new-messages {
-			.user-select-none();
-			cursor: default;
-		}
-
-		// Remove legacy stylings.
-		.usermessage {
-			background-color: inherit;
-			border: inherit;
-			color: inherit;
-			margin: 0;
-			font-weight: normal;
-		}
+	// Remove legacy stylings.
+	.usermessage {
+		background-color: inherit;
+		border: inherit;
+		color: inherit;
+		margin: 0;
+		font-weight: normal;
 	}
 }
 

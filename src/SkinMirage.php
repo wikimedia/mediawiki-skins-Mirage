@@ -277,12 +277,8 @@ class SkinMirage extends SkinMustache {
 	 */
 	public function getTemplateData() : array {
 		$out = $this->getOutput();
+		$user = $this->getUser();
 		$contentNavigation = $this->buildContentNavigationUrls();
-		$personalToolsBuilder = new PersonalToolsBuilder(
-			$this,
-			$this->getPersonalToolsForMakeListItem( $this->buildPersonalUrls() ),
-			!( $this->avatarLookup instanceof NullAvatarLookup )
-		);
 		$sidebarParser = new SidebarParser(
 			$this->WANObjectCache,
 			$this->messageCache,
@@ -309,6 +305,9 @@ class SkinMirage extends SkinMustache {
 			$out->addBodyClasses( 'skin-mirage-page-with-right-rail' );
 		}
 
+		$hasAvatar = !( $this->avatarLookup instanceof NullAvatarLookup );
+		$userAvatarIcon = MirageIcon::medium( 'userAvatar' )->toClasses();
+
 		return [
 			'page-langcode' => $this->getTitle()->getPageViewLanguage()->getHtmlCode(),
 			'page-isarticle' => (bool)$out->isArticle(),
@@ -320,7 +319,20 @@ class SkinMirage extends SkinMustache {
 				'has-mirage-wordmark' => $this->wordmarkLookup->getWordmarkUrl() !== null,
 
 				// Personal tools.
-				'data-personal-tools' => $personalToolsBuilder->getMustacheParameters(),
+				'has-avatar' => $hasAvatar,
+				'html-username-icon-classes' => $hasAvatar ? null : $userAvatarIcon,
+				'is-anon' => $user->isAnon(),
+				'username' => $user->getName(),
+
+				// Notifications.
+				'has-notifications' => (bool)$contentNavigation['notifications'],
+				'html-notifications-icon' => MirageIcon::medium( 'bell' )
+					->setContent( $this->msg( 'mirage-notifications' )->plain() )
+					->hideLabel()
+					->setClasses(
+						'skin-mirage-talk-page-icon-link',
+						$this->getNewtalks() ? 'skin-mirage-user-has-messages' : ''
+					),
 
 				// Main navigation.
 				'array-navigation-modules' => $this->buildNavigationParameters(
@@ -354,7 +366,11 @@ class SkinMirage extends SkinMustache {
 			$editButton = $this->makeListItem(
 				'addsection',
 				$views['addsection'],
-				$this->getEditButtonDropdownIcon( 'addsection', true )
+				[
+					'link-class' => MirageIcon::medium( self::findRelevantIcon( 'addsection' ) )
+						->setVariant( 'invert' )
+						->toClasses()
+				]
 			);
 
 			// Move the edit button for the whole talk page to the dropdown.
@@ -365,7 +381,11 @@ class SkinMirage extends SkinMustache {
 			$editButton = $this->makeListItem(
 				$key,
 				$views[$key],
-				$this->getEditButtonDropdownIcon( $key, true )
+				[
+					'link-class' => MirageIcon::medium( self::findRelevantIcon( $key ) )
+						->setVariant( 'invert' )
+						->toClasses()
+				]
 			);
 		}
 
@@ -413,12 +433,13 @@ class SkinMirage extends SkinMustache {
 			$dropdownItems[] = $this->makeListItem(
 				$key,
 				$item,
-				$this->getEditButtonDropdownIcon(
-					$key,
-					// Set the inverted icon variant for the first item in the list when there is
-					// no edit button, so it can be used as replacement edit button.
-					!$editButton && !$dropdownItems
-				)
+				[
+					'link-class' => MirageIcon::medium( self::findRelevantIcon( $key ) )
+						// Set the inverted icon variant for the first item in the list when there is
+						// no edit button, so it can be used as replacement edit button.
+						->setVariant( ( !$editButton && !$dropdownItems ) ? 'invert' : '' )
+						->toClasses()
+				]
 			);
 		}
 
@@ -436,54 +457,6 @@ class SkinMirage extends SkinMustache {
 					->setClasses( 'skin-mirage-dropdown-indicator' )
 					->setVariant( 'invert' )
 			] : null
-		];
-	}
-
-	/**
-	 * Find the relevant icon for the given content navigation item.
-	 *
-	 * @param string $item
-	 * @param bool $invert
-	 * @return array
-	 */
-	private function getEditButtonDropdownIcon( string $item, bool $invert ) : array {
-		switch ( $item ) {
-			case 'edit':
-			case 'history':
-				$icon = $item;
-				break;
-			case 'addsection':
-				$icon = 'speechBubbleAdd';
-				break;
-			case 'viewsource':
-				$icon = 'editLock';
-				break;
-			case 'delete':
-				$icon = 'trash';
-				break;
-			case 'undelete':
-				$icon = 'unTrash';
-				break;
-			case 'protect':
-				$icon = 'lock';
-				break;
-			case 'unprotect':
-				$icon = 'unLock';
-				break;
-			case 'view-foreign':
-				$icon = 'newWindow';
-				break;
-			// TODO: Icon needed
-			case 'move':
-			default:
-				$icon = MirageIcon::ICON_PLACEHOLDER;
-				break;
-		}
-
-		return [
-			'link-class' => MirageIcon::medium( $icon )
-				->setVariant( $invert ? 'invert' : '' )
-				->toClasses()
 		];
 	}
 
@@ -564,5 +537,59 @@ class SkinMirage extends SkinMustache {
 		}
 
 		return $footerLinks;
+	}
+
+	/**
+	 * Find the relevant icon for the given content navigation item.
+	 *
+	 * @param string $name
+	 * @return string OOUI icon name.
+	 */
+	public static function findRelevantIcon( string $name ) : string {
+		switch ( $name ) {
+			case 'userpage':
+				return 'userAvatar';
+			case 'anontalk':
+			case 'mytalk':
+				return 'userTalk';
+			case 'preferences':
+				return 'settings';
+			case 'watchlist':
+				// TODO: This would be better with an icon like userContributions, but with
+				// unStar in place of the userAvatar
+				return 'unStar';
+			// Yes, this is actually how it is spelled. See SkinTemplate::buildPersonalUrls.
+			case 'mycontris':
+			case 'anoncontribs':
+				return 'userContributions';
+			case 'createaccount':
+				return 'userAdd';
+			case 'logout':
+				return 'logOut';
+			case 'login':
+			case 'login-private':
+				return 'logIn';
+			case 'edit':
+			case 'history':
+				return $name;
+			case 'addsection':
+				return 'speechBubbleAdd';
+			case 'viewsource':
+				return 'editLock';
+			case 'delete':
+				return 'trash';
+			case 'undelete':
+				return 'unTrash';
+			case 'protect':
+				return 'lock';
+			case 'unprotect':
+				return 'unLock';
+			case 'view-foreign':
+				return 'newWindow';
+			// TODO: Icon needed
+			case 'move':
+			default:
+				return MirageIcon::ICON_PLACEHOLDER;
+		}
 	}
 }

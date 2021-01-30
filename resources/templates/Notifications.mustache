@@ -1,0 +1,28 @@
+<nav id="{{ id }}" class="{{ class }}" aria-labelledby="{{ id }}-label" {{& html-tooltip }} {{& html-user-language-attributes }}>
+	<h3 id="{{ id }}-label">{{ label }}</h3>
+	{{# has-notifications }}
+		<ul class="skin-mirage-unstyled-list">
+			{{& html-items }}
+		</ul>
+	{{/ has-notifications }}
+	{{^ has-notifications }}
+		<div class="skin-mirage-notifications skin-mirage-dropdown-container" tabindex="0">
+			<div class="skin-mirage-notifications-icon">
+				{{& html-notifications-icon }}
+				{{& html-dropdown-indicator }}
+			</div>
+			<div class="skin-mirage-dropdown-list skin-mirage-dropdown-hide">
+				<ul>
+					{{# html-user-message }}
+						<li>{{& . }}</li>
+					{{/ html-user-message }}
+					{{^ html-user-message }}
+						<li><div class="skin-mirage-no-new-messages">{{ msg-mirage-no-new-messages }}</div></li>
+					{{/ html-user-message }}
+				</ul>
+				<div class="skin-mirage-dropdown-list-anchor"></div>
+			</div>
+		</div>
+	{{/ has-notifications }}
+	{{& html-after-portal }}
+</nav>

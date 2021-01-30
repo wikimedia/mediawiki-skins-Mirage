@@ -45,8 +45,7 @@
 						"mirage-page-actions",
 						"navigation-heading",
 						"notloggedin",
-						"tagline",
-						"personaltools"
+						"tagline"
 					]
 				}
 			]
@@ -79,10 +78,13 @@
 		"MirageGetExtraIcons": {
 			"handler": "main"
 		},
-		"ResourceLoaderRegisterModules": {
+		"OutputPageBodyAttributes": {
 			"handler": "main"
 		},
-		"OutputPageBodyAttributes": {
+		"PersonalUrls": {
+			"handler": "main"
+		},
+		"ResourceLoaderRegisterModules": {
 			"handler": "main"
 		}
 	},

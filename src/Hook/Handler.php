@@ -11,10 +11,12 @@ use Html;
 use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
+use MediaWiki\Hook\PersonalUrlsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
+use MediaWiki\Skins\Mirage\MirageIcon;
 use MediaWiki\Skins\Mirage\MirageIndicator;
 use MediaWiki\Skins\Mirage\MirageNavigationExtractor;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
@@ -26,6 +28,8 @@ use ParserOutput;
 use ResourceLoader;
 use ResourceLoaderModule;
 use Skin;
+use SkinTemplate;
+use Title;
 use TitleFactory;
 use TitleValue;
 use User;
@@ -41,8 +45,9 @@ class Handler implements
 	BeforePageDisplayHook,
 	GetPreferencesHook,
 	MirageGetExtraIconsHook,
-	ResourceLoaderRegisterModulesHook,
-	OutputPageBodyAttributesHook
+	OutputPageBodyAttributesHook,
+	PersonalUrlsHook,
+	ResourceLoaderRegisterModulesHook
 {
 	public const MIRAGE_MAX_WIDTH = 0;
 	public const MIRAGE_PARTIAL_MAX_WIDTH = 1;
@@ -305,6 +310,44 @@ class Handler implements
 			default:
 				$bodyAttrs['class'] .= ' skin-mirage-limit-content-width-selectively';
 				break;
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 *
+	 * @param array &$personal_urls
+	 * @param Title &$title
+	 * @param SkinTemplate $skin
+	 */
+	public function onPersonalUrls( &$personal_urls, &$title, $skin ) : void {
+		if ( !( $skin instanceof SkinMirage ) ) {
+			return;
+		}
+
+		// Mirage doesn't use this as a personal tools item.
+		unset( $personal_urls['anonuserpage'] );
+
+		if ( isset( $personal_urls['userpage'] ) ) {
+			$personal_urls['userpage']['text'] = $skin->msg( 'mirage-userpage' )->text();
+		}
+
+		if ( isset( $personal_urls['mytalk'] ) ) {
+			$personal_urls['mytalk']['text'] = $skin->msg( 'mirage-talkpage' )->text();
+		} elseif ( isset( $personal_urls['anontalk'] ) ) {
+			$personal_urls['anontalk']['text'] = $skin->msg( 'mirage-talkpage' )->text();
+		}
+
+		foreach ( $personal_urls as $key => $_ ) {
+			$icon = MirageIcon::medium(
+				SkinMirage::findRelevantIcon( $key )
+			);
+
+			if ( is_array( $personal_urls[$key]['class'] ?? [] ) ) {
+				$personal_urls[$key]['class'][] = $icon->toClasses();
+			} else {
+				$personal_urls[$key]['class'] .= ' ' . $icon->toClasses();
+			}
 		}
 	}
 }
