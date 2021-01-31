@@ -209,7 +209,7 @@ class SkinMirage extends SkinMustache {
 		$indicatorIcon = MirageIcon::small( 'next' )
 			->setContent( $this->msg( 'mirage-expand-submenu' )->plain() )
 			->hideLabel()
-			->setClasses( 'skin-mirage-mirage-sub-list-icon' );
+			->setClasses( 'skin-mirage-sub-list-icon' );
 
 		foreach ( $sidebar as $name => $values ) {
 			if ( !is_array( $values ) || $values === [] ) {
