@@ -1,18 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
+			"Lakejason0",
 			"Wuqianye"
 		]
 	},
+	"mirage-skin-desc": "Mirage是一款专注于用右侧面板显示内容的响应式皮肤",
+	"mirage-community-messages-header": "社区留言",
 	"mirage-interface-messages-module-edit-this-message": "编辑留言",
+	"mirage-page-actions": "页面操作",
+	"mirage-jumptonavigation": "跳到导航",
 	"mirage-jumptocontent": "跳转到内容",
 	"mirage-action-addsection": "添加话题",
+	"mirage-userpage": "{{GENDER:$1|用户}}页",
+	"mirage-footer-places": "地方",
+	"mirage-footer-feeds": "源",
 	"mirage-footer-info": "页面信息",
+	"mirage-expand-submenu": "显示子菜单项目",
+	"mirage-talkpage": "讨论页",
 	"mirage-user-tools": "使用工具",
+	"mirage-no-new-messages": "您没有新消息。",
 	"mirage-notifications": "通知",
 	"mirage-page-tools": "页面工具",
 	"mirage-hidden-categories": "隐藏分类",
 	"mirage-recent-changes-module": "最近更改",
 	"mirage-more": "更多",
-	"mirage-more-recent-changes": "查看更多改动"
+	"mirage-more-recent-changes": "查看更多改动",
+	"prefs-mirage-max-width-label": "Mirage内容宽度：",
+	"prefs-mirage-max-width": "总是应用最大页面宽度",
+	"prefs-mirage-partial-max-width": "仅对文章应用最大页面宽度",
+	"prefs-mirage-no-max-width": "禁用最大页面宽度"
 }
