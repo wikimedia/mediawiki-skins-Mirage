@@ -346,6 +346,10 @@ class SkinMirage extends SkinMustache {
 					$sidebarParser->getNavigationPortals()
 				),
 
+				// Language button.
+				'html-language-button-icon' => MirageIcon::medium( 'language' )
+					->toClasses(),
+
 				// Edit button.
 				'data-page-actions' => $this->getEditButton(
 					$contentNavigation['views'],

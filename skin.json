@@ -192,6 +192,7 @@
 					}
 				},
 				"history": {},
+				"language": {},
 				"linkExternal": {
 					"selectorWithVariant": {
 						"progressive": [
@@ -335,8 +336,11 @@
 			"+ext.flow.board.styles": "skinStyles/ext.flow.board.styles.less",
 			"+ext.translate": "skinStyles/ext.translate.less",
 			"+ext.uls.common": "skinStyles/ext.uls.common.less",
+			"+ext.uls.interface": "skinStyles/ext.uls.interface.less",
+			"+ext.uls.interlanguage": "skinStyles/ext.uls.interlanguage.less",
 			"+ext.uls.pt": "skinStyles/ext.uls.pt.less",
-			"+ext.visualEditor.core": "skinStyles/ext.VisualEditor.core.less"
+			"+ext.visualEditor.core": "skinStyles/ext.VisualEditor.core.less",
+			"+ext.wikibase.client": "skinStyles/ext.wikibase.client.less"
 		}
 	},
 	"DefaultUserOptions": {

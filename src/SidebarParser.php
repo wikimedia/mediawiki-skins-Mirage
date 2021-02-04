@@ -36,9 +36,6 @@ class SidebarParser {
 	/** @var array */
 	private $toolsPortal;
 
-	/** @var array */
-	private $languagesPortal;
-
 	/**
 	 * @codeCoverageIgnore
 	 *
@@ -66,7 +63,6 @@ class SidebarParser {
 		$this->navigationPortals = [];
 		$this->extensionPortals = [];
 		$this->toolsPortal = [];
-		$this->languagesPortal = [];
 	}
 
 	/**
@@ -84,7 +80,6 @@ class SidebarParser {
 		// MediaWiki:Sidebar can contain optional 'magic words'.
 		// Mirage gives these modules a predefined spot.
 		$this->toolsPortal = $sidebar['TOOLBOX'];
-		$this->languagesPortal = $sidebar['LANGUAGES'];
 		unset(
 			$sidebar['SEARCH'],
 			$sidebar['TOOLBOX'],
@@ -176,14 +171,5 @@ class SidebarParser {
 	 */
 	public function getToolsPortal() : array {
 		return $this->toolsPortal;
-	}
-
-	/**
-	 * Return the languages portal.
-	 *
-	 * @return array
-	 */
-	public function getLanguagesPortal() : array {
-		return $this->languagesPortal;
 	}
 }

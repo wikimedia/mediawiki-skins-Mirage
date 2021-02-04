@@ -10,7 +10,8 @@
 .mw-jump-link:not( :focus ),
 #mw-navigation h2,
 #mirage-fixed-header h3,
-#module-page-navigation h3 {
+#left-navigation h3,
+#p-views-label {
 	.mixin-screen-reader-text();
 }
 
@@ -426,10 +427,8 @@ body,
 	position: relative;
 }
 
-#left-navigation {
-	// Ensure that the tab underline is on top of the content border by moving the element 2 pixels into the content.
-	margin: 0.5rem 0 -2px;
-
+#left-navigation,
+#right-navigation {
 	&,
 	nav {
 		display: inline-block;
@@ -437,16 +436,35 @@ body,
 	}
 }
 
+#left-navigation {
+	// Ensure that the tab underline is on top of the content border by moving the element 2 pixels into the content.
+	margin: 0.5rem 0 -2px;
+}
+
 #right-navigation {
 	float: right;
 }
 
+#skin-mirage-language-button,
 #mirage-edit-button {
 	position: relative;
 
 	.skin-mirage-dropdown-indicator:before {
 		display: inline-block;
 		vertical-align: text-bottom;
+	}
+}
+
+#skin-mirage-language-button {
+	h3 {
+		// Using em ensures that the font-size matches the edit button.
+		font-size: 1em;
+		display: block;
+	}
+
+	.skin-mirage-dropdown-list {
+		max-height: 65vh;
+		overflow-y: scroll;
 	}
 }
 

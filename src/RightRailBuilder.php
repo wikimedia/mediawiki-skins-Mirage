@@ -6,7 +6,6 @@ use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MediaWiki\Skins\Mirage\RightRailModules\CategoriesModule;
 use MediaWiki\Skins\Mirage\RightRailModules\GenericItemListModule;
 use MediaWiki\Skins\Mirage\RightRailModules\InterfaceMessageModule;
-use MediaWiki\Skins\Mirage\RightRailModules\LanguageLinksModule;
 use MediaWiki\Skins\Mirage\RightRailModules\PageToolsModule;
 use MediaWiki\Skins\Mirage\RightRailModules\RecentChangesModule;
 use MediaWiki\Skins\Mirage\RightRailModules\RightRailModule;
@@ -141,13 +140,6 @@ class RightRailBuilder {
 				]
 			];
 		}
-
-		$modules['LanguageLinksModule'] = [
-			'class' => LanguageLinksModule::class,
-			'args' => [
-				$this->sidebarParser->getLanguagesPortal()
-			]
-		];
 
 		foreach ( $this->sidebarParser->getExtensionPortals() as $name => $portal ) {
 			$modules[$name] = [

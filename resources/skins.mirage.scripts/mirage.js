@@ -1,5 +1,6 @@
 $( function () {
-	var $dropdowns = $( '.skin-mirage-dropdown-container' );
+	var $dropdowns = $( '.skin-mirage-dropdown-container' ),
+		ulsModuleStatus = mw.loader.getState( 'ext.uls.interface' );
 
 	function closeAll() {
 		$dropdowns
@@ -48,4 +49,14 @@ $( function () {
 			closeAll();
 		}
 	} );
+
+	// No such thing as $wgResourceLoaderSkinScripts :(
+	if ( ulsModuleStatus && ulsModuleStatus !== 'registered' ) {
+		mw.loader.using( 'ext.uls.interface' ).then( function () {
+			$( '#skin-mirage-language-button' )
+				.addClass( 'p-lang--uls-ready' )
+				.find( '.skin-mirage-dropdown-list' )
+				.remove();
+		} );
+	}
 } );

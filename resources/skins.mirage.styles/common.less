@@ -503,6 +503,45 @@ footer.mw-footer {
 	}
 }
 
+#skin-mirage-language-button,
+#mirage-edit-button {
+	.skin-mirage-dropdown-list-anchor {
+		// Align the anchor with the dropdown indicator.
+		right: 17px;
+	}
+}
+
+#skin-mirage-language-button {
+	&:hover h3 {
+		border-color: @border-color-base--hover;
+		background-color: @background-color-base--hover;
+	}
+
+	&:active h3 {
+		border-color: @border-color-base--active;
+	}
+
+	&:focus,
+	&:focus-within {
+		h3 {
+			border-color: @border-color-base--focus;
+		}
+	}
+
+	h3 {
+		border: @border-base;
+		border-radius: @border-radius-base;
+		background-color: @wmui-color-base90;
+		font-weight: @font-weight-bold;
+		padding: 0.25rem 0.5rem;
+	}
+
+	// Align the language dropdown menu with the edit button dropdown.
+	.skin-mirage-dropdown-list {
+		margin-top: -1px;
+	}
+}
+
 #mirage-edit-button {
 	.mw-watchlink .loading:before {
 		.rotation( 700ms );
@@ -587,11 +626,6 @@ footer.mw-footer {
 				border-right: 1px solid @color-primary--active;
 			}
 		}
-	}
-
-	.skin-mirage-dropdown-list-anchor {
-		// Align the anchor with the dropdown indicator.
-		right: 17px;
 	}
 }
 
