@@ -3,6 +3,7 @@
 // in the Wikimedia Design Style Guide.
 // See https://design.wikimedia.org/style-guide/visual-style_typography.html
 @import '../mirage.less/mirage.variables';
+@import 'mediawiki.mixins';
 
 html,
 body {
@@ -11,15 +12,10 @@ body {
 	color: @color-base;
 }
 
-/* stylelint-disable selector-no-vendor-prefix */
-::-webkit-input-placeholder,
-::-ms-input-placeholder,
-::-moz-placeholder,
-/* stylelint-enable selector-no-vendor-prefix */
-::placeholder {
+.mixin-placeholder( {
 	font-size: 1rem;
 	color: @color-placeholder;
-}
+} );
 
 // The `outline` for focus styles on certain browsers is more prominent than others.
 // See T245887.
