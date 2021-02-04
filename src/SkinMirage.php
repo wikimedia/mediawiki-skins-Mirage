@@ -236,15 +236,16 @@ class SkinMirage extends SkinMustache {
 				unset( $value['links'], $value['id'] );
 
 				$link = [
-					'html-id' => $id,
-					'html-link' => $this->makeLink(
-						$key,
-						$value,
-						[ 'link-fallback' => 'span' ]
-					)
+					'html-id' => $id
 				];
 
 				if ( $subLinks ) {
+					// When there are sub links, but the item does not have contain a link,
+					// set the tabindex. This allows tabbing to it and opening the sub menu.
+					if ( !( $value['href'] ?? false ) ) {
+						$value['tabindex'] = '0';
+					}
+
 					$link['array-sub-links'] = [
 						'html-extend-indicator' => $indicatorIcon,
 						'array-links' => []
@@ -264,6 +265,12 @@ class SkinMirage extends SkinMustache {
 						];
 					}
 				}
+
+				$link['html-link'] = $this->makeLink(
+					$key,
+					$value,
+					[ 'link-fallback' => 'span' ]
+				);
 
 				$navigationEntry['array-links'][] = $link;
 			}

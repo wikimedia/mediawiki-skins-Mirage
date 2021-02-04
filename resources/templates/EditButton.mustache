@@ -6,15 +6,17 @@
 		{{& html-edit-button }}
 		{{& html-watch-button }}
 		{{# html-edit-button-dropdown }}
-			<li id="p-cactions" class="skin-mirage-dropdown-container">
-				{{& html-dropdown-indicator }}
-				<div class="skin-mirage-dropdown-list skin-mirage-dropdown-hide">
-					<ul>
-						{{# array-dropdown-items }}
-							{{& . }}
-						{{/ array-dropdown-items }}
-					</ul>
-					<div class="skin-mirage-dropdown-list-anchor"></div>
+			<li id="p-cactions">
+				<div class="skin-mirage-dropdown-container" tabindex="0">
+					{{& html-dropdown-indicator }}
+					<div class="skin-mirage-dropdown-list skin-mirage-dropdown-hide">
+						<ul>
+							{{# array-dropdown-items }}
+								{{& . }}
+							{{/ array-dropdown-items }}
+						</ul>
+						<div class="skin-mirage-dropdown-list-anchor"></div>
+					</div>
 				</div>
 			</li>
 		{{/ html-edit-button-dropdown }}
