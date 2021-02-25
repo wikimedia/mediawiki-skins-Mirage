@@ -10,6 +10,7 @@
 @import 'typography.less';
 @import 'search.less';
 
+#mirage-right-rail-checkbox,
 .skin-mirage-dropdown-hide {
 	display: none;
 }
@@ -630,6 +631,35 @@ footer.mw-footer {
 				border-right: 1px solid @color-primary--active;
 			}
 		}
+	}
+}
+
+#mirage-right-rail-button {
+	border: @border-base;
+	border-radius: @border-radius-base;
+	background-color: @wmui-color-base90;
+	font-weight: @font-weight-bold;
+	padding: 0.25rem 0.5rem;
+	// Align the button with the edit button.
+	margin-top: -1px;
+	cursor: pointer;
+
+	&:hover {
+		border-color: @border-color-base--hover;
+		background-color: @background-color-base--hover;
+	}
+
+	&:active {
+		border-color: @border-color-base--active;
+	}
+
+	&:focus,
+	&:focus-within {
+		border-color: @border-color-base--focus;
+	}
+
+	#mirage-right-rail-checkbox:checked ~ #mw-navigation &:before {
+		.transform-rotate( 180deg );
 	}
 }
 

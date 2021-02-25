@@ -1,5 +1,12 @@
 <div class="skin-mirage-visible-content">
 	<div class="skin-mirage-main-container">
+		{{# html-right-rail-collapse-button }}
+			<input
+				type="checkbox"
+				id="mirage-right-rail-checkbox"
+				class="mw-checkbox-hack-checkbox"
+				{{# is-right-rail-visible }}checked{{/ is-right-rail-visible }}>
+		{{/ html-right-rail-collapse-button }}
 		{{# data-header }}
 			{{> Header }}
 		{{/ data-header }}

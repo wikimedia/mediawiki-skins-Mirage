@@ -11,6 +11,12 @@
 	}
 }
 
+// The right rail is below the content in mobile mode,
+// making the button useless.
+label#mirage-right-rail-button {
+	display: none;
+}
+
 #mirage-right-rail {
 	.column-width( @right-rail-space );
 	.column-count( 2 );

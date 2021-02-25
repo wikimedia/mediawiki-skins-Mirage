@@ -23,7 +23,8 @@
 				"ConfigFactory",
 				"MainWANObjectCache",
 				"MessageCache",
-				"HookContainer"
+				"HookContainer",
+				"UserOptionsLookup"
 			],
 			"args": [
 				{
@@ -148,8 +149,12 @@
 				"desktop",
 				"mobile"
 			],
-			"scripts": [
-				"skins.mirage.scripts/mirage.js"
+			"packageFiles": [
+				"skins.mirage.scripts/mirage.js",
+				"skins.mirage.scripts/rightrail.js"
+			],
+			"dependencies": [
+				"mediawiki.page.ready"
 			]
 		},
 		"skin.mirage.icons": {
@@ -185,6 +190,7 @@
 					]
 				},
 				"die": {},
+				"doubleChevronEnd": {},
 				"edit": {},
 				"editLock": {},
 				"ellipsis": {},
@@ -346,7 +352,8 @@
 		}
 	},
 	"DefaultUserOptions": {
-		"mirage-max-width": 1
+		"mirage-max-width": 1,
+		"mirage-show-right-rail": false
 	},
 	"SkinLessImportPaths": {
 		"mirage": "resources/mediawiki.less"
@@ -363,6 +370,9 @@
 		},
 		"MirageHiddenRightRailModules": {
 			"value": []
+		},
+		"MirageRightRailVisibleToAnonByDefault": {
+			"value": false
 		}
 	},
 	"attributes": {

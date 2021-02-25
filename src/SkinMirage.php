@@ -14,12 +14,14 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
+use MediaWiki\User\UserOptionsLookup;
 use MessageCache;
 use Sanitizer;
 use SkinMustache;
 use TemplateParser;
 use Title;
 use TitleFactory;
+use User;
 use WANObjectCache;
 use Wikimedia\ObjectFactory;
 use function array_shift;
@@ -60,6 +62,9 @@ class SkinMirage extends SkinMustache {
 	/** @var Config */
 	private $mirageConfig;
 
+	/** @var UserOptionsLookup */
+	private $userOptionsLookup;
+
 	/**
 	 * @param LinkRenderer $linkRenderer
 	 * @param ObjectFactory $objectFactory
@@ -71,6 +76,7 @@ class SkinMirage extends SkinMustache {
 	 * @param WANObjectCache $WANObjectCache
 	 * @param MessageCache $messageCache
 	 * @param HookContainer $hookContainer
+	 * @param UserOptionsLookup $userOptionsLookup
 	 * @param array $options Skin options
 	 */
 	public function __construct(
@@ -84,6 +90,7 @@ class SkinMirage extends SkinMustache {
 		WANObjectCache $WANObjectCache,
 		MessageCache $messageCache,
 		HookContainer $hookContainer,
+		UserOptionsLookup $userOptionsLookup,
 		array $options
 	) {
 		$options['templatedirectory'] = self::TEMPLATE_DIR;
@@ -97,6 +104,7 @@ class SkinMirage extends SkinMustache {
 		$this->messageCache = $messageCache;
 		$this->hookContainer = $hookContainer;
 		$this->titleFactory = $titleFactory;
+		$this->userOptionsLookup = $userOptionsLookup;
 		$this->mirageConfig = $configFactory->makeConfig( 'Mirage' );
 
 		if ( $this->mirageConfig->get( 'MirageForceTemplateRecompilation' ) ) {
@@ -307,9 +315,23 @@ class SkinMirage extends SkinMustache {
 		);
 
 		$rightRailModules = $rightRailBuilder->buildModules();
+		$rightRailCollapseButton = null;
 
 		if ( $rightRailModules ) {
 			$out->addBodyClasses( 'skin-mirage-page-with-right-rail' );
+			$rightRailCollapseButton = MirageIcon::medium( 'doubleChevronEnd' )
+				->hideLabel()
+				->setContent( $this->msg( 'mirage-toggle-right-rail' )->plain() )
+				->setClasses( 'mw-checkbox-hack-button' )
+				->setElement( 'label' )
+				->setAttributes( [
+					'id' => 'mirage-right-rail-button',
+					'role' => 'button',
+					'for' => 'mirage-right-rail-checkbox',
+					'tabindex' => 0,
+					'aria-controls' => 'mirage-right-rail',
+					'title' => $this->msg( 'mirage-toggle-right-rail' )->plain()
+				] );
 		}
 
 		$hasAvatar = !( $this->avatarLookup instanceof NullAvatarLookup );
@@ -318,6 +340,8 @@ class SkinMirage extends SkinMustache {
 		return [
 			'page-langcode' => $this->getTitle()->getPageViewLanguage()->getHtmlCode(),
 			'page-isarticle' => (bool)$out->isArticle(),
+			'html-right-rail-collapse-button' => $rightRailCollapseButton,
+			'is-right-rail-visible' => $this->displayRightRailVisible( $user ),
 			'data-header' => [
 				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
 					->setClasses( 'skin-mirage-dropdown-indicator' ),
@@ -359,6 +383,26 @@ class SkinMirage extends SkinMustache {
 			'array-right-rail' => $rightRailModules,
 			'array-extra-footer-links' => $this->buildExtraFooterLinks()
 		] + $this->adjustSkinMustacheParameters( parent::getTemplateData() );
+	}
+
+	/**
+	 * Determine if the right rail should be displayed visible or collapsed.
+	 *
+	 * For anonymous users, this uses $wgMirageRightRailVisibleToAnonByDefault.
+	 * For logged-in users, this uses the mirage-show-right-rail preference.
+	 *
+	 * @param User $user
+	 * @return bool
+	 */
+	private function displayRightRailVisible( User $user ) : bool {
+		if ( $user->isAnon() ) {
+			return $this->mirageConfig->get( 'MirageRightRailVisibleToAnonByDefault' );
+		}
+
+		return $this->userOptionsLookup->getBoolOption(
+			$user,
+			'mirage-show-right-rail'
+		);
 	}
 
 	/**

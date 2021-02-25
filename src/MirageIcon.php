@@ -26,6 +26,12 @@ class MirageIcon {
 	/** @var string[] */
 	private $classes;
 
+	/** @var string[] */
+	private $attributes;
+
+	/** @var string */
+	private $element;
+
 	/** @var bool */
 	private $hideLabel;
 
@@ -41,6 +47,8 @@ class MirageIcon {
 		$this->content = '';
 		$this->variant = '';
 		$this->classes = [];
+		$this->attributes = [];
+		$this->element = 'span';
 		$this->hideLabel = false;
 	}
 
@@ -95,14 +103,36 @@ class MirageIcon {
 	}
 
 	/**
+	 * @param array $attributes
+	 * @return $this
+	 */
+	public function setAttributes( array $attributes ) : self {
+		$this->attributes = $attributes;
+
+		return $this;
+	}
+
+	/**
+	 * Set the element to use when building the HTML for this icon.
+	 *
+	 * @param string $element
+	 * @return $this
+	 */
+	public function setElement( string $element ) : self {
+		$this->element = $element;
+
+		return $this;
+	}
+
+	/**
 	 * Generates the appropriate html for rendering the icon.
 	 *
 	 * @return string
 	 */
 	public function __toString() : string {
 		return Html::rawElement(
-			'span',
-			[ 'class' => $this->toClasses() ],
+			$this->element,
+			[ 'class' => $this->toClasses() ] + $this->attributes,
 			HtmlArmor::getHtml( $this->content )
 		);
 	}

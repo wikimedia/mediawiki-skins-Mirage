@@ -30,8 +30,10 @@
 	"mirage-recent-changes-module": "Recent changes",
 	"mirage-more": "More",
 	"mirage-more-recent-changes": "See more changes",
+	"mirage-toggle-right-rail": "Toggle right rail",
 	"prefs-mirage-max-width-label": "Mirage content width:",
 	"prefs-mirage-max-width": "Always apply the maximum page width",
 	"prefs-mirage-partial-max-width": "Apply the maximum page width only to articles",
-	"prefs-mirage-no-max-width": "Disable the maximum page width"
+	"prefs-mirage-no-max-width": "Disable the maximum page width",
+	"prefs-mirage-show-right-rail": "Display the right rail"
 }

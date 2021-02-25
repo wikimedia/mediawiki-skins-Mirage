@@ -104,4 +104,35 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 
 		static::assertEquals( "<span class=\"$classes\"><script></script></span>", (string)$icon );
 	}
+
+	/**
+	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setElement
+	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
+	 */
+	public function testSetElement() : void {
+		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
+			->setElement( 'div' );
+
+		$classes = 'skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder ' .
+				   'skin-mirage-ooui-icon-medium';
+
+		static::assertEquals( "<div class=\"$classes\"></div>", (string)$icon );
+	}
+
+	/**
+	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setAttributes
+	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
+	 */
+	public function testSetAttributes() : void {
+		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
+			->setAttributes( [
+				'class' => 'ignored',
+				'for' => 'a-test'
+			] );
+
+		$classes = 'skin-mirage-ooui-icon skin-mirage-ooui-icon-placeholder ' .
+				   'skin-mirage-ooui-icon-medium';
+
+		static::assertEquals( "<span class=\"$classes\" for=\"a-test\"></span>", (string)$icon );
+	}
 }

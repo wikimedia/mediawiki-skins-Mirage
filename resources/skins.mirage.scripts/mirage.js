@@ -1,15 +1,14 @@
-$( function () {
-	var $dropdowns = $( '.skin-mirage-dropdown-container' ),
-		ulsModuleStatus = mw.loader.getState( 'ext.uls.interface' );
+function closeAllDropdowns( $dropdowns ) {
+	$dropdowns
+		.find( '.skin-mirage-dropdown-list, .skin-mirage-dropdown-sub-list' )
+		.addClass( 'skin-mirage-dropdown-hide' );
+	$dropdowns
+		.find( '.skin-mirage-dropdown-indicator' )
+		.removeClass( 'skin-mirage-rotate' );
+}
 
-	function closeAll() {
-		$dropdowns
-			.find( '.skin-mirage-dropdown-list, .skin-mirage-dropdown-sub-list' )
-			.addClass( 'skin-mirage-dropdown-hide' );
-		$dropdowns
-			.find( '.skin-mirage-dropdown-indicator' )
-			.removeClass( 'skin-mirage-rotate' );
-	}
+function attachDropdownEvents() {
+	var $dropdowns = $( '.skin-mirage-dropdown-container' );
 
 	$dropdowns.on( 'click', function ( event ) {
 		var $element = $( this ),
@@ -22,19 +21,19 @@ $( function () {
 		}
 
 		if ( $dropdown.hasClass( 'skin-mirage-dropdown-hide' ) ) {
-			closeAll();
+			closeAllDropdowns( $dropdowns );
 
 			$dropdown.removeClass( 'skin-mirage-dropdown-hide' );
 			$element.find( '.skin-mirage-dropdown-indicator' ).addClass( 'skin-mirage-rotate' );
 		} else {
-			closeAll();
+			closeAllDropdowns( $dropdowns );
 		}
 	} );
 
 	$dropdowns.find( '.skin-mirage-sub-list-icon' ).on( 'click', function () {
 		var $element = $( this );
 
-		closeAll();
+		closeAllDropdowns( $dropdowns );
 
 		$element
 			.parentsUntil( '.skin-mirage-dropdown-list' )
@@ -46,9 +45,18 @@ $( function () {
 
 	$( document ).on( 'click', function ( event ) {
 		if ( $( event.target ).closest( $dropdowns ).length === 0 ) {
-			closeAll();
+			closeAllDropdowns( $dropdowns );
 		}
 	} );
+}
+
+function main() {
+	var ulsModuleStatus = mw.loader.getState( 'ext.uls.interface' ),
+		rightRail = require( './rightrail.js' );
+
+	attachDropdownEvents();
+
+	rightRail.initialize();
 
 	// No such thing as $wgResourceLoaderSkinScripts :(
 	if ( ulsModuleStatus && ulsModuleStatus !== 'registered' ) {
@@ -59,4 +67,6 @@ $( function () {
 				.remove();
 		} );
 	}
-} );
+}
+
+main();

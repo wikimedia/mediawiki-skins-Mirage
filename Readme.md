@@ -77,6 +77,9 @@ of module names. Mirage supports the following right rail modules out of the box
  - CommunityMessages - The contents of `MediaWiki:mirage-community-messages`
  - ... - Other sidebar modules added by extensions
 
+### `$wgMirageRightRailVisibleToAnonByDefault`
+This setting affects the initial visibility of the right rail for anonymous users. By default, the right rail is not visible.
+
 ## I don't like the ...
 Mirage as a few design and layout decisions that are controversial to some more experienced users.
 This section describes how to undo those.
