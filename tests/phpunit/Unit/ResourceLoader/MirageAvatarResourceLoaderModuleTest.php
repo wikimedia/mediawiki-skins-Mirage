@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Skins\Mirage\Test\Unit\ResourceLoader;
 
-use CSSMin;
 use InvalidArgumentException;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
@@ -10,6 +9,7 @@ use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
 use MediaWikiUnitTestCase;
 use ResourceLoaderContext;
 use User;
+use Wikimedia\Minify\CSSMin;
 
 /**
  * @covers \MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule

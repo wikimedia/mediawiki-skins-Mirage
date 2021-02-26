@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
-use CSSMin;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
 use ResourceLoaderContext;
 use ResourceLoaderFilePath;
 use ResourceLoaderSkinModule;
+use Wikimedia\Minify\CSSMin;
 use function is_array;
 
 class MirageResourceLoaderModule extends ResourceLoaderSkinModule {

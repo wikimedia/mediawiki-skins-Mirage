@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
-use CSSMin;
 use InvalidArgumentException;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use ResourceLoaderContext;
 use ResourceLoaderFileModule;
+use Wikimedia\Minify\CSSMin;
 
 class MirageAvatarResourceLoaderModule extends ResourceLoaderFileModule {
 	/** @var AvatarLookup */

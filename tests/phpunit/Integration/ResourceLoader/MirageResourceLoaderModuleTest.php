@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Integration\ResourceLoader;
 
-use CSSMin;
 use File;
 use HashConfig;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
@@ -10,6 +9,7 @@ use MediaWiki\Skins\Mirage\ResourceLoader\MirageResourceLoaderModule;
 use MultiConfig;
 use ResourceLoaderSkinModule;
 use ResourceLoaderTestCase;
+use Wikimedia\Minify\CSSMin;
 use function array_pop;
 use function sha1;
 
