@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sabelöga"
+			"Sabelöga",
+			"WikiPhoenix"
 		]
 	},
 	"mirage-skin-desc": "Mirage är ett responsivt utseende som fokuserar på att visa innehåll i en spalt till höger",
+	"mirage.css": "/* All CSS här kommer läsas in för alla användare av utseendet Mirage */",
+	"mirage.js": "/* All JavaScript här kommer att läsas in för de som använder utseendet Mirage */",
 	"mirage-community-messages-header": "Gemenskapsmeddelanden",
 	"mirage-interface-messages-module-edit-this-message": "Redigera det här meddelandet",
 	"mirage-page-actions": "Sidåtgärder",
