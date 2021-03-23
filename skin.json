@@ -110,7 +110,8 @@
 				"i18n-headings",
 				"toc",
 				"content-media",
-				"interface"
+				"interface",
+				"interface-message-box"
 			],
 			"targets": [
 				"desktop",
