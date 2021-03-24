@@ -104,14 +104,15 @@
 		"skins.mirage.styles": {
 			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageResourceLoaderModule",
 			"features": [
-				"normalize",
-				"i18n-ordered-lists",
+				"content-media",
+				"content-parser-output",
 				"i18n-all-lists-margins",
 				"i18n-headings",
-				"toc",
-				"content-media",
+				"i18n-ordered-lists",
 				"interface",
-				"interface-message-box"
+				"interface-message-box",
+				"normalize",
+				"toc"
 			],
 			"targets": [
 				"desktop",
