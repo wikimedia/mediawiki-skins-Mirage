@@ -118,7 +118,7 @@ body {
 
 #mirage-fixed-header {
 	background-color: @background-color-base;
-	.box-shadow( 1px 1px 3px @wmui-color-base70 );
+	box-shadow: 1px 1px 3px @wmui-color-base70;
 }
 
 #mirage-sitename a {
@@ -196,19 +196,19 @@ body {
 
 #mirage-top-header {
 	background-color: @wmui-color-base70;
-	.box-shadow( 1px 0 3px @wmui-color-base70 );
+	box-shadow: 1px 0 3px @wmui-color-base70;
 	.border-radius( @border-radius-base @border-radius-base 0 0 );
 }
 
 .skin-mirage-content-container {
 	background-color: @background-color-base;
-	.box-shadow( 1px 1px 3px @wmui-color-base70 );
+	box-shadow: 1px 1px 3px @wmui-color-base70;
 	.border-radius( 0 0 @border-radius-base @border-radius-base );
 }
 
 footer.mw-footer {
 	background-color: @background-color-base;
-	.box-shadow( 0 -1px 3px @wmui-color-base70 );
+	box-shadow: 0 -1px 3px @wmui-color-base70;
 }
 
 .mw-body {
@@ -227,7 +227,7 @@ footer.mw-footer {
 	background-color: @wmui-color-base100;
 	border: @border-base;
 	.border-radius( 0 0 @border-radius-base @border-radius-base );
-	.box-shadow( @box-shadow-menu );
+	box-shadow: @box-shadow-menu;
 
 	.skin-mirage-dropdown-list-anchor {
 		&:before {
@@ -271,12 +271,12 @@ footer.mw-footer {
 .skin-mirage-tabs {
 	.selected {
 		a {
-			.box-shadow( inset 0 -2px 0 0 @color-primary );
+			box-shadow: inset 0 -2px 0 0 @color-primary;
 		}
 
 		&.new {
 			a {
-				.box-shadow( inset 0 -2px 0 0 @color-destructive );
+				box-shadow: inset 0 -2px 0 0 @color-destructive;
 			}
 		}
 	}
@@ -284,16 +284,16 @@ footer.mw-footer {
 	.new a {
 		&:hover,
 		&:focus {
-			.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
+			box-shadow: inset 0 -2px 0 0 @color-destructive--hover;
 		}
 
 		// Duplicate rule to allow Internet Explorer to be usable.
 		&:focus-within {
-			.box-shadow( inset 0 -2px 0 0 @color-destructive--hover );
+			box-shadow: inset 0 -2px 0 0 @color-destructive--hover;
 		}
 
 		&:active {
-			.box-shadow( inset 0 -2px 0 0 @color-destructive--active );
+			box-shadow: inset 0 -2px 0 0 @color-destructive--active;
 		}
 	}
 
@@ -301,21 +301,21 @@ footer.mw-footer {
 		text-decoration: none;
 		padding: 0.5rem;
 		font-weight: @font-weight-bold;
-		.box-shadow( inset 0 0 0 0 @color-primary );
+		box-shadow: inset 0 0 0 0 @color-primary;
 		.transition( ~'color 100ms, box-shadow 100ms' );
 
 		&:hover,
 		&:focus {
-			.box-shadow( inset 0 -2px 0 0 @color-primary--hover );
+			box-shadow: inset 0 -2px 0 0 @color-primary--hover;
 		}
 
 		// Duplicate rule to allow Internet Explorer to be usable.
 		&:focus-within {
-			.box-shadow( inset 0 -2px 0 0 @color-primary--hover );
+			box-shadow: inset 0 -2px 0 0 @color-primary--hover;
 		}
 
 		&:active {
-			.box-shadow( inset 0 -2px 0 0 @color-primary--active );
+			box-shadow: inset 0 -2px 0 0 @color-primary--active;
 		}
 	}
 
@@ -576,7 +576,7 @@ footer.mw-footer {
 		}
 
 		&:focus {
-			.box-shadow( inset 0 0 0 2px @wmui-color-base100 );
+			box-shadow: inset 0 0 0 2px @wmui-color-base100;
 			outline: 1px solid transparent;
 		}
 
