@@ -106,6 +106,7 @@
 			"features": [
 				"content-media",
 				"content-parser-output",
+				"content-tables",
 				"i18n-all-lists-margins",
 				"i18n-headings",
 				"i18n-ordered-lists",

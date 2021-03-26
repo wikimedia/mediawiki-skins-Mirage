@@ -218,50 +218,6 @@ pre,
 	word-wrap: break-word;
 }
 
-// Tables. Keep in sync with common.less.
-.wikitable,
-.mw_metadata {
-	background: @wmui-color-base100;
-	margin: 1rem 0;
-	border: 1pt solid @wmui-color-base50;
-	border-collapse: collapse;
-}
-
-.wikitable > caption,
-.mw_metadata caption {
-	padding: 5px;
-}
-
-.wikitable > tr > th,
-.wikitable > tr > td,
-.wikitable > * > tr > th,
-.wikitable > * > tr > td,
-.mw_metadata th,
-.mw_metadata td {
-	// Important is required to override any inline styles provided by editors.
-	// stylelint-disable-next-line declaration-no-important
-	background: @wmui-color-base100 !important;
-	// We need to also set color in case editors applied a light text color.
-	// stylelint-disable-next-line declaration-no-important
-	color: @wmui-color-base0 !important;
-	border: 1pt solid @wmui-color-base50;
-	padding: 0.4rem 0.6rem;
-}
-
-.wikitable > tr > th,
-.wikitable > * > tr > th,
-.mw_metadata th {
-	text-align: center;
-}
-
-table.listing {
-	&,
-	& td {
-		border: 1pt @border-style-base @wmui-color-base0;
-		border-collapse: collapse;
-	}
-}
-
 // Floating divs (and thumbnails)
 /* @noflip */
 table.floatright,
