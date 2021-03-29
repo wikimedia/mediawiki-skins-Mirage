@@ -1,15 +1,9 @@
 // This file contains all shared mixins used in the stylesheets used by Mirage.
 @import 'mirage.variables';
 
-.border-radius( @radius ) {
-	-webkit-border-radius: @radius;
-	-moz-border-radius: @radius;
-	border-radius: @radius;
-}
-
 .default-border() {
 	border: @default-border;
-	.border-radius( @border-radius-base );
+	border-radius: @border-radius-base;
 }
 
 .user-select-none() {

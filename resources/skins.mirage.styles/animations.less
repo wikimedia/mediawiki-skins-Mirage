@@ -2,7 +2,6 @@
 
 .skin-mirage-rotate {
 	-webkit-transform: rotate( 180deg );
-	-moz-transform: rotate( 180deg );
 	transform: rotate( 180deg );
 }
 
@@ -34,28 +33,6 @@
 	94% {
 		transform: rotate( -@rotation );
 		-webkit-transform: rotate( -@rotation );
-	}
-}
-
-@-moz-keyframes bellRing {
-	0%,
-	46%,
-	100% {
-		-moz-transform: rotate( 0deg );
-	}
-
-	52%,
-	64%,
-	76%,
-	88% {
-		-moz-transform: rotate( @rotation );
-	}
-
-	58%,
-	70%,
-	82%,
-	94% {
-		-moz-transform: rotate( -@rotation );
 	}
 }
 
