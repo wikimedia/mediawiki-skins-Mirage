@@ -23,8 +23,10 @@
 	"mirage-recent-changes-module": "Letzte Änderungen",
 	"mirage-more": "Mehr",
 	"mirage-more-recent-changes": "Weitere Änderungen ansehen",
+	"mirage-toggle-right-rail": "Rechte Leiste umschalten",
 	"prefs-mirage-max-width-label": "Breite des Inhalts:",
 	"prefs-mirage-max-width": "Immer die maximale Seitenbreite anwenden",
 	"prefs-mirage-partial-max-width": "Die maximale Seitenbreite nur auf Artikel anwenden",
-	"prefs-mirage-no-max-width": "Deaktivieren der maximalen Seitenbreite"
+	"prefs-mirage-no-max-width": "Deaktivieren der maximalen Seitenbreite",
+	"prefs-mirage-show-right-rail": "Anzeige der rechten Leiste"
 }

@@ -28,8 +28,10 @@
 	"mirage-recent-changes-module": "Modifications récentes",
 	"mirage-more": "Plus",
 	"mirage-more-recent-changes": "Voir plus de modifications",
+	"mirage-toggle-right-rail": "Basculer la barre latérale",
 	"prefs-mirage-max-width-label": "Largeur de contenu Mirage :",
 	"prefs-mirage-max-width": "Toujours appliquer la largeur de page maximale",
 	"prefs-mirage-partial-max-width": "N’appliquer la largeur de page maximale qu’aux articles",
-	"prefs-mirage-no-max-width": "Désactiver la largeur de page maximale"
+	"prefs-mirage-no-max-width": "Désactiver la largeur de page maximale",
+	"prefs-mirage-show-right-rail": "Afficher la barre latérale"
 }

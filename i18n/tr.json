@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
+			"Joseph",
 			"MuratTheTurkish"
 		]
 	},
@@ -26,8 +27,10 @@
 	"mirage-recent-changes-module": "Son değişiklikler",
 	"mirage-more": "Daha fazla",
 	"mirage-more-recent-changes": "Daha fazla değişiklik görün",
+	"mirage-toggle-right-rail": "Sağ parmaklığı aç/kapat",
 	"prefs-mirage-max-width-label": "Mirage içerik genişliği:",
 	"prefs-mirage-max-width": "Her zaman maksimum sayfa genişliğini uygulayın",
 	"prefs-mirage-partial-max-width": "Maksimum sayfa genişliğini yalnızca maddelere uygulayın",
-	"prefs-mirage-no-max-width": "Maksimum sayfa genişliğini devre dışı bırakın"
+	"prefs-mirage-no-max-width": "Maksimum sayfa genişliğini devre dışı bırakın",
+	"prefs-mirage-show-right-rail": "Sağ parmaklığı göster"
 }
