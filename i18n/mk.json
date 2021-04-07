@@ -25,8 +25,10 @@
 	"mirage-recent-changes-module": "Скорешни промени",
 	"mirage-more": "Повеќе",
 	"mirage-more-recent-changes": "Погл. повеќе промени",
+	"mirage-toggle-right-rail": "Предрлање на десна пруга",
 	"prefs-mirage-max-width-label": "Спој ја содржината со:",
 	"prefs-mirage-max-width": "Секогаш применувај ја најголемата ширина за страница",
 	"prefs-mirage-partial-max-width": "Применувај најголема ширина за страница само во статии",
-	"prefs-mirage-no-max-width": "Оневозможи најголема ширина на страници"
+	"prefs-mirage-no-max-width": "Оневозможи најголема ширина на страници",
+	"prefs-mirage-show-right-rail": "Приказ на десната пруга"
 }
