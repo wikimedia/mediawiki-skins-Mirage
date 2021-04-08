@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"Eduardoaddad"
+			"Eduardoaddad",
+			"Gustavo.moraes"
 		]
 	},
 	"mirage-skin-desc": "Mirage é um tema responsivo que se concentra na exibição de conteúdo com uma grade à direita",
@@ -26,8 +27,10 @@
 	"mirage-recent-changes-module": "Mudanças recentes",
 	"mirage-more": "Mais",
 	"mirage-more-recent-changes": "Veja mais mudanças",
+	"mirage-toggle-right-rail": "Alternar barra lateral",
 	"prefs-mirage-max-width-label": "Largura do conteúdo da miragem:",
 	"prefs-mirage-max-width": "Sempre aplicar a largura máxima da página",
 	"prefs-mirage-partial-max-width": "Aplicar a largura máxima da página apenas a artigos",
-	"prefs-mirage-no-max-width": "Desativar a largura máxima da página"
+	"prefs-mirage-no-max-width": "Desativar a largura máxima da página",
+	"prefs-mirage-show-right-rail": "Mostrar a barra da direita"
 }
