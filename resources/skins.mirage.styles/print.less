@@ -43,22 +43,6 @@ a {
 	}
 }
 
-.mw-parser-output {
-	// Expand URLs for printing.
-	a.external.text:after,
-	.mw-parser-output a.external.autonumber:after {
-		content: ' (' attr( href ) ')';
-		word-break: break-all;
-		word-wrap: break-word;
-	}
-
-	// Expand protocol-relative URLs for printing.
-	a.external.text[ href^='//' ]:after,
-	.mw-parser-output a.external.autonumber[ href^='//' ]:after {
-		content: ' (https:' attr( href ) ')';
-	}
-}
-
 h1,
 h2,
 h3,
@@ -161,9 +145,6 @@ ol {
 }
 
 .toc {
-	display: table;
-	background-color: @wmui-color-base90;
-	border: 1pt solid @wmui-color-base50;
 	padding: 7px;
 
 	h2 {

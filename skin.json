@@ -331,6 +331,7 @@
 		"mirage": {
 			"+mediawiki.debug": "skinStyles/mediawiki.debug.less",
 			"+mediawiki.action.edit.styles": "skinStyles/mediawiki.action.edit.styles.less",
+			"+mediawiki.action.styles": "skinStyles/mediawiki.action.styles.less",
 			"+mediawiki.action.view.filepage": "skinStyles/mediawiki.action.view.filepage.less",
 			"+mediawiki.action.view.postEdit": "skinStyles/mediawiki.action.view.postEdit.less",
 			"+mediawiki.action.view.redirectPage": "skinStyles/mediawiki.action.view.redirectPage.less",

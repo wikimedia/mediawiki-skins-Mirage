@@ -4,30 +4,6 @@
 // of obsolete or redundant stylings.
 // Note: This file should only contain styles that are direct copies from mediawiki.skinning/legacy.less!
 // Styles that are from that file but can be placed in a dedicated skinStyles file should go there instead.
-
-.mw-underline-always a {
-	text-decoration: underline;
-}
-
-.mw-underline-never a {
-	text-decoration: none;
-}
-
-// External URLs should always be treated as LTR (T6330).
-/* @noflip */
-.rtl a.external {
-	&.free,
-	&.autonumber {
-		direction: ltr;
-		unicode-bidi: embed;
-	}
-}
-
-// T14205.
-#mw-credits a {
-	unicode-bidi: embed;
-}
-
 // Mark deleted revisions clearly.
 li span.deleted,
 span.history-deleted {
@@ -58,14 +34,6 @@ span.history-deleted {
 	color: @color-success;
 }
 
-.mw-warning-with-logexcerpt {
-	clear: both;
-
-	ul li {
-		font-size: 90%;
-	}
-}
-
 // (show/hide) revision deletion links.
 span,
 strong {
@@ -78,13 +46,5 @@ span,
 input {
 	&.mw-revdelundel-hidden {
 		visibility: hidden;
-	}
-}
-
-td,
-th {
-	&.mw-revdel-checkbox {
-		padding-right: 10px;
-		text-align: center;
 	}
 }
