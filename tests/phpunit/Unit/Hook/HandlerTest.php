@@ -140,8 +140,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 		$skin = $this->createMock( SkinMirage::class );
 		$skin->method( 'getUser' )->willReturn( new UserIdentityValue(
 			1,
-			'Testuser',
-			1
+			'Testuser'
 		) );
 
 		$bodyAttrs = [ 'class' => 'testclass' ];
