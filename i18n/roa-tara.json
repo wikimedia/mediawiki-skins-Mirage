@@ -25,8 +25,10 @@
 	"mirage-recent-changes-module": "Cangiaminde recende",
 	"mirage-more": "De cchiù",
 	"mirage-more-recent-changes": "'Ndruche cchiù cangiaminde",
+	"mirage-toggle-right-rail": "Live e mitte 'u binarie destre",
 	"prefs-mirage-max-width-label": "Larghezze d'u condenute de Mirage:",
 	"prefs-mirage-max-width": "Appleche sembre 'a larghezze massime d'a pàgene",
 	"prefs-mirage-partial-max-width": "Appleche sembre 'a larghezze massime d'a pàgene sulamende a le vôsce",
-	"prefs-mirage-no-max-width": "Disabbilite 'a larghezze massime d'a pàgene"
+	"prefs-mirage-no-max-width": "Disabbilite 'a larghezze massime d'a pàgene",
+	"prefs-mirage-show-right-rail": "Fà 'ndrucà 'u binarie destre"
 }
