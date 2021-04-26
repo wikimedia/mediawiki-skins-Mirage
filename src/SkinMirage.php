@@ -23,7 +23,7 @@ use Title;
 use TitleFactory;
 use User;
 use WANObjectCache;
-use Wikimedia\ObjectFactory;
+use Wikimedia\ObjectFactory\ObjectFactory;
 use function array_shift;
 use function implode;
 use function is_array;

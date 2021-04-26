@@ -10,7 +10,7 @@ use MediaWiki\Skins\Mirage\RightRailModules\PageToolsModule;
 use MediaWiki\Skins\Mirage\RightRailModules\RecentChangesModule;
 use MediaWiki\Skins\Mirage\RightRailModules\RightRailModule;
 use MediaWiki\Skins\Mirage\RightRailModules\UserToolsModule;
-use Wikimedia\ObjectFactory;
+use Wikimedia\ObjectFactory\ObjectFactory;
 use function array_diff_key;
 use function array_flip;
 
