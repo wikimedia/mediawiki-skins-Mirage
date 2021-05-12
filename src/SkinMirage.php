@@ -634,7 +634,7 @@ class SkinMirage extends SkinMustache {
 			case 'delete':
 				return 'trash';
 			case 'undelete':
-				return 'unTrash';
+				return 'restore';
 			case 'protect':
 				return 'lock';
 			case 'unprotect':
