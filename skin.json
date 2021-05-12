@@ -106,7 +106,7 @@
 			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageResourceLoaderModule",
 			"features": [
 				"content-media",
-				"content-parser-output",
+				"content-body",
 				"content-tables",
 				"i18n-all-lists-margins",
 				"i18n-headings",
