@@ -104,18 +104,18 @@
 	"ResourceModules": {
 		"skins.mirage.styles": {
 			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageResourceLoaderModule",
-			"features": [
-				"content-media",
-				"content-body",
-				"content-tables",
-				"i18n-all-lists-margins",
-				"i18n-headings",
-				"i18n-ordered-lists",
-				"interface",
-				"interface-message-box",
-				"normalize",
-				"toc"
-			],
+			"features": {
+				"content-media": true,
+				"content-body": true,
+				"content-tables": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"i18n-ordered-lists": true,
+				"interface": true,
+				"interface-message-box": true,
+				"normalize": true,
+				"toc": true
+			},
 			"targets": [
 				"desktop",
 				"mobile"
