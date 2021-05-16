@@ -65,6 +65,9 @@ class Handler implements
 	/** @var Config */
 	private $config;
 
+	/** @var bool */
+	private $useInstantCommons;
+
 	/**
 	 * @codeCoverageIgnore
 	 *
@@ -83,6 +86,7 @@ class Handler implements
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
 		$this->config = $configFactory->makeConfig( 'Mirage' );
+		$this->useInstantCommons = $configFactory->makeConfig( 'main' )->get( 'UseInstantCommons' );
 	}
 
 	/**
@@ -253,6 +257,10 @@ class Handler implements
 					'destructive'
 				]
 			];
+		}
+
+		if ( $this->useInstantCommons ) {
+			$icons['logoWikimediaCommons'] = [];
 		}
 	}
 

@@ -3,6 +3,7 @@
 namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
 use ConfigFactory;
+use HashConfig;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\Handler;
@@ -18,6 +19,20 @@ use TitleFactory;
 
 class HandlerTest extends MediaWikiUnitTestCase {
 	/**
+	 * @param array $coreConfig
+	 * @param array $mirageConfig
+	 * @return ConfigFactory
+	 */
+	private function getConfigFactoryForHandler( array $coreConfig = [], array $mirageConfig = [] ) : ConfigFactory {
+		$configFactory = new ConfigFactory();
+		$configFactory->register( 'Mirage', new HashConfig( $mirageConfig ) );
+		$configFactory->register( 'main', new HashConfig( $coreConfig + [
+			'UseInstantCommons' => false
+		] ) );
+		return $configFactory;
+	}
+
+	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onBeforePageDisplay
 	 */
 	public function testOnBeforePageDisplay() : void {
@@ -25,7 +40,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$outputPage = $this->createMock( OutputPage::class );
@@ -45,7 +60,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$outputPage = $this->createMock( OutputPage::class );
@@ -68,7 +83,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$outputPage = $this->createMock( OutputPage::class );
@@ -88,7 +103,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$resourceLoader = $this->createMock( ResourceLoader::class );
@@ -105,7 +120,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$resourceLoader = $this->createMock( ResourceLoader::class );
@@ -134,7 +149,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 				[ 'mirage-max-width' => Handler::MIRAGE_PARTIAL_MAX_WIDTH ]
 			),
 			new NullAvatarLookup(),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$skin = $this->createMock( SkinMirage::class );
@@ -183,7 +198,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
-			$this->createMock( ConfigFactory::class )
+			$this->getConfigFactoryForHandler()
 		);
 
 		$bodyAttrs = [];
@@ -195,5 +210,49 @@ class HandlerTest extends MediaWikiUnitTestCase {
 		);
 
 		static::assertEmpty( $bodyAttrs );
+	}
+
+	/**
+	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onMirageGetExtraIcons
+	 * @dataProvider provideIconsOptions
+	 */
+	public function testOnMirageGetExtraIcons( bool $useInstantCommons, array $expected ) : void {
+		$handler = new Handler(
+			$this->createMock( TitleFactory::class ),
+			$this->createMock( UserOptionsLookup::class ),
+			new NullAvatarLookup(),
+			$this->getConfigFactoryForHandler( [
+				'UseInstantCommons' => $useInstantCommons
+			] )
+		);
+
+		$icons = [];
+		$handler->onMirageGetExtraIcons( $icons );
+
+		// WikiLove might be loaded.
+		unset( $icons['heart'] );
+
+		static::assertSame(
+			$expected,
+			$icons
+		);
+	}
+
+	/**
+	 * Data provider for testOnMirageGetExtraIcons.
+	 *
+	 * @return array[]
+	 */
+	public function provideIconsOptions() : array {
+		return [
+			'Without InstantCommons' => [
+				false,
+				[]
+			],
+			'With InstantCommons' => [
+				true,
+				[ 'logoWikimediaCommons' => [] ]
+			]
+		];
 	}
 }

@@ -485,11 +485,18 @@ class SkinMirage extends SkinMustache {
 				$item['link-class'] = 'new';
 			}
 
+			// Use the Wikimedia Commons logo when InstantCommons is enabled.
+			if ( $key === 'view-foreign' && $this->getConfig()->get( 'UseInstantCommons' ) ) {
+				$iconName = 'logoWikimediaCommons';
+			} else {
+				$iconName = self::findRelevantIcon( $key );
+			}
+
 			$dropdownItems[] = $this->makeListItem(
 				$key,
 				$item,
 				[
-					'link-class' => MirageIcon::medium( self::findRelevantIcon( $key ) )
+					'link-class' => MirageIcon::medium( $iconName )
 						// Set the inverted icon variant for the first item in the list when there is
 						// no edit button, so it can be used as replacement edit button.
 						->setVariant( ( !$editButton && !$dropdownItems ) ? 'invert' : '' )
