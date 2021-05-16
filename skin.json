@@ -230,6 +230,7 @@
 				"next": {},
 				"printer": {},
 				"recentChanges": {},
+				"restore": {},
 				"search": {
 					"selectorWithoutVariant": [
 						"#simpleSearch .searchButton"
@@ -262,7 +263,6 @@
 						"invert": "#ca-unwatch a:before"
 					}
 				},
-				"unTrash": {},
 				"upload": {},
 				"userAdd": {},
 				"userAvatar": {
