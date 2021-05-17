@@ -4,6 +4,9 @@ namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
 use ConfigFactory;
 use HashConfig;
+use Html;
+use IContextSource;
+use ImagePage;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\Handler;
@@ -15,6 +18,7 @@ use MediaWikiUnitTestCase;
 use OutputPage;
 use ResourceLoader;
 use SkinFallback;
+use Title;
 use TitleFactory;
 
 class HandlerTest extends MediaWikiUnitTestCase {
@@ -254,5 +258,86 @@ class HandlerTest extends MediaWikiUnitTestCase {
 				[ 'logoWikimediaCommons' => [] ]
 			]
 		];
+	}
+
+	/**
+	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
+	 */
+	public function testOnImagePageAfterImageLinksWithWordmarkDisabled() : void {
+		$handler = new Handler(
+			$this->createMock( TitleFactory::class ),
+			$this->createMock( UserOptionsLookup::class ),
+			new NullAvatarLookup(),
+			$this->getConfigFactoryForHandler( [], [
+				'MirageEnableImageWordmark' => false
+			] )
+		);
+
+		$html = '';
+
+		$handler->onImagePageAfterImageLinks( $this->createMock( ImagePage::class ), $html );
+
+		static::assertEmpty( $html );
+	}
+
+	/**
+	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
+	 */
+	public function testOnImagePageAfterImageLinksWithWordmarkEnabledWrongPage() : void {
+		$handler = new Handler(
+			$this->createMock( TitleFactory::class ),
+			$this->createMock( UserOptionsLookup::class ),
+			new NullAvatarLookup(),
+			$this->getConfigFactoryForHandler( [], [
+				'MirageEnableImageWordmark' => true
+			] )
+		);
+
+		$titleMock = $this->createMock( Title::class );
+		$titleMock->method( 'equals' )->willReturn( false );
+
+		$imagePage = $this->createMock( ImagePage::class );
+		$imagePage->method( 'getTitle' )->willReturn( $titleMock );
+
+		$html = '';
+
+		$handler->onImagePageAfterImageLinks( $imagePage, $html );
+
+		static::assertEmpty( $html );
+	}
+
+	/**
+	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
+	 */
+	public function testOnImagePageAfterImageLinksWithWordmarkEnabled() : void {
+		$handler = new Handler(
+			$this->createMock( TitleFactory::class ),
+			$this->createMock( UserOptionsLookup::class ),
+			new NullAvatarLookup(),
+			$this->getConfigFactoryForHandler( [], [
+				'MirageEnableImageWordmark' => true
+			] )
+		);
+
+		$mockContext = $this->createMock( IContextSource::class );
+		$mockContext->method( 'msg' )->willReturnCallback( function ( $key, ...$param ) {
+			return $this->getMockMessage( $key, $param );
+		} );
+
+		$titleMock = $this->createMock( Title::class );
+		$titleMock->method( 'equals' )->willReturn( true );
+
+		$imagePage = $this->createMock( ImagePage::class );
+		$imagePage->method( 'getTitle' )->willReturn( $titleMock );
+		$imagePage->method( 'getContext' )->willReturn( $mockContext );
+
+		$html = '';
+
+		$handler->onImagePageAfterImageLinks( $imagePage, $html );
+
+		static::assertSame(
+			Html::warningBox( 'mirage-wordmark-file-warning' ),
+			$html
+		);
 	}
 }
