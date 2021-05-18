@@ -76,6 +76,9 @@
 		"GetPreferences": {
 			"handler": "main"
 		},
+		"ImagePageAfterImageLinks": {
+			"handler": "main"
+		},
 		"MirageGetExtraIcons": {
 			"handler": "main"
 		},

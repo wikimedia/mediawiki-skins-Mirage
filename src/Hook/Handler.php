@@ -12,6 +12,7 @@ use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
 use MediaWiki\Hook\PersonalUrlsHook;
+use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
@@ -38,12 +39,14 @@ use Xml;
 use function array_keys;
 use function array_search;
 use function array_slice;
+use const NS_FILE;
 use const NS_MEDIAWIKI;
 
 class Handler implements
 	AlternateEditPreviewHook,
 	BeforePageDisplayHook,
 	GetPreferencesHook,
+	ImagePageAfterImageLinksHook,
 	MirageGetExtraIconsHook,
 	OutputPageBodyAttributesHook,
 	PersonalUrlsHook,
@@ -237,6 +240,23 @@ class Handler implements
 				 + array_slice( $preferences, $mirageSectionIndex, null, true );
 		} else {
 			$preferences += $miragePreferences;
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onImagePageAfterImageLinks( $imagePage, &$html ) : void {
+		if ( !$this->config->get( 'MirageEnableImageWordmark' ) ) {
+			return;
+		}
+
+		$wordmarkTitle = $this->titleFactory->makeTitle( NS_FILE, 'Mirage-wordmark.png' );
+
+		if ( $imagePage->getTitle()->equals( $wordmarkTitle ) ) {
+			$html .= Html::warningBox(
+				$imagePage->getContext()->msg( 'mirage-wordmark-file-warning' )->escaped()
+			);
 		}
 	}
 
