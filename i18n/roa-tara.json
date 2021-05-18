@@ -4,7 +4,10 @@
 			"Joetaras"
 		]
 	},
+	"skinname-mirage": "Mirage",
 	"mirage-skin-desc": "Mirage jè 'nu skin responsive ca s'affisse sus 'u 'ndrucamende d'u 'u condenute cu 'nu binarie sus a destre",
+	"mirage.css": "/* 'U CSS ca se iacchie aqquà 'u 'ndrucane le utinde d'a masckere Mirage */",
+	"mirage.js": "/* Ogne JavaScript aqquà avène carecate pe le utinde ca ausane 'a masckere Mirage */",
 	"mirage-community-messages-header": "Messàgge d'a comunitate",
 	"mirage-interface-messages-module-edit-this-message": "Cange stu messàgge",
 	"mirage-page-actions": "Aziune sus 'a pàgene",
