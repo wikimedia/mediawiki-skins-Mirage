@@ -28,5 +28,6 @@
 	"prefs-mirage-max-width": "Immer die maximale Seitenbreite anwenden",
 	"prefs-mirage-partial-max-width": "Die maximale Seitenbreite nur auf Artikel anwenden",
 	"prefs-mirage-no-max-width": "Deaktivieren der maximalen Seitenbreite",
-	"prefs-mirage-show-right-rail": "Anzeige der rechten Leiste"
+	"prefs-mirage-show-right-rail": "Anzeige der rechten Leiste",
+	"mirage-wordmark-file-warning": "Diese Datei wird derzeit als Wortmarke für den Mirage-Skin verwendet."
 }

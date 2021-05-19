@@ -30,5 +30,6 @@
 	"prefs-mirage-max-width": "永遠套用最大頁面寬度",
 	"prefs-mirage-partial-max-width": "僅對條目套用最大頁面寬度",
 	"prefs-mirage-no-max-width": "停用最大頁面寬度",
-	"prefs-mirage-show-right-rail": "顯示右側面板"
+	"prefs-mirage-show-right-rail": "顯示右側面板",
+	"mirage-wordmark-file-warning": "此檔案目前用作為 Mirage 外觀的字標。"
 }
