@@ -24,5 +24,6 @@
 	"mirage-more-recent-changes": "더 많은 변경사항 보기",
 	"prefs-mirage-max-width": "최대 문서 너비 무조건 적용",
 	"prefs-mirage-partial-max-width": "본문 글에만 최대 문서 너비 적용",
-	"prefs-mirage-no-max-width": "최대 문서 너비 비활성화"
+	"prefs-mirage-no-max-width": "최대 문서 너비 비활성화",
+	"mirage-wordmark-file-warning": "이 파일은 현재 Mirage 스킨의 워드마크로 사용 중입니다."
 }

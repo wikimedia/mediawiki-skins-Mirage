@@ -33,5 +33,6 @@
 	"prefs-mirage-max-width": "Tillämpa alltid den högsta sidbredden",
 	"prefs-mirage-partial-max-width": "Tillämpa bara den högsta sidbredden till artiklar",
 	"prefs-mirage-no-max-width": "Avaktivera den högsta sidbredden",
-	"prefs-mirage-show-right-rail": "Visa höger sidofält"
+	"prefs-mirage-show-right-rail": "Visa höger sidofält",
+	"mirage-wordmark-file-warning": "Denna fil används för tillfället som textlogotypen till utseendet Mirage."
 }
