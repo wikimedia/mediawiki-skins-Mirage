@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Gomoko",
 			"Verdy p"
 		]
 	},
@@ -33,5 +34,6 @@
 	"prefs-mirage-max-width": "Toujours appliquer la largeur de page maximale",
 	"prefs-mirage-partial-max-width": "N’appliquer la largeur de page maximale qu’aux articles",
 	"prefs-mirage-no-max-width": "Désactiver la largeur de page maximale",
-	"prefs-mirage-show-right-rail": "Afficher la barre latérale"
+	"prefs-mirage-show-right-rail": "Afficher la barre latérale",
+	"mirage-wordmark-file-warning": "Ce fichier est actuellement utilisé comme mot-balise pour l’habillage Mirage."
 }
