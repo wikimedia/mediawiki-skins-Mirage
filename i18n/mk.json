@@ -30,5 +30,6 @@
 	"prefs-mirage-max-width": "Секогаш применувај ја најголемата ширина за страница",
 	"prefs-mirage-partial-max-width": "Применувај најголема ширина за страница само во статии",
 	"prefs-mirage-no-max-width": "Оневозможи најголема ширина на страници",
-	"prefs-mirage-show-right-rail": "Приказ на десната пруга"
+	"prefs-mirage-show-right-rail": "Приказ на десната пруга",
+	"mirage-wordmark-file-warning": "Оваа податотека тековно е во потреба како зборовен белег на рувото Mirage."
 }

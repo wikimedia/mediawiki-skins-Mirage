@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"mirage-skin-desc": "Mirage es un apparentia responsive que se concentra sur le presentation de contento con un barra lateral a dextra",
+	"mirage-community-messages-header": "Messages del communitate",
+	"mirage-interface-messages-module-edit-this-message": "Modificar iste message",
+	"mirage-page-actions": "Actiones de pagina",
+	"mirage-jumptonavigation": "Saltar al navigation",
+	"mirage-jumptocontent": "Saltar al contento",
+	"mirage-action-addsection": "Adder topico",
+	"mirage-userpage": "Pagina de {{GENDER:$1|usator}}",
+	"mirage-footer-places": "Locos",
+	"mirage-footer-feeds": "Syndicationes",
+	"mirage-footer-info": "Information sur le pagina",
+	"mirage-expand-submenu": "Monstrar le entratas del submenu",
+	"mirage-talkpage": "Pagina de discussion",
+	"mirage-user-tools": "Instrumentos de usator",
+	"mirage-no-new-messages": "Tu non ha nove messages.",
+	"mirage-notifications": "Notificationes",
+	"mirage-page-tools": "Instrumentos pro paginas",
+	"mirage-hidden-categories": "Categorias celate",
+	"mirage-recent-changes-module": "Modificationes recente",
+	"mirage-more": "Plus",
+	"mirage-more-recent-changes": "Vider plus modificationes",
+	"mirage-toggle-right-rail": "Alternar le barra lateral a dextra",
+	"prefs-mirage-max-width-label": "Latitude de contento Mirage:",
+	"prefs-mirage-max-width": "Sempre applicar le latitude maximal del pagina",
+	"prefs-mirage-partial-max-width": "Applicar le latitude maximal del pagina solmente pro articulos",
+	"prefs-mirage-no-max-width": "Disactivar le latitude maximal de paginas",
+	"prefs-mirage-show-right-rail": "Monstrar le barra lateral a dextra",
+	"mirage-wordmark-file-warning": "Iste file es actualmente in uso como le marca de parola pro le apparentia Mirage."
+}
