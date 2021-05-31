@@ -3,6 +3,7 @@
 		"authors": [
 			"Hedda",
 			"Joseph",
+			"Mim.saitkilic",
 			"MuratTheTurkish"
 		]
 	},
@@ -32,5 +33,6 @@
 	"prefs-mirage-max-width": "Her zaman maksimum sayfa genişliğini uygulayın",
 	"prefs-mirage-partial-max-width": "Maksimum sayfa genişliğini yalnızca maddelere uygulayın",
 	"prefs-mirage-no-max-width": "Maksimum sayfa genişliğini devre dışı bırakın",
-	"prefs-mirage-show-right-rail": "Sağ parmaklığı göster"
+	"prefs-mirage-show-right-rail": "Sağ parmaklığı göster",
+	"mirage-wordmark-file-warning": "Bu dosya şu anda Mirage görünümü için marka işareti olarak kullanılıyor."
 }
