@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"mirage-skin-desc": "Mirage — це адаптивна тема оформлення, зосереджена на показі контенту з панеллю праворуч",
+	"mirage-community-messages-header": "Повідомлення спільноти",
+	"mirage-interface-messages-module-edit-this-message": "Редагувати це повідомлення",
+	"mirage-page-actions": "Дії на сторінці",
+	"mirage-jumptonavigation": "Перейти до навігації",
+	"mirage-jumptocontent": "Перейти до вмісту",
+	"mirage-action-addsection": "Додати тему",
+	"mirage-userpage": "Сторінка {{GENDER:$1|користувача|користувачки}}",
+	"mirage-footer-places": "Місця",
+	"mirage-footer-feeds": "Стрічки",
+	"mirage-footer-info": "Інформація про сторінку",
+	"mirage-expand-submenu": "Показати елементи підменю",
+	"mirage-talkpage": "Сторінка обговорення",
+	"mirage-user-tools": "Інструменти користувача",
+	"mirage-no-new-messages": "У вас немає нових повідомлень.",
+	"mirage-notifications": "Сповіщення",
+	"mirage-page-tools": "Інструменти сторінки",
+	"mirage-hidden-categories": "Приховані категорії",
+	"mirage-recent-changes-module": "Нові редагування",
+	"mirage-more": "Більше",
+	"mirage-more-recent-changes": "Переглянути більше змін",
+	"mirage-toggle-right-rail": "Перемкнути бічну панель",
+	"prefs-mirage-max-width-label": "Ширина контенту у Mirage:",
+	"prefs-mirage-max-width": "Завжди застосовувати максимальну ширину сторінки",
+	"prefs-mirage-partial-max-width": "Застосовувати максимальну ширину сторінки лише до статей",
+	"prefs-mirage-no-max-width": "Вимкнути максимальну ширину сторінки",
+	"prefs-mirage-show-right-rail": "Показувати панель праворуч",
+	"mirage-wordmark-file-warning": "Цей файл наразі використовується як текстова мітка теми Mirage."
+}
