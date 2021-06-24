@@ -47,7 +47,8 @@
 						"navigation-heading",
 						"notloggedin",
 						"tagline"
-					]
+					],
+					"responsive": true
 				}
 			]
 		}
