@@ -40,10 +40,16 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 	public function testGetDefinitionSummaryWithoutWordmark() : void {
 		$this->setWordmarkLookup( false );
 
+		$context = $this->getResourceLoaderContext();
+		$config = $context->getResourceLoader()->getConfig();
+
 		$module = new MirageResourceLoaderModule();
+		$module->setConfig( $config );
 		$parentModule = new ResourceLoaderSkinModule();
-		$parentSummary = $parentModule->getDefinitionSummary( $this->getResourceLoaderContext() );
-		$moduleSummary = $module->getDefinitionSummary( $this->getResourceLoaderContext() );
+		$parentModule->setConfig( $config );
+
+		$parentSummary = $parentModule->getDefinitionSummary( $context );
+		$moduleSummary = $module->getDefinitionSummary( $context );
 
 		// The _class property differs between parent and child.
 		unset( $parentSummary['_class'], $moduleSummary['_class'] );
@@ -57,8 +63,11 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 	public function testGetDefinitionSummaryWithWordmark() : void {
 		$this->setWordmarkLookup( true );
 
+		$context = $this->getResourceLoaderContext();
+
 		$module = new MirageResourceLoaderModule();
-		$summary = $module->getDefinitionSummary( $this->getResourceLoaderContext() );
+		$module->setConfig( $context->getResourceLoader()->getConfig() );
+		$summary = $module->getDefinitionSummary( $context );
 
 		$item = array_pop( $summary );
 
@@ -67,18 +76,22 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 
 	public function testGetPreloadLinksWithoutWordmark() : void {
 		$this->setWordmarkLookup( false );
+		$context = $this->getResourceLoaderContext();
 
 		$module = new MirageResourceLoaderModule();
-		$preloadLinks = $module->getPreloadLinks( $this->getResourceLoaderContext() );
+		$module->setConfig( $context->getResourceLoader()->getConfig() );
+		$preloadLinks = $module->getPreloadLinks( $context );
 
 		static::assertArrayNotHasKey( self::WORDMARK_URL, $preloadLinks );
 	}
 
 	public function testGetPreloadLinksWithWordmark() : void {
 		$this->setWordmarkLookup( true );
+		$context = $this->getResourceLoaderContext();
 
 		$module = new MirageResourceLoaderModule();
-		$preloadLinks = $module->getPreloadLinks( $this->getResourceLoaderContext() );
+		$module->setConfig( $context->getResourceLoader()->getConfig() );
+		$preloadLinks = $module->getPreloadLinks( $context );
 
 		static::assertArrayHasKey( self::WORDMARK_URL, $preloadLinks );
 		static::assertEquals( [ 'as' => 'image' ], $preloadLinks[self::WORDMARK_URL] );
@@ -86,6 +99,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 
 	public function testGetPreloadLinksIconFallback() : void {
 		$this->setWordmarkLookup( false );
+		$context = $this->getResourceLoaderContext();
 
 		$module = new MirageResourceLoaderModule();
 		$module->setConfig( new MultiConfig( [
@@ -98,9 +112,9 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 				// cannot be transformed.
 				'ResourceBasePath' => '//'
 			] ),
-			$module->getConfig()
+			$context->getResourceLoader()->getConfig()
 		] ) );
-		$preloadLinks = $module->getPreloadLinks( $this->getResourceLoaderContext() );
+		$preloadLinks = $module->getPreloadLinks( $context );
 
 		static::assertArrayNotHasKey( self::WORDMARK_URL, $preloadLinks );
 		static::assertArrayHasKey( '/img.svg', $preloadLinks );
@@ -108,9 +122,11 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 
 	public function testGetStylesWithoutWordmark() : void {
 		$this->setWordmarkLookup( false );
+		$context = $this->getResourceLoaderContext();
 
 		$module = new MirageResourceLoaderModule();
-		$styles = $module->getStyles( $this->getResourceLoaderContext() );
+		$module->setConfig( $context->getResourceLoader()->getConfig() );
+		$styles = $module->getStyles( $context );
 		$wordmark = CSSMin::buildUrlValue( self::WORDMARK_URL );
 
 		static::assertNotContains(
@@ -121,9 +137,11 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 
 	public function testGetStylesWithWordmark() : void {
 		$this->setWordmarkLookup( true );
+		$context = $this->getResourceLoaderContext();
 
 		$module = new MirageResourceLoaderModule();
-		$styles = $module->getStyles( $this->getResourceLoaderContext() );
+		$module->setConfig( $context->getResourceLoader()->getConfig() );
+		$styles = $module->getStyles( $context );
 		$wordmark = CSSMin::buildUrlValue( self::WORDMARK_URL );
 
 		static::assertContains(
