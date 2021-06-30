@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Les Meloures",
 			"Robby"
 		]
 	},
@@ -9,7 +10,7 @@
 	"mirage-interface-messages-module-edit-this-message": "Dëse Message änneren",
 	"mirage-jumptonavigation": "Op d'Navigatioun wiesselen",
 	"mirage-jumptocontent": "Op den Inhalt sprangen",
-	"mirage-action-addsection": "Sujet dobäisetzen",
+	"mirage-action-addsection": "Sujet derbäisetzen",
 	"mirage-userpage": "{{GENDER:$1|Benotzersäit|Benotzerinnesäit|Benotzersäit}}",
 	"mirage-footer-places": "Plazen",
 	"mirage-footer-info": "Informatiounen iwwer d'Säit",
