@@ -372,15 +372,16 @@ class Handler implements
 			$personal_urls['anontalk']['text'] = $skin->msg( 'mirage-talkpage' )->text();
 		}
 
-		foreach ( $personal_urls as $key => $_ ) {
+		foreach ( $personal_urls as $key => $personalUrl ) {
 			$icon = MirageIcon::medium(
-				SkinMirage::findRelevantIcon( $key )
+				$personalUrl['icon'] ?? MirageIcon::ICON_PLACEHOLDER
 			);
 
-			if ( is_array( $personal_urls[$key]['class'] ?? [] ) ) {
-				$personal_urls[$key]['class'][] = $icon->toClasses();
+			// Set icon classes on the link, not the <li>.
+			if ( is_array( $personalUrl['link-class'] ?? [] ) ) {
+				$personal_urls[$key]['link-class'][] = $icon->toClasses();
 			} else {
-				$personal_urls[$key]['class'] .= ' ' . $icon->toClasses();
+				$personal_urls[$key]['link-class'] .= ' ' . $icon->toClasses();
 			}
 		}
 	}

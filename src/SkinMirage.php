@@ -607,30 +607,8 @@ class SkinMirage extends SkinMustache {
 	 * @param string $name
 	 * @return string OOUI icon name.
 	 */
-	public static function findRelevantIcon( string $name ) : string {
+	private static function findRelevantIcon( string $name ) : string {
 		switch ( $name ) {
-			case 'userpage':
-				return 'userAvatar';
-			case 'anontalk':
-			case 'mytalk':
-				return 'userTalk';
-			case 'preferences':
-				return 'settings';
-			case 'watchlist':
-				// TODO: This would be better with an icon like userContributions, but with
-				// unStar in place of the userAvatar
-				return 'unStar';
-			// Yes, this is actually how it is spelled. See SkinTemplate::buildPersonalUrls.
-			case 'mycontris':
-			case 'anoncontribs':
-				return 'userContributions';
-			case 'createaccount':
-				return 'userAdd';
-			case 'logout':
-				return 'logOut';
-			case 'login':
-			case 'login-private':
-				return 'logIn';
 			case 'edit':
 			case 'history':
 				return $name;
