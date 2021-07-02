@@ -14,6 +14,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
 use MessageCache;
 use Sanitizer;
@@ -21,7 +22,6 @@ use SkinMustache;
 use TemplateParser;
 use Title;
 use TitleFactory;
-use User;
 use WANObjectCache;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use function array_shift;
@@ -352,7 +352,7 @@ class SkinMirage extends SkinMustache {
 				// Personal tools.
 				'has-avatar' => $hasAvatar,
 				'html-username-icon-classes' => $hasAvatar ? null : $userAvatarIcon,
-				'is-anon' => $user->isAnon(),
+				'is-anon' => !$user->isRegistered(),
 				'username' => $user->getName(),
 
 				// Notifications.
@@ -391,11 +391,11 @@ class SkinMirage extends SkinMustache {
 	 * For anonymous users, this uses $wgMirageRightRailVisibleToAnonByDefault.
 	 * For logged-in users, this uses the mirage-show-right-rail preference.
 	 *
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return bool
 	 */
-	private function displayRightRailVisible( User $user ) : bool {
-		if ( $user->isAnon() ) {
+	private function displayRightRailVisible( UserIdentity $user ) : bool {
+		if ( !$user->isRegistered() ) {
 			return $this->mirageConfig->get( 'MirageRightRailVisibleToAnonByDefault' );
 		}
 
