@@ -25,5 +25,8 @@
 	"mirage-recent-changes-module": "Recente wijzigingen",
 	"mirage-more": "Meer",
 	"mirage-more-recent-changes": "Meer wijzigingen bekijken",
+	"prefs-mirage-max-width": "Pas altijd de maximale paginabreedte toe",
+	"prefs-mirage-partial-max-width": "Pas de maximale paginabreedte alleen toe op artikelen",
+	"prefs-mirage-no-max-width": "De maximale paginabreedte uitschakelen",
 	"mirage-wordmark-file-warning": "Dit bestand wordt momenteel gebruikt als het woordmerk voor de Mirage vormgeving."
 }
