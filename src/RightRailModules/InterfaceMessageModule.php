@@ -49,7 +49,7 @@ class InterfaceMessageModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getBodyContent() : string {
+	protected function getBodyContent(): string {
 		$content = Html::rawElement(
 			'div',
 			[],
@@ -81,21 +81,21 @@ class InterfaceMessageModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getHeader() : ?string {
+	protected function getHeader(): ?string {
 		return $this->headerMessage ? $this->headerMessage->escaped() : null;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function canBeShown() : bool {
+	public function canBeShown(): bool {
 		return !$this->message->isDisabled();
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	protected function getAdditionalModuleClasses() : array {
+	protected function getAdditionalModuleClasses(): array {
 		$classes = parent::getAdditionalModuleClasses();
 
 		$classes[] = 'skin-mirage-interface-message-module';

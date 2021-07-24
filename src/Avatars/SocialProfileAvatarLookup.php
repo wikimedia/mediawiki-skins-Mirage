@@ -9,7 +9,7 @@ class SocialProfileAvatarLookup extends AvatarLookup {
 	/**
 	 * @inheritDoc
 	 */
-	public function getAvatarForUser( UserIdentity $user ) : string {
+	public function getAvatarForUser( UserIdentity $user ): string {
 		return ( new wAvatar( $user->getId(), 'ml' ) )->getAvatarUrlPath();
 	}
 }

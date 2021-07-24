@@ -35,7 +35,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	/**
 	 * @return SkinMirage
 	 */
-	protected function getSkin() : SkinMirage {
+	protected function getSkin(): SkinMirage {
 		return $this->skin;
 	}
 
@@ -44,7 +44,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return string
 	 */
-	abstract protected function getBodyContent() : string;
+	abstract protected function getBodyContent(): string;
 
 	/**
 	 * Returns the message to use for the header of this module.
@@ -52,7 +52,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return string|null
 	 */
-	protected function getHeader() : ?string {
+	protected function getHeader(): ?string {
 		$msg = $this->msg( $this->name );
 
 		return !$msg->isDisabled() ? $msg->escaped() : HtmlArmor::getHtml( $this->name );
@@ -64,7 +64,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return string|null
 	 */
-	protected function getRole() : ?string {
+	protected function getRole(): ?string {
 		return null;
 	}
 
@@ -73,7 +73,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return string
 	 */
-	protected function getAfterModuleContent() : string {
+	protected function getAfterModuleContent(): string {
 		return $this->skin->getAfterPortlet( $this->name );
 	}
 
@@ -82,7 +82,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return array
 	 */
-	protected function getAdditionalModuleClasses() : array {
+	protected function getAdditionalModuleClasses(): array {
 		return [ 'skin-mirage-styled-right-rail-module' ];
 	}
 
@@ -96,7 +96,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return bool
 	 */
-	public function canBeShown() : bool {
+	public function canBeShown(): bool {
 		return true;
 	}
 
@@ -107,7 +107,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 * @param mixed ...$params
 	 * @return Message
 	 */
-	public function msg( $key, ...$params ) : Message {
+	public function msg( $key, ...$params ): Message {
 		return $this->skin->msg( $key, ...$params );
 	}
 
@@ -116,7 +116,7 @@ abstract class RightRailModule implements MessageLocalizer {
 	 *
 	 * @return array
 	 */
-	final public function getTemplateParameters() : array {
+	final public function getTemplateParameters(): array {
 		$header = $this->getHeader();
 
 		return [

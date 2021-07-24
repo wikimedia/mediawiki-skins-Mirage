@@ -18,5 +18,5 @@ interface MirageBuildSiteToolsHook {
 	 * @param IContextSource $context
 	 * @param array &$tools
 	 */
-	public function onMirageBuildSiteTools( IContextSource $context, array &$tools ) : void;
+	public function onMirageBuildSiteTools( IContextSource $context, array &$tools ): void;
 }

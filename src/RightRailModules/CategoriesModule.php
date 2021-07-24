@@ -47,7 +47,7 @@ class CategoriesModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getHeader() : string {
+	protected function getHeader(): string {
 		return $this->linkRenderer->makeLink(
 			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
 			$this->titleFactory->newFromText(
@@ -60,7 +60,7 @@ class CategoriesModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getAdditionalModuleClasses() : array {
+	protected function getAdditionalModuleClasses(): array {
 		$classes = parent::getAdditionalModuleClasses();
 
 		$classes[] = 'catlinks';
@@ -71,7 +71,7 @@ class CategoriesModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	public function canBeShown() : bool {
+	public function canBeShown(): bool {
 		return !empty( $this->allCategories['normal'] ) ||
 			( $this->displayHiddenCategories && !empty( $this->allCategories['hidden'] ) );
 	}
@@ -79,7 +79,7 @@ class CategoriesModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getBodyContent() : string {
+	protected function getBodyContent(): string {
 		$html = '';
 
 		if ( !empty( $this->allCategories['normal'] ) ) {
@@ -117,7 +117,7 @@ class CategoriesModule extends RightRailModule {
 	 * @param string $id Wrapper Id (and class)
 	 * @return string
 	 */
-	private function renderCategories( array $categories, string $id ) : string {
+	private function renderCategories( array $categories, string $id ): string {
 		$html = Html::openElement( 'div', [
 				'id' => $id,
 				// It just so happens the id and the class are the same.

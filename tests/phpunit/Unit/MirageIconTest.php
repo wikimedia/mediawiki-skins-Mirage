@@ -11,7 +11,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::small
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 */
-	public function testSmall() : void {
+	public function testSmall(): void {
 		$icon = MirageIcon::small( 'test' );
 
 		static::assertStringContainsString(
@@ -24,7 +24,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::medium
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 */
-	public function testMedium() : void {
+	public function testMedium(): void {
 		$icon = MirageIcon::medium( 'test' );
 
 		static::assertStringContainsString(
@@ -37,7 +37,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setVariant
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 */
-	public function testSetVariant() : void {
+	public function testSetVariant(): void {
 		$icon = MirageIcon::medium( 'test' )
 			->setVariant( 'invert' );
 
@@ -51,7 +51,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::hideLabel
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 */
-	public function testHideLabel() : void {
+	public function testHideLabel(): void {
 		$icon = MirageIcon::medium( 'test' )
 			->hideLabel();
 
@@ -65,7 +65,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::hideLabel
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 */
-	public function testHideLabelWithFalse() : void {
+	public function testHideLabelWithFalse(): void {
 		$icon = MirageIcon::medium( 'test' )
 			->hideLabel( false );
 
@@ -80,7 +80,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::toClasses
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
 	 */
-	public function testAddClasses() : void {
+	public function testAddClasses(): void {
 		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
 			->setClasses( 'test-class' );
 
@@ -95,7 +95,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setContent
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
 	 */
-	public function testSetContent() : void {
+	public function testSetContent(): void {
 		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
 			->setContent( new HtmlArmor( '<script></script>' ) );
 
@@ -109,7 +109,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setElement
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
 	 */
-	public function testSetElement() : void {
+	public function testSetElement(): void {
 		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
 			->setElement( 'div' );
 
@@ -123,7 +123,7 @@ class MirageIconTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::setAttributes
 	 * @covers \MediaWiki\Skins\Mirage\MirageIcon::__toString
 	 */
-	public function testSetAttributes() : void {
+	public function testSetAttributes(): void {
 		$icon = MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
 			->setAttributes( [
 				'class' => 'ignored',

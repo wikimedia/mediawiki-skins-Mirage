@@ -39,7 +39,7 @@ class MirageWordmarkLookup {
 	 *
 	 * @return string|null
 	 */
-	public function getWordmarkUrl() : ?string {
+	public function getWordmarkUrl(): ?string {
 		if ( $this->wordmarkEnabled ) {
 			$file = $this->getWordmarkFile();
 
@@ -54,7 +54,7 @@ class MirageWordmarkLookup {
 	/**
 	 * @return File|null
 	 */
-	public function getWordmarkFile() : ?File {
+	public function getWordmarkFile(): ?File {
 		$title = $this->titleFactory->makeTitle( NS_FILE, 'Mirage-wordmark.png' );
 
 		return $this->repoGroup->findFile( $title ) ?: null;

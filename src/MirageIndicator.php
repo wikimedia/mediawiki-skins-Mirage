@@ -15,7 +15,7 @@ class MirageIndicator extends MirageIcon {
 	 * @inheritDoc
 	 * @return string
 	 */
-	public function toClasses() : string {
+	public function toClasses(): string {
 		return 'skin-mirage-ooui-indicator ' . parent::toClasses();
 	}
 }

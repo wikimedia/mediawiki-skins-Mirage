@@ -27,7 +27,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 * @param array $mirageConfig
 	 * @return ConfigFactory
 	 */
-	private function getConfigFactoryForHandler( array $coreConfig = [], array $mirageConfig = [] ) : ConfigFactory {
+	private function getConfigFactoryForHandler( array $coreConfig = [], array $mirageConfig = [] ): ConfigFactory {
 		$configFactory = new ConfigFactory();
 		$configFactory->register( 'Mirage', new HashConfig( $mirageConfig ) );
 		$configFactory->register( 'main', new HashConfig( $coreConfig + [
@@ -39,7 +39,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onBeforePageDisplay
 	 */
-	public function testOnBeforePageDisplay() : void {
+	public function testOnBeforePageDisplay(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -59,7 +59,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onBeforePageDisplay
 	 */
-	public function testOnBeforePageDisplayWithAvatarLookup() : void {
+	public function testOnBeforePageDisplayWithAvatarLookup(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -82,7 +82,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onBeforePageDisplay
 	 */
-	public function testOnBeforePageDisplayWithAvatarLookupAndWrongSkin() : void {
+	public function testOnBeforePageDisplayWithAvatarLookupAndWrongSkin(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -102,7 +102,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onResourceLoaderRegisterModules
 	 */
-	public function testOnResourceLoaderRegisterModules() : void {
+	public function testOnResourceLoaderRegisterModules(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -119,7 +119,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onResourceLoaderRegisterModules
 	 */
-	public function testOnResourceLoaderRegisterModulesWithAvatarService() : void {
+	public function testOnResourceLoaderRegisterModulesWithAvatarService(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -141,7 +141,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 * @param int|null $option
 	 * @param string $expected
 	 */
-	public function testOnOutputPageBodyAttributes( ?int $option, string $expected ) : void {
+	public function testOnOutputPageBodyAttributes( ?int $option, string $expected ): void {
 		$options = $option === null ? [] : [
 			'Testuser' => [ 'mirage-max-width' => $option ]
 		];
@@ -181,7 +181,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return array[]
 	 */
-	public function provideOptions() : array {
+	public function provideOptions(): array {
 		return [
 			'No preference set' => [ null, ' skin-mirage-limit-content-width-selectively' ],
 			'Invalid' => [ -1, ' skin-mirage-limit-content-width-selectively' ],
@@ -197,7 +197,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onOutputPageBodyAttributes
 	 */
-	public function testOnOutputPageBodyAttributesWithOtherSkin() : void {
+	public function testOnOutputPageBodyAttributesWithOtherSkin(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -220,7 +220,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onMirageGetExtraIcons
 	 * @dataProvider provideIconsOptions
 	 */
-	public function testOnMirageGetExtraIcons( bool $useInstantCommons, array $expected ) : void {
+	public function testOnMirageGetExtraIcons( bool $useInstantCommons, array $expected ): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -247,7 +247,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return array[]
 	 */
-	public function provideIconsOptions() : array {
+	public function provideIconsOptions(): array {
 		return [
 			'Without InstantCommons' => [
 				false,
@@ -263,7 +263,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
 	 */
-	public function testOnImagePageAfterImageLinksWithWordmarkDisabled() : void {
+	public function testOnImagePageAfterImageLinksWithWordmarkDisabled(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -283,7 +283,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
 	 */
-	public function testOnImagePageAfterImageLinksWithWordmarkEnabledWrongPage() : void {
+	public function testOnImagePageAfterImageLinksWithWordmarkEnabledWrongPage(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
@@ -309,7 +309,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
 	 */
-	public function testOnImagePageAfterImageLinksWithWordmarkEnabled() : void {
+	public function testOnImagePageAfterImageLinksWithWordmarkEnabled(): void {
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),

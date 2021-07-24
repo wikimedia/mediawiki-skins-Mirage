@@ -33,7 +33,7 @@ class ThemeRegistry {
 	 *
 	 * @return string[]
 	 */
-	public function getThemeStyleFiles() : array {
+	public function getThemeStyleFiles(): array {
 		$theme = $this->config->get( 'MirageTheme' );
 
 		if ( $theme && isset( self::THEMES[$theme] ) ) {
@@ -48,7 +48,7 @@ class ThemeRegistry {
 	 *
 	 * @return array
 	 */
-	public function buildResourceLoaderModuleDefinitions() : array {
+	public function buildResourceLoaderModuleDefinitions(): array {
 		$definitions = [];
 
 		foreach ( self::THEMES as $themeName => $styleFiles ) {

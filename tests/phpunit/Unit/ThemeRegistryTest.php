@@ -17,7 +17,7 @@ class ThemeRegistryTest extends MediaWikiUnitTestCase {
 	 * @param string $theme
 	 * @param array $expected
 	 */
-	public function testGetThemeStyleFiles( string $theme, array $expected ) : void {
+	public function testGetThemeStyleFiles( string $theme, array $expected ): void {
 		$registry = new ThemeRegistry( new HashConfig( [
 			'MirageTheme' => $theme
 		] ) );
@@ -33,7 +33,7 @@ class ThemeRegistryTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return Generator
 	 */
-	public function provideThemes() : Generator {
+	public function provideThemes(): Generator {
 		foreach ( ThemeRegistry::THEMES as $theme => $styles ) {
 			yield $theme => [ $theme, $styles ];
 		}
@@ -44,7 +44,7 @@ class ThemeRegistryTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\ThemeRegistry::buildResourceLoaderModuleDefinitions
 	 */
-	public function testBuildResourceLoaderModuleDefinitions() : void {
+	public function testBuildResourceLoaderModuleDefinitions(): void {
 		$registry = new ThemeRegistry( new HashConfig() );
 
 		$actual = $registry->buildResourceLoaderModuleDefinitions();

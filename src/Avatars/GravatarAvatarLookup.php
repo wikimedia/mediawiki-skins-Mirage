@@ -19,7 +19,7 @@ class GravatarAvatarLookup extends AvatarLookup {
 	/**
 	 * @inheritDoc
 	 */
-	public function getAvatarForUser( UserIdentity $user ) : string {
+	public function getAvatarForUser( UserIdentity $user ): string {
 		return $this->gravatarLookup->getAvatarForUser( $user );
 	}
 }

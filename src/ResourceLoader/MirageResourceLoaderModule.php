@@ -18,7 +18,7 @@ class MirageResourceLoaderModule extends ResourceLoaderSkinModule {
 	 * @param ResourceLoaderContext $context
 	 * @return array[]
 	 */
-	public function getStyles( ResourceLoaderContext $context ) : array {
+	public function getStyles( ResourceLoaderContext $context ): array {
 		$styles = parent::getStyles( $context );
 
 		$wordmark = MediaWikiServices::getInstance()->getService( 'MirageWordmarkLookup' )
@@ -41,7 +41,7 @@ CSS;
 	 * @param ResourceLoaderContext $context
 	 * @return array
 	 */
-	public function getStyleFiles( ResourceLoaderContext $context ) : array {
+	public function getStyleFiles( ResourceLoaderContext $context ): array {
 		$styles = parent::getStyleFiles( $context );
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Theme' ) ) {
@@ -67,7 +67,7 @@ CSS;
 	 * @param ResourceLoaderContext $context
 	 * @return array
 	 */
-	public function getPreloadLinks( ResourceLoaderContext $context ) : array {
+	public function getPreloadLinks( ResourceLoaderContext $context ): array {
 		$preloadLinks = parent::getPreloadLinks( $context );
 
 		$wordmark = MediaWikiServices::getInstance()->getService( 'MirageWordmarkLookup' )
@@ -112,7 +112,7 @@ CSS;
 	 * @param ResourceLoaderContext $context
 	 * @return array
 	 */
-	public function getDefinitionSummary( ResourceLoaderContext $context ) : array {
+	public function getDefinitionSummary( ResourceLoaderContext $context ): array {
 		$summary = parent::getDefinitionSummary( $context );
 
 		$wordmarkFile = MediaWikiServices::getInstance()->getService( 'MirageWordmarkLookup' )

@@ -10,7 +10,7 @@ class NullAvatarLookup extends AvatarLookup {
 	 * @inheritDoc
 	 * @throws DomainException
 	 */
-	public function getAvatarForUser( UserIdentity $user ) : string {
+	public function getAvatarForUser( UserIdentity $user ): string {
 		throw new DomainException( self::class . ': No avatar backend available!' );
 	}
 }

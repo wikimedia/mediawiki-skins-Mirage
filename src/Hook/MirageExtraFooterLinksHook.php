@@ -18,5 +18,5 @@ interface MirageExtraFooterLinksHook {
 	 * @param SkinMirage $skin
 	 * @param array &$footerLinks Footer links
 	 */
-	public function onMirageExtraFooterLinks( SkinMirage $skin, array &$footerLinks ) : void;
+	public function onMirageExtraFooterLinks( SkinMirage $skin, array &$footerLinks ): void;
 }

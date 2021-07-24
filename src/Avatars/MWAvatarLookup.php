@@ -9,7 +9,7 @@ class MWAvatarLookup extends AvatarLookup {
 	/**
 	 * @inheritDoc
 	 */
-	public function getAvatarForUser( UserIdentity $user ) : string {
+	public function getAvatarForUser( UserIdentity $user ): string {
 		return Avatars::getLinkFor( $user->getName() );
 	}
 }

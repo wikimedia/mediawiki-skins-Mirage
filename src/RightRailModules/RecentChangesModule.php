@@ -79,7 +79,7 @@ class RecentChangesModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getBodyContent() : string {
+	protected function getBodyContent(): string {
 		$html = Html::openElement( 'ul', [ 'class' => 'skin-mirage-unstyled-list' ] );
 
 		foreach ( $this->res as $row ) {
@@ -117,7 +117,7 @@ class RecentChangesModule extends RightRailModule {
 	 * @param stdClass $row
 	 * @return string HTML
 	 */
-	private function renderRecentChange( stdClass $row ) : string {
+	private function renderRecentChange( stdClass $row ): string {
 		$html = Html::rawElement(
 			'div',
 			[ 'class' => 'skin-mirage-recent-changes-module-page' ],
@@ -160,14 +160,14 @@ class RecentChangesModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getHeader() : string {
+	protected function getHeader(): string {
 		return $this->msg( 'mirage-recent-changes-module' )->escaped();
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function canBeShown() : bool {
+	public function canBeShown(): bool {
 		return $this->res && $this->res->numRows() > 0;
 	}
 }

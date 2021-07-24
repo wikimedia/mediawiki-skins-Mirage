@@ -25,7 +25,7 @@ class GenericItemListModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getBodyContent() : string {
+	protected function getBodyContent(): string {
 		$skin = $this->getSkin();
 
 		$html = Html::openElement( 'ul', [ 'class' => 'skin-mirage-unstyled-list' ] );
@@ -40,14 +40,14 @@ class GenericItemListModule extends RightRailModule {
 	/**
 	 * @inheritDoc
 	 */
-	public function canBeShown() : bool {
+	public function canBeShown(): bool {
 		return $this->items !== [];
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	protected function getRole() : string {
+	protected function getRole(): string {
 		return 'navigation';
 	}
 }

@@ -12,7 +12,7 @@ use TitleFactory;
  * @covers \MediaWiki\Skins\Mirage\MirageWordmarkLookup
  */
 class MirageWordmarkLookupTest extends MediaWikiUnitTestCase {
-	public function testGetWordmarkUrlWithWordmarkDisabled() : void {
+	public function testGetWordmarkUrlWithWordmarkDisabled(): void {
 		$lookup = new MirageWordmarkLookup(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( RepoGroup::class ),
@@ -22,7 +22,7 @@ class MirageWordmarkLookupTest extends MediaWikiUnitTestCase {
 		static::assertNull( $lookup->getWordmarkUrl() );
 	}
 
-	public function testGetWordmarkUrlWithNoFileFound() : void {
+	public function testGetWordmarkUrlWithNoFileFound(): void {
 		$repoGroup = $this->createMock( RepoGroup::class );
 		$repoGroup->method( 'findFile' )->willReturn( false );
 
@@ -35,7 +35,7 @@ class MirageWordmarkLookupTest extends MediaWikiUnitTestCase {
 		static::assertNull( $lookup->getWordmarkUrl() );
 	}
 
-	public function testGetWordmarkUrl() : void {
+	public function testGetWordmarkUrl(): void {
 		$file = $this->createMock( File::class );
 		$file->method( 'exists' )->willReturn( true );
 		$file->method( 'getUrl' )->willReturn( '/url.png' );

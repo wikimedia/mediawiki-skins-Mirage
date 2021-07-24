@@ -19,7 +19,7 @@ use function sha1;
 class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 	private const WORDMARK_URL = '/img.png';
 
-	private function setWordmarkLookup( bool $wordmarkDefined ) : void {
+	private function setWordmarkLookup( bool $wordmarkDefined ): void {
 		$fileMock = $this->createMock( File::class );
 		$fileMock->method( 'getSha1' )->willReturn( sha1( 'test' ) );
 
@@ -37,7 +37,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		);
 	}
 
-	public function testGetDefinitionSummaryWithoutWordmark() : void {
+	public function testGetDefinitionSummaryWithoutWordmark(): void {
 		$this->setWordmarkLookup( false );
 
 		$context = $this->getResourceLoaderContext();
@@ -60,7 +60,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		);
 	}
 
-	public function testGetDefinitionSummaryWithWordmark() : void {
+	public function testGetDefinitionSummaryWithWordmark(): void {
 		$this->setWordmarkLookup( true );
 
 		$context = $this->getResourceLoaderContext();
@@ -74,7 +74,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		static::assertEquals( [ 'mirage-wordmark' => sha1( 'test' ) ], $item );
 	}
 
-	public function testGetPreloadLinksWithoutWordmark() : void {
+	public function testGetPreloadLinksWithoutWordmark(): void {
 		$this->setWordmarkLookup( false );
 		$context = $this->getResourceLoaderContext();
 
@@ -85,7 +85,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		static::assertArrayNotHasKey( self::WORDMARK_URL, $preloadLinks );
 	}
 
-	public function testGetPreloadLinksWithWordmark() : void {
+	public function testGetPreloadLinksWithWordmark(): void {
 		$this->setWordmarkLookup( true );
 		$context = $this->getResourceLoaderContext();
 
@@ -97,7 +97,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		static::assertEquals( [ 'as' => 'image' ], $preloadLinks[self::WORDMARK_URL] );
 	}
 
-	public function testGetPreloadLinksIconFallback() : void {
+	public function testGetPreloadLinksIconFallback(): void {
 		$this->setWordmarkLookup( false );
 		$context = $this->getResourceLoaderContext();
 
@@ -120,7 +120,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		static::assertArrayHasKey( '/img.svg', $preloadLinks );
 	}
 
-	public function testGetStylesWithoutWordmark() : void {
+	public function testGetStylesWithoutWordmark(): void {
 		$this->setWordmarkLookup( false );
 		$context = $this->getResourceLoaderContext();
 
@@ -135,7 +135,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		);
 	}
 
-	public function testGetStylesWithWordmark() : void {
+	public function testGetStylesWithWordmark(): void {
 		$this->setWordmarkLookup( true );
 		$context = $this->getResourceLoaderContext();
 

@@ -20,14 +20,14 @@ class MustacheCodeStyleTest extends MediaWikiUnitTestCase {
 	 *
 	 * @param string $template
 	 */
-	public function testTemplateCodeStyle( string $template ) : void {
+	public function testTemplateCodeStyle( string $template ): void {
 		static::assertSame(
 			[],
 			( new TemplateProcessor( SkinMirage::TEMPLATE_DIR, $template ) )->process()
 		);
 	}
 
-	public static function provideTemplates() : Generator {
+	public static function provideTemplates(): Generator {
 		foreach ( glob( SkinMirage::TEMPLATE_DIR . '/*.mustache' ) as $template ) {
 			yield basename( $template ) => [
 				str_replace( SkinMirage::TEMPLATE_DIR . '/', '', $template )

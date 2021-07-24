@@ -38,7 +38,7 @@ class MirageNavigationExtractor {
 	 * @param string $messageContent Message content (typically from MediaWiki:Mirage-navigation)
 	 * @return array
 	 */
-	public function extract( string $messageContent ) : array {
+	public function extract( string $messageContent ): array {
 		$messageContent = trim( $messageContent );
 
 		// Don't try to extract from disabled or empty messages.
@@ -94,7 +94,7 @@ class MirageNavigationExtractor {
 	 * @param string $line
 	 * @return string[]
 	 */
-	private function parseLine( string $line ) : array {
+	private function parseLine( string $line ): array {
 		if ( strpos( $line, '|' ) === false ) {
 			$target = $text = trim( $line, " \t\0\x0B|" );
 		} else {

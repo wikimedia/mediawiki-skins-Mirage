@@ -14,5 +14,5 @@ interface MirageGetRightRailModulesHook {
 	 * @param IContextSource $context
 	 * @param array[] &$modules List of module ObjectFactory specs keyed to the module name
 	 */
-	public function onMirageGetRightRailModules( IContextSource $context, array &$modules ) : void;
+	public function onMirageGetRightRailModules( IContextSource $context, array &$modules ): void;
 }

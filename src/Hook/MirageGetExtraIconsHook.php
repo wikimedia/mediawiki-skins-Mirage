@@ -12,5 +12,5 @@ interface MirageGetExtraIconsHook {
 	 * @param string[] &$icons Icon names, optionally mapped to an array describing the supported
 	 * variants and custom selectors. See skin.json for examples.
 	 */
-	public function onMirageGetExtraIcons( array &$icons ) : void;
+	public function onMirageGetExtraIcons( array &$icons ): void;
 }

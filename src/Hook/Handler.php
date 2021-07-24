@@ -106,7 +106,7 @@ class Handler implements
 		&$content,
 		&$previewHTML,
 		&$parserOutput
-	) : bool {
+	): bool {
 		$context = $editPage->getContext();
 		$skin = $context->getSkin();
 		$out = $context->getOutput();
@@ -195,7 +195,7 @@ class Handler implements
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 */
-	public function onBeforePageDisplay( $out, $skin ) : void {
+	public function onBeforePageDisplay( $out, $skin ): void {
 		if ( !( $skin instanceof SkinMirage ) || $this->avatarLookup instanceof NullAvatarLookup ) {
 			return;
 		}
@@ -209,7 +209,7 @@ class Handler implements
 	 * @param User $user
 	 * @param array $preferences
 	 */
-	public function onGetPreferences( $user, &$preferences ) : void {
+	public function onGetPreferences( $user, &$preferences ): void {
 		$miragePreferences = [
 			'mirage-max-width' => [
 				'type' => 'radio',
@@ -246,7 +246,7 @@ class Handler implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onImagePageAfterImageLinks( $imagePage, &$html ) : void {
+	public function onImagePageAfterImageLinks( $imagePage, &$html ): void {
 		if ( !$this->config->get( 'MirageEnableImageWordmark' ) ) {
 			return;
 		}
@@ -267,7 +267,7 @@ class Handler implements
 	 *
 	 * @param array $icons
 	 */
-	public function onMirageGetExtraIcons( array &$icons ) : void {
+	public function onMirageGetExtraIcons( array &$icons ): void {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiLove' ) ) {
 			$icons['heart'] = [
 				'selectorWithVariant' => [
@@ -287,7 +287,7 @@ class Handler implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onResourceLoaderRegisterModules( ResourceLoader $rl ) : void {
+	public function onResourceLoaderRegisterModules( ResourceLoader $rl ): void {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Theme' ) ) {
 			$rl->register(
 				( new ThemeRegistry( $this->config ) )->buildResourceLoaderModuleDefinitions()
@@ -309,7 +309,7 @@ class Handler implements
 				]
 			],
 			'origin' => ResourceLoaderModule::ORIGIN_CORE_INDIVIDUAL,
-			'factory' => function ( array $options ) : MirageAvatarResourceLoaderModule {
+			'factory' => function ( array $options ): MirageAvatarResourceLoaderModule {
 				return new MirageAvatarResourceLoaderModule(
 					$options,
 					null,
@@ -329,7 +329,7 @@ class Handler implements
 	 * @param Skin $sk
 	 * @param string[] &$bodyAttrs
 	 */
-	public function onOutputPageBodyAttributes( $out, $sk, &$bodyAttrs ) : void {
+	public function onOutputPageBodyAttributes( $out, $sk, &$bodyAttrs ): void {
 		if ( !( $sk instanceof SkinMirage ) ) {
 			return;
 		}
@@ -354,7 +354,7 @@ class Handler implements
 	 * @param Title &$title
 	 * @param SkinTemplate $skin
 	 */
-	public function onPersonalUrls( &$personal_urls, &$title, $skin ) : void {
+	public function onPersonalUrls( &$personal_urls, &$title, $skin ): void {
 		if ( !( $skin instanceof SkinMirage ) ) {
 			return;
 		}

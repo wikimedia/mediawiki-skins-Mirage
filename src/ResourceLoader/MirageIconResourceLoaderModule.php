@@ -44,7 +44,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 	/**
 	 * @inheritDoc
 	 */
-	public function getImages( ResourceLoaderContext $context ) : array {
+	public function getImages( ResourceLoaderContext $context ): array {
 		$skin = $context->getSkin();
 		if ( $this->imageObjects === null ) {
 			$this->loadFromDefinition();
@@ -101,7 +101,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 		ResourceLoaderImage $image,
 		string $script,
 		?string $variant = null
-	) : string {
+	): string {
 		$imageDataUri = $this->useDataURI ? $image->getDataUri( $context, $variant, 'original' ) : false;
 		$primaryUrl = $imageDataUri ?: $image->getUrl( $context, $script, $variant, 'original' );
 		$declarations = $this->getCssDeclarations(
@@ -114,7 +114,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 	/**
 	 * @inheritDoc
 	 */
-	public function getStyles( ResourceLoaderContext $context ) : array {
+	public function getStyles( ResourceLoaderContext $context ): array {
 		$this->loadFromDefinition();
 
 		// Build CSS rules
@@ -171,7 +171,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function loadOOUIDefinition( $theme, $unused ) : array {
+	protected function loadOOUIDefinition( $theme, $unused ): array {
 		// This is shared between instances of this class, so we only have to load the JSON files once
 		static $data = [];
 
@@ -203,7 +203,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 	/**
 	 * @inheritDoc
 	 */
-	public static function extractLocalBasePath( array $options, $localBasePath = null ) : ?string {
+	public static function extractLocalBasePath( array $options, $localBasePath = null ): ?string {
 		global $IP;
 
 		// Ignore any 'localBasePath' present in $options, this always refers to files in MediaWiki core

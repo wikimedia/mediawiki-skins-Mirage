@@ -58,7 +58,7 @@ class TemplateProcessor {
 	 *
 	 * @return array The encountered errors
 	 */
-	public function process() : array {
+	public function process(): array {
 		foreach ( $this->lines as $index => $line ) {
 			$this->parseLine( $line, $index + 1 );
 		}
@@ -72,7 +72,7 @@ class TemplateProcessor {
 	 * @param string $line
 	 * @param int $lineNumber Line number for error reporting
 	 */
-	private function parseLine( string $line, int $lineNumber ) : void {
+	private function parseLine( string $line, int $lineNumber ): void {
 		$res = preg_match_all(
 			'/(\{\{[\{&!#\/]? *)([a-z-_\.]+)( *\}?\}\})/i',
 			$line,
@@ -110,7 +110,7 @@ class TemplateProcessor {
 	 * @param string $closeTag
 	 * @return Generator
 	 */
-	private function investigateTag( string $openTag, string $content, string $closeTag ) : Generator {
+	private function investigateTag( string $openTag, string $content, string $closeTag ): Generator {
 		if ( strpos( $openTag, '{{{' ) === 0 ) {
 			yield 'Unescaped HTML should use the {{& }} tag';
 		} elseif ( $openTag === '{{' && strpos( $content, 'html-' ) === 0 ) {
@@ -137,7 +137,7 @@ class TemplateProcessor {
 	 * @param int $column
 	 * @param string $message
 	 */
-	private function addError( int $lineNumber, int $column, string $message ) : void {
+	private function addError( int $lineNumber, int $column, string $message ): void {
 		$column++;
 
 		$this->errors["$lineNumber:$column"] = [

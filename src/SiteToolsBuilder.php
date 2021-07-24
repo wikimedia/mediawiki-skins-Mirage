@@ -35,7 +35,7 @@ class SiteToolsBuilder {
 	 * @param SkinMirage $skin
 	 * @return array Mustache parameters for the site tools
 	 */
-	public function build( SkinMirage $skin ) : array {
+	public function build( SkinMirage $skin ): array {
 		$tools = [
 			'RecentChanges' => [
 				'icon' => 'recentChanges',
@@ -110,7 +110,7 @@ class SiteToolsBuilder {
 	 * @param User $user
 	 * @return array
 	 */
-	private function getUploadLink( User $user ) : array {
+	private function getUploadLink( User $user ): array {
 		$uploadLink = [
 			'icon' => 'upload',
 			'msg' => 'upload',
@@ -136,7 +136,7 @@ class SiteToolsBuilder {
 	 * @param Title $title
 	 * @return array
 	 */
-	private function getPrintableVersionLink( OutputPage $out, Title $title ) : array {
+	private function getPrintableVersionLink( OutputPage $out, Title $title ): array {
 		if ( $out->isPrintable() || ( !$out->isArticle() && !$title->isSpecialPage() ) ) {
 			return [];
 		}

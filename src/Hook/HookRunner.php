@@ -29,7 +29,7 @@ class HookRunner implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onMirageBuildNavigation( SkinMirage $skin, array &$navigation ) : void {
+	public function onMirageBuildNavigation( SkinMirage $skin, array &$navigation ): void {
 		$this->hookContainer->run(
 			'MirageBuildNavigation',
 			[ $skin, &$navigation ],
@@ -40,7 +40,7 @@ class HookRunner implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onMirageBuildSiteTools( IContextSource $context, array &$tools ) : void {
+	public function onMirageBuildSiteTools( IContextSource $context, array &$tools ): void {
 		$this->hookContainer->run(
 			'MirageBuildSiteTools',
 			[ $context, &$tools ],
@@ -51,7 +51,7 @@ class HookRunner implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onMirageGetExtraIcons( array &$icons ) : void {
+	public function onMirageGetExtraIcons( array &$icons ): void {
 		$this->hookContainer->run(
 			'MirageGetExtraIcons',
 			[ &$icons ],
@@ -62,7 +62,7 @@ class HookRunner implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onMirageExtraFooterLinks( SkinMirage $skin, array &$footerLinks ) : void {
+	public function onMirageExtraFooterLinks( SkinMirage $skin, array &$footerLinks ): void {
 		$this->hookContainer->run(
 			'MirageExtraFooterLinks',
 			[ $skin, &$footerLinks ],
@@ -73,7 +73,7 @@ class HookRunner implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onMirageGetRightRailModules( IContextSource $context, array &$modules ) : void {
+	public function onMirageGetRightRailModules( IContextSource $context, array &$modules ): void {
 		$this->hookContainer->run(
 			'MirageGetRightRailModules',
 			[ $context, &$modules ],

@@ -13,7 +13,7 @@ class HookRunnerTest extends HookRunnerTestBase {
 	/**
 	 * @inheritDoc
 	 */
-	public function provideHookRunners() : Generator {
+	public function provideHookRunners(): Generator {
 		yield HookRunner::class => [ HookRunner::class ];
 	}
 }

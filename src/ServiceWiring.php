@@ -9,7 +9,7 @@ use MediaWiki\Skins\Mirage\Avatars\SocialProfileAvatarLookup;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 
 return [
-	'MirageWordmarkLookup' => static function ( MediaWikiServices $services ) : MirageWordmarkLookup {
+	'MirageWordmarkLookup' => static function ( MediaWikiServices $services ): MirageWordmarkLookup {
 		return new MirageWordmarkLookup(
 			$services->getTitleFactory(),
 			$services->getRepoGroup(),
@@ -17,7 +17,7 @@ return [
 		);
 	},
 
-	'MirageAvatarLookup' => static function ( MediaWikiServices $services ) : AvatarLookup {
+	'MirageAvatarLookup' => static function ( MediaWikiServices $services ): AvatarLookup {
 		$extensionRegistry = ExtensionRegistry::getInstance();
 
 		if ( $extensionRegistry->isLoaded( 'Gravatar' ) ) {

@@ -124,14 +124,14 @@ class SkinMirage extends SkinMustache {
 	 *
 	 * @return TemplateParser
 	 */
-	public function getTemplateParser() : TemplateParser {
+	public function getTemplateParser(): TemplateParser {
 		return $this->templateParser;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	protected function getHookContainer() : HookContainer {
+	protected function getHookContainer(): HookContainer {
 		return $this->hookContainer;
 	}
 
@@ -150,7 +150,7 @@ class SkinMirage extends SkinMustache {
 	 * @param Language $lang Language code
 	 * @return string HTML to use for edit link
 	 */
-	public function doEditSectionLink( Title $nt, $section, $tooltip, Language $lang ) : string {
+	public function doEditSectionLink( Title $nt, $section, $tooltip, Language $lang ): string {
 		$attribs = [
 			'class' => MirageIcon::small( 'edit' )->toClasses()
 		];
@@ -213,7 +213,7 @@ class SkinMirage extends SkinMustache {
 	 * @param array[] $sidebar
 	 * @return Generator
 	 */
-	public function buildNavigationParameters( array $sidebar ) : Generator {
+	public function buildNavigationParameters( array $sidebar ): Generator {
 		$indicatorIcon = MirageIcon::small( 'next' )
 			->setContent( $this->msg( 'mirage-expand-submenu' )->plain() )
 			->hideLabel()
@@ -290,7 +290,7 @@ class SkinMirage extends SkinMustache {
 	/**
 	 * @inheritDoc
 	 */
-	public function getTemplateData() : array {
+	public function getTemplateData(): array {
 		$out = $this->getOutput();
 		$user = $this->getUser();
 		$contentNavigation = $this->buildContentNavigationUrls();
@@ -394,7 +394,7 @@ class SkinMirage extends SkinMustache {
 	 * @param UserIdentity $user
 	 * @return bool
 	 */
-	private function displayRightRailVisible( UserIdentity $user ) : bool {
+	private function displayRightRailVisible( UserIdentity $user ): bool {
 		if ( !$user->isRegistered() ) {
 			return $this->mirageConfig->get( 'MirageRightRailVisibleToAnonByDefault' );
 		}
@@ -412,7 +412,7 @@ class SkinMirage extends SkinMustache {
 	 * @param array $actions
 	 * @return array|null
 	 */
-	private function getEditButton( array $views, array $actions ) : ?array {
+	private function getEditButton( array $views, array $actions ): ?array {
 		$dropdown = [];
 		$editButton = null;
 
@@ -528,7 +528,7 @@ class SkinMirage extends SkinMustache {
 	 * @param array $parameters
 	 * @return array
 	 */
-	private function adjustSkinMustacheParameters( array $parameters ) : array {
+	private function adjustSkinMustacheParameters( array $parameters ): array {
 		$parameters['data-footer']['data-places']['label'] = $this->msg( 'mirage-footer-places' )->text();
 
 		// Set the icon to the logo when not defined, to allow displaying something.
@@ -550,7 +550,7 @@ class SkinMirage extends SkinMustache {
 	 *
 	 * @return array
 	 */
-	private function buildExtraFooterLinks() : array {
+	private function buildExtraFooterLinks(): array {
 		$footerLinks = [];
 		$feeds = $this->buildFeedUrls();
 
@@ -607,7 +607,7 @@ class SkinMirage extends SkinMustache {
 	 * @param string $name
 	 * @return string OOUI icon name.
 	 */
-	private static function findRelevantIcon( string $name ) : string {
+	private static function findRelevantIcon( string $name ): string {
 		switch ( $name ) {
 			case 'edit':
 			case 'history':

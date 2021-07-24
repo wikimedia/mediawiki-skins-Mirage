@@ -10,7 +10,7 @@ class MirageIndicatorTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\MirageIndicator::__construct
 	 * @covers \MediaWiki\Skins\Mirage\MirageIndicator::toClasses
 	 */
-	public function testDefaults() : void {
+	public function testDefaults(): void {
 		$indicator = new MirageIndicator( 'test' );
 
 		static::assertStringStartsWith(

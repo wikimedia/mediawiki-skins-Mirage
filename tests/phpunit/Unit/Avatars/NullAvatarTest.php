@@ -11,7 +11,7 @@ use MediaWikiUnitTestCase;
  * @covers \MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup
  */
 class NullAvatarTest extends MediaWikiUnitTestCase {
-	public function testGetAvatarForUser() : void {
+	public function testGetAvatarForUser(): void {
 		$this->expectException( DomainException::class );
 		$this->expectExceptionMessage( NullAvatarLookup::class . ': No avatar backend available!' );
 

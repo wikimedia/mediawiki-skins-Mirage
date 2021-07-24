@@ -59,7 +59,7 @@ class MirageIcon {
 	 * @param bool $hide
 	 * @return static
 	 */
-	public function hideLabel( bool $hide = true ) : self {
+	public function hideLabel( bool $hide = true ): self {
 		$this->hideLabel = $hide;
 
 		return $this;
@@ -72,7 +72,7 @@ class MirageIcon {
 	 * @param HtmlArmor|string $content
 	 * @return static
 	 */
-	public function setContent( $content ) : self {
+	public function setContent( $content ): self {
 		$this->content = $content;
 
 		return $this;
@@ -86,7 +86,7 @@ class MirageIcon {
 	 * @param string $variant
 	 * @return static
 	 */
-	public function setVariant( string $variant ) : self {
+	public function setVariant( string $variant ): self {
 		$this->variant = $variant;
 
 		return $this;
@@ -96,7 +96,7 @@ class MirageIcon {
 	 * @param string ...$classes
 	 * @return static
 	 */
-	public function setClasses( string ...$classes ) : self {
+	public function setClasses( string ...$classes ): self {
 		$this->classes = $classes;
 
 		return $this;
@@ -106,7 +106,7 @@ class MirageIcon {
 	 * @param array $attributes
 	 * @return $this
 	 */
-	public function setAttributes( array $attributes ) : self {
+	public function setAttributes( array $attributes ): self {
 		$this->attributes = $attributes;
 
 		return $this;
@@ -118,7 +118,7 @@ class MirageIcon {
 	 * @param string $element
 	 * @return $this
 	 */
-	public function setElement( string $element ) : self {
+	public function setElement( string $element ): self {
 		$this->element = $element;
 
 		return $this;
@@ -129,7 +129,7 @@ class MirageIcon {
 	 *
 	 * @return string
 	 */
-	public function __toString() : string {
+	public function __toString(): string {
 		return Html::rawElement(
 			$this->element,
 			[ 'class' => $this->toClasses() ] + $this->attributes,
@@ -142,7 +142,7 @@ class MirageIcon {
 	 *
 	 * @return string
 	 */
-	public function toClasses() : string {
+	public function toClasses(): string {
 		$icon = $this->variant ? "$this->icon-$this->variant" : $this->icon;
 
 		$classes = $this->classes;
@@ -163,7 +163,7 @@ class MirageIcon {
 	 * @param string $icon
 	 * @return static
 	 */
-	public static function small( string $icon ) : self {
+	public static function small( string $icon ): self {
 		return new self( $icon, self::ICON_SMALL );
 	}
 
@@ -173,7 +173,7 @@ class MirageIcon {
 	 * @param string $icon
 	 * @return static
 	 */
-	public static function medium( string $icon ) : self {
+	public static function medium( string $icon ): self {
 		return new self( $icon, self::ICON_MEDIUM );
 	}
 }

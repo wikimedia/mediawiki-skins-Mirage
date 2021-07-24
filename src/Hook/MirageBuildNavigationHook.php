@@ -14,5 +14,5 @@ interface MirageBuildNavigationHook {
 	 * @param SkinMirage $skin
 	 * @param array &$navigation Navigation contents
 	 */
-	public function onMirageBuildNavigation( SkinMirage $skin, array &$navigation ) : void;
+	public function onMirageBuildNavigation( SkinMirage $skin, array &$navigation ): void;
 }

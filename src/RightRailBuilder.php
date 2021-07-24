@@ -58,7 +58,7 @@ class RightRailBuilder {
 	 *
 	 * @return array[]|null
 	 */
-	public function buildModules() : ?array {
+	public function buildModules(): ?array {
 		$modules = [];
 
 		foreach ( $this->determineModules() as $spec ) {
@@ -94,7 +94,7 @@ class RightRailBuilder {
 	 *
 	 * @return array[]
 	 */
-	private function determineModules() : array {
+	private function determineModules(): array {
 		$modules = [];
 
 		if (

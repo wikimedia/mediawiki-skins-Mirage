@@ -15,7 +15,7 @@ use Wikimedia\Minify\CSSMin;
  * @covers \MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule
  */
 class MirageAvatarResourceLoaderModuleTest extends MediaWikiUnitTestCase {
-	public function testConstruct() : void {
+	public function testConstruct(): void {
 		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage(
 			'This ResourceLoader module can only be instantiated with an actual avatar lookup, not NullAvatarLookup!'
@@ -29,7 +29,7 @@ class MirageAvatarResourceLoaderModuleTest extends MediaWikiUnitTestCase {
 		);
 	}
 
-	public function testGetStyles() : void {
+	public function testGetStyles(): void {
 		$user = $this->createMock( User::class );
 
 		$context = $this->createMock( ResourceLoaderContext::class );

@@ -68,7 +68,7 @@ class SidebarParser {
 	/**
 	 * Parse the sidebar into distinct parts.
 	 */
-	public function parse() : void {
+	public function parse(): void {
 		$sidebar = $this->skin->buildSidebar();
 
 		$diffBar = [];
@@ -105,13 +105,13 @@ class SidebarParser {
 	 * @param Message $msg
 	 * @return array
 	 */
-	private function extractMirageNavigation( Message $msg ) : array {
+	private function extractMirageNavigation( Message $msg ): array {
 		/**
 		 * @param null $old
 		 * @param int|null $ttl
 		 * @return array
 		 */
-		$callback = function ( $old = null, ?int &$ttl = null ) use ( $msg ) : array {
+		$callback = function ( $old = null, ?int &$ttl = null ) use ( $msg ): array {
 			$bar = $this->navigationExtractor->extract( $msg->plain() );
 			( new MirageHookRunner( $this->hookContainer ) )->onMirageBuildNavigation(
 				$this->skin,
@@ -151,7 +151,7 @@ class SidebarParser {
 	 *
 	 * @return array
 	 */
-	public function getNavigationPortals() : array {
+	public function getNavigationPortals(): array {
 		return $this->navigationPortals;
 	}
 
@@ -160,7 +160,7 @@ class SidebarParser {
 	 *
 	 * @return array
 	 */
-	public function getExtensionPortals() : array {
+	public function getExtensionPortals(): array {
 		return $this->extensionPortals;
 	}
 
@@ -169,7 +169,7 @@ class SidebarParser {
 	 *
 	 * @return array
 	 */
-	public function getToolsPortal() : array {
+	public function getToolsPortal(): array {
 		return $this->toolsPortal;
 	}
 }

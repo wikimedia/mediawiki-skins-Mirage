@@ -11,7 +11,7 @@ class GenericItemListModuleTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\Skins\Mirage\RightRailModules\GenericItemListModule::getRole
 	 */
-	public function testGetRole() : void {
+	public function testGetRole(): void {
 		$module = new GenericItemListModule(
 			$this->createMock( SkinMirage::class ),
 			'test',
@@ -31,7 +31,7 @@ class GenericItemListModuleTest extends MediaWikiUnitTestCase {
 	 *
 	 * @param array $items
 	 */
-	public function testCanBeShown( array $items ) : void {
+	public function testCanBeShown( array $items ): void {
 		$module = new GenericItemListModule(
 			$this->createMock( SkinMirage::class ),
 			'test',
@@ -46,7 +46,7 @@ class GenericItemListModuleTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return array
 	 */
-	public function provideItems() : array {
+	public function provideItems(): array {
 		return [
 			'Empty' => [ [] ],
 			'With items' => [

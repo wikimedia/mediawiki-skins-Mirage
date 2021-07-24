@@ -34,7 +34,7 @@ class PageToolsModule extends GenericItemListModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getHeader() : string {
+	protected function getHeader(): string {
 		return $this->msg( 'mirage-page-tools' )->escaped();
 	}
 }

@@ -40,7 +40,7 @@ class MirageAvatarResourceLoaderModule extends ResourceLoaderFileModule {
 	/**
 	 * @inheritDoc
 	 */
-	public function getStyles( ResourceLoaderContext $context ) : array {
+	public function getStyles( ResourceLoaderContext $context ): array {
 		$styles = parent::getStyles( $context );
 
 		$avatarUrl = CSSMin::buildUrlValue(

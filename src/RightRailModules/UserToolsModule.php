@@ -35,7 +35,7 @@ class UserToolsModule extends GenericItemListModule {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getHeader() : string {
+	protected function getHeader(): string {
 		return $this->msg( 'mirage-user-tools' )->escaped();
 	}
 }
