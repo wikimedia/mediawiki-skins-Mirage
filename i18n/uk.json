@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Ата"
 		]
 	},
+	"skinname-mirage": "Mirage",
 	"mirage-skin-desc": "Mirage — це адаптивна тема оформлення, зосереджена на показі контенту з панеллю праворуч",
+	"mirage.css": "/* CSS, розміщений тут, вплине на користувачів скіна Mirage */",
+	"mirage.js": "/* JavaScript, розміщений тут, вплине на користувачів скіна Mirage */",
 	"mirage-community-messages-header": "Повідомлення спільноти",
 	"mirage-interface-messages-module-edit-this-message": "Редагувати це повідомлення",
 	"mirage-page-actions": "Дії на сторінці",
