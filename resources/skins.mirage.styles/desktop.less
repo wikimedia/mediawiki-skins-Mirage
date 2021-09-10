@@ -12,7 +12,7 @@
 }
 
 #mirage-right-rail {
-	// Align the right rail with the h1, which differs once pixel, regardless of the value of 1rem.
+	// Align the right rail with the h1, which differs one pixel, regardless of the value of 1rem.
 	margin-top: ~'calc( 1rem + 1px )';
 	width: @right-rail-space;
 	float: left;
@@ -23,46 +23,33 @@
 	display: none;
 }
 
-/* @noflip */
-.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container #mirage-right-rail {
-	display: block;
-}
+.skin-mirage-page-with-right-rail {
+	#mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container {
+		#mirage-right-rail {
+			display: block;
+		}
 
-/* @noflip */
-.skin-mirage-limit-content-width.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container,
-.skin-mirage-limit-content-width-selectively.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container,
-.skin-mirage-limit-content-width.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ #mw-navigation,
-.skin-mirage-limit-content-width-selectively.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ #mw-navigation {
-	max-width: @max-content-width-with-right-rail;
-}
+		#content {
+			margin-right: @right-rail-space + @standard-margin;
+			padding-right: 1rem;
+		}
 
-// CSSJanus seems to mis-interpret ~ (https://github.com/cssjanus/cssjanus/issues/85).
-// Wrap these in individual .rtl/.ltr with manual flipping to work around this issue.
-// This doesn't use Less nesting because that mangles the /* @noflip */ comments.
-/* @noflip */
-.ltr.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container #content {
-	margin-right: @right-rail-space + @standard-margin;
-	padding-right: 1rem;
-}
+		.mediawiki-content-container {
+			margin-right: -@right-rail-space - @standard-margin;
+			float: left;
+			width: 100%;
+		}
+	}
 
-/* @noflip */
-.ltr.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container .mediawiki-content-container {
-	margin-right: -@right-rail-space - @standard-margin;
-	/* @noflip */
-	float: left;
-	width: 100%;
-}
-
-/* @noflip */
-.rtl.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container #content {
-	margin-left: @right-rail-space + @standard-margin;
-	padding-left: 1rem;
-}
-
-/* @noflip */
-.rtl.skin-mirage-page-with-right-rail #mirage-right-rail-checkbox:checked ~ .skin-mirage-content-container .mediawiki-content-container {
-	margin-left: -@right-rail-space - @standard-margin;
-	/* @noflip */
-	float: right;
-	width: 100%;
+	&.skin-mirage-limit-content-width {
+		&,
+		&-selectively {
+			#mirage-right-rail-checkbox:checked {
+				~ .skin-mirage-content-container,
+				~ #mw-navigation {
+					max-width: @max-content-width-with-right-rail;
+				}
+			}
+		}
+	}
 }
