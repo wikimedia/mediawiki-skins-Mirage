@@ -156,6 +156,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 				if ( isset( $this->icons[$name]['selectorWithVariant'][$variant] ) ) {
 					$selector = "$selector,\n" . implode(
 						",\n",
+						// @phan-suppress-next-line PhanTypeArraySuspiciousNullable Checked by isset
 						(array)$this->icons[$name]['selectorWithVariant'][$variant]
 					);
 				}
@@ -207,6 +208,7 @@ class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
 		global $IP;
 
 		// Ignore any 'localBasePath' present in $options, this always refers to files in MediaWiki core
+		// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 		return $localBasePath ?? $IP;
 	}
 }

@@ -9,6 +9,7 @@ class NullAvatarLookup extends AvatarLookup {
 	/**
 	 * @inheritDoc
 	 * @throws DomainException
+	 * @suppress PhanPluginNeverReturnMethod LSP violation
 	 */
 	public function getAvatarForUser( UserIdentity $user ): string {
 		throw new DomainException( self::class . ': No avatar backend available!' );
