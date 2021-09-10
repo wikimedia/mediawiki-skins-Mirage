@@ -3,7 +3,6 @@
 namespace MediaWiki\Skins\Mirage\Tests\Unit;
 
 use Generator;
-use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\Skins\Mirage\Tests\TemplateProcessor;
 use MediaWikiUnitTestCase;
 use function basename;
@@ -14,6 +13,7 @@ use function str_replace;
  * @coversNothing
  */
 class MustacheCodeStyleTest extends MediaWikiUnitTestCase {
+	private const TEMPLATE_DIR = __DIR__ . '/../../../resources/templates';
 
 	/**
 	 * @dataProvider provideTemplates
@@ -23,14 +23,14 @@ class MustacheCodeStyleTest extends MediaWikiUnitTestCase {
 	public function testTemplateCodeStyle( string $template ): void {
 		static::assertSame(
 			[],
-			( new TemplateProcessor( SkinMirage::TEMPLATE_DIR, $template ) )->process()
+			( new TemplateProcessor( self::TEMPLATE_DIR, $template ) )->process()
 		);
 	}
 
 	public static function provideTemplates(): Generator {
-		foreach ( glob( SkinMirage::TEMPLATE_DIR . '/*.mustache' ) as $template ) {
+		foreach ( glob( self::TEMPLATE_DIR . '/*.mustache' ) as $template ) {
 			yield basename( $template ) => [
-				str_replace( SkinMirage::TEMPLATE_DIR . '/', '', $template )
+				str_replace( self::TEMPLATE_DIR . '/', '', $template )
 			];
 		}
 	}

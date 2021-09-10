@@ -38,6 +38,7 @@
 						"skins.mirage.scripts"
 					],
 					"template": "Main",
+					"templateDirectory": "resources/templates",
 					"messages": [
 						"mirage-footer-info",
 						"mirage-jumptonavigation",

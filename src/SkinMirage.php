@@ -29,9 +29,6 @@ use function implode;
 use function is_array;
 
 class SkinMirage extends SkinMustache {
-
-	public const TEMPLATE_DIR = __DIR__ . '/../resources/templates';
-
 	/** @var LinkRenderer */
 	private $linkRenderer;
 
@@ -93,7 +90,6 @@ class SkinMirage extends SkinMustache {
 		UserOptionsLookup $userOptionsLookup,
 		array $options
 	) {
-		$options['templatedirectory'] = self::TEMPLATE_DIR;
 		parent::__construct( $options );
 
 		$this->linkRenderer = $linkRenderer;
@@ -113,7 +109,7 @@ class SkinMirage extends SkinMustache {
 			$cache = $localServerCache;
 		}
 
-		$this->templateParser = new TemplateParser( self::TEMPLATE_DIR, $cache );
+		$this->templateParser = new TemplateParser( $this->options['templateDirectory'], $cache );
 	}
 
 	/**
