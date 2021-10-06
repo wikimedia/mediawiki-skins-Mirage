@@ -22,7 +22,7 @@ Community messages is a right rail module that displays the content of
 `MediaWiki:mirage-community-messages`. It only shows if that message is not disabled.
 
 ### Avatars
-Mirage supports user avatars through two extensions: [SocialProfile](https://www.mediawiki.org/wiki/Extension:SocialProfile) and [MW-Avatar](https://github.com/nbdd0121/MW-Avatar).
+Mirage supports user avatars through three extensions: [SocialProfile](https://www.mediawiki.org/wiki/Extension:SocialProfile), [MW-Avatar](https://github.com/nbdd0121/MW-Avatar) and [Gravatar](https://www.mediawiki.org/wiki/Extension:Gravatar).
 
 ## Themes
 Mirage supports the [Theme extension](https://www.mediawiki.org/wiki/Extension:Theme) out of the box.
@@ -40,7 +40,7 @@ Mirage, but without some of the more controversial WikimediaUI elements.
 ![Desktop: 1024 by 768](screenshots/1024x768.png "Desktop: 1024 by 768")
 #### Desktop: 1280 by 800
 ![Desktop: 1280 by 800](screenshots/1280x800.png "Desktop: 1280 by 800")
-#### Desktop: 192 by 1080
+#### Desktop: 1920 by 1080
 ![Desktop: 1920 by 1080](screenshots/1920x1080.png "Desktop: 1920 by 1080")
 #### Mobile: 700 by 969
 ![Mobile: 700 by 969](screenshots/mobile-small.png "Mobile: 700 by 969")
