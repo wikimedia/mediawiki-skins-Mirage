@@ -49,6 +49,6 @@ class MirageWordmarkLookupTest extends MediaWikiUnitTestCase {
 			true
 		);
 
-		static::assertSame( $lookup->getWordmarkUrl(), '/url.png' );
+		static::assertSame( '/url.png', $lookup->getWordmarkUrl() );
 	}
 }
