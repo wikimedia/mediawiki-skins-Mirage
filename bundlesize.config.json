@@ -1,0 +1,18 @@
+[
+	{
+		"resourceModule": "skins.mirage.styles",
+		"maxSize": "9 kB"
+	},
+	{
+		"resourceModule": "skins.mirage.scripts",
+		"maxSize": "2 kB"
+	},
+	{
+		"resourceModule": "skin.mirage.icons",
+		"maxSize": "4.5 kB"
+	},
+	{
+		"resourceModule": "skin.mirage.indicators",
+		"maxSize": "750 B"
+	}
+]
