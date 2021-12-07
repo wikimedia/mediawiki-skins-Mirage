@@ -28,8 +28,10 @@
 	"mirage-recent-changes-module": "Ostatnie zmiany",
 	"mirage-more": "Więcej",
 	"mirage-more-recent-changes": "Zobacz więcej zmian",
+	"mirage-toggle-right-rail": "Przełącz prawy panel",
 	"prefs-mirage-max-width-label": "Szerokość treści mirażu:",
 	"prefs-mirage-max-width": "Zawsze stosuj maksymalną szerokość strony",
 	"prefs-mirage-partial-max-width": "Stosuj maksymalną szerokość strony tylko do artykułów",
-	"prefs-mirage-no-max-width": "Wyłącz maksymalną szerokość strony"
+	"prefs-mirage-no-max-width": "Wyłącz maksymalną szerokość strony",
+	"prefs-mirage-show-right-rail": "Wyświetl prawy panel"
 }

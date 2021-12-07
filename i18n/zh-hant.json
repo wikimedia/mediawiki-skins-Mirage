@@ -25,8 +25,10 @@
 	"mirage-recent-changes-module": "近期變更",
 	"mirage-more": "更多",
 	"mirage-more-recent-changes": "查看更多變更",
+	"mirage-toggle-right-rail": "切換右側面板",
 	"prefs-mirage-max-width-label": "合併內容與：",
 	"prefs-mirage-max-width": "永遠套用最大頁面寬度",
 	"prefs-mirage-partial-max-width": "僅對條目套用最大頁面寬度",
-	"prefs-mirage-no-max-width": "停用最大頁面寬度"
+	"prefs-mirage-no-max-width": "停用最大頁面寬度",
+	"prefs-mirage-show-right-rail": "顯示右側面板"
 }

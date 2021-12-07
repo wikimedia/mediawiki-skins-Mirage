@@ -28,8 +28,10 @@
 	"mirage-recent-changes-module": "Senaste ändringar",
 	"mirage-more": "Mer",
 	"mirage-more-recent-changes": "Se fler ändringar",
+	"mirage-toggle-right-rail": "Visa/dölj höger sidofält",
 	"prefs-mirage-max-width-label": "Mirages innehållsbredd:",
 	"prefs-mirage-max-width": "Tillämpa alltid den högsta sidbredden",
 	"prefs-mirage-partial-max-width": "Tillämpa bara den högsta sidbredden till artiklar",
-	"prefs-mirage-no-max-width": "Avaktivera den högsta sidbredden"
+	"prefs-mirage-no-max-width": "Avaktivera den högsta sidbredden",
+	"prefs-mirage-show-right-rail": "Visa höger sidofält"
 }

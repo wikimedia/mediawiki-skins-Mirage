@@ -1,22 +1,32 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Danniel07"
 		]
 	},
 	"mirage-community-messages-header": "Mensajes a la comunidad",
 	"mirage-interface-messages-module-edit-this-message": "Editar este mensaje",
 	"mirage-page-actions": "Acciones de la página",
+	"mirage-jumptonavigation": "Ir a la navegación.",
+	"mirage-jumptocontent": "Ir al contenido",
 	"mirage-action-addsection": "Añadir tema",
 	"mirage-userpage": "Página de {{GENDER:$1|usuario|usuaria|usuarie}}",
 	"mirage-footer-places": "Lugares",
 	"mirage-footer-feeds": "Suministros",
 	"mirage-footer-info": "Información sobre la página",
+	"mirage-expand-submenu": "Mostrar las entradas para el submenú",
 	"mirage-talkpage": "Página de discusión",
+	"mirage-user-tools": "Herramientas del usuario",
 	"mirage-no-new-messages": "No hay mensajes nuevos.",
 	"mirage-notifications": "Notificaciones",
 	"mirage-page-tools": "Herramientas de la página",
 	"mirage-hidden-categories": "Categorías ocultas",
 	"mirage-recent-changes-module": "Cambios recientes",
-	"mirage-more": "Más"
+	"mirage-more": "Más",
+	"mirage-more-recent-changes": "Ver más cambios",
+	"prefs-mirage-max-width-label": "Ancho del contenido de Mirage:",
+	"prefs-mirage-max-width": "Siempre aplicar el ancho de página máximo",
+	"prefs-mirage-partial-max-width": "Aplicar el ancho de página máximo sólo a artículos",
+	"prefs-mirage-no-max-width": "Deshabilitar el ancho de página máximo"
 }

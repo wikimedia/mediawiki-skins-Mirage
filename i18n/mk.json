@@ -4,7 +4,10 @@
 			"Bjankuloski06"
 		]
 	},
-	"mirage-skin-desc": "Mirage е одѕивно руво кое се задржува на приказ на содржините со страничник од десно",
+	"skinname-mirage": "Привидение",
+	"mirage-skin-desc": "Привидение е одѕивно руво кое се задржува на приказ на содржините со страничник од десно",
+	"mirage.css": "/* Тука поставениот CSS ќе се применува врз корисниците на рувото „Привидение“ */",
+	"mirage.js": "/* Тука поставениот JavaScript ќе се применува врз корисниците на рувото „Привидение“ */",
 	"mirage-community-messages-header": "Пораки на заедницата",
 	"mirage-interface-messages-module-edit-this-message": "Уреди ја поракава",
 	"mirage-page-actions": "Дејства врз страницата",
@@ -25,8 +28,8 @@
 	"mirage-recent-changes-module": "Скорешни промени",
 	"mirage-more": "Повеќе",
 	"mirage-more-recent-changes": "Погл. повеќе промени",
-	"mirage-toggle-right-rail": "Предрлање на десна пруга",
-	"prefs-mirage-max-width-label": "Спој ја содржината со:",
+	"mirage-toggle-right-rail": "Префрлање на десна пруга",
+	"prefs-mirage-max-width-label": "Ширина на содржината:",
 	"prefs-mirage-max-width": "Секогаш применувај ја најголемата ширина за страница",
 	"prefs-mirage-partial-max-width": "Применувај најголема ширина за страница само во статии",
 	"prefs-mirage-no-max-width": "Оневозможи најголема ширина на страници",

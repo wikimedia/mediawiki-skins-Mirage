@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"mirage-userpage": "{{GENDER:$1|အသုံးပြု}} စာမျက်နှာ",
+	"mirage-footer-places": "နေရာများ",
+	"mirage-footer-info": "စာမျက်နှာ အချက်အလက်",
+	"mirage-talkpage": "ဆွေးနွေးချက် စာမျက်နှာ",
+	"mirage-user-tools": "အသုံးပြုသူ ကိရိယာများ",
+	"mirage-no-new-messages": "မက်ဆေ့အသစ်များ မရှိပါ။",
+	"mirage-notifications": "အသိပေးချက်များ",
+	"mirage-page-tools": "စာမျက်နှာအတွက် ကိရိယာများ",
+	"mirage-hidden-categories": "ဝှက်ထားသော ကဏ္ဍများ",
+	"mirage-recent-changes-module": "လတ်တလော အပြောင်းအလဲများ",
+	"mirage-more": "ပို၍",
+	"mirage-more-recent-changes": "အပြောင်းအလဲများ ပိုမိုကြည့်ရန်"
+}

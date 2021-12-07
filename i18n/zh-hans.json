@@ -26,8 +26,10 @@
 	"mirage-recent-changes-module": "最近更改",
 	"mirage-more": "更多",
 	"mirage-more-recent-changes": "查看更多改动",
+	"mirage-toggle-right-rail": "切换右侧栏",
 	"prefs-mirage-max-width-label": "Mirage内容宽度：",
 	"prefs-mirage-max-width": "总是应用最大页面宽度",
 	"prefs-mirage-partial-max-width": "仅对文章应用最大页面宽度",
-	"prefs-mirage-no-max-width": "禁用最大页面宽度"
+	"prefs-mirage-no-max-width": "禁用最大页面宽度",
+	"prefs-mirage-show-right-rail": "显示右侧栏"
 }

@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"mirage-skin-desc": "מיראז' הוא עיצוב רספונסיבי שמתמקד בהצגת תוכן עם מסילה בצד שמאל",
+	"mirage-community-messages-header": "הודעות קהילה",
+	"mirage-interface-messages-module-edit-this-message": "עריכת ההודעה הזאת",
+	"mirage-page-actions": "פעולות דף",
+	"mirage-jumptonavigation": "קפיצה לניווט",
+	"mirage-jumptocontent": "קפיצה לתוכן",
+	"mirage-action-addsection": "הוספת נושא",
+	"mirage-userpage": "דף {{GENDER:$1|משתמש|משתמשת}}",
+	"mirage-footer-places": "מקומות",
+	"mirage-footer-feeds": "הזנות",
+	"mirage-footer-info": "מידע על הדף",
+	"mirage-expand-submenu": "להציג את הרשומות עבור התת־תפריט",
+	"mirage-talkpage": "דף שיחה",
+	"mirage-user-tools": "כלי משתמש",
+	"mirage-no-new-messages": "אין לך הודעות חדשות.",
+	"mirage-notifications": "התראות",
+	"mirage-page-tools": "כלי דף",
+	"mirage-hidden-categories": "קטגוריות מוסתרות",
+	"mirage-recent-changes-module": "שינויים אחרונים",
+	"mirage-more": "עוד",
+	"mirage-more-recent-changes": "להציג עוד שינויים",
+	"mirage-toggle-right-rail": "שינוי מצב במסילה השמאלית",
+	"prefs-mirage-max-width-label": "רוחב תוכן מיראז':",
+	"prefs-mirage-max-width": "תמיד להחיל את רוחב הדף המרבי",
+	"prefs-mirage-partial-max-width": "להחיל את רוחב הדף המרבי רק לערכים",
+	"prefs-mirage-no-max-width": "לכבות את רוחב הדף המרבי",
+	"prefs-mirage-show-right-rail": "להציג את המסילה השמאלית"
+}

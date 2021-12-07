@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "Cancia stu missaggiu",
+	"mirage-page-actions": "Azzioni supra la pàggina",
+	"mirage-action-addsection": "Agghiunci argumentu",
+	"mirage-userpage": "Pàggina di l'{{GENDER:$1|utenti}}",
+	"mirage-talkpage": "Pàggina di discussioni",
+	"mirage-notifications": "Nutìfichi",
+	"mirage-hidden-categories": "Catigurìi ammucciati",
+	"mirage-recent-changes-module": "Ùrtimi canciamenti",
+	"mirage-more": "Àutri cosi"
+}
