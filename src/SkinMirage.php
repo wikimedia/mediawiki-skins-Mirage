@@ -334,7 +334,6 @@ class SkinMirage extends SkinMustache {
 		$userAvatarIcon = MirageIcon::medium( 'userAvatar' )->toClasses();
 
 		return [
-			'page-langcode' => $this->getTitle()->getPageViewLanguage()->getHtmlCode(),
 			'page-isarticle' => (bool)$out->isArticle(),
 			'html-right-rail-collapse-button' => $rightRailCollapseButton,
 			'is-right-rail-visible' => $this->displayRightRailVisible( $user ),
