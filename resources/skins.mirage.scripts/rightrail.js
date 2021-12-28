@@ -15,9 +15,9 @@ function initialize() {
 
 	if ( checkbox instanceof HTMLInputElement && button ) {
 		checkboxHack.bindToggleOnClick( checkbox, button );
-		checkboxHack.bindUpdateAriaExpandedOnInput( checkbox, button );
-		checkboxHack.updateAriaExpanded( checkbox, button );
-		checkboxHack.bindToggleOnSpaceEnter( checkbox, button );
+		checkboxHack.bindUpdateAriaExpandedOnInput( checkbox );
+		checkboxHack.updateAriaExpanded( checkbox );
+		checkboxHack.bindToggleOnEnter( checkbox );
 
 		if ( mw.config.get( 'wgUserName' ) ) {
 			checkbox.addEventListener( 'input', saveSidebarState( checkbox ) );
