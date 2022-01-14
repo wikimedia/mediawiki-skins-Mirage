@@ -314,7 +314,8 @@
 					"variants": [
 						"progressive"
 					]
-				}
+				},
+				"watchlist": {}
 			}
 		},
 		"skin.mirage.indicators": {
