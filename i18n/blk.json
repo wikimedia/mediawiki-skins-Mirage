@@ -1,8 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
+			"Khun Kt",
 			"咽頭べさ"
 		]
 	},
-	"mirage-recent-changes-module": "ထွာပြောင်ꩻယိုခါကျာꩻ"
+	"mirage-interface-messages-module-edit-this-message": "မွဉ်းဖျင် လိတ်မဲက်သေ့ယို",
+	"mirage-page-actions": "လိတ်မဲ့ငါခွုမ်မာꩻချက်ဖိုင်ႏ",
+	"mirage-action-addsection": "ထဲမ်သော့ꩻ အကျောင်ꩻခရာႏ",
+	"mirage-userpage": "{{GENDER:$1|ကေားသုင်ꩻသား}} လိတ်မဲ့ငါ",
+	"mirage-footer-places": "ခင်ႏလမ်းဖိုင်ႏ",
+	"mirage-footer-info": "လိတ်မဲ့ငါအချက်လျက်",
+	"mirage-talkpage": "အိုင်ကိုမ်ဒေါ့ꩻရီ လိတ်မဲ့ငါ",
+	"mirage-user-tools": "သုင်ꩻသား ကိရိယာႏဖိုင်ႏ",
+	"mirage-notifications": "ဖေႏသေချက်ဖိုင်ႏ",
+	"mirage-page-tools": "လိတ်မဲ့ငါ ကိရိယာႏ",
+	"mirage-hidden-categories": "ပလို့ꩻခါꩻဒါႏ ကဏ္ဍဖုံႏ",
+	"mirage-recent-changes-module": "ထွာပြောင်ꩻယိုခါကျာꩻ",
+	"mirage-more": "ထဲင်းယင်း"
 }
