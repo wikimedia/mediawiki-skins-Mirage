@@ -220,13 +220,13 @@ class Handler implements
 				],
 				'label-message' => 'prefs-mirage-max-width-label',
 				'section' => 'rendering/skin/skin-prefs',
-				'hide-if' => [ '!==', 'wpskin', 'mirage' ]
+				'hide-if' => [ '!==', 'skin', 'mirage' ]
 			],
 			'mirage-show-right-rail' => [
 				'type' => 'check',
 				'label-message' => 'prefs-mirage-show-right-rail',
 				'section' => 'rendering/skin/skin-prefs',
-				'hide-if' => [ '!==', 'wpskin', 'mirage' ]
+				'hide-if' => [ '!==', 'skin', 'mirage' ]
 			]
 		];
 
