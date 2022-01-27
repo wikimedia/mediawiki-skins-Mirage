@@ -351,7 +351,6 @@ class SkinMirage extends SkinMustache {
 				'username' => $user->getName(),
 
 				// Notifications.
-				'has-notifications' => (bool)$contentNavigation['notifications'],
 				'html-notifications-icon' => MirageIcon::medium( 'bell' )
 					->setContent( $this->msg( 'mirage-notifications' )->plain() )
 					->hideLabel()
