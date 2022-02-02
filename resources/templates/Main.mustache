@@ -21,7 +21,7 @@
 					{{> Indicators }}
 					{{& html-title-heading }}
 					<div id="bodyContent">
-						{{# page-isarticle }}<div id="siteSub" class="noprint">{{ msg-tagline }}</div>{{/ page-isarticle }}
+						{{# is-article }}<div id="siteSub" class="noprint">{{ msg-tagline }}</div>{{/ is-article }}
 						<div id="contentSub" {{& html-user-language-attributes }}>{{& html-subtitle }}</div>
 						{{# html-undelete-link }}<div id="contentSub2">{{& . }}</div>{{/ html-undelete-link }}
 						<a class="mw-jump-link" href="#mw-navigation">{{ msg-mirage-jumptonavigation }}</a>

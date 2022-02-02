@@ -287,7 +287,6 @@ class SkinMirage extends SkinMustache {
 	 * @inheritDoc
 	 */
 	public function getTemplateData(): array {
-		$out = $this->getOutput();
 		$user = $this->getUser();
 		$contentNavigation = $this->buildContentNavigationUrls();
 		$sidebarParser = new SidebarParser(
@@ -314,7 +313,7 @@ class SkinMirage extends SkinMustache {
 		$rightRailCollapseButton = null;
 
 		if ( $rightRailModules ) {
-			$out->addBodyClasses( 'skin-mirage-page-with-right-rail' );
+			$this->getOutput()->addBodyClasses( 'skin-mirage-page-with-right-rail' );
 			$rightRailCollapseButton = MirageIcon::medium( 'doubleChevronEnd' )
 				->hideLabel()
 				->setContent( $this->msg( 'mirage-toggle-right-rail' )->plain() )
@@ -334,7 +333,6 @@ class SkinMirage extends SkinMustache {
 		$userAvatarIcon = MirageIcon::medium( 'userAvatar' )->toClasses();
 
 		return [
-			'page-isarticle' => (bool)$out->isArticle(),
 			'html-right-rail-collapse-button' => $rightRailCollapseButton,
 			'is-right-rail-visible' => $this->displayRightRailVisible( $user ),
 			'data-header' => [
@@ -347,7 +345,6 @@ class SkinMirage extends SkinMustache {
 				// Personal tools.
 				'has-avatar' => $hasAvatar,
 				'html-username-icon-classes' => $hasAvatar ? null : $userAvatarIcon,
-				'is-anon' => !$user->isRegistered(),
 				'username' => $user->getName(),
 
 				// Notifications.
