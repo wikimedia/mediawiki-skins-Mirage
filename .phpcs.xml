@@ -8,6 +8,9 @@
 			<property name="ignoreList" type="array" value="$IP" />
 		</properties>
 	</rule>
+	<rule ref="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName">
+		<exclude-pattern>src/Hook/Handler.php</exclude-pattern>
+	</rule>
 	<file>.</file>
 	<arg name="bootstrap" value="./vendor/mediawiki/mediawiki-codesniffer/utils/bootstrap-ci.php" />
 	<arg name="extensions" value="php" />

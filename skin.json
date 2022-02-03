@@ -92,6 +92,9 @@
 		},
 		"ResourceLoaderRegisterModules": {
 			"handler": "main"
+		},
+		"SkinTemplateNavigation::Universal": {
+			"handler": "main"
 		}
 	},
 	"ServiceWiringFiles": [

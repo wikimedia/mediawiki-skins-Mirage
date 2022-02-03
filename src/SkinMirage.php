@@ -24,7 +24,6 @@ use Title;
 use TitleFactory;
 use WANObjectCache;
 use Wikimedia\ObjectFactory\ObjectFactory;
-use function array_shift;
 use function implode;
 use function is_array;
 
@@ -288,7 +287,6 @@ class SkinMirage extends SkinMustache {
 	 */
 	public function getTemplateData(): array {
 		$user = $this->getUser();
-		$contentNavigation = $this->buildContentNavigationUrls();
 		$sidebarParser = new SidebarParser(
 			$this->WANObjectCache,
 			$this->messageCache,
@@ -336,11 +334,17 @@ class SkinMirage extends SkinMustache {
 			'html-right-rail-collapse-button' => $rightRailCollapseButton,
 			'is-right-rail-visible' => $this->displayRightRailVisible( $user ),
 			'data-header' => [
-				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
-					->setClasses( 'skin-mirage-dropdown-indicator' ),
-
 				'sitename' => $this->getConfig()->get( 'Sitename' ),
 				'has-mirage-wordmark' => $this->wordmarkLookup->getWordmarkUrl() !== null,
+
+				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
+					->setClasses( 'skin-mirage-dropdown-indicator' ),
+				'html-language-button-icon' => MirageIcon::medium( 'language' )
+					->toClasses(),
+				'html-edit-button-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
+					->setContent( $this->msg( 'mirage-more' )->plain() )
+					->setClasses( 'skin-mirage-dropdown-indicator' )
+					->setVariant( 'invert' ),
 
 				// Personal tools.
 				'has-avatar' => $hasAvatar,
@@ -359,16 +363,6 @@ class SkinMirage extends SkinMustache {
 				// Main navigation.
 				'array-navigation-modules' => $this->buildNavigationParameters(
 					$sidebarParser->getNavigationPortals()
-				),
-
-				// Language button.
-				'html-language-button-icon' => MirageIcon::medium( 'language' )
-					->toClasses(),
-
-				// Edit button.
-				'data-page-actions' => $this->getEditButton(
-					$contentNavigation['views'],
-					$contentNavigation['actions']
 				)
 			] + $siteToolsBuilder->build( $this ),
 			'array-right-rail' => $rightRailModules,
@@ -394,123 +388,6 @@ class SkinMirage extends SkinMustache {
 			$user,
 			'mirage-show-right-rail'
 		);
-	}
-
-	/**
-	 * Creates the mustache parameters for the EditButton template, for the edit button.
-	 *
-	 * @param array $views
-	 * @param array $actions
-	 * @return array|null
-	 */
-	private function getEditButton( array $views, array $actions ): ?array {
-		$dropdown = [];
-		$editButton = null;
-
-		if ( isset( $views['addsection'] ) ) {
-			$views['addsection']['label'] = $this->msg( 'mirage-action-addsection' )->plain();
-			$editButton = $this->makeListItem(
-				'addsection',
-				$views['addsection'],
-				[
-					'link-class' => MirageIcon::medium( self::findRelevantIcon( 'addsection' ) )
-						->setVariant( 'invert' )
-						->toClasses()
-				]
-			);
-
-			// Move the edit button for the whole talk page to the dropdown.
-			$dropdown['edit'] = $views['edit'];
-		} elseif ( isset( $views['edit'] ) || isset( $views['viewsource'] ) ) {
-			$key = isset( $views['edit'] ) ? 'edit' : 'viewsource';
-
-			$editButton = $this->makeListItem(
-				$key,
-				$views[$key],
-				[
-					'link-class' => MirageIcon::medium( self::findRelevantIcon( $key ) )
-						->setVariant( 'invert' )
-						->toClasses()
-				]
-			);
-		}
-
-		$watchButton = null;
-		if ( isset( $actions['watch'] ) ) {
-			$watchButton = $this->makeListItem(
-				'watch',
-				$actions['watch'],
-				[
-					'link-class' => MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
-						->hideLabel()
-						->toClasses()
-				]
-			);
-		} elseif ( isset( $actions['unwatch'] ) ) {
-			$watchButton = $this->makeListItem(
-				'unwatch',
-				$actions['unwatch'],
-				[
-					'link-class' => MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
-						->hideLabel()
-						->toClasses()
-				]
-			);
-		}
-
-		unset(
-			$views['view'],
-			$views['edit'],
-			$views['viewsource'],
-			$views['addsection'],
-			$actions['watch'],
-			$actions['unwatch']
-		);
-
-		$dropdownItems = [];
-
-		foreach ( $dropdown + $views + $actions as $key => $item ) {
-			// Set link-class to apply the 'new' css class to the link.
-			// This ensures redlinked pages will be styled properly.
-			if ( isset( $item['exists'] ) && $item['exists'] === false ) {
-				$item['link-class'] = 'new';
-			}
-
-			// Use the Wikimedia Commons logo when InstantCommons is enabled.
-			if ( $key === 'view-foreign' && $this->getConfig()->get( 'UseInstantCommons' ) ) {
-				$iconName = 'logoWikimediaCommons';
-			} else {
-				$iconName = self::findRelevantIcon( $key );
-			}
-
-			$dropdownItems[] = $this->makeListItem(
-				$key,
-				$item,
-				[
-					'link-class' => MirageIcon::medium( $iconName )
-						// Set the inverted icon variant for the first item in the list when there is
-						// no edit button, so it can be used as replacement edit button.
-						->setVariant( ( !$editButton && !$dropdownItems ) ? 'invert' : '' )
-						->toClasses()
-				]
-			);
-		}
-
-		if ( $editButton === null && !$dropdownItems ) {
-			return null;
-		}
-
-		return [
-			'html-edit-button' => $editButton ?? array_shift( $dropdownItems ),
-			'html-watch-button' => $watchButton,
-			'html-edit-button-dropdown' => $dropdownItems ? [
-				'array-dropdown-items' => $dropdownItems,
-				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
-					->setContent( $this->msg( 'mirage-more' )->plain() )
-					->setClasses( 'skin-mirage-dropdown-indicator' )
-					->setVariant( 'invert' )
-			] : null
-		];
 	}
 
 	/**
@@ -590,37 +467,5 @@ class SkinMirage extends SkinMustache {
 		}
 
 		return $footerLinks;
-	}
-
-	/**
-	 * Find the relevant icon for the given content navigation item.
-	 *
-	 * @param string $name
-	 * @return string OOUI icon name.
-	 */
-	private static function findRelevantIcon( string $name ): string {
-		switch ( $name ) {
-			case 'edit':
-			case 'history':
-				return $name;
-			case 'addsection':
-				return 'speechBubbleAdd';
-			case 'viewsource':
-				return 'editLock';
-			case 'delete':
-				return 'trash';
-			case 'undelete':
-				return 'restore';
-			case 'protect':
-				return 'lock';
-			case 'unprotect':
-				return 'unLock';
-			case 'view-foreign':
-				return 'newWindow';
-			// TODO: Icon needed
-			case 'move':
-			default:
-				return MirageIcon::ICON_PLACEHOLDER;
-		}
 	}
 }
