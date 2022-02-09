@@ -422,7 +422,6 @@ class Handler implements
 			$links['mirage-edit-button-dropdown']['edit'] = $this->addLinkClass(
 				$views['edit'],
 				MirageIcon::medium( $this->findRelevantIcon( 'edit' ) )
-					->setVariant( 'invert' )
 					->toClasses()
 			);
 		} elseif ( isset( $views['edit'] ) || isset( $views['viewsource'] ) ) {
