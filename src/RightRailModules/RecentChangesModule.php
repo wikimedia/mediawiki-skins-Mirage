@@ -5,7 +5,7 @@ namespace MediaWiki\Skins\Mirage\RightRailModules;
 use Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Skins\Mirage\SkinMirage;
-use MediaWiki\Special\SpecialPageFactory;
+use MediaWiki\SpecialPage\SpecialPageFactory;
 use MWExceptionHandler;
 use MWTimestamp;
 use RecentChange;
