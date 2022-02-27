@@ -12,7 +12,6 @@ use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
 use MediaWiki\Hook\PersonalUrlsHook;
-use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
@@ -37,11 +36,9 @@ use TitleValue;
 use User;
 use WikitextContent;
 use Xml;
-use function array_key_first;
 use function array_keys;
 use function array_search;
 use function array_slice;
-use function is_string;
 use const NS_FILE;
 use const NS_MEDIAWIKI;
 
@@ -53,8 +50,7 @@ class Handler implements
 	MirageGetExtraIconsHook,
 	OutputPageBodyAttributesHook,
 	PersonalUrlsHook,
-	ResourceLoaderRegisterModulesHook,
-	SkinTemplateNavigation__UniversalHook
+	ResourceLoaderRegisterModulesHook
 {
 	public const MIRAGE_MAX_WIDTH = 0;
 	public const MIRAGE_PARTIAL_MAX_WIDTH = 1;
@@ -388,163 +384,5 @@ class Handler implements
 				$personal_urls[$key]['link-class'] .= ' ' . $icon->toClasses();
 			}
 		}
-	}
-
-	/**
-	 * @inheritDoc
-	 *
-	 * @suppress PhanTypeInvalidRightOperand, PhanTypePossiblyInvalidDimOffset, PhanTypeInvalidRightOperandOfAdd
-	 *
-	 * @param SkinTemplate $sktemplate
-	 * @param array[][] &$links
-	 */
-	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
-		if ( !( $sktemplate instanceof SkinMirage ) ) {
-			return;
-		}
-
-		$links['mirage-edit-button'] = [];
-		$links['mirage-edit-button-dropdown'] = [];
-
-		list( 'views' => $views, 'actions' => $actions ) = $links;
-
-		if ( isset( $views['addsection'] ) ) {
-			$views['addsection']['label'] = $sktemplate->msg( 'mirage-action-addsection' )->plain();
-
-			$links['mirage-edit-button']['addsection'] = $this->addLinkClass(
-				$views['addsection'],
-				MirageIcon::medium( $this->findRelevantIcon( 'addsection' ) )
-					->setVariant( 'invert' )
-					->toClasses()
-			);
-
-			// Move the edit button for the whole talk page to the dropdown.
-			$links['mirage-edit-button-dropdown']['edit'] = $this->addLinkClass(
-				$views['edit'],
-				MirageIcon::medium( $this->findRelevantIcon( 'edit' ) )
-					->toClasses()
-			);
-		} elseif ( isset( $views['edit'] ) || isset( $views['viewsource'] ) ) {
-			$key = isset( $views['edit'] ) ? 'edit' : 'viewsource';
-
-			$links['mirage-edit-button'][$key] = $this->addLinkClass(
-				$views[$key],
-				MirageIcon::medium( $this->findRelevantIcon( $key ) )
-					->setVariant( 'invert' )
-					->toClasses()
-			);
-		}
-
-		if ( isset( $actions['watch'] ) || isset( $actions['unwatch'] ) ) {
-			$key = isset( $actions['watch'] ) ? 'watch' : 'unwatch';
-
-			$links['mirage-edit-button'][$key] = $this->addLinkClass(
-				$actions[$key],
-				MirageIcon::medium( MirageIcon::ICON_PLACEHOLDER )
-					->hideLabel()
-					->toClasses()
-			);
-		}
-
-		unset(
-			$views['view'],
-			$views['edit'],
-			$views['viewsource'],
-			$views['addsection'],
-			$actions['watch'],
-			$actions['unwatch']
-		);
-
-		$dropdownItems = $views + $actions;
-
-		// If there is no edit link (or equivalent) and there are dropdown items,
-		// pick the first dropdown item to display in the place of the edit link.
-		// A watch star might be shown so checking if $links['mirage-edit-button'] won't work.
-		if (
-			!isset( $links['mirage-edit-button']['addsection'] ) &&
-			!isset( $links['mirage-edit-button']['edit'] ) &&
-			!isset( $links['mirage-edit-button']['viewsource'] ) &&
-			$dropdownItems
-		) {
-			$key = array_key_first( $dropdownItems );
-			$item = $dropdownItems[$key];
-			unset( $dropdownItems[$key] );
-
-			$links['mirage-edit-button'] = [
-				$key => $this->addLinkClass(
-					$item,
-					MirageIcon::medium( $this->findRelevantIcon( $key ) )
-						->setVariant( 'invert' )
-						->toClasses()
-				)
-			] + $links['mirage-edit-button'];
-		}
-
-		foreach ( $dropdownItems as $key => $item ) {
-			// Set link-class to apply the 'new' css class to the link.
-			// This ensures redlinked pages will be styled properly.
-			if ( isset( $item['exists'] ) && $item['exists'] === false ) {
-				$item['link-class'] .= 'new';
-			}
-
-			$links['mirage-edit-button-dropdown'][$key] = $this->addLinkClass(
-				$item,
-				MirageIcon::medium( $this->findRelevantIcon( $key ) )->toClasses()
-			);
-		}
-	}
-
-	/**
-	 * Find the relevant icon for the given content navigation item.
-	 *
-	 * @param string $name
-	 * @return string OOUI icon name.
-	 */
-	private function findRelevantIcon( string $name ): string {
-		switch ( $name ) {
-			case 'edit':
-			case 'history':
-				return $name;
-			case 'addsection':
-				return 'speechBubbleAdd';
-			case 'viewsource':
-				return 'editLock';
-			case 'delete':
-				return 'trash';
-			case 'undelete':
-				return 'restore';
-			case 'protect':
-				return 'lock';
-			case 'unprotect':
-				return 'unLock';
-			case 'view-foreign':
-				// Use the Wikimedia Commons logo when InstantCommons is enabled.
-				return $this->useInstantCommons ? 'logoWikimediaCommons' : 'newWindow';
-			// TODO: Icon needed
-			case 'move':
-			default:
-				return MirageIcon::ICON_PLACEHOLDER;
-		}
-	}
-
-	/**
-	 * Helper to add CSS link-classes.
-	 *
-	 * @param array $definition
-	 * @param string $newClass
-	 * @return array
-	 */
-	private function addLinkClass( array $definition, string $newClass ): array {
-		if ( isset( $definition['link-class'] ) ) {
-			if ( is_string( $definition['link-class'] ) ) {
-				$definition['link-class'] .= ' ' . $newClass;
-			} else {
-				$definition['link-class'][] = $newClass;
-			}
-		} else {
-			$definition['link-class'] = $newClass;
-		}
-
-		return $definition;
 	}
 }
