@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\Avatars;
 
-use MediaWiki\Extensions\Gravatar\GravatarLookup;
+use MediaWiki\Extension\Gravatar\GravatarLookup;
 use MediaWiki\User\UserIdentity;
 
 class GravatarAvatarLookup extends AvatarLookup {

@@ -2,7 +2,7 @@
 // phpcs:ignoreFile
 // Stubs for the Gravatar extension.
 
-namespace MediaWiki\Extensions\Gravatar;
+namespace MediaWiki\Extension\Gravatar;
 
 use MediaWiki\User\UserIdentity;
 
