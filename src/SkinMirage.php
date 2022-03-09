@@ -220,8 +220,6 @@ class SkinMirage extends SkinMustache {
 		list( 'views' => $views, 'actions' => $actions ) = $content_navigation;
 
 		if ( isset( $views['addsection'] ) ) {
-			$views['addsection']['label'] = $this->msg( 'mirage-action-addsection' )->plain();
-
 			$content_navigation['mirage-edit-button']['addsection'] = $this->addLinkClass(
 				$views['addsection'],
 				MirageIcon::medium( $this->findRelevantIcon( 'addsection' ) )
