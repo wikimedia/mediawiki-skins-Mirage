@@ -114,7 +114,7 @@ class Handler implements
 		if (
 			!( $skin instanceof SkinMirage ) ||
 			!( $content instanceof WikitextContent ) ||
-			!$editPage->getTitle()->equals( new TitleValue( NS_MEDIAWIKI, 'Mirage-navigation' ) )
+			!$editPage->getTitle()->isSameLinkAs( new TitleValue( NS_MEDIAWIKI, 'Mirage-navigation' ) )
 		) {
 			return true;
 		}
