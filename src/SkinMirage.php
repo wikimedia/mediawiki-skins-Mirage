@@ -171,7 +171,6 @@ class SkinMirage extends SkinMustache {
 			$this,
 			$nt,
 			$section,
-			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
 			$tooltip,
 			$links,
 			$lang
