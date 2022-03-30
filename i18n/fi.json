@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Korjaus1"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "Muokkaa tätä viestiä",
+	"mirage-action-addsection": "Lisää aihe",
+	"mirage-userpage": "{{GENDER:$1|Käyttäjäsivu}}",
+	"mirage-footer-feeds": "Syötteet",
+	"mirage-footer-info": "Sivun tiedot",
+	"mirage-talkpage": "Keskustelusivu",
+	"mirage-user-tools": "Käyttäjätyökalut",
+	"mirage-hidden-categories": "Piilotetut luokat",
+	"mirage-recent-changes-module": "Tuoreet muutokset",
+	"mirage-more": "Lisää",
+	"mirage-more-recent-changes": "Näytä lisää muutoksia"
+}
