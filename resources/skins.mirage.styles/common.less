@@ -19,7 +19,7 @@ textarea {
 	// This border is the same as the one for .editOptions.
 	border: @default-border;
 	padding: 0.1rem;
-	.box-sizing( border-box );
+	box-sizing: border-box;
 }
 
 fieldset {
@@ -315,7 +315,7 @@ footer.mw-footer {
 		padding: 0.5rem;
 		font-weight: @font-weight-bold;
 		box-shadow: inset 0 0 0 0 @color-primary;
-		.transition( ~'color 100ms, box-shadow 100ms' );
+		transition: color 100ms, box-shadow 100ms;
 
 		&:hover,
 		&:focus {
@@ -397,7 +397,7 @@ footer.mw-footer {
 		}
 
 		.skin-mirage-dropdown-indicator {
-			.transform-rotate( 180deg );
+			transform: rotate( 180deg );
 		}
 
 		.skin-mirage-entry-with-sub-list {
@@ -422,7 +422,7 @@ footer.mw-footer {
 		}
 
 		.skin-mirage-dropdown-indicator {
-			.transform-rotate( 180deg );
+			transform: rotate( 180deg );
 		}
 
 		.skin-mirage-entry-with-sub-list {
@@ -458,7 +458,7 @@ footer.mw-footer {
 		& > li {
 			border: 1px solid @color-base;
 			border-right: 0;
-			.transition( ~'background-color 100ms, border 100ms, color 100ms, opacity 100ms' );
+			transition: background-color 100ms, border 100ms, color 100ms, opacity 100ms;
 
 			& > :not( .skin-mirage-dropdown-list ) {
 				font-weight: @font-weight-bold;
@@ -565,14 +565,14 @@ footer.mw-footer {
 		outline: 0;
 		cursor: default;
 		pointer-events: none;
-		.transform-origin( 50% 50% );
+		transform-origin: 50% 50%;
 	}
 
 	> li {
 		border-top: 1px solid @color-primary;
 		border-bottom: 1px solid @color-primary;
 		background-color: @color-primary;
-		.transition( ~'background-color 100ms, border 100ms' );
+		transition: background-color 100ms, border 100ms;
 
 		&:first-child a {
 			// If there isn't an icon, don't render a placeholder.
@@ -671,7 +671,7 @@ footer.mw-footer {
 	}
 
 	#mirage-right-rail-checkbox:checked ~ #mw-navigation &:before {
-		.transform-rotate( 180deg );
+		transform: rotate( 180deg );
 	}
 }
 
