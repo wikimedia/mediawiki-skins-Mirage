@@ -1,4 +1,5 @@
 @import '../mirage.less/mirage.variables';
+@import 'mediawiki.mixins.less';
 
 .skin-mirage-limit-content-width {
 	&,
@@ -17,8 +18,7 @@
 	width: @right-rail-space;
 	float: left;
 	top: @fixed-header-content-height;
-	position: -webkit-sticky;
-	position: sticky;
+	.position-sticky();
 	// Hide the right rail by default, unless the page has a right rail.
 	display: none;
 }
