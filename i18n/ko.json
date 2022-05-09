@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Apzp79",
+			"Bluehill",
 			"Ykhwong"
 		]
 	},
+	"skinname-mirage": "미라주",
+	"mirage-skin-desc": "미라주는 오른쪽에 레일이 있고 내용 표시에 중점을 둔 반응형 스킨입니다",
 	"mirage-community-messages-header": "공동체 메시지",
 	"mirage-interface-messages-module-edit-this-message": "이 메시지 편집하기",
 	"mirage-jumptonavigation": "둘러보기로 이동",
