@@ -110,6 +110,7 @@
 		"skins.mirage.styles": {
 			"class": "MediaWiki\\Skins\\Mirage\\ResourceLoader\\MirageResourceLoaderModule",
 			"features": {
+				"accessibility": true,
 				"content-media": true,
 				"content-body": true,
 				"content-tables": true,
