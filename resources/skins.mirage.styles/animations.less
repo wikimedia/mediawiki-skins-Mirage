@@ -1,14 +1,13 @@
 @import 'mediawiki.mixins.animation.less';
 
 .skin-mirage-rotate {
-	-webkit-transform: rotate( 180deg );
 	transform: rotate( 180deg );
 }
 
 @rotation: 30deg;
 
 .animation-bell-ring() {
-	.animation( 3.5s infinite normal bellRing );
+	animation: 3.5s infinite normal bellRing;
 }
 
 @keyframes bellRing {
@@ -16,7 +15,6 @@
 	46%,
 	100% {
 		transform: rotate( 0deg );
-		-webkit-transform: rotate( 0deg );
 	}
 
 	52%,
@@ -24,7 +22,6 @@
 	76%,
 	88% {
 		transform: rotate( @rotation );
-		-webkit-transform: rotate( @rotation );
 	}
 
 	58%,
@@ -32,28 +29,5 @@
 	82%,
 	94% {
 		transform: rotate( -@rotation );
-		-webkit-transform: rotate( -@rotation );
-	}
-}
-
-@-webkit-keyframes bellRing {
-	0%,
-	46%,
-	100% {
-		-webkit-transform: rotate( 0deg );
-	}
-
-	52%,
-	64%,
-	76%,
-	88% {
-		-webkit-transform: rotate( @rotation );
-	}
-
-	58%,
-	70%,
-	82%,
-	94% {
-		-webkit-transform: rotate( -@rotation );
 	}
 }
