@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Huñvreüs"
+		]
+	},
+	"mirage-community-messages-header": "Kemennadennoù ar gumuniezh",
+	"mirage-interface-messages-module-edit-this-message": "Kemmañ ar gemennadenn-mañ",
+	"mirage-page-actions": "Oberoù pajenn",
+	"mirage-jumptonavigation": "Mont d’ar merdeerezh",
+	"mirage-jumptocontent": "Mont d’an endalc’had",
+	"mirage-action-addsection": "Ouzhpennañ ur gaoz",
+	"mirage-userpage": "Pajenn {{GENDER:$1|implijer|implijerez}}",
+	"mirage-footer-places": "Lec'hioù",
+	"mirage-footer-info": "Titouroù ar bajenn",
+	"mirage-talkpage": "Pajenn gaozeal",
+	"mirage-user-tools": "Benvegoù implijer",
+	"mirage-no-new-messages": "N'hoc'h eus kemennadenn nevez ebet.",
+	"mirage-notifications": "Kemennoù",
+	"mirage-page-tools": "Ostilhoù evit ar pajennoù",
+	"mirage-hidden-categories": "Rummadoù kuzhet",
+	"mirage-recent-changes-module": "Kemmoù diwezhañ",
+	"mirage-more": "Muioc'h",
+	"mirage-more-recent-changes": "Gwelout muioc’h kemmoù"
+}
