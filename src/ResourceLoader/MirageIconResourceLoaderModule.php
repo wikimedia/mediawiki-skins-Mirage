@@ -3,16 +3,16 @@
 namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
+use MediaWiki\ResourceLoader\Image as ResourceLoaderImage;
+use MediaWiki\ResourceLoader\OOUIIconPackModule;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
-use ResourceLoaderContext;
-use ResourceLoaderImage;
-use ResourceLoaderOOUIIconPackModule;
 use function array_merge;
 use function implode;
 use function is_string;
 use function strtr;
 
-class MirageIconResourceLoaderModule extends ResourceLoaderOOUIIconPackModule {
+class MirageIconResourceLoaderModule extends OOUIIconPackModule {
 	/** @var array */
 	private $icons;
 

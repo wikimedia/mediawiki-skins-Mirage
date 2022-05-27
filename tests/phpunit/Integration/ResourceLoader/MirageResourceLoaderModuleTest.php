@@ -4,10 +4,10 @@ namespace MediaWiki\Skins\Mirage\Tests\Integration\ResourceLoader;
 
 use File;
 use HashConfig;
+use MediaWiki\ResourceLoader\SkinModule;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageResourceLoaderModule;
 use MultiConfig;
-use ResourceLoaderSkinModule;
 use ResourceLoaderTestCase;
 use Wikimedia\Minify\CSSMin;
 use function array_pop;
@@ -45,7 +45,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 
 		$module = new MirageResourceLoaderModule();
 		$module->setConfig( $config );
-		$parentModule = new ResourceLoaderSkinModule();
+		$parentModule = new SkinModule();
 		$parentModule->setConfig( $config );
 
 		$parentSummary = $parentModule->getDefinitionSummary( $context );

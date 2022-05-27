@@ -4,14 +4,14 @@ namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
+use MediaWiki\ResourceLoader\FilePath;
+use MediaWiki\ResourceLoader\SkinModule;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
-use ResourceLoaderContext;
-use ResourceLoaderFilePath;
-use ResourceLoaderSkinModule;
 use Wikimedia\Minify\CSSMin;
 use function is_array;
 
-class MirageResourceLoaderModule extends ResourceLoaderSkinModule {
+class MirageResourceLoaderModule extends SkinModule {
 	/**
 	 * @inheritDoc
 	 *
@@ -50,7 +50,7 @@ CSS;
 			);
 
 			foreach ( $themeRegistry->getThemeStyleFiles() as $styleFile ) {
-				$styles['screen'][] = new ResourceLoaderFilePath(
+				$styles['screen'][] = new FilePath(
 					$styleFile,
 					$this->localBasePath,
 					$this->remoteBasePath

@@ -3,13 +3,13 @@
 namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
 use InvalidArgumentException;
+use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
+use MediaWiki\ResourceLoader\FileModule;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
-use ResourceLoaderContext;
-use ResourceLoaderFileModule;
 use Wikimedia\Minify\CSSMin;
 
-class MirageAvatarResourceLoaderModule extends ResourceLoaderFileModule {
+class MirageAvatarResourceLoaderModule extends FileModule {
 	/** @var AvatarLookup */
 	private $avatarLookup;
 
