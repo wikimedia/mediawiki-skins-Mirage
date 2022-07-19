@@ -143,24 +143,22 @@ class SkinMirage extends SkinMustache {
 	 *   the current page, if the section is included from a template)
 	 * @param string $section The designation of the section being pointed to,
 	 *   to be included in the link, like "&section=$section"
-	 * @param string|null $tooltip The tooltip to use for the link: will be escaped
-	 *   and wrapped in the 'editsectionhint' message
+	 * @param string $sectionTitle Section title. It is used in the link tooltip, escaped and
+	 *   wrapped in the 'editsectionhint' message
 	 * @param Language $lang Language code
 	 * @return string HTML to use for edit link
 	 */
-	public function doEditSectionLink( Title $nt, $section, $tooltip, Language $lang ): string {
+	public function doEditSectionLink( Title $nt, $section, $sectionTitle, Language $lang ): string {
 		$attribs = [
-			'class' => MirageIcon::small( 'edit' )->toClasses()
+			'class' => MirageIcon::small( 'edit' )->toClasses(),
+			'title' => $this->msg( 'editsectionhint' )
+				->rawParams( $sectionTitle )
+				->inLanguage( $lang )->text()
 		];
-		if ( $tooltip !== null ) {
-			$attribs['title'] = $this->msg( 'editsectionhint' )
-				->rawParams( $tooltip )
-				->inLanguage( $lang )->plain();
-		}
 
 		$links = [
 			'editsection' => [
-				'text' => $this->msg( 'editsection' )->inLanguage( $lang )->plain(),
+				'text' => $this->msg( 'editsection' )->inLanguage( $lang )->text(),
 				'targetTitle' => $nt,
 				'attribs' => $attribs,
 				'query' => [ 'action' => 'edit', 'section' => $section ]
@@ -171,7 +169,7 @@ class SkinMirage extends SkinMustache {
 			$this,
 			$nt,
 			$section,
-			$tooltip,
+			$sectionTitle,
 			$links,
 			$lang
 		);
