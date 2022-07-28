@@ -118,6 +118,23 @@ footer,
 	text-align: center;
 }
 
+/* Set matching list margin and padding to what i18n-all-lists-margins defines. */
+// This will be flipped based on the direction by CSS-Janus. Keep synchronized with i18n-all-lists-margins.less.
+ul {
+	margin: 0.3em 0 0 1.6em;
+	padding: 0;
+}
+
+ol {
+	margin: 0.3em 0 0 3.2em;
+	padding: 0;
+}
+
+dd {
+	margin-left: 1.6em;
+	margin-right: 0;
+}
+
 html,
 body,
 .skin-mirage-visible-content {
