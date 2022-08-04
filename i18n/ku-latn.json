@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bikarhêner"
+			"Bikarhêner",
+			"Gomada"
 		]
 	},
 	"mirage-talkpage": "Rûpela gotûbêjê",
@@ -10,7 +11,7 @@
 	"mirage-notifications": "Agahdarî",
 	"mirage-page-tools": "Amûrên rûpelê",
 	"mirage-hidden-categories": "Kategoriyên veşartî",
-	"mirage-recent-changes-module": "Guhartinên dawî",
+	"mirage-recent-changes-module": "Guhertinên dawî",
 	"mirage-more": "Zêdetir",
 	"mirage-more-recent-changes": "Zêdetir guherandinan bibîne"
 }
