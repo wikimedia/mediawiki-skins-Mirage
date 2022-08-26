@@ -55,6 +55,44 @@ table.small {
 	font-size: 100%;
 }
 
+/* @noflip */
+div.tright,
+div.floatright,
+table.floatright {
+	clear: right;
+	float: right;
+}
+
+/* @noflip */
+div.tleft,
+div.floatleft,
+table.floatleft {
+	float: left;
+	clear: left;
+}
+
+/* @noflip */
+div.floatright,
+table.floatright {
+	margin: 0 0 0.5em 0.5em;
+}
+
+/* @noflip */
+div.floatleft,
+table.floatleft {
+	margin: 0 0.5em 0.5em 0;
+}
+
+/* @noflip */
+div.tleft {
+	margin: 0.5em 1.4em 1.3em 0;
+}
+
+/* @noflip */
+div.tright {
+	margin: 0.5em 0 1.3em 1.4em;
+}
+
 a {
 	&.mw-selflink {
 		&,
@@ -352,13 +390,17 @@ footer.mw-footer {
 		margin-top: 0.5rem;
 	}
 
-	.toctitle .toctogglespan {
-		float: right;
-		margin-left: 0.25rem;
+	.toctitle {
+		text-align: start;
 
-		&:before,
-		&:after {
-			content: '';
+		.toctogglespan {
+			float: right;
+			margin-left: 0.25rem;
+
+			&:before,
+			&:after {
+				content: '';
+			}
 		}
 	}
 }

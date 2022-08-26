@@ -114,7 +114,6 @@
 			"features": {
 				"accessibility": true,
 				"content-body": true,
-				"content-media": true,
 				"content-tables": true,
 				"i18n-all-lists-margins": true,
 				"i18n-headings": true,
