@@ -4,6 +4,7 @@ namespace MediaWiki\Skins\Mirage;
 
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Skins\Mirage\Hook\HookRunner as MirageHookRunner;
 use Message;
 use MessageCache;
@@ -127,10 +128,10 @@ class SidebarParser {
 		$config = $this->skin->getConfig();
 		$languageCode = $this->skin->getLanguage()->getCode();
 
-		if ( $config->get( 'EnableSidebarCache' ) ) {
+		if ( $config->get( MainConfigNames::EnableSidebarCache ) ) {
 			return $this->WANObjectCache->getWithSetCallback(
 				$this->WANObjectCache->makeKey( 'mirage-sidebar', $languageCode ),
-				$config->get( 'SidebarCacheExpiry' ),
+				$config->get( MainConfigNames::SidebarCacheExpiry ),
 				$callback,
 				[
 					'checkKeys' => [

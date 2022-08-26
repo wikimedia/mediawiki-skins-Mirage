@@ -12,6 +12,7 @@ use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
 use MediaWiki\Hook\PersonalUrlsHook;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
@@ -89,7 +90,8 @@ class Handler implements
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
 		$this->config = $configFactory->makeConfig( 'Mirage' );
-		$this->useInstantCommons = $configFactory->makeConfig( 'main' )->get( 'UseInstantCommons' );
+		$this->useInstantCommons = $configFactory->makeConfig( 'main' )
+			->get( MainConfigNames::UseInstantCommons );
 	}
 
 	/**

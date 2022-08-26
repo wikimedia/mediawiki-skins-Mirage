@@ -11,6 +11,7 @@ use Html;
 use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
@@ -404,7 +405,7 @@ class SkinMirage extends SkinMustache {
 		);
 		$siteToolsBuilder = new SiteToolsBuilder(
 			new HookRunner( $this->getHookContainer() ),
-			$this->getConfig()->get( 'UploadNavigationUrl' )
+			$this->getConfig()->get( MainConfigNames::UploadNavigationUrl )
 		);
 
 		$rightRailModules = $rightRailBuilder->buildModules();
@@ -434,7 +435,7 @@ class SkinMirage extends SkinMustache {
 			'html-right-rail-collapse-button' => $rightRailCollapseButton,
 			'is-right-rail-visible' => $this->displayRightRailVisible( $user ),
 			'data-header' => [
-				'sitename' => $this->getConfig()->get( 'Sitename' ),
+				'sitename' => $this->getConfig()->get( MainConfigNames::Sitename ),
 				'has-mirage-wordmark' => $this->wordmarkLookup->getWordmarkUrl() !== null,
 
 				'html-dropdown-indicator' => ( new MirageIndicator( 'down' ) )
@@ -594,7 +595,11 @@ class SkinMirage extends SkinMustache {
 				return 'unLock';
 			case 'view-foreign':
 				// Use the Wikimedia Commons logo when InstantCommons is enabled.
-				return $this->getConfig()->get( 'UseInstantCommons' ) ? 'logoWikimediaCommons' : 'newWindow';
+				if ( $this->getConfig()->get( MainConfigNames::UseInstantCommons ) ) {
+					return 'logoWikimediaCommons';
+				} else {
+					return 'newWindow';
+				}
 			// TODO: Icon needed
 			case 'move':
 			default:

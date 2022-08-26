@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage;
 
+use MediaWiki\MainConfigNames;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MediaWiki\Skins\Mirage\RightRailModules\CategoriesModule;
 use MediaWiki\Skins\Mirage\RightRailModules\GenericItemListModule;
@@ -109,7 +110,7 @@ class RightRailBuilder {
 					'SpecialPageFactory'
 				],
 				'args' => [
-					$this->skin->getConfig()->get( 'ContentNamespaces' )
+					$this->skin->getConfig()->get( MainConfigNames::ContentNamespaces )
 				]
 			];
 		}

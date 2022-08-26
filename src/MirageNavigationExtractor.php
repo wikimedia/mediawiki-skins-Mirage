@@ -3,6 +3,7 @@
 namespace MediaWiki\Skins\Mirage;
 
 use IContextSource;
+use MediaWiki\MainConfigNames;
 use Sanitizer;
 use TitleFactory;
 use function array_map;
@@ -117,14 +118,14 @@ class MirageNavigationExtractor {
 			$attributes['href'] = $target;
 
 			if (
-				$config->get( 'NoFollowLinks' ) &&
-				!wfMatchesDomainList( $target, $config->get( 'NoFollowDomainExceptions' ) )
+				$config->get( MainConfigNames::NoFollowLinks ) &&
+				!wfMatchesDomainList( $target, $config->get( MainConfigNames::NoFollowDomainExceptions ) )
 			) {
 				$attributes['rel'] = 'nofollow';
 			}
 
-			if ( $config->get( 'ExternalLinkTarget' ) ) {
-				$attributes['target'] = $config->get( 'ExternalLinkTarget' );
+			if ( $config->get( MainConfigNames::ExternalLinkTarget ) ) {
+				$attributes['target'] = $config->get( MainConfigNames::ExternalLinkTarget );
 			}
 		} elseif ( $target !== '' ) {
 			$title = $this->titleFactory->newFromText( $target );
