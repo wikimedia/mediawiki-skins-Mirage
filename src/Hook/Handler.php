@@ -27,6 +27,7 @@ use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
 use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\Utils\UrlUtils;
 use OutputPage;
 use ParserOutput;
 use Skin;
@@ -66,6 +67,9 @@ class Handler implements
 	/** @var AvatarLookup */
 	private $avatarLookup;
 
+	/** @var UrlUtils */
+	private $urlUtils;
+
 	/** @var Config */
 	private $config;
 
@@ -78,17 +82,20 @@ class Handler implements
 	 * @param TitleFactory $titleFactory
 	 * @param UserOptionsLookup $optionsLookup
 	 * @param AvatarLookup $avatarLookup
+	 * @param UrlUtils $urlUtils
 	 * @param ConfigFactory $configFactory
 	 */
 	public function __construct(
 		TitleFactory $titleFactory,
 		UserOptionsLookup $optionsLookup,
 		AvatarLookup $avatarLookup,
+		UrlUtils $urlUtils,
 		ConfigFactory $configFactory
 	) {
 		$this->titleFactory = $titleFactory;
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
+		$this->urlUtils = $urlUtils;
 		$this->config = $configFactory->makeConfig( 'Mirage' );
 		$this->useInstantCommons = $configFactory->makeConfig( 'main' )
 			->get( MainConfigNames::UseInstantCommons );
@@ -166,6 +173,7 @@ class Handler implements
 
 		$navigationExtractor = new MirageNavigationExtractor(
 			$this->titleFactory,
+			$this->urlUtils,
 			$context
 		);
 

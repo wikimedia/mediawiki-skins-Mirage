@@ -4,6 +4,7 @@ namespace MediaWiki\Skins\Mirage;
 
 use IContextSource;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Utils\UrlUtils;
 use Sanitizer;
 use TitleFactory;
 use function array_map;
@@ -12,12 +13,13 @@ use function preg_match;
 use function rtrim;
 use function strpos;
 use function trim;
-use function wfMatchesDomainList;
-use function wfUrlProtocols;
 
 class MirageNavigationExtractor {
 	/** @var TitleFactory */
 	private $titleFactory;
+
+	/** @var UrlUtils */
+	private $urlUtils;
 
 	/** @var IContextSource */
 	private $context;
@@ -26,10 +28,16 @@ class MirageNavigationExtractor {
 	 * @codeCoverageIgnore
 	 *
 	 * @param TitleFactory $titleFactory
+	 * @param UrlUtils $urlUtils
 	 * @param IContextSource $context
 	 */
-	public function __construct( TitleFactory $titleFactory, IContextSource $context ) {
+	public function __construct(
+		TitleFactory $titleFactory,
+		UrlUtils $urlUtils,
+		IContextSource $context
+	) {
 		$this->titleFactory = $titleFactory;
+		$this->urlUtils = $urlUtils;
 		$this->context = $context;
 	}
 
@@ -103,7 +111,7 @@ class MirageNavigationExtractor {
 		}
 
 		$attributes = [
-			'id' => Sanitizer::escapeIdForAttribute( 'n-' . strtr( $text, ' ', '_' ) )
+			'id' => Sanitizer::escapeIdForAttribute( 'n-' . str_replace( ' ', '_', $text ) )
 		];
 
 		$msg = $this->context->msg( $text );
@@ -113,13 +121,16 @@ class MirageNavigationExtractor {
 			$attributes['text'] = $text;
 		}
 
-		if ( preg_match( '/^(?i:' . wfUrlProtocols() . ')/', $target ) ) {
+		if ( preg_match( '/^(?i:' . $this->urlUtils->validProtocols() . ')/', $target ) ) {
 			$config = $this->context->getConfig();
 			$attributes['href'] = $target;
 
 			if (
 				$config->get( MainConfigNames::NoFollowLinks ) &&
-				!wfMatchesDomainList( $target, $config->get( MainConfigNames::NoFollowDomainExceptions ) )
+				!$this->urlUtils->matchesDomainList(
+					$target,
+					$config->get( MainConfigNames::NoFollowDomainExceptions )
+				)
 			) {
 				$attributes['rel'] = 'nofollow';
 			}

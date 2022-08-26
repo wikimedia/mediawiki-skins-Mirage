@@ -6,6 +6,7 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Skins\Mirage\Hook\HookRunner as MirageHookRunner;
+use MediaWiki\Utils\UrlUtils;
 use Message;
 use MessageCache;
 use TitleFactory;
@@ -44,6 +45,7 @@ class SidebarParser {
 	 * @param MessageCache $messageCache
 	 * @param HookContainer $hookContainer
 	 * @param TitleFactory $titleFactory
+	 * @param UrlUtils $urlUtils
 	 * @param SkinMirage $skin
 	 */
 	public function __construct(
@@ -51,6 +53,7 @@ class SidebarParser {
 		MessageCache $messageCache,
 		HookContainer $hookContainer,
 		TitleFactory $titleFactory,
+		UrlUtils $urlUtils,
 		SkinMirage $skin
 	) {
 		$this->WANObjectCache = $WANObjectCache;
@@ -58,6 +61,7 @@ class SidebarParser {
 		$this->hookContainer = $hookContainer;
 		$this->navigationExtractor = new MirageNavigationExtractor(
 			$titleFactory,
+			$urlUtils,
 			$skin->getContext()
 		);
 		$this->skin = $skin;

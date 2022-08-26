@@ -17,6 +17,7 @@ use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\Utils\UrlUtils;
 use MessageCache;
 use Sanitizer;
 use SkinMustache;
@@ -56,6 +57,9 @@ class SkinMirage extends SkinMustache {
 	/** @var TitleFactory */
 	private $titleFactory;
 
+	/** @var UrlUtils */
+	private $urlUtils;
+
 	/** @var TemplateParser */
 	private $templateParser;
 
@@ -72,6 +76,7 @@ class SkinMirage extends SkinMustache {
 	 * @param MirageWordmarkLookup $wordmarkLookup
 	 * @param AvatarLookup $avatarLookup
 	 * @param TitleFactory $titleFactory
+	 * @param UrlUtils $urlUtils
 	 * @param ConfigFactory $configFactory
 	 * @param WANObjectCache $WANObjectCache
 	 * @param MessageCache $messageCache
@@ -86,6 +91,7 @@ class SkinMirage extends SkinMustache {
 		MirageWordmarkLookup $wordmarkLookup,
 		AvatarLookup $avatarLookup,
 		TitleFactory $titleFactory,
+		UrlUtils $urlUtils,
 		ConfigFactory $configFactory,
 		WANObjectCache $WANObjectCache,
 		MessageCache $messageCache,
@@ -103,6 +109,7 @@ class SkinMirage extends SkinMustache {
 		$this->messageCache = $messageCache;
 		$this->hookContainer = $hookContainer;
 		$this->titleFactory = $titleFactory;
+		$this->urlUtils = $urlUtils;
 		$this->userOptionsLookup = $userOptionsLookup;
 		$this->mirageConfig = $configFactory->makeConfig( 'Mirage' );
 
@@ -393,6 +400,7 @@ class SkinMirage extends SkinMustache {
 			$this->messageCache,
 			$this->getHookContainer(),
 			$this->titleFactory,
+			$this->urlUtils,
 			$this
 		);
 		$sidebarParser->parse();

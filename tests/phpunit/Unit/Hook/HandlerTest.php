@@ -14,6 +14,7 @@ use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\User\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\Utils\UrlUtils;
 use MediaWikiUnitTestCase;
 use OutputPage;
 use ResourceLoader;
@@ -44,6 +45,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -64,6 +66,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -87,6 +90,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -107,6 +111,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -124,6 +129,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -153,6 +159,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 				[ 'mirage-max-width' => Handler::MIRAGE_PARTIAL_MAX_WIDTH ]
 			),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -202,6 +209,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -225,6 +233,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler( [
 				'UseInstantCommons' => $useInstantCommons
 			] )
@@ -268,6 +277,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => false
 			] )
@@ -288,6 +298,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => true
 			] )
@@ -314,6 +325,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
+			$this->createMock( UrlUtils::class ),
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => true
 			] )

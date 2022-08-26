@@ -20,6 +20,7 @@
 				"MirageWordmarkLookup",
 				"MirageAvatarLookup",
 				"TitleFactory",
+				"UrlUtils",
 				"ConfigFactory",
 				"MainWANObjectCache",
 				"MessageCache",
@@ -64,6 +65,7 @@
 				"TitleFactory",
 				"UserOptionsLookup",
 				"MirageAvatarLookup",
+				"UrlUtils",
 				"ConfigFactory"
 			]
 		}
