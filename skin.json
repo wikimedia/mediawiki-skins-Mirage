@@ -352,6 +352,7 @@
 			"+mediawiki.notification": "skinStyles/mediawiki.notification.less",
 			"+mediawiki.page.gallery.styles": "skinStyles/mediawiki.page.gallery.styles.less",
 			"+mediawiki.searchSuggest": "skinStyles/mediawiki.searchSuggest.less",
+			"+mediawiki.special": "skinStyles/mediawiki.special.less",
 			"+mediawiki.special.changeslist": "skinStyles/mediawiki.special.changeslist.less",
 			"+oojs-ui-core.styles": "skinStyles/oojs-ui-core.styles.less",
 			"+ext.dismissableSiteNotice.styles": "skinStyles/ext.dismissableSiteNotice.styles.less",
