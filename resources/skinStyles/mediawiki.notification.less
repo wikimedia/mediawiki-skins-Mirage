@@ -2,26 +2,19 @@
 @import '../mirage.less/mirage.mixins';
 
 .mw-notification-area {
-	top: @fixed-header-content-height + 0.05rem;
-	width: 100%;
-	padding: 0;
 	position: fixed;
+
+	&-layout {
+		top: @fixed-header-content-height + 3rem;
+	}
+
+	&-floating {
+		top: 3rem;
+	}
 }
 
 .mw-notification {
 	border: @border-base;
-	border-top: 0;
-	border-bottom-left-radius: @border-radius-base;
-	border-bottom-right-radius: @border-radius-base;
+	border-radius: @border-radius-base;
 	box-shadow: @box-shadow-dialog;
-	margin: 0;
-	transform: translateY( -35px );
-
-	&-visible {
-		transform: translateY( 0 );
-	}
-
-	.mw-notification-content {
-		text-align: center;
-	}
 }
