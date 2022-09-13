@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "Rediger denne beskjeden",
+	"mirage-page-actions": "Sidehandlinger",
+	"mirage-jumptonavigation": "Til navigasjon",
+	"mirage-jumptocontent": "Til innhold",
+	"mirage-action-addsection": "Legg til emne",
+	"mirage-userpage": "{{GENDER:$1|Brukerside}}",
+	"mirage-footer-places": "Steder",
+	"mirage-footer-feeds": "Matinger",
+	"mirage-footer-info": "Sideinformasjon",
+	"mirage-talkpage": "Diskusjonsside",
+	"mirage-user-tools": "Brukerverktøy",
+	"mirage-no-new-messages": "Du har ingen nye beskjeder.",
+	"mirage-notifications": "Varsler",
+	"mirage-page-tools": "Sideverktøy",
+	"mirage-hidden-categories": "Skjulte kategorier",
+	"mirage-recent-changes-module": "Siste endringer",
+	"mirage-more": "Mer",
+	"mirage-more-recent-changes": "Se flere endringer",
+	"prefs-mirage-max-width-label": "Innholdsbredde i Mirage:",
+	"prefs-mirage-max-width": "Bruk alltid maksimal sidebredde",
+	"prefs-mirage-partial-max-width": "Bruk maksimal sidebredde kun i artikler",
+	"prefs-mirage-no-max-width": "Slå av maksimal sidebredde",
+	"mirage-wordmark-file-warning": "Denne fila brukes for tiden som logotyp for Mirage-drakta."
+}
