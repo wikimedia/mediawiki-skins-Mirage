@@ -89,10 +89,10 @@
 		"OutputPageBodyAttributes": {
 			"handler": "main"
 		},
-		"PersonalUrls": {
+		"ResourceLoaderRegisterModules": {
 			"handler": "main"
 		},
-		"ResourceLoaderRegisterModules": {
+		"SkinTemplateNavigation::Universal": {
 			"handler": "main"
 		}
 	},
