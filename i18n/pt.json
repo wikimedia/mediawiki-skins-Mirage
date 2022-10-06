@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"mirage-skin-desc": "Miragem é um tema de resposta rápida que se foca na apresentação de conteúdo com uma barra à direita",
+	"mirage-community-messages-header": "Mensagens da comunidade",
+	"mirage-interface-messages-module-edit-this-message": "Editar esta mensagem",
+	"mirage-page-actions": "Operações em páginas",
+	"mirage-jumptonavigation": "Saltar para a navegação",
+	"mirage-jumptocontent": "Saltar para o conteúdo",
+	"mirage-action-addsection": "Adicionar tópico",
+	"mirage-userpage": "Página {{GENDER:$1|do utilizador|da utilizadora}}",
+	"mirage-footer-places": "Lugares",
+	"mirage-footer-feeds": "''Feeds''",
+	"mirage-footer-info": "Informações da página",
+	"mirage-expand-submenu": "Mostrar as entradas do submenu",
+	"mirage-talkpage": "Página de discussão",
+	"mirage-user-tools": "Ferramentas do utilizador",
+	"mirage-no-new-messages": "Não tem mensagens novas.",
+	"mirage-notifications": "Notificações",
+	"mirage-page-tools": "Ferramentas da página",
+	"mirage-hidden-categories": "Categorias ocultas",
+	"mirage-recent-changes-module": "Mudanças recentes",
+	"mirage-more": "Mais",
+	"mirage-more-recent-changes": "Ver mais mudanças",
+	"mirage-toggle-right-rail": "Alternar barra da direita",
+	"prefs-mirage-max-width-label": "Largura do conteúdo da Miragem:",
+	"prefs-mirage-max-width": "Aplicar sempre a largura máxima de página",
+	"prefs-mirage-partial-max-width": "Só aplicar a largura máxima de página a artigos",
+	"prefs-mirage-no-max-width": "Desativar a largura máxima de página",
+	"prefs-mirage-show-right-rail": "Apresentar a barra da direita",
+	"mirage-wordmark-file-warning": "Este ficheiro está a ser usado neste momento como marca nominativa do tema Miragem."
+}
