@@ -221,7 +221,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$bodyAttrs
 		);
 
-		static::assertEmpty( $bodyAttrs );
+		static::assertEquals( [], $bodyAttrs );
 	}
 
 	/**
@@ -287,7 +287,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 
 		$handler->onImagePageAfterImageLinks( $this->createMock( ImagePage::class ), $html );
 
-		static::assertEmpty( $html );
+		static::assertSame( '', $html );
 	}
 
 	/**
@@ -314,7 +314,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 
 		$handler->onImagePageAfterImageLinks( $imagePage, $html );
 
-		static::assertEmpty( $html );
+		static::assertSame( '', $html );
 	}
 
 	/**
