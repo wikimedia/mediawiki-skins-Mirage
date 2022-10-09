@@ -208,7 +208,6 @@ class MirageIconResourceLoaderModule extends OOUIIconPackModule {
 		global $IP;
 
 		// Ignore any 'localBasePath' present in $options, this always refers to files in MediaWiki core
-		// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 		return $localBasePath ?? $IP;
 	}
 }
