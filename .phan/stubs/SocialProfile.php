@@ -5,5 +5,11 @@
 class wAvatar {
 	public function __construct( int $userId, string $size ) {}
 
-	public function getAvatarUrlPath() : string {}
+	public function getAvatarImage() {}
+}
+
+class SocialProfileFileBackend {
+	public function __construct( string $container ) {}
+
+	public function getFileHttpUrlFromName( string $fileName ) {}
 }
