@@ -1,10 +1,36 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"محمد أحمد عبد الفتاح"
 		]
 	},
+	"mirage-skin-desc": "Mirage هي بشرة سريعة الاستجابة تركز على عرض المحتوى مع سكة حديدية على اليمين",
 	"mirage-community-messages-header": "رسائل المجتمع",
+	"mirage-interface-messages-module-edit-this-message": "عدل هذه الصفحة",
+	"mirage-page-actions": "أفعال الصفحة",
+	"mirage-jumptonavigation": "اذهب إلى التصفح",
+	"mirage-jumptocontent": "انتقل إلى المحتوى",
+	"mirage-action-addsection": "أضِف موضوعاً",
+	"mirage-userpage": "صفحة {{GENDER:$1|المستخدم|المستخدمة}}",
+	"mirage-footer-places": "أماكن",
+	"mirage-footer-feeds": "يغذي",
 	"mirage-footer-info": "معلومات الصفحة",
-	"mirage-recent-changes-module": "أحدث التغييرات"
+	"mirage-expand-submenu": "إظهار إدخالات القائمة الفرعية",
+	"mirage-talkpage": "صفحة نقاش",
+	"mirage-user-tools": "أدوات المستخدم",
+	"mirage-no-new-messages": "ليست لديك رسائل جديدة.",
+	"mirage-notifications": "الإشعارات",
+	"mirage-page-tools": "أدوات الصفحات",
+	"mirage-hidden-categories": "تصنيفات مخفية",
+	"mirage-recent-changes-module": "أحدث التغييرات",
+	"mirage-more": "المزيد",
+	"mirage-more-recent-changes": "رؤية المزيد من التغييرات",
+	"mirage-toggle-right-rail": "تبديل السكة الحديدية اليمنى",
+	"prefs-mirage-max-width-label": "عرض محتوى ميراج:",
+	"prefs-mirage-max-width": "قم دائمًا بتطبيق الحد الأقصى لعرض الصفحة",
+	"prefs-mirage-partial-max-width": "تطبيق الحد الأقصى لعرض الصفحة فقط على المقالات",
+	"prefs-mirage-no-max-width": "قم بتعطيل الحد الأقصى لعرض الصفحة",
+	"prefs-mirage-show-right-rail": "اعرض السكة الحديدية اليمنى",
+	"mirage-wordmark-file-warning": "هذا الملف قيد الاستخدام حاليًا كعلامة نصية لجلد ميراج."
 }
