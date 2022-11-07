@@ -5,7 +5,10 @@
 			"محمد أحمد عبد الفتاح"
 		]
 	},
+	"skinname-mirage": "سراب",
 	"mirage-skin-desc": "Mirage هي بشرة سريعة الاستجابة تركز على عرض المحتوى مع سكة حديدية على اليمين",
+	"mirage.css": "/ * سيؤثر وضع CSS هنا على مستخدمي Mirage skin * /",
+	"mirage.js": "/ * سيتم تحميل أي JavaScript هنا للمستخدمين الذين يستخدمون Mirage skin * /",
 	"mirage-community-messages-header": "رسائل المجتمع",
 	"mirage-interface-messages-module-edit-this-message": "عدل هذه الصفحة",
 	"mirage-page-actions": "أفعال الصفحة",
