@@ -50,7 +50,16 @@
 						"notloggedin",
 						"tagline"
 					],
-					"responsive": true
+					"responsive": true,
+					"menus": [
+						"user-page",
+						"user-menu",
+						"notifications",
+						"views",
+						"actions",
+						"variants",
+						"associated-pages"
+					]
 				}
 			]
 		}

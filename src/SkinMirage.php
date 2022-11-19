@@ -219,6 +219,25 @@ class SkinMirage extends SkinMustache {
 	protected function runOnSkinTemplateNavigationHooks( SkinTemplate $skin, &$content_navigation ): void {
 		parent::runOnSkinTemplateNavigationHooks( $skin, $content_navigation );
 
+		// For compatibility reasons, if the associated-pages portlet is equal to the namespaces
+		// portlet, omit the associated-pages portlet. If not, empty the namespaces portlet.
+		// This ensures that compatibility with the old namespaces portlet is preserved while
+		// more and more things migrate to associated-pages.
+		// The namespaces portlet isn't omitted to allow adding to it by scripts that aren't
+		// updated yet.
+		// This is modified here to prevent the parent method from detecting these changes and
+		// misunderstanding the intent.
+		if ( $content_navigation['associated-pages'] ) {
+			if (
+				array_keys( $content_navigation['namespaces'] ) ===
+				array_keys( $content_navigation['associated-pages'] )
+			) {
+				unset( $content_navigation['associated-pages'] );
+			} else {
+				$content_navigation['namespaces'] = [];
+			}
+		}
+
 		$content_navigation['mirage-edit-button'] = [];
 		$content_navigation['mirage-edit-button-dropdown'] = [];
 

@@ -443,10 +443,12 @@ body,
 	position: relative;
 }
 
+// The nav selector here is more specific than .emptyPortlet.
+// It must not override .emptyPortlet's display: none;
 #left-navigation,
 #right-navigation {
 	&,
-	nav,
+	nav:not( .emptyPortlet ),
 	label {
 		display: inline-block;
 		vertical-align: middle;
