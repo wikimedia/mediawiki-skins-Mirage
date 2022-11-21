@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"Bikarhêner",
 			"Gomada"
 		]
@@ -11,7 +12,7 @@
 	"mirage-notifications": "Agahdarî",
 	"mirage-page-tools": "Amûrên rûpelê",
 	"mirage-hidden-categories": "Kategoriyên veşartî",
-	"mirage-recent-changes-module": "Guhertinên dawî",
+	"mirage-recent-changes-module": "Guhartinên dawî",
 	"mirage-more": "Zêdetir",
 	"mirage-more-recent-changes": "Zêdetir guherandinan bibîne"
 }
