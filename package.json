@@ -1,4 +1,5 @@
 {
+	"name": "Mirage",
 	"private": true,
 	"scripts": {
 		"test": "npm -s run lint",
