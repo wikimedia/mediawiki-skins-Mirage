@@ -15,6 +15,7 @@ use User;
 use Wikimedia\Rdbms\DBError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use const DB_REPLICA;
 use const NS_SPECIAL;
 use const NS_USER;
@@ -45,28 +46,26 @@ class RecentChangesModule extends RightRailModule {
 		$this->linkRenderer = $linkRenderer;
 		$this->specialPageFactory = $specialPageFactory;
 
-		$dbr = $loadBalancer->getConnectionRef( DB_REPLICA );
+		$queryBuilder = $loadBalancer->getConnectionRef( DB_REPLICA )->newSelectQueryBuilder();
+		$queryBuilder->select( [
+				'rc_actor',
+				'rc_namespace',
+				'rc_title',
+				'rc_timestamp'
+			] )
+			->from( 'recentchanges' )
+			->where( [
+				'rc_namespace' => $contentNamespaces,
+				'rc_type' => RecentChange::parseToRCType( [ 'new', 'edit' ] ),
+				'rc_bot' => 0,
+				'rc_deleted' => 0
+			] )
+			->caller( __METHOD__ )
+			->limit( 4 )
+			->orderBy( 'rc_timestamp', SelectQueryBuilder::SORT_DESC );
+
 		try {
-			$this->res = $dbr->select(
-				'recentchanges',
-				[
-					'rc_actor',
-					'rc_namespace',
-					'rc_title',
-					'rc_timestamp'
-				],
-				[
-					'rc_namespace' => $contentNamespaces,
-					'rc_type' => RecentChange::parseToRCType( [ 'new', 'edit' ] ),
-					'rc_bot' => 0,
-					'rc_deleted' => 0
-				],
-				__METHOD__,
-				[
-					'LIMIT' => 4,
-					'ORDER BY' => 'rc_timestamp DESC'
-				]
-			);
+			$this->res = $queryBuilder->fetchResultSet();
 		} catch ( DBError $e ) {
 			MWExceptionHandler::logException( $e );
 			$this->res = null;
