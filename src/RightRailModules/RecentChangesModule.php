@@ -6,12 +6,12 @@ use Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\SpecialPage\SpecialPageFactory;
+use MediaWiki\User\UserFactory;
 use MWExceptionHandler;
 use MWTimestamp;
 use RecentChange;
 use stdClass;
 use TitleValue;
-use User;
 use Wikimedia\Rdbms\DBError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -25,6 +25,8 @@ class RecentChangesModule extends RightRailModule {
 
 	private SpecialPageFactory $specialPageFactory;
 
+	private UserFactory $userFactory;
+
 	private ?IResultWrapper $res;
 
 	/**
@@ -32,6 +34,7 @@ class RecentChangesModule extends RightRailModule {
 	 * @param LinkRenderer $linkRenderer
 	 * @param ILoadBalancer $loadBalancer
 	 * @param SpecialPageFactory $specialPageFactory
+	 * @param UserFactory $userFactory
 	 * @param int[] $contentNamespaces
 	 */
 	public function __construct(
@@ -39,12 +42,14 @@ class RecentChangesModule extends RightRailModule {
 		LinkRenderer $linkRenderer,
 		ILoadBalancer $loadBalancer,
 		SpecialPageFactory $specialPageFactory,
+		UserFactory $userFactory,
 		array $contentNamespaces
 ) {
 		parent::__construct( $skin, 'recentchanges' );
 
 		$this->linkRenderer = $linkRenderer;
 		$this->specialPageFactory = $specialPageFactory;
+		$this->userFactory = $userFactory;
 
 		$queryBuilder = $loadBalancer->getConnectionRef( DB_REPLICA )->newSelectQueryBuilder();
 		$queryBuilder->select( [
@@ -122,7 +127,7 @@ class RecentChangesModule extends RightRailModule {
 			)
 		);
 
-		$performer = User::newFromActorId( $row->rc_actor );
+		$performer = $this->userFactory->newFromActorId( $row->rc_actor );
 
 		if ( $performer->isAnon() ) {
 			$linkTarget = new TitleValue(

@@ -103,7 +103,8 @@ class RightRailBuilder {
 				'services' => [
 					'LinkRenderer',
 					'DBLoadBalancer',
-					'SpecialPageFactory'
+					'SpecialPageFactory',
+					'UserFactory'
 				],
 				'args' => [
 					$this->skin->getConfig()->get( MainConfigNames::ContentNamespaces )
