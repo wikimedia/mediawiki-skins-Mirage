@@ -17,7 +17,7 @@ class HookRunner implements
 	/**
 	 * @var HookContainer
 	 */
-	private $hookContainer;
+	private HookContainer $hookContainer;
 
 	/**
 	 * @param HookContainer $hookContainer

@@ -15,11 +15,9 @@ use function implode;
  */
 abstract class RightRailModule implements MessageLocalizer {
 
-	/** @var SkinMirage */
-	private $skin;
+	private SkinMirage $skin;
 
-	/** @var string */
-	private $name;
+	private string $name;
 
 	/**
 	 * @codeCoverageIgnore

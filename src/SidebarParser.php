@@ -14,29 +14,21 @@ use WANObjectCache;
 use function array_diff_key;
 
 class SidebarParser {
-	/** @var WANObjectCache */
-	private $WANObjectCache;
+	private WANObjectCache $WANObjectCache;
 
-	/** @var MessageCache */
-	private $messageCache;
+	private MessageCache $messageCache;
 
-	/** @var HookContainer */
-	private $hookContainer;
+	private HookContainer $hookContainer;
 
-	/** @var MirageNavigationExtractor */
-	private $navigationExtractor;
+	private MirageNavigationExtractor $navigationExtractor;
 
-	/** @var SkinMirage */
-	private $skin;
+	private SkinMirage $skin;
 
-	/** @var array */
-	private $navigationPortals;
+	private array $navigationPortals;
 
-	/** @var array */
-	private $extensionPortals;
+	private array $extensionPortals;
 
-	/** @var array */
-	private $toolsPortal;
+	private array $toolsPortal;
 
 	/**
 	 * @codeCoverageIgnore

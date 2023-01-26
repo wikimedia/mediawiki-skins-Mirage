@@ -10,8 +10,7 @@ use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use Wikimedia\Minify\CSSMin;
 
 class MirageAvatarResourceLoaderModule extends FileModule {
-	/** @var AvatarLookup */
-	private $avatarLookup;
+	private AvatarLookup $avatarLookup;
 
 	/**
 	 * @param array $options

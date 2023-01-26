@@ -20,14 +20,11 @@ use const NS_SPECIAL;
 use const NS_USER;
 
 class RecentChangesModule extends RightRailModule {
-	/** @var LinkRenderer */
-	private $linkRenderer;
+	private LinkRenderer $linkRenderer;
 
-	/** @var SpecialPageFactory */
-	private $specialPageFactory;
+	private SpecialPageFactory $specialPageFactory;
 
-	/** @var IResultWrapper|null */
-	private $res;
+	private ?IResultWrapper $res;
 
 	/**
 	 * @param SkinMirage $skin

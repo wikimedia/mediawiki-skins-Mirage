@@ -13,8 +13,7 @@ use function is_string;
 use function strtr;
 
 class MirageIconResourceLoaderModule extends OOUIIconPackModule {
-	/** @var array */
-	private $icons;
+	private array $icons;
 
 	/**
 	 * @inheritDoc

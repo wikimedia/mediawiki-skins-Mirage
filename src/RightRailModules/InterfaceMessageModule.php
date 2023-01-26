@@ -10,17 +10,13 @@ use Message;
 use MessageSpecifier;
 
 class InterfaceMessageModule extends RightRailModule {
-	/** @var LinkRenderer */
-	private $linkRenderer;
+	private LinkRenderer $linkRenderer;
 
-	/** @var PermissionManager */
-	private $permissionManager;
+	private PermissionManager $permissionManager;
 
-	/** @var Message */
-	private $message;
+	private Message $message;
 
-	/** @var Message|null */
-	private $headerMessage;
+	private ?Message $headerMessage;
 
 	/**
 	 * @param SkinMirage $skinMirage

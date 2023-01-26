@@ -6,8 +6,7 @@ use MediaWiki\Extension\Gravatar\GravatarLookup;
 use MediaWiki\User\UserIdentity;
 
 class GravatarAvatarLookup extends AvatarLookup {
-	/** @var GravatarLookup */
-	private $gravatarLookup;
+	private GravatarLookup $gravatarLookup;
 
 	/**
 	 * @param GravatarLookup $gravatarLookup

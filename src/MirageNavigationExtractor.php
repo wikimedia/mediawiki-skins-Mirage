@@ -15,14 +15,11 @@ use function strpos;
 use function trim;
 
 class MirageNavigationExtractor {
-	/** @var TitleFactory */
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
-	/** @var UrlUtils */
-	private $urlUtils;
+	private UrlUtils $urlUtils;
 
-	/** @var IContextSource */
-	private $context;
+	private IContextSource $context;
 
 	/**
 	 * @codeCoverageIgnore

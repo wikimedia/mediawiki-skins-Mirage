@@ -12,8 +12,7 @@ use function array_slice;
 use function count;
 
 class SiteToolsBuilder {
-	/** @var HookRunner */
-	private $hookRunner;
+	private HookRunner $hookRunner;
 
 	/** @var false|string */
 	private $uploadNavigationUrl;

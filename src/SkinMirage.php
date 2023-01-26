@@ -33,41 +33,29 @@ use function is_array;
 use function is_string;
 
 class SkinMirage extends SkinMustache {
-	/** @var LinkRenderer */
-	private $linkRenderer;
+	private LinkRenderer $linkRenderer;
 
-	/** @var ObjectFactory */
-	private $objectFactory;
+	private ObjectFactory $objectFactory;
 
-	/** @var MirageWordmarkLookup */
-	private $wordmarkLookup;
+	private MirageWordmarkLookup $wordmarkLookup;
 
-	/** @var AvatarLookup */
-	private $avatarLookup;
+	private AvatarLookup $avatarLookup;
 
-	/** @var WANObjectCache */
-	private $WANObjectCache;
+	private WANObjectCache $WANObjectCache;
 
-	/** @var MessageCache */
-	private $messageCache;
+	private MessageCache $messageCache;
 
-	/** @var HookContainer */
-	private $hookContainer;
+	private HookContainer $hookContainer;
 
-	/** @var TitleFactory */
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
-	/** @var UrlUtils */
-	private $urlUtils;
+	private UrlUtils $urlUtils;
 
-	/** @var TemplateParser */
-	private $templateParser;
+	private TemplateParser $templateParser;
 
-	/** @var Config */
-	private $mirageConfig;
+	private Config $mirageConfig;
 
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
+	private UserOptionsLookup $userOptionsLookup;
 
 	/**
 	 * @param LinkRenderer $linkRenderer

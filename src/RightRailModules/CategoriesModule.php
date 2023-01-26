@@ -9,17 +9,13 @@ use MediaWiki\User\UserOptionsLookup;
 use TitleFactory;
 
 class CategoriesModule extends RightRailModule {
-	/** @var LinkRenderer */
-	private $linkRenderer;
+	private LinkRenderer $linkRenderer;
 
-	/** @var TitleFactory */
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
-	/** @var bool */
-	private $displayHiddenCategories;
+	private bool $displayHiddenCategories;
 
-	/** @var array */
-	private $allCategories;
+	private array $allCategories;
 
 	/**
 	 * @param SkinMirage $skin

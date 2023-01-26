@@ -16,20 +16,16 @@ use function array_diff_key;
 use function array_flip;
 
 class RightRailBuilder {
-	/** @var ObjectFactory */
-	private $objectFactory;
+	private ObjectFactory $objectFactory;
 
-	/** @var HookRunner */
-	private $hookRunner;
+	private HookRunner $hookRunner;
 
-	/** @var SidebarParser */
-	private $sidebarParser;
+	private SidebarParser $sidebarParser;
 
-	/** @var SkinMirage */
-	private $skin;
+	private SkinMirage $skin;
 
 	/** @var string[] */
-	private $hiddenRightRailModules;
+	private array $hiddenRightRailModules;
 
 	/**
 	 * @codeCoverageIgnore

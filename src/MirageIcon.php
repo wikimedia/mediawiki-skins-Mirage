@@ -11,29 +11,24 @@ class MirageIcon {
 	protected const ICON_SMALL = 'small';
 	public const ICON_PLACEHOLDER = 'placeholder';
 
-	/** @var string */
-	private $icon;
+	private string $icon;
 
-	/** @var string */
-	private $size;
+	private string $size;
 
 	/** @var string|HtmlArmor */
 	private $content;
 
-	/** @var string */
-	private $variant;
+	private string $variant;
 
 	/** @var string[] */
-	private $classes;
+	private array $classes;
 
 	/** @var string[] */
-	private $attributes;
+	private array $attributes;
 
-	/** @var string */
-	private $element;
+	private string $element;
 
-	/** @var bool */
-	private $hideLabel;
+	private bool $hideLabel;
 
 	/**
 	 * @codeCoverageIgnore

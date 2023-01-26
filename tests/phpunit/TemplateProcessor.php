@@ -21,21 +21,21 @@ class TemplateProcessor {
 	 *
 	 * @var string
 	 */
-	private $templateDir;
+	private string $templateDir;
 
 	/**
 	 * Lines in the template.
 	 *
 	 * @var string[]
 	 */
-	private $lines;
+	private array $lines;
 
 	/**
 	 * Recorded errors.
 	 *
 	 * @var array
 	 */
-	private $errors;
+	private array $errors;
 
 	/**
 	 * @param string $templateDir Path to the template directory

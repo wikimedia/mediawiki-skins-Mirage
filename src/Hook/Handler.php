@@ -57,23 +57,17 @@ class Handler implements
 	public const MIRAGE_PARTIAL_MAX_WIDTH = 1;
 	public const MIRAGE_NO_MAX_WIDTH = 2;
 
-	/** @var TitleFactory */
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
-	/** @var UserOptionsLookup */
-	private $optionsLookup;
+	private UserOptionsLookup $optionsLookup;
 
-	/** @var AvatarLookup */
-	private $avatarLookup;
+	private AvatarLookup $avatarLookup;
 
-	/** @var UrlUtils */
-	private $urlUtils;
+	private UrlUtils $urlUtils;
 
-	/** @var Config */
-	private $config;
+	private Config $config;
 
-	/** @var bool */
-	private $useInstantCommons;
+	private bool $useInstantCommons;
 
 	/**
 	 * @codeCoverageIgnore

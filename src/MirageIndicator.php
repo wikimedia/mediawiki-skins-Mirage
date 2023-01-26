@@ -11,10 +11,7 @@ class MirageIndicator extends MirageIcon {
 		$this->hideLabel();
 	}
 
-	/**
-	 * @inheritDoc
-	 * @return string
-	 */
+	/** @inheritDoc */
 	public function toClasses(): string {
 		return 'skin-mirage-ooui-indicator ' . parent::toClasses();
 	}

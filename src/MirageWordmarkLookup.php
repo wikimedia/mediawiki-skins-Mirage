@@ -8,14 +8,11 @@ use TitleFactory;
 use const NS_FILE;
 
 class MirageWordmarkLookup {
-	/** @var TitleFactory */
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
-	/** @var RepoGroup */
-	private $repoGroup;
+	private RepoGroup $repoGroup;
 
-	/** @var bool */
-	private $wordmarkEnabled;
+	private bool $wordmarkEnabled;
 
 	/**
 	 * @codeCoverageIgnore

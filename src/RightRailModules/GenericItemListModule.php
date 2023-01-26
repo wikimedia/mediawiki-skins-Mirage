@@ -6,8 +6,7 @@ use Html;
 use MediaWiki\Skins\Mirage\SkinMirage;
 
 class GenericItemListModule extends RightRailModule {
-	/** @var array */
-	private $items;
+	private array $items;
 
 	/**
 	 * @codeCoverageIgnore

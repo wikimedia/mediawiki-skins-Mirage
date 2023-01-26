@@ -15,9 +15,7 @@ class ThemeRegistry {
 			'themes/Neutral/theme.less'
 		]
 	];
-
-	/** @var Config */
-	private $config;
+	private Config $config;
 
 	/**
 	 * @codeCoverageIgnore
