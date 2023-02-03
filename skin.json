@@ -75,6 +75,7 @@
 				"UserOptionsLookup",
 				"MirageAvatarLookup",
 				"UrlUtils",
+				"MirageWordmarkLookup",
 				"ConfigFactory"
 			]
 		}

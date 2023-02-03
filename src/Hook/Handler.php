@@ -23,6 +23,7 @@ use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\MirageIcon;
 use MediaWiki\Skins\Mirage\MirageIndicator;
 use MediaWiki\Skins\Mirage\MirageNavigationExtractor;
+use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
@@ -40,7 +41,6 @@ use Xml;
 use function array_keys;
 use function array_search;
 use function array_slice;
-use const NS_FILE;
 use const NS_MEDIAWIKI;
 
 class Handler implements
@@ -65,6 +65,8 @@ class Handler implements
 
 	private UrlUtils $urlUtils;
 
+	private MirageWordmarkLookup $wordmarkLookup;
+
 	private Config $config;
 
 	private bool $useInstantCommons;
@@ -76,6 +78,7 @@ class Handler implements
 	 * @param UserOptionsLookup $optionsLookup
 	 * @param AvatarLookup $avatarLookup
 	 * @param UrlUtils $urlUtils
+	 * @param MirageWordmarkLookup $wordmarkLookup
 	 * @param ConfigFactory $configFactory
 	 */
 	public function __construct(
@@ -83,12 +86,14 @@ class Handler implements
 		UserOptionsLookup $optionsLookup,
 		AvatarLookup $avatarLookup,
 		UrlUtils $urlUtils,
+		MirageWordmarkLookup $wordmarkLookup,
 		ConfigFactory $configFactory
 	) {
 		$this->titleFactory = $titleFactory;
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
 		$this->urlUtils = $urlUtils;
+		$this->wordmarkLookup = $wordmarkLookup;
 		$this->config = $configFactory->makeConfig( 'Mirage' );
 		$this->useInstantCommons = $configFactory->makeConfig( 'main' )
 			->get( MainConfigNames::UseInstantCommons );
@@ -254,9 +259,9 @@ class Handler implements
 			return;
 		}
 
-		$wordmarkTitle = $this->titleFactory->makeTitle( NS_FILE, 'Mirage-wordmark.png' );
+		$wordmarkFile = $this->wordmarkLookup->getWordmarkFile();
 
-		if ( $imagePage->getTitle()->equals( $wordmarkTitle ) ) {
+		if ( $wordmarkFile && $imagePage->getTitle()->equals( $wordmarkFile->getTitle() ) ) {
 			$html .= Html::warningBox(
 				$imagePage->getContext()->msg( 'mirage-wordmark-file-warning' )->escaped()
 			);

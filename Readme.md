@@ -7,9 +7,9 @@ Mirage is based on Oasis, the skin used by [FANDOM](https://www.fandom.com). Rat
 ## Features
 Mirage supports on-wiki configuration for several of its features.
 ### Wordmark
-Mirage will use the wordmark from `mirage-wordmark.png` when that file exists and
-`$wgMirageEnableWordmark` is enabled.
-The file should be 250 pixels wide and 65 pixels high.
+Mirage will use the files `mirage-wordmark.svg` and `mirage-wordmark.png`, in that order, when
+`$wgMirageEnableWordmark` is enabled to display a wordmark.
+The wordmark file should be 250 pixels wide and 65 pixels high.
 
 ### Navigation
 Mirage can use navigation defined in `MediaWiki:sidebar`, but also supports enhanced navigation

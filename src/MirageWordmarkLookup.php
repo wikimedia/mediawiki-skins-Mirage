@@ -8,6 +8,15 @@ use TitleFactory;
 use const NS_FILE;
 
 class MirageWordmarkLookup {
+	/**
+	 * Names of the wordmark files.
+	 * Titles are iterated in order: the first file will take precedence if multiple exist.
+	 */
+	private const WORDMARK_FILE_NAMES = [
+		'Mirage-wordmark.svg',
+		'Mirage-wordmark.png'
+	];
+
 	private TitleFactory $titleFactory;
 
 	private RepoGroup $repoGroup;
@@ -40,7 +49,7 @@ class MirageWordmarkLookup {
 		if ( $this->wordmarkEnabled ) {
 			$file = $this->getWordmarkFile();
 
-			if ( $file && $file->exists() ) {
+			if ( $file ) {
 				return $file->getUrl();
 			}
 		}
@@ -49,11 +58,23 @@ class MirageWordmarkLookup {
 	}
 
 	/**
+	 * Get the wordmark file to use.
+	 *
+	 * This ignores $wgMirageEnableImageWordmark.
+	 *
 	 * @return File|null
 	 */
 	public function getWordmarkFile(): ?File {
-		$title = $this->titleFactory->makeTitle( NS_FILE, 'Mirage-wordmark.png' );
+		foreach ( self::WORDMARK_FILE_NAMES as $name ) {
+			$title = $this->titleFactory->makeTitle( NS_FILE, $name );
 
-		return $this->repoGroup->findFile( $title ) ?: null;
+			$file = $this->repoGroup->findFile( $title );
+
+			if ( $file && $file->exists() ) {
+				return $file;
+			}
+		}
+
+		return null;
 	}
 }

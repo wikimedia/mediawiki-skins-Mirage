@@ -3,6 +3,7 @@
 namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
 use ConfigFactory;
+use File;
 use HashConfig;
 use Html;
 use IContextSource;
@@ -10,6 +11,7 @@ use ImagePage;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\Handler;
+use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\User\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentityValue;
@@ -46,6 +48,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -67,6 +70,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -91,6 +95,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -112,6 +117,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -130,6 +136,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			$this->createMock( AvatarLookup::class ),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -160,6 +167,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -210,6 +218,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler()
 		);
 
@@ -234,6 +243,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler( [
 				'UseInstantCommons' => $useInstantCommons
 			] )
@@ -273,11 +283,15 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
 	 */
 	public function testOnImagePageAfterImageLinksWithWordmarkDisabled(): void {
+		$wordmarkLookup = $this->createMock( MirageWordmarkLookup::class );
+		$wordmarkLookup->method( 'getWordmarkFile' )->willReturn( null );
+
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$wordmarkLookup,
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => false
 			] )
@@ -294,18 +308,25 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
 	 */
 	public function testOnImagePageAfterImageLinksWithWordmarkEnabledWrongPage(): void {
+		$titleMock = $this->createMock( Title::class );
+		$titleMock->method( 'equals' )->willReturn( false );
+
+		$file = $this->createMock( File::class );
+		$file->method( 'getTitle' )->willReturn( $titleMock );
+
+		$wordmarkLookup = $this->createMock( MirageWordmarkLookup::class );
+		$wordmarkLookup->method( 'getWordmarkFile' )->willReturn( $file );
+
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$wordmarkLookup,
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => true
 			] )
 		);
-
-		$titleMock = $this->createMock( Title::class );
-		$titleMock->method( 'equals' )->willReturn( false );
 
 		$imagePage = $this->createMock( ImagePage::class );
 		$imagePage->method( 'getTitle' )->willReturn( $titleMock );
@@ -321,11 +342,21 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 * @covers \MediaWiki\Skins\Mirage\Hook\Handler::onImagePageAfterImageLinks
 	 */
 	public function testOnImagePageAfterImageLinksWithWordmarkEnabled(): void {
+		$titleMock = $this->createMock( Title::class );
+		$titleMock->method( 'equals' )->willReturn( true );
+
+		$file = $this->createMock( File::class );
+		$file->method( 'getTitle' )->willReturn( $titleMock );
+
+		$wordmarkLookup = $this->createMock( MirageWordmarkLookup::class );
+		$wordmarkLookup->method( 'getWordmarkFile' )->willReturn( $file );
+
 		$handler = new Handler(
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( UserOptionsLookup::class ),
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
+			$wordmarkLookup,
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => true
 			] )
@@ -335,9 +366,6 @@ class HandlerTest extends MediaWikiUnitTestCase {
 		$mockContext->method( 'msg' )->willReturnCallback( function ( $key, ...$param ) {
 			return $this->getMockMessage( $key, $param );
 		} );
-
-		$titleMock = $this->createMock( Title::class );
-		$titleMock->method( 'equals' )->willReturn( true );
 
 		$imagePage = $this->createMock( ImagePage::class );
 		$imagePage->method( 'getTitle' )->willReturn( $titleMock );
