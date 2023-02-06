@@ -4,6 +4,7 @@
 			"Mainframe98"
 		]
 	},
+	"mirage-skin-desc": "Mirage is een responsieve vormgeving die zich richt op het weergeven van inhoud met een balk aan de rechterkant",
 	"mirage.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op het uiterlijk Mirage */",
 	"mirage.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die het uiterlijk Mirage gebruiken */",
 	"mirage-community-messages-header": "Gemeenschapsberichten",
