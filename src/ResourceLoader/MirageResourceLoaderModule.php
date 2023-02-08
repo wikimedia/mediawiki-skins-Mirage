@@ -9,7 +9,6 @@ use MediaWiki\ResourceLoader\FilePath;
 use MediaWiki\ResourceLoader\SkinModule;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
 use Wikimedia\Minify\CSSMin;
-use function is_array;
 
 class MirageResourceLoaderModule extends SkinModule {
 	/**
@@ -78,17 +77,12 @@ CSS;
 		}
 
 		// Mirage doesn't use the default MediaWiki logo, but does support the wordmark.
-		// Preload these manually.
-		$logo = $this->getLogoData( $this->getConfig() );
+		// Preload these manually. Use SkinModule::getAvailableLogos instead of
+		// SkinModule::getLogoData because the latter transforms the path, causing the preload
+		// link to mismatch and warnings to be shown in the browser console.
+		$logo = self::getAvailableLogos( $this->getConfig(), $context->getLanguage() );
 
-		if ( !is_array( $logo ) ) {
-			$logo = [
-				'1x' => $logo
-			];
-		}
-
-		// Mirage falls back to the default logo when no icon is defined, so preload it if it
-		// isn't defined.
+		// Substitute the svg, or 1x logo, for the icon if it is not defined.
 		if ( !isset( $logo['icon'] ) ) {
 			$logo['icon'] = $logo['svg'] ?? $logo['1x'];
 		}
