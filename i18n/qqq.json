@@ -37,5 +37,5 @@
 	"prefs-mirage-partial-max-width": "Label for the option to only limit the width of the content of articles",
 	"prefs-mirage-no-max-width": "Label for the option to never limit the width of the content.",
 	"prefs-mirage-show-right-rail": "Label for the option to display the right rail.",
-	"mirage-wordmark-file-warning": "Warning message displayed on [[:File:Mirage-wordmark.png]] when that file is used as the wordmark."
+	"mirage-wordmark-file-warning": "Warning message displayed on [[:File:Mirage-wordmark.svg]] or [[:File:Mirage-wordmark.png]] when that file is used as the wordmark."
 }
