@@ -37,5 +37,10 @@
 	"prefs-mirage-partial-max-width": "Label for the option to only limit the width of the content of articles",
 	"prefs-mirage-no-max-width": "Label for the option to never limit the width of the content.",
 	"prefs-mirage-show-right-rail": "Label for the option to display the right rail.",
+	"prefs-mirage-toc": "Label for the radiobuttons that control the placement of the table of contents",
+	"prefs-mirage-toc-legacy": "Label for the option to place the table of contents in the article body",
+	"prefs-mirage-toc-hybrid": "Label for the option to place the table of contents in the article body and in a right rail module",
+	"prefs-mirage-toc-right-rail-only": "Label for the option to place the table of contents in a right rail module",
+	"mirage-toggle-toc": "Label for the button that toggles the visibility of the table of contents in the right rail module",
 	"mirage-wordmark-file-warning": "Warning message displayed on [[:File:Mirage-wordmark.svg]] or [[:File:Mirage-wordmark.png]] when that file is used as the wordmark."
 }

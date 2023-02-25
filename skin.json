@@ -133,8 +133,7 @@
 				"interface-indicators": true,
 				"interface-message-box": true,
 				"interface-subtitle": true,
-				"normalize": true,
-				"toc": true
+				"normalize": true
 			},
 			"targets": [
 				"desktop",
@@ -172,6 +171,9 @@
 			"packageFiles": [
 				"skins.mirage.scripts/mirage.js",
 				"skins.mirage.scripts/rightrail.js"
+			],
+			"messages": [
+				"mirage-toggle-toc"
 			],
 			"dependencies": [
 				"mediawiki.page.ready"
@@ -377,7 +379,8 @@
 	},
 	"DefaultUserOptions": {
 		"mirage-max-width": 1,
-		"mirage-show-right-rail": false
+		"mirage-show-right-rail": false,
+		"mirage-toc": 0
 	},
 	"SkinLessImportPaths": {
 		"mirage": "resources/mediawiki.less"

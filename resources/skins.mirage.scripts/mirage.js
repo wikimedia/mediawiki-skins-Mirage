@@ -57,6 +57,7 @@ function main() {
 	attachDropdownEvents();
 
 	rightRail.initialize();
+	rightRail.addTocToggle();
 
 	// No such thing as $wgResourceLoaderSkinScripts :(
 	if ( ulsModuleStatus && ulsModuleStatus !== 'registered' ) {

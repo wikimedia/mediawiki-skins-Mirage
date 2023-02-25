@@ -3,6 +3,7 @@
 namespace MediaWiki\Skins\Mirage;
 
 use MediaWiki\MainConfigNames;
+use MediaWiki\Skins\Mirage\Hook\Handler;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MediaWiki\Skins\Mirage\RightRailModules\CategoriesModule;
 use MediaWiki\Skins\Mirage\RightRailModules\GenericItemListModule;
@@ -10,7 +11,9 @@ use MediaWiki\Skins\Mirage\RightRailModules\InterfaceMessageModule;
 use MediaWiki\Skins\Mirage\RightRailModules\PageToolsModule;
 use MediaWiki\Skins\Mirage\RightRailModules\RecentChangesModule;
 use MediaWiki\Skins\Mirage\RightRailModules\RightRailModule;
+use MediaWiki\Skins\Mirage\RightRailModules\TableOfContentsModule;
 use MediaWiki\Skins\Mirage\RightRailModules\UserToolsModule;
+use MediaWiki\User\UserOptionsLookup;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use function array_diff_key;
 use function array_flip;
@@ -19,6 +22,8 @@ class RightRailBuilder {
 	private ObjectFactory $objectFactory;
 
 	private HookRunner $hookRunner;
+
+	private UserOptionsLookup $optionsLookup;
 
 	private SidebarParser $sidebarParser;
 
@@ -32,6 +37,7 @@ class RightRailBuilder {
 	 *
 	 * @param ObjectFactory $objectFactory
 	 * @param HookRunner $hookRunner
+	 * @param UserOptionsLookup $optionsLookup
 	 * @param SidebarParser $sidebarParser
 	 * @param SkinMirage $skin
 	 * @param string[] $hiddenRightRailModules
@@ -39,12 +45,14 @@ class RightRailBuilder {
 	public function __construct(
 		ObjectFactory $objectFactory,
 		HookRunner $hookRunner,
+		UserOptionsLookup $optionsLookup,
 		SidebarParser $sidebarParser,
 		SkinMirage $skin,
 		array $hiddenRightRailModules
 	) {
 		$this->objectFactory = $objectFactory;
 		$this->hookRunner = $hookRunner;
+		$this->optionsLookup = $optionsLookup;
 		$this->sidebarParser = $sidebarParser;
 		$this->skin = $skin;
 		$this->hiddenRightRailModules = $hiddenRightRailModules;
@@ -93,6 +101,19 @@ class RightRailBuilder {
 	 */
 	private function determineModules(): array {
 		$modules = [];
+
+		if (
+			$this->optionsLookup->getOption( $this->skin->getUser(), 'mirage-toc' ) !== Handler::MIRAGE_TOC_LEGACY &&
+			$this->skin->getOutput()->isTOCEnabled()
+		) {
+			$modules['TableOfContents'] = [
+				'class' => TableOfContentsModule::class,
+				'args' => [
+					$this->skin->getOutput()->getTOCData(),
+					$this->skin->getConfig()->get( MainConfigNames::MaxTocLevel )
+				]
+			];
+		}
 
 		if (
 			!$this->skin->getUser()->isAnon() &&

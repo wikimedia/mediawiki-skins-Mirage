@@ -7,6 +7,7 @@ use Config;
 use ConfigFactory;
 use EmptyBagOStuff;
 use Generator;
+use IContextSource;
 use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -15,6 +16,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
+use MediaWiki\Skins\Mirage\Hook\Handler;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
@@ -108,6 +110,18 @@ class SkinMirage extends SkinMustache {
 		}
 
 		$this->templateParser = new TemplateParser( $this->options['templateDirectory'], $cache );
+	}
+
+	/** @inheritDoc */
+	public function setContext( IContextSource $context ): void {
+		parent::setContext( $context );
+
+		// XXX: Terrible hack to ensure the mirage-toc option is respected.
+		// This should be in ::getOptions, but that method is final.
+		$this->options['toc'] = $this->userOptionsLookup->getIntOption(
+			$context->getUser(),
+			'mirage-toc'
+		) !== Handler::MIRAGE_TOC_RIGHT_RAIL_ONLY;
 	}
 
 	/**
@@ -414,6 +428,7 @@ class SkinMirage extends SkinMustache {
 		$rightRailBuilder = new RightRailBuilder(
 			$this->objectFactory,
 			new HookRunner( $this->getHookContainer() ),
+			$this->userOptionsLookup,
 			$sidebarParser,
 			$this,
 			$this->mirageConfig->get( 'MirageHiddenRightRailModules' )

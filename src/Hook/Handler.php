@@ -57,6 +57,10 @@ class Handler implements
 	public const MIRAGE_PARTIAL_MAX_WIDTH = 1;
 	public const MIRAGE_NO_MAX_WIDTH = 2;
 
+	public const MIRAGE_TOC_LEGACY = 0;
+	public const MIRAGE_TOC_HYBRID = 1;
+	public const MIRAGE_TOC_RIGHT_RAIL_ONLY = 2;
+
 	private TitleFactory $titleFactory;
 
 	private UserOptionsLookup $optionsLookup;
@@ -227,6 +231,17 @@ class Handler implements
 					'prefs-mirage-no-max-width' => self::MIRAGE_NO_MAX_WIDTH,
 				],
 				'label-message' => 'prefs-mirage-max-width-label',
+				'section' => 'rendering/skin/skin-prefs',
+				'hide-if' => [ '!==', 'skin', 'mirage' ]
+			],
+			'mirage-toc' => [
+				'type' => 'radio',
+				'options-messages' => [
+					'prefs-mirage-toc-legacy' => self::MIRAGE_TOC_LEGACY,
+					'prefs-mirage-toc-hybrid' => self::MIRAGE_TOC_HYBRID,
+					'prefs-mirage-toc-right-rail-only' => self::MIRAGE_TOC_RIGHT_RAIL_ONLY,
+				],
+				'label-message' => 'prefs-mirage-toc',
 				'section' => 'rendering/skin/skin-prefs',
 				'hide-if' => [ '!==', 'skin', 'mirage' ]
 			],
