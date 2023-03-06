@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"mirage-skin-desc": "Mirage is een responsieve vormgeving die zich richt op het weergeven van inhoud met een balk aan de rechterkant",
@@ -9,7 +10,7 @@
 	"mirage.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die het uiterlijk Mirage gebruiken */",
 	"mirage-community-messages-header": "Gemeenschapsberichten",
 	"mirage-interface-messages-module-edit-this-message": "Dit bericht bewerken",
-	"mirage-page-actions": "Pagina-acties",
+	"mirage-page-actions": "Pagina-handelingen",
 	"mirage-jumptonavigation": "Naar navigatie springen",
 	"mirage-jumptocontent": "Naar inhoud springen",
 	"mirage-action-addsection": "Onderwerp toevoegen",
