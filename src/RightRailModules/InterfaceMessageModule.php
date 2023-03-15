@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
-use Html;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Skins\Mirage\SkinMirage;

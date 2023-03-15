@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
-use Html;
+use MediaWiki\Html\Html;
 use MediaWiki\Skins\Mirage\SkinMirage;
 
 class GenericItemListModule extends RightRailModule {
