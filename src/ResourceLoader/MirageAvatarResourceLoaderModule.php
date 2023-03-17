@@ -48,7 +48,7 @@ class MirageAvatarResourceLoaderModule extends FileModule {
 
 		$screenStyles = $styles['screen'] ?? '';
 		$screenStyles .= <<<CSS
-.skin-mirage-avatar-holder:before { background-image: $avatarUrl; }
+.skin-mirage-avatar-holder::before { background-image: $avatarUrl; }
 CSS;
 		$styles['screen'] = $screenStyles;
 

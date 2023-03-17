@@ -277,11 +277,11 @@ footer.mw-footer {
 	box-shadow: @box-shadow-menu;
 
 	.skin-mirage-dropdown-list-anchor {
-		&:before {
+		&::before {
 			border-bottom-color: @wmui-color-base30;
 		}
 
-		&:after {
+		&::after {
 			border-bottom-color: @wmui-color-base100;
 		}
 	}
@@ -397,8 +397,8 @@ footer.mw-footer {
 			float: right;
 			margin-left: 0.25rem;
 
-			&:before,
-			&:after {
+			&::before,
+			&::after {
 				content: '';
 			}
 		}
@@ -515,7 +515,7 @@ footer.mw-footer {
 					color: @color-base--hover;
 				}
 
-				& > .skin-mirage-ooui-icon:before {
+				& > .skin-mirage-ooui-icon::before {
 					opacity: @opacity-icon-base--hover;
 				}
 			}
@@ -529,7 +529,7 @@ footer.mw-footer {
 					color: @color-base--active;
 				}
 
-				& > .skin-mirage-ooui-icon:before {
+				& > .skin-mirage-ooui-icon::before {
 					opacity: @opacity-base;
 				}
 			}
@@ -598,7 +598,7 @@ footer.mw-footer {
 }
 
 #mirage-edit-button {
-	.mw-watchlink .loading:before {
+	.mw-watchlink .loading::before {
 		.rotation( 700ms );
 		outline: 0;
 		cursor: default;
@@ -614,7 +614,7 @@ footer.mw-footer {
 
 		&:first-child a {
 			// If there isn't an icon, don't render a placeholder.
-			&.skin-mirage-ooui-icon-placeholder-invert:before {
+			&.skin-mirage-ooui-icon-placeholder-invert::before {
 				display: none;
 			}
 
@@ -708,7 +708,7 @@ footer.mw-footer {
 		border-color: @border-color-base--focus;
 	}
 
-	#mirage-right-rail-checkbox:checked ~ #mw-navigation &:before {
+	#mirage-right-rail-checkbox:checked ~ #mw-navigation &::before {
 		transform: rotate( 180deg );
 	}
 }
@@ -735,7 +735,7 @@ footer.mw-footer {
 		}
 	}
 
-	.skin-mirage-recent-changes-module-timestamp:before {
+	.skin-mirage-recent-changes-module-timestamp::before {
 		content: '\2022';
 		margin: 0 0.25rem;
 	}

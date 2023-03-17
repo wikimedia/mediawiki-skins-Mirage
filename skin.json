@@ -184,8 +184,8 @@
 				"mobile"
 			],
 			"defaultColor": "#000",
-			"selectorWithoutVariant": ".skin-mirage-ooui-icon-{name}:before",
-			"selectorWithVariant": ".skin-mirage-ooui-icon-{name}-{variant}:before",
+			"selectorWithoutVariant": ".skin-mirage-ooui-icon-{name}::before",
+			"selectorWithVariant": ".skin-mirage-ooui-icon-{name}-{variant}::before",
 			"variants": {
 				"default": {
 					"invert": {
@@ -217,7 +217,7 @@
 				"expand": {},
 				"halfStar": {
 					"selectorWithVariant": {
-						"invert": "#ca-unwatch.mw-watchlink-temp a:before"
+						"invert": "#ca-unwatch.mw-watchlink-temp a::before"
 					}
 				},
 				"history": {},
@@ -274,14 +274,14 @@
 				"speechBubbleAdd": {},
 				"star": {
 					"selectorWithVariant": {
-						"invert": "#ca-watch a:before"
+						"invert": "#ca-watch a::before"
 					}
 				},
 				"trash": {},
 				"unLock": {},
 				"unStar": {
 					"selectorWithVariant": {
-						"invert": "#ca-unwatch a:before"
+						"invert": "#ca-unwatch a::before"
 					}
 				},
 				"upload": {},
@@ -289,7 +289,7 @@
 				"userAvatar": {
 					"selectorWithVariant": {
 						"destructive": [
-							"#pt-userpage a.new:before"
+							"#pt-userpage a.new::before"
 						]
 					},
 					"variants": [
@@ -300,8 +300,8 @@
 				"userTalk": {
 					"selectorWithVariant": {
 						"destructive": [
-							"#pt-mytalk a.new:before",
-							"#pt-anontalk a.new:before"
+							"#pt-mytalk a.new::before",
+							"#pt-anontalk a.new::before"
 						]
 					},
 					"variants": [
@@ -340,8 +340,8 @@
 				"mobile"
 			],
 			"defaultColor": "#000",
-			"selectorWithoutVariant": ".skin-mirage-ooui-icon-indicator-{name}:before",
-			"selectorWithVariant": ".skin-mirage-ooui-icon-indicator-{name}-{variant}:before",
+			"selectorWithoutVariant": ".skin-mirage-ooui-icon-indicator-{name}::before",
+			"selectorWithVariant": ".skin-mirage-ooui-icon-indicator-{name}-{variant}::before",
 			"themeImages": "indicators"
 		}
 	},

@@ -6,7 +6,7 @@
 .skin-mirage-ooui-icon {
 	display: inline-block;
 
-	&:before {
+	&::before {
 		content: '';
 		display: inline-block;
 		background-size: contain;
@@ -16,12 +16,12 @@
 		vertical-align: sub;
 	}
 
-	&.skin-mirage-ooui-icon-small:before {
+	&.skin-mirage-ooui-icon-small::before {
 		width: @size-icon-small;
 		height: @size-icon-small;
 	}
 
-	&.skin-mirage-ooui-icon-medium:before {
+	&.skin-mirage-ooui-icon-medium::before {
 		width: @size-icon-medium;
 		height: @size-icon-medium;
 	}
@@ -32,7 +32,7 @@
 		color: transparent;
 		.user-select-none();
 
-		&:before {
+		&::before {
 			margin-right: 0;
 		}
 
@@ -47,7 +47,7 @@
 }
 
 .skin-mirage-ooui-indicator {
-	&:before {
+	&::before {
 		display: block;
 	}
 }

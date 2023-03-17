@@ -279,7 +279,7 @@ class Handler implements
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiLove' ) ) {
 			$icons['heart'] = [
 				'selectorWithVariant' => [
-					'destructive' => '#ca-wikilove.icon a:before'
+					'destructive' => '#ca-wikilove.icon a::before'
 				],
 				'variants' => [
 					'destructive'

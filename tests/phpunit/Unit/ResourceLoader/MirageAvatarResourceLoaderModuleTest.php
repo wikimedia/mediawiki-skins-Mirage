@@ -52,7 +52,7 @@ class MirageAvatarResourceLoaderModuleTest extends MediaWikiUnitTestCase {
 		);
 		static::assertEquals(
 			[
-				'screen' => ".skin-mirage-avatar-holder:before { background-image: $url; }"
+				'screen' => ".skin-mirage-avatar-holder::before { background-image: $url; }"
 			],
 			$module->getStyles( $context )
 		);

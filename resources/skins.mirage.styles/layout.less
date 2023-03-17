@@ -60,8 +60,8 @@
 		top: -10px;
 		right: 18px;
 
-		&:before,
-		&:after {
+		&::before,
+		&::after {
 			content: '';
 			position: absolute;
 			width: 0;
@@ -71,13 +71,13 @@
 			border-color: transparent;
 		}
 
-		&:before {
+		&::before {
 			bottom: -10px;
 			left: -9px;
 			border-width: 10px;
 		}
 
-		&:after {
+		&::after {
 			bottom: -10px;
 			left: -8px;
 			border-width: 9px;
@@ -421,7 +421,7 @@ body,
 			width: 1rem;
 			padding-left: 0;
 
-			&:before {
+			&::before {
 				vertical-align: text-top;
 			}
 		}
@@ -468,7 +468,7 @@ body,
 #mirage-edit-button {
 	position: relative;
 
-	.skin-mirage-dropdown-indicator:before {
+	.skin-mirage-dropdown-indicator::before {
 		display: inline-block;
 		vertical-align: text-bottom;
 	}
@@ -509,7 +509,7 @@ body,
 .mw-editsection {
 	.user-select-none();
 
-	a:before {
+	a::before {
 		position: relative;
 		bottom: 0.2rem;
 	}
