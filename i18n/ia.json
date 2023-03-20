@@ -5,6 +5,8 @@
 		]
 	},
 	"mirage-skin-desc": "Mirage es un apparentia responsive que se concentra sur le presentation de contento con un barra lateral a dextra",
+	"mirage.css": "/* Le codice CSS placiate hic affectara le usatores del apparentia Mirage */",
+	"mirage.js": "/* Le codice JavaScript placiate hic essera cargate pro le usatores del apparentia Mirage */",
 	"mirage-community-messages-header": "Messages del communitate",
 	"mirage-interface-messages-module-edit-this-message": "Modificar iste message",
 	"mirage-page-actions": "Actiones de pagina",
