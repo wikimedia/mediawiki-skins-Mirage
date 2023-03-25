@@ -46,7 +46,7 @@ class GenericItemListModuleTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return array
 	 */
-	public function provideItems(): array {
+	public static function provideItems(): array {
 		return [
 			'Empty' => [ [] ],
 			'With items' => [

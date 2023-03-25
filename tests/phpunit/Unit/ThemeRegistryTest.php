@@ -33,7 +33,7 @@ class ThemeRegistryTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return Generator
 	 */
-	public function provideThemes(): Generator {
+	public static function provideThemes(): Generator {
 		foreach ( ThemeRegistry::THEMES as $theme => $styles ) {
 			yield $theme => [ $theme, $styles ];
 		}

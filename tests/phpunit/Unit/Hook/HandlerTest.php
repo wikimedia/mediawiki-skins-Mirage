@@ -196,7 +196,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return array[]
 	 */
-	public function provideOptions(): array {
+	public static function provideOptions(): array {
 		return [
 			'No preference set' => [ null, ' skin-mirage-limit-content-width-selectively' ],
 			'Invalid' => [ -1, ' skin-mirage-limit-content-width-selectively' ],
@@ -266,7 +266,7 @@ class HandlerTest extends MediaWikiUnitTestCase {
 	 *
 	 * @return array[]
 	 */
-	public function provideIconsOptions(): array {
+	public static function provideIconsOptions(): array {
 		return [
 			'Without InstantCommons' => [
 				false,
