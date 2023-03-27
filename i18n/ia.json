@@ -33,5 +33,7 @@
 	"prefs-mirage-partial-max-width": "Applicar le latitude maximal del pagina solmente pro articulos",
 	"prefs-mirage-no-max-width": "Disactivar le latitude maximal de paginas",
 	"prefs-mirage-show-right-rail": "Monstrar le barra lateral a dextra",
+	"prefs-mirage-toc": "Placiamento del tabula de contento:",
+	"prefs-mirage-toc-legacy": "Monstrar le tabula de contento in le texto principal del articulo",
 	"mirage-wordmark-file-warning": "Iste file es actualmente in uso como le marca de parola pro le apparentia Mirage."
 }

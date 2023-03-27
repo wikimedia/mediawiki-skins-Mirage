@@ -35,5 +35,10 @@
 	"prefs-mirage-partial-max-width": "N’appliquer la largeur de page maximale qu’aux articles",
 	"prefs-mirage-no-max-width": "Désactiver la largeur de page maximale",
 	"prefs-mirage-show-right-rail": "Afficher la barre latérale",
+	"prefs-mirage-toc": "Placement de la table des matières :",
+	"prefs-mirage-toc-legacy": "Afficher la table des matières dans le corps de l’article",
+	"prefs-mirage-toc-hybrid": "Afficher le contenu du tableau dans le corps de l’article et en tant que module à droite",
+	"prefs-mirage-toc-right-rail-only": "Afficher le contenu du tableau sous la forme d’un module à droite",
+	"mirage-toggle-toc": "Afficher ou cacher la table des matières",
 	"mirage-wordmark-file-warning": "Ce fichier est actuellement utilisé comme mot-balise pour l’habillage Mirage."
 }

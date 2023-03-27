@@ -32,5 +32,10 @@
 	"prefs-mirage-partial-max-width": "Uporabi največjo širino strani samo pri člankih",
 	"prefs-mirage-no-max-width": "Izklopi največjo širini strani",
 	"prefs-mirage-show-right-rail": "Prikaži desno letvico",
+	"prefs-mirage-toc": "Postavitev kazala:",
+	"prefs-mirage-toc-legacy": "Prikaži vsebino v telesu članka",
+	"prefs-mirage-toc-hybrid": "Prikaži vsebino tabele v telesu članka in kot modul desne tirnice",
+	"prefs-mirage-toc-right-rail-only": "Prikaži vsebino tabele kot modul desne letvice",
+	"mirage-toggle-toc": "Preklopi kazalo",
 	"mirage-wordmark-file-warning": "Ta datoteka se trenutno uporablja kot besedni znak za preobleko Mirage."
 }
