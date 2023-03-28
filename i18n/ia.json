@@ -35,5 +35,8 @@
 	"prefs-mirage-show-right-rail": "Monstrar le barra lateral a dextra",
 	"prefs-mirage-toc": "Placiamento del tabula de contento:",
 	"prefs-mirage-toc-legacy": "Monstrar le tabula de contento in le texto principal del articulo",
+	"prefs-mirage-toc-hybrid": "Monstra le tabula de contento in le texto principal del articulo e como modulo in le columna dextre",
+	"prefs-mirage-toc-right-rail-only": "Monstrar le tabula de contento como modulo in le columna dextre",
+	"mirage-toggle-toc": "Alternar le tabula de contento",
 	"mirage-wordmark-file-warning": "Iste file es actualmente in uso como le marca de parola pro le apparentia Mirage."
 }
