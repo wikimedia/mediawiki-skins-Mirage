@@ -27,8 +27,14 @@
 	"mirage-recent-changes-module": "Recente wijzigingen",
 	"mirage-more": "Meer",
 	"mirage-more-recent-changes": "Meer wijzigingen bekijken",
+	"prefs-mirage-max-width-label": "Mirage-inhoudsbreedte:",
 	"prefs-mirage-max-width": "Pas altijd de maximale paginabreedte toe",
 	"prefs-mirage-partial-max-width": "Pas de maximale paginabreedte alleen toe op artikelen",
 	"prefs-mirage-no-max-width": "De maximale paginabreedte uitschakelen",
+	"prefs-mirage-show-right-rail": "De rechterrail weergeven",
+	"prefs-mirage-toc": "Locatie van de inhoudsopgave:",
+	"prefs-mirage-toc-legacy": "Toon de inhoudsopgave in de artikeltekst",
+	"prefs-mirage-toc-hybrid": "Toon de inhoudsopgave in de artikeltekst en als rechterrailmodule",
+	"prefs-mirage-toc-right-rail-only": "Toon de inhoudsopgave als een rechterrailmodule",
 	"mirage-wordmark-file-warning": "Dit bestand wordt momenteel gebruikt als het woordmerk voor de Mirage vormgeving."
 }

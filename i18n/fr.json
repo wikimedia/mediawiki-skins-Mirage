@@ -39,7 +39,7 @@
 	"prefs-mirage-toc": "Placement de la table des matières :",
 	"prefs-mirage-toc-legacy": "Afficher la table des matières dans le corps de l’article",
 	"prefs-mirage-toc-hybrid": "Afficher le contenu du tableau dans le corps de l’article et en tant que module à droite",
-	"prefs-mirage-toc-right-rail-only": "Afficher le contenu du tableau sous la forme d’un module à droite",
+	"prefs-mirage-toc-right-rail-only": "Afficher le contenu du tableau et en tant que module à droite",
 	"mirage-toggle-toc": "Afficher ou masquer la table des matières",
 	"mirage-wordmark-file-warning": "Ce fichier est actuellement utilisé comme mot-balise pour l’habillage Mirage."
 }

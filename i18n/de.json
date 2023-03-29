@@ -31,8 +31,8 @@
 	"prefs-mirage-show-right-rail": "Anzeige der rechten Leiste",
 	"prefs-mirage-toc": "Platzierung des Inhaltsverzeichnisses:",
 	"prefs-mirage-toc-legacy": "Anzeigen des Inhaltsverzeichnisses im Hauptteil des Artikels",
-	"prefs-mirage-toc-hybrid": "Anzeige des Tabelleninhalts im Artikelkörper und als Modul in der rechten Leiste",
-	"prefs-mirage-toc-right-rail-only": "Anzeige des Tabelleninhalts als Modul in der rechten Leiste",
+	"prefs-mirage-toc-hybrid": "Anzeige des Inhaltsverzeichnisses im Artikelkorpus und als Modul in der rechten Leiste",
+	"prefs-mirage-toc-right-rail-only": "Anzeige des Inhaltsverzeichnisses als Modul der rechten Leiste",
 	"mirage-toggle-toc": "Umschalten des Inhaltsverzeichnisses",
 	"mirage-wordmark-file-warning": "Diese Datei wird derzeit als Wortmarke für den Mirage-Skin verwendet."
 }

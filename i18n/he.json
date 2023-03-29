@@ -4,7 +4,7 @@
 			"Amire80"
 		]
 	},
-	"mirage-skin-desc": "מיראז' הוא עיצוב רספונסיבי שמתמקד בהצגת תוכן עם מסילה בצד שמאל",
+	"mirage-skin-desc": "מיראז' הוא עיצוב מסתגל שמתמקד בהצגת תוכן עם מסילה בצד שמאל",
 	"mirage-community-messages-header": "הודעות קהילה",
 	"mirage-interface-messages-module-edit-this-message": "עריכת ההודעה הזאת",
 	"mirage-page-actions": "פעולות דף",
@@ -31,5 +31,10 @@
 	"prefs-mirage-partial-max-width": "להחיל את רוחב הדף המרבי רק לערכים",
 	"prefs-mirage-no-max-width": "לכבות את רוחב הדף המרבי",
 	"prefs-mirage-show-right-rail": "להציג את המסילה השמאלית",
+	"prefs-mirage-toc": "מיקום תוכן העניינים:",
+	"prefs-mirage-toc-legacy": "הצגת תוכן העניינים בגוף הערך",
+	"prefs-mirage-toc-hybrid": "הצגת תוכן העניינים בגוף הערך וכמודול במסילה השמאלית",
+	"prefs-mirage-toc-right-rail-only": "הצגת תוכן העניינים כמודול במסילה השמאלית",
+	"mirage-toggle-toc": "שינוי מצב תוכן העניינים",
 	"mirage-wordmark-file-warning": "הקובץ הזה בשימוש עכשיו בתור סמל טקסט לעיצוב מיראז'."
 }
