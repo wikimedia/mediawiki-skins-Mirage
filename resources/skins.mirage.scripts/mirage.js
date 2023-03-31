@@ -8,17 +8,17 @@ function closeAllDropdowns( $dropdowns ) {
 }
 
 function attachDropdownEvents() {
-	var $dropdowns = $( '.skin-mirage-dropdown-container' );
+	const $dropdowns = $( '.skin-mirage-dropdown-container' );
 
 	$dropdowns.on( 'click', function ( event ) {
-		var $element = $( this ),
-			$dropdown = $element.find( '.skin-mirage-dropdown-list' )
-				.not( '.skin-mirage-dropdown-sub-list' );
-
 		// Don't close the list when it is clicked.
 		if ( $( event.target ).closest( '.skin-mirage-dropdown-list' ).length > 0 ) {
 			return;
 		}
+
+		const $element = $( this );
+		const $dropdown = $element.find( '.skin-mirage-dropdown-list' )
+			.not( '.skin-mirage-dropdown-sub-list' );
 
 		if ( $dropdown.hasClass( 'skin-mirage-dropdown-hide' ) ) {
 			closeAllDropdowns( $dropdowns );
@@ -31,9 +31,9 @@ function attachDropdownEvents() {
 	} );
 
 	$dropdowns.find( '.skin-mirage-sub-list-icon' ).on( 'click', function () {
-		var $element = $( this );
-
 		closeAllDropdowns( $dropdowns );
+
+		const $element = $( this );
 
 		$element
 			.parentsUntil( '.skin-mirage-dropdown-list' )
@@ -51,8 +51,8 @@ function attachDropdownEvents() {
 }
 
 function main() {
-	var ulsModuleStatus = mw.loader.getState( 'ext.uls.interface' ),
-		rightRail = require( './rightrail.js' );
+	const ulsModuleStatus = mw.loader.getState( 'ext.uls.interface' );
+	const rightRail = require( './rightrail.js' );
 
 	attachDropdownEvents();
 
@@ -61,12 +61,11 @@ function main() {
 
 	// No such thing as $wgResourceLoaderSkinScripts :(
 	if ( ulsModuleStatus && ulsModuleStatus !== 'registered' ) {
-		mw.loader.using( 'ext.uls.interface' ).then( function () {
-			$( '#skin-mirage-language-button' )
-				.addClass( 'p-lang--uls-ready' )
-				.find( '.skin-mirage-dropdown-list' )
-				.remove();
-		} );
+		mw.loader.using( 'ext.uls.interface' ).then( () => $( '#skin-mirage-language-button' )
+			.addClass( 'p-lang--uls-ready' )
+			.find( '.skin-mirage-dropdown-list' )
+			.remove()
+		);
 	}
 }
 
