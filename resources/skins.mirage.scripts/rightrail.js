@@ -1,6 +1,6 @@
-var checkboxHack = require( 'mediawiki.page.ready' ).checkboxHack,
-	debounce = require( 'mediawiki.util' ).debounce,
-	api;
+const checkboxHack = require( 'mediawiki.page.ready' ).checkboxHack;
+const debounce = require( 'mediawiki.util' ).debounce;
+let api;
 
 function saveSidebarState( checkbox ) {
 	return debounce( 1000, function () {
@@ -10,8 +10,8 @@ function saveSidebarState( checkbox ) {
 }
 
 function initialize() {
-	var checkbox = window.document.getElementById( 'mirage-right-rail-checkbox' ),
-		button = window.document.getElementById( 'mirage-right-rail-button' );
+	const checkbox = window.document.getElementById( 'mirage-right-rail-checkbox' );
+	const button = window.document.getElementById( 'mirage-right-rail-button' );
 
 	if ( checkbox instanceof HTMLInputElement && button ) {
 		checkboxHack.bindToggleOnClick( checkbox, button );
@@ -26,17 +26,15 @@ function initialize() {
 }
 
 function addTocToggle() {
-	var $tocModule = $( '#p-mirage-toc' ),
-		$button,
-		$tocContent;
+	const $tocModule = $( '#p-mirage-toc' );
 
 	if ( !$tocModule.length ) {
 		return;
 	}
 
-	$tocContent = $tocModule.find( '.skin-mirage-module-body' );
+	const $tocContent = $tocModule.find( '.skin-mirage-module-body' );
 
-	$button = $( '<span>' )
+	const $button = $( '<span>' )
 		.text( mw.msg( 'mirage-toggle-toc' ) )
 		.attr( 'role', 'button' )
 		.attr( 'id', 'mirage-toc-toggle' )
@@ -56,6 +54,6 @@ function addTocToggle() {
 }
 
 module.exports = {
-	initialize: initialize,
-	addTocToggle: addTocToggle
+	initialize,
+	addTocToggle
 };
