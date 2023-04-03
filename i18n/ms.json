@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hakimi97",
 			"Tofeiku"
 		]
 	},
@@ -18,5 +19,7 @@
 	"mirage-page-tools": "Alat laman",
 	"mirage-hidden-categories": "Kategori tersembunyi",
 	"mirage-recent-changes-module": "Perubahan terkini",
-	"mirage-more-recent-changes": "Lihat lebih perubahan"
+	"mirage-more-recent-changes": "Lihat lebih perubahan",
+	"prefs-mirage-toc-hybrid": "Tunjukkan jadual kandungan dalam badan rencana dan sebagai modul rel kanan",
+	"prefs-mirage-toc-right-rail-only": "Tunjukkan jadual kandungan dalam bentuk modul rel kanan"
 }
