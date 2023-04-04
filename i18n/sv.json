@@ -34,5 +34,10 @@
 	"prefs-mirage-partial-max-width": "Tillämpa bara den högsta sidbredden till artiklar",
 	"prefs-mirage-no-max-width": "Avaktivera den högsta sidbredden",
 	"prefs-mirage-show-right-rail": "Visa höger sidofält",
+	"prefs-mirage-toc": "Placering av innehållsförteckningen:",
+	"prefs-mirage-toc-legacy": "Visa innehållsförteckningen i artikeltexten",
+	"prefs-mirage-toc-hybrid": "Visa innehållsförteckningen i artikeltexten och som en modul på högersidan",
+	"prefs-mirage-toc-right-rail-only": "Visa innehållsförteckningen som en modul på högersidan",
+	"mirage-toggle-toc": "Visa/dölj innehållsförteckningen",
 	"mirage-wordmark-file-warning": "Denna fil används för tillfället som textlogotypen till utseendet Mirage."
 }
