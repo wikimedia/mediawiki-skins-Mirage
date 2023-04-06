@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"Robby"
+			"Robby",
+			"Amire80"
 		]
 	},
 	"skinname-mirage": "{{name}}",
-	"mirage-skin-desc": "{{desc|what=skin|name=Mirage|url=https://www.mediawiki.org/wiki/Skin:Mirage}}",
+	"mirage-skin-desc": "'''For RTL languages, replace \"right\" with \"left\".'''\n\n{{desc|what=skin|name=Mirage|url=https://www.mediawiki.org/wiki/Skin:Mirage}}",
 	"mirage-navigation": "{{notranslate}}",
 	"mirage.css": "{{optional}}",
 	"mirage.js": "{{optional}}",
@@ -31,11 +32,11 @@
 	"mirage-recent-changes-module": "Header for the right rail module with a small list of recent changes\n{{Identical|Recent changes}}",
 	"mirage-more": "Button label for the edit button dropdown. This message is for screen readers and won't be shown to regular users.\n{{Identical|More}}",
 	"mirage-more-recent-changes": "Text used for the link to Special:RecentChanges in the recent changes right rail module.",
-	"mirage-toggle-right-rail": "Label for the button that toggles the right rail. This message will be shown as a tooltip and read by screen readers.\n\nSee also\n* {{msg-mw|vector-action-toggle-sidebar}}",
+	"mirage-toggle-right-rail": "'''For RTL languages, replace \"right\" with \"left\".'''\n\nLabel for the button that toggles the right rail. This message will be shown as a tooltip and read by screen readers.\n\nSee also\n* {{msg-mw|vector-action-toggle-sidebar}}",
 	"prefs-mirage-max-width-label": "Label for the radiobuttons that control the limit on the width of the content.",
 	"prefs-mirage-max-width": "Label for the option to always limit the width of the content.",
 	"prefs-mirage-partial-max-width": "Label for the option to only limit the width of the content of articles",
 	"prefs-mirage-no-max-width": "Label for the option to never limit the width of the content.",
-	"prefs-mirage-show-right-rail": "Label for the option to display the right rail.",
+	"prefs-mirage-show-right-rail": "'''For RTL languages, replace \"right\" with \"left\".'''\n\nLabel for the option to display the right rail.",
 	"mirage-wordmark-file-warning": "Warning message displayed on [[:File:Mirage-wordmark.svg]] or [[:File:Mirage-wordmark.png]] when that file is used as the wordmark."
 }
