@@ -34,5 +34,10 @@
 	"prefs-mirage-partial-max-width": "Stosuj maksymalną szerokość strony tylko do artykułów",
 	"prefs-mirage-no-max-width": "Wyłącz maksymalną szerokość strony",
 	"prefs-mirage-show-right-rail": "Wyświetl prawy panel",
+	"prefs-mirage-toc": "Umiejscowienie spisu treści:",
+	"prefs-mirage-toc-legacy": "Wyświetlaj spis treści wewnątrz artykułu",
+	"prefs-mirage-toc-hybrid": "Wyświetlaj spis treści wewnątrz artykułu i w prawym panelu wiki",
+	"prefs-mirage-toc-right-rail-only": "Wyświetlaj spis treści w prawym panelu wiki",
+	"mirage-toggle-toc": "Przełącz spis treści",
 	"mirage-wordmark-file-warning": "Ten plik obecnie jest używany jako logo skórki Mirage."
 }
