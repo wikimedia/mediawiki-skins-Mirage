@@ -31,5 +31,10 @@
 	"prefs-mirage-partial-max-width": "僅對條目套用最大頁面寬度",
 	"prefs-mirage-no-max-width": "停用最大頁面寬度",
 	"prefs-mirage-show-right-rail": "顯示右側面板",
+	"prefs-mirage-toc": "目錄的放置：",
+	"prefs-mirage-toc-legacy": "在條目正文裡顯示目錄",
+	"prefs-mirage-toc-hybrid": "目錄以右側面板模組樣式在條目正文裡顯示",
+	"prefs-mirage-toc-right-rail-only": "目錄以右側面板模組樣式顯示",
+	"mirage-toggle-toc": "切換目錄",
 	"mirage-wordmark-file-warning": "此檔案目前用作為 Mirage 外觀的字標。"
 }
