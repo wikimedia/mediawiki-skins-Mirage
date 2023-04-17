@@ -4,5 +4,6 @@
 			"Rooiratel"
 		]
 	},
-	"mirage-action-addsection": "Voeg onderwerp by"
+	"mirage-action-addsection": "Voeg onderwerp by",
+	"mirage-toggle-toc": "Wissel die inhoudsopgawe"
 }
