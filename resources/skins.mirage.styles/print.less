@@ -1,13 +1,12 @@
 @import 'mediawiki.mixins';
 @import '../mirage.less/mirage.variables';
-@import '../mirage.less/wikimedia-ui-base';
 
-@print-border: 2px solid @wmui-color-base0;
+@print-border: 2px solid @mirage-color-base0;
 
 body {
-	line-height: @line-height-base;
-	background: @wmui-color-base100;
-	color: @wmui-color-base0;
+	line-height: @line-height-medium;
+	background: @mirage-color-base100;
+	color: @mirage-color-base0;
 	font-family: @font-family-serif;
 	padding: 0;
 }
@@ -39,7 +38,7 @@ a {
 	text-decoration: inherit !important;
 
 	&:not( .image ) {
-		border-bottom: 1px solid @wmui-color-base50;
+		border-bottom: 1px solid @mirage-color-base50;
 	}
 }
 
@@ -114,8 +113,8 @@ tt {
 }
 
 .mw-body {
-	background: @wmui-color-base100;
-	color: @wmui-color-base0;
+	background: @mirage-color-base100;
+	color: @mirage-color-base0;
 	// stylelint-disable-next-line declaration-no-important
 	border: 0 !important;
 	// stylelint-disable-next-line declaration-no-important
@@ -188,9 +187,9 @@ ol {
 
 pre,
 .mw-code {
-	background: @wmui-color-base100;
-	color: @wmui-color-base0;
-	border: 1pt dashed @wmui-color-base0;
+	background: @mirage-color-base100;
+	color: @mirage-color-base0;
+	border: 1pt dashed @mirage-color-base0;
 	padding: 1rem;
 	white-space: pre-wrap;
 	// Create a new block formatting context.
@@ -250,10 +249,10 @@ div.thumb {
 	}
 
 	.thumbinner {
-		background-color: @wmui-color-base100;
+		background-color: @mirage-color-base100;
 		border: 0;
 		padding: 5px;
-		color: @wmui-color-base20;
+		color: @mirage-color-base20;
 		text-align: center;
 		// New block formatting context, to clear background from floating content.
 		overflow: hidden;

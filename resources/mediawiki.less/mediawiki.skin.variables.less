@@ -1,7 +1,21 @@
-// This file is a LESS import match for "mediawiki.skin.variables.less"
+// This file is a Less import match for 'mediawiki.skin.variables.less'
 // when Mirage is the active skin.
 
 @import 'mediawiki.skin.defaults.less';
-@import '../mirage.less/wikimedia-ui-base.less';
+@import 'mediawiki.skin.codex-design-tokens/theme-wikimedia-ui.less';
 
-@width-breakpoint-desktop: 1024px;
+// Codex has the link colours too dark.
+@color-link-red: #d33;
+@color-link-red--hover: #ff4242;
+@color-link-red--active: #b32424;
+@color-link-red--focus: #d03;
+
+// but the box shadow too light.
+@box-shadow-drop-small: 0 1px 1px rgba( 0, 0, 0, 0.25 );
+@box-shadow-drop-medium: 0 2px 2px 0 rgba( 0, 0, 0, 0.25 );
+@box-shadow-drop-xx-large: 0 20px 48px 0 rgba( 0, 0, 0, 0.25 );
+@line-height-xxx-small: 1.3;
+
+@min-width-breakpoint-tablet: 720px;
+@min-width-breakpoint-desktop: 1024px;
+@font-family-system-sans: 'Helvetica Neue', 'Helvetica', 'Liberation Sans', 'Arial', sans-serif;

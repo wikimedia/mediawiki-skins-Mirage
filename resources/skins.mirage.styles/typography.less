@@ -7,9 +7,9 @@
 
 html,
 body {
-	line-height: @line-height-base;
+	line-height: @line-height-medium;
 	font-family: @mirage-content-font-family;
-	color: @color-base;
+	color: @mirage-color-base;
 }
 
 .mixin-placeholder( {
@@ -20,30 +20,30 @@ body {
 // The `outline` for focus styles on certain browsers is more prominent than others.
 // See T245887.
 :focus {
-	outline-color: @color-primary;
+	outline-color: @outline-color-progressive--focus;
 }
 
 a {
-	text-decoration: none;
+	text-decoration: @text-decoration-none;
 	background: none;
 
 	&,
 	&:visited {
-		color: @color-primary;
+		color: @color-progressive;
 	}
 
 	&:hover {
-		color: @color-primary--hover;
+		color: @color-progressive--hover;
 	}
 
 	&:active {
-		color: @color-primary--active;
+		color: @color-progressive--active;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		text-decoration: underline;
+		text-decoration: @text-decoration-underline;
 	}
 }
 
@@ -52,15 +52,15 @@ a {
 a.new {
 	&,
 	&:visited {
-		color: @color-destructive;
+		color: @color-link-new;
 	}
 
 	&:hover {
-		color: @color-destructive--hover;
+		color: @color-link-red--hover;
 	}
 
 	&:active {
-		color: @color-destructive--active;
+		color: @color-link-red--active;
 	}
 }
 
@@ -76,16 +76,16 @@ h6 {
 	padding-top: 0.5em;
 	padding-bottom: 0.17em;
 	font-weight: normal;
-	color: @wmui-color-base0;
+	color: @mirage-color-base0;
 }
 
 h1,
 h2 {
 	margin-bottom: 0.25rem;
 	padding: 0;
-	line-height: @line-height-heading;
+	line-height: @line-height-xxx-small;
 	font-family: @font-family-heading-main;
-	border-bottom: @header-underline;
+	border-bottom: @mirage-header-underline;
 
 	// Fallback heading font for scripts which render poorly in `@font-family-serif`.
 	// See T73240.
@@ -132,7 +132,7 @@ h5 {
 }
 
 hr {
-	border: @header-underline;
+	border: @mirage-header-underline;
 	margin: 0.8rem 0;
 }
 
@@ -141,7 +141,7 @@ p {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: @font-weight-bold;
 	margin-bottom: 0.1rem;
 }
 
@@ -159,7 +159,7 @@ code,
 .mw-code {
 	font-family: @font-family-monospace;
 	font-size: 0.875rem;
-	color: @wmui-color-base0;
+	color: @mirage-color-base0;
 }
 
 tt,
@@ -169,7 +169,7 @@ samp {
 }
 
 blockquote {
-	font-family: @mirage-serif;
+	font-family: @font-family-serif;
 	font-size: 1.25rem;
 	font-style: italic;
 
@@ -187,7 +187,7 @@ small,
 
 figcaption,
 .thumbinner .thumbcaption {
-	color: @color-base--subtle;
+	color: @mirage-color-base--subtle;
 	font-style: italic;
 	// The style guide specifies the caption as 0.8125rem (13px), but that is too small,
 	// especially compared against the font-size of gallery captions.
@@ -200,7 +200,7 @@ figcaption,
 .mw-parser-output .toc h2 {
 	font-size: 100%; /* (reset) */
 	font-family: inherit;
-	font-weight: bold;
+	font-weight: @font-weight-bold;
 	border: 0;
 }
 
@@ -214,7 +214,7 @@ figcaption,
 
 .skin-mirage-right-rail-module {
 	h3 {
-		border-bottom: @header-underline;
+		border-bottom: @mirage-header-underline;
 	}
 
 	h3,
