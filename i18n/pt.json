@@ -31,5 +31,10 @@
 	"prefs-mirage-partial-max-width": "Só aplicar a largura máxima de página a artigos",
 	"prefs-mirage-no-max-width": "Desativar a largura máxima de página",
 	"prefs-mirage-show-right-rail": "Apresentar a barra da direita",
+	"prefs-mirage-toc": "Colocação do índice:",
+	"prefs-mirage-toc-legacy": "Mostrar o índice no corpo do artigo",
+	"prefs-mirage-toc-hybrid": "Mostrar o índice no corpo do artigo e como módulo de trilho à direita",
+	"prefs-mirage-toc-right-rail-only": "Mostrar o índice como um módulo de trilho à direita",
+	"mirage-toggle-toc": "Alternar o índice",
 	"mirage-wordmark-file-warning": "Este ficheiro está a ser usado neste momento como marca nominativa do tema Miragem."
 }
