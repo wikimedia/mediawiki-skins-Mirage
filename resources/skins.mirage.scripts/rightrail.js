@@ -19,7 +19,7 @@ function initialize() {
 		checkboxHack.updateAriaExpanded( checkbox );
 		checkboxHack.bindToggleOnEnter( checkbox );
 
-		if ( mw.config.get( 'wgUserName' ) ) {
+		if ( mw.user.isNamed() ) {
 			checkbox.addEventListener( 'input', saveSidebarState( checkbox ) );
 		}
 	}
