@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"mirage-interface-messages-module-edit-this-message": "Üzenet szerkesztése",
+	"mirage-page-actions": "Lapműveletek",
+	"mirage-jumptonavigation": "Ugrás a navigációhoz",
+	"mirage-jumptocontent": "Ugrás a tartalomhoz",
+	"mirage-action-addsection": "Téma hozzáadása",
+	"mirage-notifications": "Értesítések",
+	"mirage-more": "Több",
+	"mirage-more-recent-changes": "További változások megtekintése"
+}
