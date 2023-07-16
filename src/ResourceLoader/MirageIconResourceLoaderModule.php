@@ -103,11 +103,7 @@ class MirageIconResourceLoaderModule extends OOUIIconPackModule {
 	): string {
 		$imageDataUri = $this->useDataURI ? $image->getDataUri( $context, $variant, 'original' ) : false;
 		$primaryUrl = $imageDataUri ?: $image->getUrl( $context, $script, $variant, 'original' );
-		$declarations = $this->getCssDeclarations(
-			$primaryUrl,
-			$image->getUrl( $context, $script, $variant, 'rasterized' )
-		);
-		return implode( "\n\t", $declarations );
+		return implode( "\n\t", $this->getCssDeclarations( $primaryUrl ) );
 	}
 
 	/**
