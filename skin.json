@@ -176,7 +176,8 @@
 				"mirage-toggle-toc"
 			],
 			"dependencies": [
-				"mediawiki.page.ready"
+				"mediawiki.page.ready",
+				"mediawiki.user"
 			]
 		},
 		"skin.mirage.icons": {
