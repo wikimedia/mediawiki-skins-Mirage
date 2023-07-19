@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Kareyac",
-			"Okras"
+			"Okras",
+			"BerryAVGN"
 		]
 	},
+	"mirage-skin-desc": "Mirage - отзывчивая тема оформления, ориентированная на отображение содержимого с помощью направляющей справа",
 	"mirage-community-messages-header": "Сообщения сообщества",
 	"mirage-interface-messages-module-edit-this-message": "Отредактировать это сообщение",
 	"mirage-page-actions": "Действия на странице",
@@ -13,7 +15,9 @@
 	"mirage-action-addsection": "Добавить тему",
 	"mirage-userpage": "Страница {{GENDER:$1|участника|участницы}}",
 	"mirage-footer-places": "Места",
+	"mirage-footer-feeds": "Ленты новостей",
 	"mirage-footer-info": "Сведения о странице",
+	"mirage-expand-submenu": "Отображение записей для подменю",
 	"mirage-talkpage": "Страница обсуждения",
 	"mirage-user-tools": "Пользовательские инструменты",
 	"mirage-no-new-messages": "У вас нет новых сообщений.",
@@ -22,5 +26,12 @@
 	"mirage-hidden-categories": "Скрытые категории",
 	"mirage-recent-changes-module": "Свежие правки",
 	"mirage-more": "Ещё",
-	"mirage-more-recent-changes": "Просмотреть больше изменений"
+	"mirage-more-recent-changes": "Просмотреть больше изменений",
+	"mirage-toggle-right-rail": "Отобразить/Скрыть направляющую справа",
+	"prefs-mirage-max-width-label": "Ширина содержимого Mirage:",
+	"prefs-mirage-max-width": "Всегда применять максимальную ширину страницы",
+	"prefs-mirage-partial-max-width": "Применять максимальную ширину страницы только к статьям",
+	"prefs-mirage-no-max-width": "Отключить максимальную ширину страницы",
+	"prefs-mirage-show-right-rail": "Отображение правой направляющей",
+	"mirage-wordmark-file-warning": "В настоящее время этот файл используется в качестве словесного товарного знака для темы оформления Mirage."
 }
