@@ -213,13 +213,38 @@ class SkinMirage extends SkinMustache {
 	/**
 	 * @inheritDoc
 	 *
-	 * phpcs:ignore Generic.Files.LineLength.TooLong
-	 * @suppress PhanTypeInvalidRightOperand, PhanTypePossiblyInvalidDimOffset, PhanTypeInvalidRightOperandOfAdd, PhanTypeArraySuspicious, PhanTypeMismatchForeach, PhanTypeMismatchArgumentInternal, PhanTypeArrayUnsetSuspicious
-	 *
 	 * @param array &$content_navigation
 	 */
 	protected function runOnSkinTemplateNavigationHooks( SkinTemplate $skin, &$content_navigation ): void {
 		parent::runOnSkinTemplateNavigationHooks( $skin, $content_navigation );
+
+		// Mirage doesn't use this as a personal tools item.
+		unset( $content_navigation['user-menu']['anonuserpage'] );
+
+		if ( isset( $content_navigation['user-menu']['userpage'] ) ) {
+			$content_navigation['user-menu']['userpage']['text'] = $this->msg( 'mirage-userpage' )->text();
+		}
+
+		if ( isset( $content_navigation['user-menu']['mytalk'] ) ) {
+			$content_navigation['user-menu']['mytalk']['text'] = $this->msg( 'mirage-talkpage' )->text();
+		} elseif ( isset( $content_navigation['user-menu']['anontalk'] ) ) {
+			$content_navigation['user-menu']['anontalk']['text'] = $this->msg( 'mirage-talkpage' )->text();
+		}
+
+		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
+		foreach ( $content_navigation['user-menu'] as &$personalUrl ) {
+			$icon = MirageIcon::medium(
+				$personalUrl['icon'] ?? MirageIcon::ICON_PLACEHOLDER
+			);
+
+			// Set icon classes on the link, not the <li>.
+			if ( is_array( $personalUrl['link-class'] ?? [] ) ) {
+				$personalUrl['link-class'][] = $icon->toClasses();
+			} else {
+				$personalUrl['link-class'] .= ' ' . $icon->toClasses();
+			}
+		}
+		unset( $personalUrl );
 
 		// For compatibility reasons, if the associated-pages portlet is equal to the namespaces
 		// portlet, omit the associated-pages portlet. If not, empty the namespaces portlet.
@@ -240,6 +265,18 @@ class SkinMirage extends SkinMustache {
 			}
 		}
 
+		$this->buildEditButton( $content_navigation );
+	}
+
+	/**
+	 * Build the navigation menu for the edit button.
+	 *
+	 * phpcs:ignore Generic.Files.LineLength.TooLong
+	 * @suppress PhanTypeInvalidRightOperand, PhanTypePossiblyInvalidDimOffset, PhanTypeInvalidRightOperandOfAdd, PhanTypeArraySuspicious, PhanTypeMismatchForeach, PhanTypeMismatchArgumentInternal, PhanTypeArrayUnsetSuspicious
+	 *
+	 * @param array &$content_navigation
+	 */
+	private function buildEditButton( array &$content_navigation ): void {
 		$content_navigation['mirage-edit-button'] = [];
 		$content_navigation['mirage-edit-button-dropdown'] = [];
 

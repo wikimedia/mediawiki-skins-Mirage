@@ -10,7 +10,6 @@ use ExtensionRegistry;
 use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
-use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
@@ -20,7 +19,6 @@ use MediaWiki\ResourceLoader\Module as ResourceLoaderModule;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
-use MediaWiki\Skins\Mirage\MirageIcon;
 use MediaWiki\Skins\Mirage\MirageIndicator;
 use MediaWiki\Skins\Mirage\MirageNavigationExtractor;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
@@ -32,7 +30,6 @@ use MediaWiki\Utils\UrlUtils;
 use OutputPage;
 use ParserOutput;
 use Skin;
-use SkinTemplate;
 use TitleFactory;
 use TitleValue;
 use User;
@@ -50,7 +47,6 @@ class Handler implements
 	ImagePageAfterImageLinksHook,
 	MirageGetExtraIconsHook,
 	OutputPageBodyAttributesHook,
-	SkinTemplateNavigation__UniversalHook,
 	ResourceLoaderRegisterModulesHook
 {
 	public const MIRAGE_MAX_WIDTH = 0;
@@ -367,45 +363,6 @@ class Handler implements
 			default:
 				$bodyAttrs['class'] .= ' skin-mirage-limit-content-width-selectively';
 				break;
-		}
-	}
-
-	/**
-	 * @inheritDoc
-	 *
-	 * @param SkinTemplate $sktemplate
-	 * @param array &$links
-	 */
-	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
-		if ( !( $sktemplate instanceof SkinMirage ) || !isset( $links['user-menu'] ) ) {
-			return;
-		}
-
-		// Mirage doesn't use this as a personal tools item.
-		unset( $links['user-menu']['anonuserpage'] );
-
-		if ( isset( $links['user-menu']['userpage'] ) ) {
-			$links['user-menu']['userpage']['text'] = $sktemplate->msg( 'mirage-userpage' )->text();
-		}
-
-		if ( isset( $links['user-menu']['mytalk'] ) ) {
-			$links['user-menu']['mytalk']['text'] = $sktemplate->msg( 'mirage-talkpage' )->text();
-		} elseif ( isset( $links['user-menu']['anontalk'] ) ) {
-			$links['user-menu']['anontalk']['text'] = $sktemplate->msg( 'mirage-talkpage' )->text();
-		}
-
-		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset Checked above
-		foreach ( $links['user-menu'] as &$personalUrl ) {
-			$icon = MirageIcon::medium(
-				$personalUrl['icon'] ?? MirageIcon::ICON_PLACEHOLDER
-			);
-
-			// Set icon classes on the link, not the <li>.
-			if ( is_array( $personalUrl['link-class'] ?? [] ) ) {
-				$personalUrl['link-class'][] = $icon->toClasses();
-			} else {
-				$personalUrl['link-class'] .= ' ' . $icon->toClasses();
-			}
 		}
 	}
 }
