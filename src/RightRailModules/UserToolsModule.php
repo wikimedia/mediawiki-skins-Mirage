@@ -2,13 +2,14 @@
 
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
+use ExtensionRegistry;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use function array_fill_keys;
 use function array_intersect_key;
 
 class UserToolsModule extends GenericItemListModule {
 
-	public const USER_TOOLS = [
+	private const USER_TOOLS = [
 		'contributions',
 		'log',
 		'blockip',
@@ -27,8 +28,20 @@ class UserToolsModule extends GenericItemListModule {
 			'user-tools',
 			array_intersect_key(
 				$toolbox,
-				array_fill_keys( self::USER_TOOLS, true )
+				array_fill_keys( self::getUserTools(), true )
 			)
+		);
+	}
+
+	/**
+	 * Get the tools that should be in the UserToolsModule.
+	 *
+	 * @return array
+	 */
+	public static function getUserTools(): array {
+		return array_merge(
+			self::USER_TOOLS,
+			ExtensionRegistry::getInstance()->getAttribute( 'MirageExtraUserTools' )
 		);
 	}
 

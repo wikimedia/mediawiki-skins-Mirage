@@ -18,7 +18,7 @@ class PageToolsModule extends GenericItemListModule {
 			array_diff_key(
 				$toolbox,
 				// User tools (when present) are handled by the UserTools module.
-				array_fill_keys( UserToolsModule::USER_TOOLS, true ),
+				array_fill_keys( UserToolsModule::getUserTools(), true ),
 				// Feeds are provided in the footer, upload, special pages and printable
 				// version in the site tools.
 				[
