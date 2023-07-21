@@ -68,7 +68,12 @@ class SidebarParser {
 	public function parse(): void {
 		$sidebar = $this->skin->buildSidebar();
 
-		$diffBar = [];
+		// Stub this for extensions expecting them to exist.
+		$diffBar = [
+			'LANGUAGES' => [],
+			'SEARCH' => [],
+			'TOOLBOX' => [],
+		];
 
 		$hookRunner = new HookRunner( $this->hookContainer );
 		$hookRunner->onSkinBuildSidebar( $this->skin, $diffBar );
@@ -78,12 +83,12 @@ class SidebarParser {
 		// Mirage gives these modules a predefined spot.
 		$this->toolsPortal = $sidebar['TOOLBOX'];
 		unset(
+			$sidebar['LANGUAGES'],
 			$sidebar['SEARCH'],
 			$sidebar['TOOLBOX'],
-			$sidebar['LANGUAGES'],
+			$diffBar['LANGUAGES'],
 			$diffBar['SEARCH'],
-			$diffBar['TOOLBOX'],
-			$diffBar['LANGUAGES']
+			$diffBar['TOOLBOX']
 		);
 
 		$this->extensionPortals = $diffBar;
