@@ -27,7 +27,7 @@
 	"mirage-recent-changes-module": "Modificationes recente",
 	"mirage-more": "Plus",
 	"mirage-more-recent-changes": "Vider plus modificationes",
-	"mirage-toggle-right-rail": "Alternar le barra lateral a dextra",
+	"mirage-toggle-right-rail": "Commutar le barra lateral a dextra",
 	"prefs-mirage-max-width-label": "Latitude de contento Mirage:",
 	"prefs-mirage-max-width": "Sempre applicar le latitude maximal del pagina",
 	"prefs-mirage-partial-max-width": "Applicar le latitude maximal del pagina solmente pro articulos",
@@ -37,6 +37,6 @@
 	"prefs-mirage-toc-legacy": "Monstrar le tabula de contento in le texto principal del articulo",
 	"prefs-mirage-toc-hybrid": "Monstra le tabula de contento in le texto principal del articulo e como modulo in le columna dextre",
 	"prefs-mirage-toc-right-rail-only": "Monstrar le tabula de contento como modulo in le columna dextre",
-	"mirage-toggle-toc": "Alternar le tabula de contento",
+	"mirage-toggle-toc": "Commutar le tabula de contento",
 	"mirage-wordmark-file-warning": "Iste file es actualmente in uso como le marca de parola pro le apparentia Mirage."
 }
