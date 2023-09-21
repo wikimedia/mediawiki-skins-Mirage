@@ -20,7 +20,7 @@ class MirageResourceLoaderModule extends SkinModule {
 	public function getStyles( ResourceLoaderContext $context ): array {
 		$styles = parent::getStyles( $context );
 
-		$wordmark = MediaWikiServices::getInstance()->getService( 'MirageWordmarkLookup' )
+		$wordmark = MediaWikiServices::getInstance()->getService( 'Mirage.WordmarkLookup' )
 			->getWordmarkUrl();
 
 		if ( $wordmark !== null ) {
@@ -69,7 +69,7 @@ CSS;
 	public function getPreloadLinks( ResourceLoaderContext $context ): array {
 		$preloadLinks = parent::getPreloadLinks( $context );
 
-		$wordmark = MediaWikiServices::getInstance()->getService( 'MirageWordmarkLookup' )
+		$wordmark = MediaWikiServices::getInstance()->getService( 'Mirage.WordmarkLookup' )
 			->getWordmarkUrl();
 
 		if ( $wordmark !== null ) {
@@ -109,7 +109,7 @@ CSS;
 	public function getDefinitionSummary( ResourceLoaderContext $context ): array {
 		$summary = parent::getDefinitionSummary( $context );
 
-		$wordmarkFile = MediaWikiServices::getInstance()->getService( 'MirageWordmarkLookup' )
+		$wordmarkFile = MediaWikiServices::getInstance()->getService( 'Mirage.WordmarkLookup' )
 			->getWordmarkFile();
 
 		if ( $wordmarkFile ) {

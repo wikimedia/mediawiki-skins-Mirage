@@ -14,7 +14,7 @@ class BundleSizeTest extends \MediaWiki\Tests\Structure\BundleSizeTest {
 	 * Mock MirageWordmarkLookup to prevent it from doing lookups.
 	 */
 	protected function replaceWordmarkLookupWithMockSetUp(): void {
-		$this->setService( 'MirageWordmarkLookup', $this->createMock( MirageWordmarkLookup::class ) );
+		$this->setService( 'Mirage.WordmarkLookup', $this->createMock( MirageWordmarkLookup::class ) );
 	}
 
 	/** @inheritDoc */

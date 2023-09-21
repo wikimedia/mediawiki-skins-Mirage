@@ -58,11 +58,11 @@ class Handler implements
 
 	private TitleFactory $titleFactory;
 
+	private UrlUtils $urlUtils;
+
 	private UserOptionsLookup $optionsLookup;
 
 	private AvatarLookup $avatarLookup;
-
-	private UrlUtils $urlUtils;
 
 	private MirageWordmarkLookup $wordmarkLookup;
 
@@ -75,27 +75,27 @@ class Handler implements
 	/**
 	 * @codeCoverageIgnore
 	 *
+	 * @param ConfigFactory $configFactory
 	 * @param TitleFactory $titleFactory
+	 * @param UrlUtils $urlUtils
 	 * @param UserOptionsLookup $optionsLookup
 	 * @param AvatarLookup $avatarLookup
-	 * @param UrlUtils $urlUtils
 	 * @param MirageWordmarkLookup $wordmarkLookup
-	 * @param ConfigFactory $configFactory
 	 * @param ExtensionRegistry|null $extensionRegistry Optional for injection
 	 */
 	public function __construct(
+		ConfigFactory $configFactory,
 		TitleFactory $titleFactory,
+		UrlUtils $urlUtils,
 		UserOptionsLookup $optionsLookup,
 		AvatarLookup $avatarLookup,
-		UrlUtils $urlUtils,
 		MirageWordmarkLookup $wordmarkLookup,
-		ConfigFactory $configFactory,
 		?ExtensionRegistry $extensionRegistry = null
 	) {
 		$this->titleFactory = $titleFactory;
+		$this->urlUtils = $urlUtils;
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
-		$this->urlUtils = $urlUtils;
 		$this->wordmarkLookup = $wordmarkLookup;
 		$this->extensionRegistry = $extensionRegistry ?? ExtensionRegistry::getInstance();
 		$this->config = $configFactory->makeConfig( 'Mirage' );

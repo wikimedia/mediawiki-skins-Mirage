@@ -33,7 +33,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		);
 
 		$this->setService(
-			'MirageWordmarkLookup',
+			'Mirage.WordmarkLookup',
 			$mock
 		);
 	}

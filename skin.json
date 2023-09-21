@@ -17,8 +17,8 @@
 				"LinkRenderer",
 				"ObjectFactory",
 				"LocalServerObjectCache",
-				"MirageWordmarkLookup",
-				"MirageAvatarLookup",
+				"Mirage.WordmarkLookup",
+				"Mirage.AvatarLookup",
 				"TitleFactory",
 				"UrlUtils",
 				"ConfigFactory",
@@ -71,12 +71,12 @@
 		"main": {
 			"class": "MediaWiki\\Skins\\Mirage\\Hook\\Handler",
 			"services": [
+				"ConfigFactory",
 				"TitleFactory",
-				"UserOptionsLookup",
-				"MirageAvatarLookup",
 				"UrlUtils",
-				"MirageWordmarkLookup",
-				"ConfigFactory"
+				"UserOptionsLookup",
+				"Mirage.AvatarLookup",
+				"Mirage.WordmarkLookup"
 			]
 		}
 	},
