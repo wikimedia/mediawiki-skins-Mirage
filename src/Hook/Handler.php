@@ -67,6 +67,8 @@ class Handler implements
 
 	private MirageWordmarkLookup $wordmarkLookup;
 
+	private ?ExtensionRegistry $extensionRegistry;
+
 	private Config $config;
 
 	private bool $useInstantCommons;
@@ -80,6 +82,7 @@ class Handler implements
 	 * @param UrlUtils $urlUtils
 	 * @param MirageWordmarkLookup $wordmarkLookup
 	 * @param ConfigFactory $configFactory
+	 * @param ExtensionRegistry|null $extensionRegistry Optional for injection
 	 */
 	public function __construct(
 		TitleFactory $titleFactory,
@@ -87,13 +90,15 @@ class Handler implements
 		AvatarLookup $avatarLookup,
 		UrlUtils $urlUtils,
 		MirageWordmarkLookup $wordmarkLookup,
-		ConfigFactory $configFactory
+		ConfigFactory $configFactory,
+		?ExtensionRegistry $extensionRegistry = null
 	) {
 		$this->titleFactory = $titleFactory;
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
 		$this->urlUtils = $urlUtils;
 		$this->wordmarkLookup = $wordmarkLookup;
+		$this->extensionRegistry = $extensionRegistry ?? ExtensionRegistry::getInstance();
 		$this->config = $configFactory->makeConfig( 'Mirage' );
 		$this->useInstantCommons = $configFactory->makeConfig( 'main' )
 			->get( MainConfigNames::UseInstantCommons );
@@ -287,7 +292,7 @@ class Handler implements
 	 * @param array $icons
 	 */
 	public function onMirageGetExtraIcons( array &$icons ): void {
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiLove' ) ) {
+		if ( $this->extensionRegistry->isLoaded( 'WikiLove' ) ) {
 			$icons['heart'] = [
 				'selectorWithVariant' => [
 					'destructive' => '#ca-wikilove.icon a::before'
@@ -307,7 +312,7 @@ class Handler implements
 	 * @inheritDoc
 	 */
 	public function onResourceLoaderRegisterModules( ResourceLoader $rl ): void {
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Theme' ) ) {
+		if ( $this->extensionRegistry->isLoaded( 'Theme' ) ) {
 			$rl->register(
 				( new ThemeRegistry( $this->config ) )->buildResourceLoaderModuleDefinitions()
 			);

@@ -13,6 +13,8 @@ use Wikimedia\TestingAccessWrapper;
  */
 class UserToolsModuleTest extends MediaWikiUnitTestCase {
 	public function testExtraModuleInExtensionRegistryAttribute(): void {
+		ExtensionRegistry::enableForTest();
+
 		$sc = ExtensionRegistry::getInstance()->setAttributeForTest( 'MirageExtraUserTools', [
 			'testmodule'
 		] );
@@ -21,6 +23,8 @@ class UserToolsModuleTest extends MediaWikiUnitTestCase {
 	}
 
 	public function testExtraModuleInList(): void {
+		ExtensionRegistry::enableForTest();
+
 		$sc = ExtensionRegistry::getInstance()->setAttributeForTest( 'MirageExtraUserTools', [
 			'testmodule'
 		] );

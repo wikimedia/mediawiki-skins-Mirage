@@ -3,6 +3,7 @@
 namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
 use ConfigFactory;
+use ExtensionRegistry;
 use File;
 use HashConfig;
 use IContextSource;
@@ -49,7 +50,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$outputPage = $this->createMock( OutputPage::class );
@@ -71,7 +73,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( AvatarLookup::class ),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$outputPage = $this->createMock( OutputPage::class );
@@ -96,7 +99,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( AvatarLookup::class ),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$outputPage = $this->createMock( OutputPage::class );
@@ -118,7 +122,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$resourceLoader = $this->createMock( ResourceLoader::class );
@@ -137,7 +142,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( AvatarLookup::class ),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$resourceLoader = $this->createMock( ResourceLoader::class );
@@ -168,7 +174,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$skin = $this->createMock( SkinMirage::class );
@@ -219,7 +226,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			new NullAvatarLookup(),
 			$this->createMock( UrlUtils::class ),
 			$this->createMock( MirageWordmarkLookup::class ),
-			$this->getConfigFactoryForHandler()
+			$this->getConfigFactoryForHandler(),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$bodyAttrs = [];
@@ -246,7 +254,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$this->createMock( MirageWordmarkLookup::class ),
 			$this->getConfigFactoryForHandler( [
 				'UseInstantCommons' => $useInstantCommons
-			] )
+			] ),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$icons = [];
@@ -294,7 +303,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$wordmarkLookup,
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => false
-			] )
+			] ),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$html = '';
@@ -325,7 +335,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$wordmarkLookup,
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => true
-			] )
+			] ),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$imagePage = $this->createMock( ImagePage::class );
@@ -359,7 +370,8 @@ class HandlerTest extends MediaWikiUnitTestCase {
 			$wordmarkLookup,
 			$this->getConfigFactoryForHandler( [], [
 				'MirageEnableImageWordmark' => true
-			] )
+			] ),
+			$this->createMock( ExtensionRegistry::class )
 		);
 
 		$mockContext = $this->createMock( IContextSource::class );
