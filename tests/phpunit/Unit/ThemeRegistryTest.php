@@ -3,7 +3,7 @@
 namespace MediaWiki\Skins\Mirage\Tests\Unit;
 
 use Generator;
-use HashConfig;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
 use MediaWikiUnitTestCase;
 

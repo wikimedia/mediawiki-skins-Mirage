@@ -4,9 +4,9 @@ namespace MediaWiki\Skins\Mirage;
 
 use IContextSource;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Parser\Sanitizer;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\Utils\UrlUtils;
-use Sanitizer;
-use TitleFactory;
 use function array_map;
 use function explode;
 use function preg_match;

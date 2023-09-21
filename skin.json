@@ -107,7 +107,7 @@
 		"src/ServiceWiring.php"
 	],
 	"ConfigRegistry": {
-		"Mirage": "GlobalVarConfig::newInstance"
+		"Mirage": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Skins\\Mirage\\": "src/"

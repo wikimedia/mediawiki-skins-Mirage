@@ -4,9 +4,9 @@ namespace MediaWiki\Skins\Mirage\Tests\Unit;
 
 use File;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
+use MediaWiki\Title\TitleFactory;
 use MediaWikiUnitTestCase;
 use RepoGroup;
-use TitleFactory;
 
 /**
  * @covers \MediaWiki\Skins\Mirage\MirageWordmarkLookup

@@ -7,8 +7,8 @@ use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
+use MediaWiki\User\User;
 use MediaWikiUnitTestCase;
-use User;
 use Wikimedia\Minify\CSSMin;
 
 /**

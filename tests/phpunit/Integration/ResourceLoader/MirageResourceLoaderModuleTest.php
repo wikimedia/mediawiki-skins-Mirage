@@ -3,11 +3,12 @@
 namespace MediaWiki\Skins\Mirage\Tests\Integration\ResourceLoader;
 
 use File;
-use HashConfig;
+use MediaWiki\Config\HashConfig;
+use MediaWiki\Config\MultiConfig;
+use MediaWiki\MainConfigNames;
 use MediaWiki\ResourceLoader\SkinModule;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageResourceLoaderModule;
-use MultiConfig;
 use ResourceLoaderTestCase;
 use Wikimedia\Minify\CSSMin;
 use function array_pop;
@@ -104,13 +105,13 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		$module = new MirageResourceLoaderModule();
 		$module->setConfig( new MultiConfig( [
 			new HashConfig( [
-				'Logos' => [
+				MainConfigNames::Logos => [
 					'1x' => $GLOBALS['wgLogo'],
 					'svg' => '/img.svg'
 				],
 				// Trick OutputPage::transformResourcePath into thinking this is something that
 				// cannot be transformed.
-				'ResourceBasePath' => '//'
+				MainConfigNames::ResourceBasePath => '//'
 			] ),
 			$context->getResourceLoader()->getConfig()
 		] ) );

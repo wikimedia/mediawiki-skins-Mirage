@@ -2,16 +2,17 @@
 
 namespace MediaWiki\Skins\Mirage\Hook;
 
-use Config;
-use ConfigFactory;
 use Content;
-use EditPage;
 use ExtensionRegistry;
+use MediaWiki\Config\Config;
+use MediaWiki\Config\ConfigFactory;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
@@ -25,16 +26,14 @@ use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageAvatarResourceLoaderModule;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\Skins\Mirage\ThemeRegistry;
+use MediaWiki\Title\TitleFactory;
+use MediaWiki\Title\TitleValue;
+use MediaWiki\User\User;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\Utils\UrlUtils;
-use OutputPage;
 use ParserOutput;
 use Skin;
-use TitleFactory;
-use TitleValue;
-use User;
 use WikitextContent;
-use Xml;
 use function array_keys;
 use function array_search;
 use function array_slice;
@@ -188,7 +187,7 @@ class Handler implements
 				->setClasses( 'skin-mirage-dropdown-indicator' ),
 			// SkinTemplate::prepareUserLanguageAttributes is protected and final,
 			// so just fill in the user language code and direction unconditionally.
-			'html-user-language-attributes' => Xml::expandAttributes( [
+			'html-user-language-attributes' => Html::expandAttributes( [
 				'lang' => $context->getLanguage()->getHtmlCode(),
 				'dir' => $context->getLanguage()->getDir()
 			] )

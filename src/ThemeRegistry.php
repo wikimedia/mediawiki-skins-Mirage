@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage;
 
-use Config;
+use MediaWiki\Config\Config;
 use function array_fill_keys;
 use function strtolower;
 

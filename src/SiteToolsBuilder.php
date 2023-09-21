@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Skins\Mirage;
 
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
-use OutputPage;
-use SpecialPage;
-use Title;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\Title;
 use UploadBase;
-use User;
 use function array_slice;
 use function count;
 
@@ -59,7 +59,7 @@ class SiteToolsBuilder {
 			]
 		] +
 			$this->getPrintableVersionLink( $skin->getOutput(), $skin->getTitle() ) +
-			$this->getUploadLink( $skin->getUser() );
+			$this->getUploadLink( $skin->getAuthority() );
 
 		$this->hookRunner->onMirageBuildSiteTools( $skin->getContext(), $tools );
 
@@ -106,10 +106,10 @@ class SiteToolsBuilder {
 	 * It is only shown when either $wgUploadNavigationUrl is set, or the user is allowed to
 	 * upload files.
 	 *
-	 * @param User $user
+	 * @param Authority $authority Authority to who an upload link will be shown
 	 * @return array
 	 */
-	private function getUploadLink( User $user ): array {
+	private function getUploadLink( Authority $authority ): array {
 		$uploadLink = [
 			'icon' => 'upload',
 			'msg' => 'upload',
@@ -119,7 +119,7 @@ class SiteToolsBuilder {
 
 		if ( $this->uploadNavigationUrl ) {
 			$uploadLink['href'] = $this->uploadNavigationUrl;
-		} elseif ( UploadBase::isEnabled() && UploadBase::isAllowed( $user ) ) {
+		} elseif ( UploadBase::isEnabled() && UploadBase::isAllowed( $authority ) ) {
 			$uploadLink['href'] = SpecialPage::getTitleFor( 'Upload' )->getLocalURL();
 		} else {
 			return [];

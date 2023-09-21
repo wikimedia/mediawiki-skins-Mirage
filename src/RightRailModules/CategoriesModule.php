@@ -5,8 +5,8 @@ namespace MediaWiki\Skins\Mirage\RightRailModules;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Skins\Mirage\SkinMirage;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserOptionsLookup;
-use TitleFactory;
 
 class CategoriesModule extends RightRailModule {
 	private LinkRenderer $linkRenderer;

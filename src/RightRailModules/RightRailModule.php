@@ -3,11 +3,11 @@
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
 use HtmlArmor;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use Message;
 use MessageLocalizer;
 use MessageSpecifier;
-use Sanitizer;
 use function implode;
 
 /**

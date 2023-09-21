@@ -3,8 +3,8 @@
 namespace MediaWiki\Skins\Mirage;
 
 use File;
+use MediaWiki\Title\TitleFactory;
 use RepoGroup;
-use TitleFactory;
 use const NS_FILE;
 
 class MirageWordmarkLookup {

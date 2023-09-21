@@ -6,10 +6,10 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Skins\Mirage\Hook\HookRunner as MirageHookRunner;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\Utils\UrlUtils;
 use Message;
 use MessageCache;
-use TitleFactory;
 use WANObjectCache;
 use function array_diff_key;
 
