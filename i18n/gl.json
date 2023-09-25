@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"mirage-skin-desc": "Mirage é un aspecto adaptable que se centra en amosar contido cunha barra á dereita",
+	"mirage-community-messages-header": "Mensaxes da comunidade",
+	"mirage-interface-messages-module-edit-this-message": "Editar esta mensaxe",
+	"mirage-page-actions": "Accións de páxina",
+	"mirage-jumptonavigation": "Saltar á navegación",
+	"mirage-jumptocontent": "Saltar ao contido",
+	"mirage-action-addsection": "Nova sección",
+	"mirage-userpage": "Páxina de {{GENDER:$1|usuario|usuaria}}",
+	"mirage-footer-places": "Lugares",
+	"mirage-footer-feeds": "Fontes de novas",
+	"mirage-footer-info": "Información da páxina",
+	"mirage-expand-submenu": "Amosa as entradas para o submenú",
+	"mirage-talkpage": "Páxina de conversa",
+	"mirage-user-tools": "Ferramentas de usuario",
+	"mirage-no-new-messages": "Non tes mensaxes novas.",
+	"mirage-notifications": "Notificacións",
+	"mirage-page-tools": "Ferramentas das páxinas",
+	"mirage-hidden-categories": "Categorías ocultas",
+	"mirage-recent-changes-module": "Cambios recentes",
+	"mirage-more": "Máis",
+	"mirage-more-recent-changes": "Ver máis cambios",
+	"mirage-toggle-right-rail": "Alternar a barra dereita",
+	"prefs-mirage-max-width-label": "Ancho do contido de Mirage:",
+	"prefs-mirage-max-width": "Aplica sempre o ancho máximo da páxina",
+	"prefs-mirage-partial-max-width": "Aplica o ancho máximo da páxina só aos artigos",
+	"prefs-mirage-no-max-width": "Desactivar o ancho máximo da páxina",
+	"prefs-mirage-show-right-rail": "Amosar a barra dereita",
+	"prefs-mirage-toc": "Colocación da táboa de contidos:",
+	"prefs-mirage-toc-legacy": "Amosar a táboa de contidos no corpo do artigo",
+	"prefs-mirage-toc-hybrid": "Amosar a táboa de contidos no corpo do artigo e como módulo da barra dereita",
+	"prefs-mirage-toc-right-rail-only": "Amosa a táboa de contidos como un módulo da barra dereita",
+	"mirage-toggle-toc": "Amosar ou agochar a táboa de contidos",
+	"mirage-wordmark-file-warning": "Este ficheiro utilízase actualmente como marca de palabras para o aspecto Mirage."
+}
