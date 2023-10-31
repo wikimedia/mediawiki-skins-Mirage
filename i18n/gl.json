@@ -5,6 +5,8 @@
 		]
 	},
 	"mirage-skin-desc": "Mirage é un aspecto adaptable que se centra en amosar contido cunha barra á dereita",
+	"mirage.css": "/* O CSS colocado aquí afectará aos usuarios da aparencia Mirage */",
+	"mirage.js": "/* O código JavaScript colocado aquí cargarase para os usuarios que utilicen a aparencia Mirage */",
 	"mirage-community-messages-header": "Mensaxes da comunidade",
 	"mirage-interface-messages-module-edit-this-message": "Editar esta mensaxe",
 	"mirage-page-actions": "Accións de páxina",
