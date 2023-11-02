@@ -187,7 +187,7 @@ class MirageIconResourceLoaderModule extends OOUIIconPackModule {
 		$definition = $data[$theme];
 
 		// Filter out the data for all other icons, leaving only the ones we want for this module.
-		foreach ( array_keys( $definition['images'] ) as $iconName ) {
+		foreach ( $definition['images'] ?? [] as $iconName => $_ ) {
 			if ( !isset( $this->icons[$iconName] ) ) {
 				unset( $definition['images'][$iconName] );
 			}
