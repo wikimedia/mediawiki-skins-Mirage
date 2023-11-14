@@ -1,16 +1,42 @@
 // This file contains all shared variables used in the stylesheets used by Mirage.
-// Import this again to make ResourcesTest::testResourceFiles happy. It also allows IDE's to access
-// the variables defined in this file.
 @import 'mediawiki.skin.variables';
-@import 'wikimedia-ui-base.less';
 
-@mirage-serif: @font-family-serif;
-@mirage-sans: @font-family-sans;
-@mirage-header-font-family: @mirage-serif;
-@mirage-content-font-family: @mirage-sans;
-@default-border-color: @wmui-color-base70;
-@default-border: @border-width-base solid @default-border-color;
-@header-underline: 3px solid @wmui-color-base80;
+// These are taken from the now-defunct WikimediaUI library.
+// Codex doesn't specify these, but Mirage is built around these tokens.
+// Note that you should use Codex tokens when that makes semantic sense;
+// If the token doesn't match the Mirage style, override it in mediawiki.skin.variables.less.
+@mirage-color-base0:   #000;    // = HSB 0°, 0%, 0%
+@mirage-color-base10:  #202122; // = HSB 210°, 6%, 13%
+@mirage-color-base20:  #54595d; // = HSB 207°, 10%, 36%; WCAG 2.0 level AAA 7.09:1 contrast ratio on `#fff`
+@mirage-color-base30:  #72777d; // = HSB 210°, 9%, 49%; WCAG 2.0 level AA at 4.52:1 contrast ratio on `#fff`
+@mirage-color-base50:  #a2a9b1; // = HSB 212°, 8%, 69%
+@mirage-color-base70:  #c8ccd1; // = HSB 213°, 4%, 82%
+@mirage-color-base80:  #eaecf0; // = HSB 220°, 3%, 94%
+@mirage-color-base90:  #f8f9fa; // = HSB 210°, 1%, 98%
+@mirage-color-base100: #fff;    // = HSB 0°, 0%, 100%
+
+@mirage-color-base10--lighten: #404244;
+@mirage-color-base90--lighten: #dedfe0;
+
+@mirage-content-font-family: @font-family-system-sans;
+@mirage-color-base: @mirage-color-base10;
+@mirage-color-base--hover: @mirage-color-base10--lighten;
+@mirage-color-base--active: @mirage-color-base0;
+@mirage-color-base--inverted: @mirage-color-base100;
+@mirage-color-base--emphasized: @mirage-color-base0;
+@mirage-color-base--subtle: @mirage-color-base30;
+@mirage-default-border-color: @border-color-subtle;
+@mirage-default-border: @border-width-base solid @mirage-default-border-color;
+@border-color-base--hover: @mirage-color-base50;
+@background-color-base--hover: @mirage-color-base80;
+@border-color-base--active: @mirage-color-base30;
+@mirage-header-underline: 3px solid @mirage-color-base80;
+
+@mirage-header-font-family: @font-family-serif;
+@mirage-content-font-family: @font-family-sans;
+@mirage-default-border-color: @mirage-color-base70;
+@mirage-default-border: @border-width-base solid @mirage-default-border-color;
+@mirage-header-underline: 3px solid @mirage-color-base80;
 @standard-margin: 1rem;
 
 @right-rail-space: 20rem;
@@ -20,13 +46,10 @@
 @max-content-width: 68.5rem;
 @max-content-width-with-right-rail: @max-content-width + @standard-margin + @right-rail-space;
 
-@size-icon-small: 16px;
-@size-icon-medium: @size-icon;
-
 // Keep this synchronized with skin.json!
 @width-breakpoint-mirage-desktop-small: 1280px;
 // This is overridden in mediawiki.skin.variables.less to be 1024px.
-@width-breakpoint-mirage-mobile: @width-breakpoint-desktop;
+@width-breakpoint-mirage-mobile: @min-width-breakpoint-desktop;
 // Mirage considers anything below the tablet width to be a mobile phone, assuming the portrait
 // orientation.
-@width-breakpoint-mirage-mobile-small: @width-breakpoint-tablet;
+@width-breakpoint-mirage-mobile-small: @min-width-breakpoint-tablet;

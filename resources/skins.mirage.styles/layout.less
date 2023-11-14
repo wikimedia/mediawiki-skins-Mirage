@@ -91,7 +91,7 @@
 	// Using relative positioning is ugly, but so are Xdebug errors.
 	// At least this way all notices are visible without overlapping.
 	position: relative;
-	z-index: 99;
+	z-index: @z-index-sticky;
 }
 
 textarea {
@@ -201,7 +201,7 @@ body,
 		cursor: pointer;
 		float: right;
 		margin-top: 0.5rem;
-		height: @size-icon-small;
+		height: @min-size-icon-small;
 	}
 
 	.skin-mirage-module-body > ul {
@@ -232,7 +232,7 @@ body,
 
 #mw-html-debug-log {
 	padding: 1rem;
-	background-color: @wmui-color-base100;
+	background-color: @mirage-color-base100;
 
 	ul {
 		// Apply margin around content,
@@ -523,10 +523,10 @@ body,
 	}
 
 	.mw-indicators {
-		line-height: @line-height-base;
+		line-height: @line-height-medium;
 		// Ensure that this is displayed on top of the h1 and clickable.
 		position: relative;
-		z-index: 1;
+		z-index: @z-index-above-content;
 	}
 }
 

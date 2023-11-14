@@ -17,7 +17,7 @@
 textarea {
 	// Enforce a consistent border around text areas.
 	// This border is the same as the one for .editOptions.
-	border: @default-border;
+	border: @mirage-default-border;
 	padding: 0.1rem;
 	box-sizing: border-box;
 }
@@ -43,8 +43,8 @@ form {
 }
 
 .warning {
-	// @color-warning is base0, but is historically yellow.
-	color: @wmui-color-yellow50;
+	// @color-warning is too dark.
+	color: #fc3;
 }
 
 .success {
@@ -125,7 +125,7 @@ img {
 }
 
 blockquote {
-	border-left: 3px solid @wmui-color-base70;
+	border-left: 3px solid @mirage-color-base70;
 	padding: 0.1rem 0 0.1rem 1.5rem;
 
 	cite {
@@ -137,8 +137,8 @@ blockquote {
 pre,
 code,
 .mw-code {
-	background-color: @background-color-code;
-	border: @default-border;
+	background-color: @mirage-color-base90;
+	border: @mirage-default-border;
 }
 
 code {
@@ -161,12 +161,12 @@ html {
 }
 
 body {
-	background-color: @wmui-color-base80;
+	background-color: @mirage-color-base80;
 }
 
 #mirage-fixed-header {
 	background-color: @background-color-base;
-	box-shadow: 1px 1px 3px @wmui-color-base70;
+	box-shadow: 1px 1px 3px @mirage-color-base70;
 }
 
 #mirage-sitename a {
@@ -196,8 +196,8 @@ body {
 
 			.skin-mirage-username {
 				padding: 0.75rem 0 0 0.75rem;
-				border-bottom: @header-underline;
-				font-family: @mirage-serif;
+				border-bottom: @mirage-header-underline;
+				font-family: @font-family-serif;
 				font-weight: bold;
 				cursor: auto;
 			}
@@ -242,20 +242,20 @@ body {
 }
 
 #mirage-top-header {
-	background-color: @wmui-color-base70;
-	box-shadow: 1px 0 3px @wmui-color-base70;
+	background-color: @mirage-color-base70;
+	box-shadow: 1px 0 3px @mirage-color-base70;
 	border-radius: @border-radius-base @border-radius-base 0 0;
 }
 
 .skin-mirage-content-container {
 	background-color: @background-color-base;
-	box-shadow: 1px 1px 3px @wmui-color-base70;
+	box-shadow: 1px 1px 3px @mirage-color-base70;
 	border-radius: 0 0 @border-radius-base @border-radius-base;
 }
 
 footer.mw-footer {
 	background-color: @background-color-base;
-	box-shadow: 0 -1px 3px @wmui-color-base70;
+	box-shadow: 0 -1px 3px @mirage-color-base70;
 }
 
 .mw-body {
@@ -267,22 +267,22 @@ footer.mw-footer {
 }
 
 .mw-wordmark-container .mw-logo-wordmark {
-	color: @wmui-color-base0;
+	color: @mirage-color-base0;
 }
 
 .skin-mirage-dropdown-list {
-	background-color: @wmui-color-base100;
+	background-color: @mirage-color-base100;
 	border: @border-base;
 	border-radius: 0 0 @border-radius-base @border-radius-base;
-	box-shadow: @box-shadow-menu;
+	box-shadow: @box-shadow-drop-medium;
 
 	.skin-mirage-dropdown-list-anchor {
 		&::before {
-			border-bottom-color: @wmui-color-base30;
+			border-bottom-color: @mirage-color-base30;
 		}
 
 		&::after {
-			border-bottom-color: @wmui-color-base100;
+			border-bottom-color: @mirage-color-base100;
 		}
 	}
 
@@ -305,10 +305,10 @@ footer.mw-footer {
 			text-decoration: none;
 
 			&:not( .new ) {
-				color: @color-base;
+				color: @mirage-color-base;
 
 				&:active {
-					color: @color-base--active;
+					color: @mirage-color-base--active;
 				}
 			}
 		}
@@ -318,12 +318,12 @@ footer.mw-footer {
 .skin-mirage-tabs {
 	.selected {
 		a {
-			box-shadow: inset 0 -2px 0 0 @color-primary;
+			box-shadow: inset 0 -2px 0 0 @color-progressive;
 		}
 
 		&.new {
 			a {
-				box-shadow: inset 0 -2px 0 0 @color-destructive;
+				box-shadow: inset 0 -2px 0 0 @color-link-new;
 			}
 		}
 	}
@@ -331,16 +331,16 @@ footer.mw-footer {
 	.new a {
 		&:hover,
 		&:focus {
-			box-shadow: inset 0 -2px 0 0 @color-destructive--hover;
+			box-shadow: inset 0 -2px 0 0 @color-link-red--hover;
 		}
 
 		// Duplicate rule to allow Internet Explorer to be usable.
 		&:focus-within {
-			box-shadow: inset 0 -2px 0 0 @color-destructive--hover;
+			box-shadow: inset 0 -2px 0 0 @color-link-red--hover;
 		}
 
 		&:active {
-			box-shadow: inset 0 -2px 0 0 @color-destructive--active;
+			box-shadow: inset 0 -2px 0 0 @color-link-red--active;
 		}
 	}
 
@@ -348,21 +348,21 @@ footer.mw-footer {
 		text-decoration: none;
 		padding: 0.5rem;
 		font-weight: @font-weight-bold;
-		box-shadow: inset 0 0 0 0 @color-primary;
+		box-shadow: inset 0 0 0 0 @color-progressive;
 		transition: color 100ms, box-shadow 100ms;
 
 		&:hover,
 		&:focus {
-			box-shadow: inset 0 -2px 0 0 @color-primary--hover;
+			box-shadow: inset 0 -2px 0 0 @color-progressive--hover;
 		}
 
 		// Duplicate rule to allow Internet Explorer to be usable.
 		&:focus-within {
-			box-shadow: inset 0 -2px 0 0 @color-primary--hover;
+			box-shadow: inset 0 -2px 0 0 @color-progressive--hover;
 		}
 
 		&:active {
-			box-shadow: inset 0 -2px 0 0 @color-primary--active;
+			box-shadow: inset 0 -2px 0 0 @color-progressive--active;
 		}
 	}
 
@@ -418,7 +418,7 @@ footer.mw-footer {
 .toccolours,
 #filetoc {
 	.default-border();
-	background-color: @wmui-color-base90;
+	background-color: @mirage-color-base90;
 }
 
 .skin-mirage-dropdown-container {
@@ -494,7 +494,7 @@ footer.mw-footer {
 		position: relative;
 
 		& > li {
-			border: 1px solid @color-base;
+			border: 1px solid @mirage-color-base;
 			border-right: 0;
 			transition: background-color 100ms, border 100ms, color 100ms, opacity 100ms;
 
@@ -503,16 +503,16 @@ footer.mw-footer {
 			}
 
 			& > :not( .skin-mirage-ooui-icon-no-label ) {
-				color: @color-base;
+				color: @mirage-color-base;
 			}
 
 			&:hover {
 				background-color: rgba( 255, 255, 255, 0.15 );
-				border: 1px solid @color-base--hover;
+				border: 1px solid @mirage-color-base--hover;
 				border-right: 0;
 
 				& > :not( .skin-mirage-ooui-icon-no-label ) {
-					color: @color-base--hover;
+					color: @mirage-color-base--hover;
 				}
 
 				& > .skin-mirage-ooui-icon::before {
@@ -522,11 +522,11 @@ footer.mw-footer {
 
 			&:active {
 				background-color: transparent;
-				border: 1px solid @color-base--active;
+				border: 1px solid @mirage-color-base--active;
 				border-right: 0;
 
 				& > :not( .skin-mirage-ooui-icon-no-label ) {
-					color: @color-base--active;
+					color: @mirage-color-base--active;
 				}
 
 				& > .skin-mirage-ooui-icon::before {
@@ -546,12 +546,12 @@ footer.mw-footer {
 			}
 
 			&:last-child {
-				border-right: 1px solid @color-base;
+				border-right: 1px solid @mirage-color-base;
 				border-top-right-radius: @border-radius-base;
 				border-bottom-right-radius: @border-radius-base;
 
 				&:hover {
-					border-right: 1px solid @color-base--hover;
+					border-right: 1px solid @mirage-color-base--hover;
 				}
 			}
 		}
@@ -579,14 +579,14 @@ footer.mw-footer {
 	&:focus,
 	&:focus-within {
 		h3 {
-			border-color: @border-color-base--focus;
+			border-color: @border-color-progressive--focus;
 		}
 	}
 
 	h3 {
 		border: @border-base;
 		border-radius: @border-radius-base;
-		background-color: @wmui-color-base90;
+		background-color: @mirage-color-base90;
 		font-weight: @font-weight-bold;
 		padding: 0.25rem 0.5rem;
 	}
@@ -607,9 +607,9 @@ footer.mw-footer {
 	}
 
 	> li {
-		border-top: 1px solid @color-primary;
-		border-bottom: 1px solid @color-primary;
-		background-color: @color-primary;
+		border-top: 1px solid @color-progressive;
+		border-bottom: 1px solid @color-progressive;
+		background-color: @color-progressive;
 		transition: background-color 100ms, border 100ms;
 
 		&:first-child a {
@@ -621,26 +621,26 @@ footer.mw-footer {
 			&,
 			&:hover,
 			&:focus {
-				color: @wmui-color-base100;
+				color: @mirage-color-base100;
 				text-decoration: none;
 			}
 		}
 
 		&:focus {
-			box-shadow: inset 0 0 0 2px @wmui-color-base100;
-			outline: 1px solid transparent;
+			box-shadow: @box-shadow-inset-medium @box-shadow-color-inverted;
+			outline: @outline-base--focus;
 		}
 
 		&:hover {
-			background-color: @color-primary--hover;
-			border-top: 1px solid @color-primary--hover;
-			border-bottom: 1px solid @color-primary--hover;
+			background-color: @color-progressive--hover;
+			border-top: 1px solid @color-progressive--hover;
+			border-bottom: 1px solid @color-progressive--hover;
 		}
 
 		&:active {
-			background-color: @color-primary--active;
-			border-top: 1px solid @color-primary--active;
-			border-bottom: 1px solid @color-primary--active;
+			background-color: @color-progressive--active;
+			border-top: 1px solid @color-progressive--active;
+			border-bottom: 1px solid @color-progressive--active;
 		}
 
 		> a,
@@ -651,34 +651,34 @@ footer.mw-footer {
 		}
 
 		& + li {
-			border-left: 1px solid @wmui-color-base100;
+			border-left: 1px solid @mirage-color-base100;
 		}
 
 		&:first-child {
-			border-left: 1px solid @color-primary;
+			border-left: 1px solid @color-progressive;
 			border-top-left-radius: @border-radius-base;
 			border-bottom-left-radius: @border-radius-base;
 
 			&:hover {
-				border-left: 1px solid @color-primary--hover;
+				border-left: 1px solid @color-progressive--hover;
 			}
 
 			&:active {
-				border-left: 1px solid @color-primary--active;
+				border-left: 1px solid @color-progressive--active;
 			}
 		}
 
 		&:last-child {
-			border-right: 1px solid @color-primary;
+			border-right: 1px solid @color-progressive;
 			border-top-right-radius: @border-radius-base;
 			border-bottom-right-radius: @border-radius-base;
 
 			&:hover {
-				border-right: 1px solid @color-primary--hover;
+				border-right: 1px solid @color-progressive--hover;
 			}
 
 			&:active {
-				border-right: 1px solid @color-primary--active;
+				border-right: 1px solid @color-progressive--active;
 			}
 		}
 	}
@@ -687,7 +687,7 @@ footer.mw-footer {
 #mirage-right-rail-button {
 	border: @border-base;
 	border-radius: @border-radius-base;
-	background-color: @wmui-color-base90;
+	background-color: @mirage-color-base90;
 	font-weight: @font-weight-bold;
 	padding: 0.25rem 0.5rem;
 	// Align the button with the edit button.
@@ -705,7 +705,7 @@ footer.mw-footer {
 
 	&:focus,
 	&:focus-within {
-		border-color: @border-color-base--focus;
+		border-color: @color-progressive--focus;
 	}
 
 	#mirage-right-rail-checkbox:checked ~ #mw-navigation &::before {
@@ -791,8 +791,8 @@ figcaption,
 		background-size: contain;
 		background-position: center center;
 		background-repeat: no-repeat;
-		width: @size-icon-medium;
-		height: @size-icon-medium;
+		width: @min-size-icon-medium;
+		height: @min-size-icon-medium;
 		overflow: hidden;
 		white-space: nowrap;
 		.user-select-none();
@@ -802,7 +802,7 @@ figcaption,
 		position: absolute;
 		right: 0;
 		top: 50%;
-		margin-top: @size-icon-medium / -2;
+		margin-top: @min-size-icon-medium / -2;
 
 		&,
 		& a {
