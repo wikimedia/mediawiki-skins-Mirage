@@ -27,6 +27,7 @@
 	"mirage-recent-changes-module": "Recente wijzigingen",
 	"mirage-more": "Meer",
 	"mirage-more-recent-changes": "Meer wijzigingen bekijken",
+	"mirage-toggle-right-rail": "Rechter rail tonen of verbergen",
 	"prefs-mirage-max-width-label": "Mirage-inhoudsbreedte:",
 	"prefs-mirage-max-width": "Pas altijd de maximale paginabreedte toe",
 	"prefs-mirage-partial-max-width": "Pas de maximale paginabreedte alleen toe op artikelen",
@@ -36,5 +37,6 @@
 	"prefs-mirage-toc-legacy": "Toon de inhoudsopgave in de artikeltekst",
 	"prefs-mirage-toc-hybrid": "Toon de inhoudsopgave in de artikeltekst en als rechterrailmodule",
 	"prefs-mirage-toc-right-rail-only": "Toon de inhoudsopgave als een rechterrailmodule",
+	"mirage-toggle-toc": "Inhoudsopgave tonen of verbergen",
 	"mirage-wordmark-file-warning": "Dit bestand wordt momenteel gebruikt als het woordmerk voor de Mirage vormgeving."
 }
