@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"علاء"
 		]
 	},
 	"skinname-mirage": "سراب",
@@ -22,7 +23,7 @@
 	"mirage-expand-submenu": "إظهار إدخالات القائمة الفرعية",
 	"mirage-talkpage": "صفحة نقاش",
 	"mirage-user-tools": "أدوات المستخدم",
-	"mirage-no-new-messages": "ليست لديك رسائل جديدة.",
+	"mirage-no-new-messages": "ليس لديك رسائل جديدة.",
 	"mirage-notifications": "الإشعارات",
 	"mirage-page-tools": "أدوات الصفحات",
 	"mirage-hidden-categories": "تصنيفات مخفية",
