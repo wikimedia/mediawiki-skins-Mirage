@@ -162,7 +162,7 @@ class SkinMirage extends SkinMustache {
 		$attribs = [
 			'class' => MirageIcon::small( 'edit' )->toClasses(),
 			'title' => $this->msg( 'editsectionhint' )
-				->rawParams( $sectionTitle )
+				->plaintextParams( $sectionTitle )
 				->inLanguage( $lang )->text()
 		];
 
