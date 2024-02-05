@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
-use ResourceLoaderOOUIImageModule;
+use MediaWiki\ResourceLoader\OOUIImageModule;
 
 /**
  * ResourceLoader module to load indicators from OOUI with custom classes.
  *
  * @codeCoverageIgnore
  */
-class MirageIndicatorResourceLoaderModule extends ResourceLoaderOOUIImageModule {
+class MirageIndicatorResourceLoaderModule extends OOUIImageModule {
 	/**
 	 * @inheritDoc
 	 * Copied from ResourceLoaderOOUIIconPackModule.
