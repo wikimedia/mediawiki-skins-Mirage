@@ -5,6 +5,8 @@
 		]
 	},
 	"mirage-skin-desc": "Mirage er ei responsiv drakt som fokuserer på å vise innhold med en skinne på høyre side",
+	"mirage.css": "/* CSS i denne fila vil gjelde alle som bruker drakta Mirage */",
+	"mirage.js": "/* Javascript i denne fila vil gjelde for brukere av drakta Mirage */",
 	"mirage-community-messages-header": "Meldinger til nettsamfunnet",
 	"mirage-interface-messages-module-edit-this-message": "Rediger denne beskjeden",
 	"mirage-page-actions": "Sidehandlinger",
