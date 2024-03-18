@@ -132,7 +132,7 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 
 		static::assertNotContains(
 			"#mirage-wordmark { background-image: $wordmark; }",
-			$styles['all']
+			$styles['all'] ?? []
 		);
 	}
 
