@@ -91,7 +91,7 @@ class TemplateProcessor {
 			return;
 		}
 
-		foreach ( $matches as list( $wholeMatch, $openTag, $content, $closeTag ) ) {
+		foreach ( $matches as [ $wholeMatch, $openTag, $content, $closeTag ] ) {
 			$column = strpos( $line, str_replace( '\t', '    ', $wholeMatch ) );
 
 			foreach ( $this->investigateTag( $openTag, $content, $closeTag ) as $error ) {

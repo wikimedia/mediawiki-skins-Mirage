@@ -280,7 +280,7 @@ class SkinMirage extends SkinMustache {
 		$content_navigation['mirage-edit-button'] = [];
 		$content_navigation['mirage-edit-button-dropdown'] = [];
 
-		list( 'views' => $views, 'actions' => $actions ) = $content_navigation;
+		[ 'views' => $views, 'actions' => $actions ] = $content_navigation;
 
 		if ( isset( $views['addsection'] ) ) {
 			$content_navigation['mirage-edit-button']['addsection'] = $this->addLinkClass(

@@ -44,7 +44,7 @@ class RecentChangesModule extends RightRailModule {
 		SpecialPageFactory $specialPageFactory,
 		UserFactory $userFactory,
 		array $contentNamespaces
-) {
+	) {
 		parent::__construct( $skin, 'recentchanges' );
 
 		$this->linkRenderer = $linkRenderer;

@@ -104,7 +104,7 @@ class MirageNavigationExtractor {
 		if ( strpos( $line, '|' ) === false ) {
 			$target = $text = trim( $line, " \t\0\x0B|" );
 		} else {
-			list( $target, $text ) = array_map( '\trim', explode( '|', $line, 2 ) );
+			[ $target, $text ] = array_map( '\trim', explode( '|', $line, 2 ) );
 		}
 
 		$attributes = [
