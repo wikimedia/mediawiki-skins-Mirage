@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"しぃ",
-			"LaMagiaaa"
+			"LaMagiaaa",
+			"Chqaz"
 		]
 	},
 	"skinname-mirage": "Mirage",
 	"mirage-skin-desc": "Mirageは、右側のレールでコンテンツを表示することに重点を置いたレスポンシブスキンです",
 	"mirage-userpage": "{{GENDER:$1|利用者}}ページ",
-	"mirage-talkpage": "トークページ"
+	"mirage-talkpage": "トークページ",
+	"mirage-notifications": "通知"
 }
