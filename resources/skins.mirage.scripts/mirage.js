@@ -43,7 +43,7 @@ function attachDropdownEvents() {
 			.removeClass( 'skin-mirage-dropdown-hide' );
 	} );
 
-	$( document ).on( 'click', function ( event ) {
+	$( document ).on( 'click', ( event ) => {
 		if ( $( event.target ).closest( $dropdowns ).length === 0 ) {
 			closeAllDropdowns( $dropdowns );
 		}

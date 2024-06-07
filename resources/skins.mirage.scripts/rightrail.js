@@ -3,7 +3,7 @@ const debounce = require( 'mediawiki.util' ).debounce;
 let api;
 
 function saveSidebarState( checkbox ) {
-	return debounce( 1000, function () {
+	return debounce( 1000, () => {
 		api = api || new mw.Api();
 		api.saveOption( 'mirage-show-right-rail', checkbox.checked ? 1 : 0 );
 	} );
@@ -45,7 +45,7 @@ function addTocToggle() {
 			'skin-mirage-ooui-icon-small',
 			'skin-mirage-ooui-icon-no-label'
 		] )
-		.on( 'click', function () {
+		.on( 'click', () => {
 			$tocContent.toggle();
 			$button.toggleClass( 'skin-mirage-toc-toggle' );
 		} );
