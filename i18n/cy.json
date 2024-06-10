@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Afalau"
+		]
+	},
+	"mirage-community-messages-header": "Negeseuon y gymuned",
+	"mirage-interface-messages-module-edit-this-message": "Golygu'r neges hon",
+	"mirage-page-actions": "Gweithredoedd tudalen",
+	"mirage-jumptonavigation": "Neidio i'r panel llywio",
+	"mirage-jumptocontent": "Neidio i'r cynnwys",
+	"mirage-action-addsection": "Ychwanegu pwnc",
+	"mirage-userpage": "Tudalen {{GENDER:$1|ddefnyddiwr}}",
+	"mirage-footer-places": "Lleoedd",
+	"mirage-footer-feeds": "Ffrydau",
+	"mirage-footer-info": "Gwybodaeth am y dudalen",
+	"mirage-expand-submenu": "Dangos y cofnodion ar gyfer yr is-ddewislen",
+	"mirage-talkpage": "Tudalen sgwrs",
+	"mirage-user-tools": "Offer defnyddiwr",
+	"mirage-no-new-messages": "Nid oes gennych unrhyw negeseuon newydd.",
+	"mirage-notifications": "Hysbysiadau",
+	"mirage-page-tools": "Offer tudalen",
+	"mirage-hidden-categories": "Categorïau cudd",
+	"mirage-recent-changes-module": "Newidiadau diweddar",
+	"mirage-more": "Mwy",
+	"mirage-more-recent-changes": "Gweld mwy o newidiadau",
+	"mirage-toggle-right-rail": "Toglo rheilen dde",
+	"prefs-mirage-max-width-label": "Lled cynnwys Mirage:",
+	"prefs-mirage-max-width": "Defnyddiwch led uchafswm y dudalen bob tro",
+	"mirage-toggle-toc": "Toglo'r tabl cynnwys"
+}
