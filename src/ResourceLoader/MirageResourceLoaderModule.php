@@ -89,8 +89,13 @@ CSS;
 
 		$preloadLinks[$logo['icon']] = [ 'as' => 'image' ];
 
-		if ( isset( $logo['wordmark']['src'] ) ) {
-			$preloadLinks[$logo['wordmark']['src']] = [ 'as' => 'image' ];
+		// Substitute the src variant for the 1x wordmark if it is not defined.
+		if ( !isset( $logo['wordmark']['1x'] ) && isset( $logo['wordmark']['src'] ) ) {
+			$logo['wordmark']['1x'] = $logo['wordmark']['src'];
+		}
+
+		if ( isset( $logo['wordmark']['1x'] ) ) {
+			$preloadLinks[$logo['wordmark']['1x']] = [ 'as' => 'image' ];
 		}
 
 		if ( isset( $logo['tagline']['src'] ) ) {

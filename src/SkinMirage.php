@@ -573,6 +573,13 @@ class SkinMirage extends SkinMustache {
 			'icon' => $parameters['data-logos']['svg'] ?? $parameters['data-logos']['1x']
 		];
 
+		// If defined, set the wordmark to its 1x version. Otherwise, if there's a
+		// src wordmark, use that instead.
+		if ( isset( $parameters['data-logos']['wordmark'] ) ) {
+			$wordmark = $parameters['data-logos']['wordmark'];
+			$parameters['data-logos']['wordmark']['src'] = $wordmark['1x'] ?? $wordmark['src'];
+		}
+
 		// Don't ship things that are empty.
 		if ( empty( $parameters['data-footer']['data-info']['array-items'] ) ) {
 			unset( $parameters['data-footer']['data-info'] );
