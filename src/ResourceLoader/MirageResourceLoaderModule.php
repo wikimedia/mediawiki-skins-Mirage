@@ -89,12 +89,12 @@ CSS;
 
 		$preloadLinks[$logo['icon']] = [ 'as' => 'image' ];
 
-		if ( isset( $logo['wordmark'] ) ) {
-			$preloadLinks[$logo['wordmark']] = [ 'as' => 'image' ];
+		if ( isset( $logo['wordmark']['src'] ) ) {
+			$preloadLinks[$logo['wordmark']['src']] = [ 'as' => 'image' ];
 		}
 
-		if ( isset( $logo['tagline'] ) ) {
-			$preloadLinks[$logo['tagline']] = [ 'as' => 'image' ];
+		if ( isset( $logo['tagline']['src'] ) ) {
+			$preloadLinks[$logo['tagline']['src']] = [ 'as' => 'image' ];
 		}
 
 		return $preloadLinks;

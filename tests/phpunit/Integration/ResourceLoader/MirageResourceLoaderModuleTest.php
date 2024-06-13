@@ -121,6 +121,38 @@ class MirageResourceLoaderModuleTest extends ResourceLoaderTestCase {
 		static::assertArrayHasKey( '/img.svg', $preloadLinks );
 	}
 
+	public function testGetPreloadLinksWithWordmarkAndTagline(): void {
+		$this->setWordmarkLookup( false );
+		$context = $this->getResourceLoaderContext();
+
+		$module = new MirageResourceLoaderModule();
+		$module->setConfig( new MultiConfig( [
+			new HashConfig( [
+				MainConfigNames::Logos => [
+					'1x' => '/1x.png',
+					'wordmark' => [
+						'src' => '/wordmark.png',
+						'width' => 32,
+						'height' => 32,
+					],
+					'tagline' => [
+						'src' => '/tagline.png',
+						'width' => 32,
+						'height' => 32,
+					],
+				],
+				// Trick OutputPage::transformResourcePath into thinking this is something that
+				// cannot be transformed.
+				MainConfigNames::ResourceBasePath => '//'
+			] ),
+			$context->getResourceLoader()->getConfig()
+		] ) );
+		$preloadLinks = $module->getPreloadLinks( $context );
+
+		static::assertArrayHasKey( '/wordmark.png', $preloadLinks );
+		static::assertArrayHasKey( '/tagline.png', $preloadLinks );
+	}
+
 	public function testGetStylesWithoutWordmark(): void {
 		$this->setWordmarkLookup( false );
 		$context = $this->getResourceLoaderContext();
