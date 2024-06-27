@@ -35,6 +35,8 @@
 	"prefs-mirage-show-right-rail": "显示右侧栏",
 	"prefs-mirage-toc": "目录的位置：",
 	"prefs-mirage-toc-legacy": "在条目正文内显示目录",
+	"prefs-mirage-toc-hybrid": "在条目正文及右侧栏模块中显示目录",
+	"prefs-mirage-toc-right-rail-only": "在右侧栏模块中显示目录",
 	"mirage-toggle-toc": "开关目录",
 	"mirage-wordmark-file-warning": "此文件目前被用作Mirage皮肤的文字标志（Wordmark）。"
 }
