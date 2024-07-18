@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Don Alessandro",
 			"TayfunEt.",
 			"Zolgoyo"
 		]
 	},
-	"mirage-notifications": "Bildirimler",
+	"mirage-notifications": "Bildirmeler",
 	"mirage-page-tools": "Saife aletleri",
 	"mirage-hidden-categories": "Gizli kategoriyalar",
 	"mirage-recent-changes-module": "Soñki deñiştirmeler",
