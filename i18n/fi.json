@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Korjaus1",
-			"Rönttönen"
+			"Rönttönen",
+			"Samoasambia"
 		]
 	},
+	"mirage-community-messages-header": "Yhteisön viestit",
 	"mirage-interface-messages-module-edit-this-message": "Muokkaa tätä viestiä",
 	"mirage-page-actions": "Sivun toiminnot",
 	"mirage-jumptonavigation": "Hyppää navigaatioon",
