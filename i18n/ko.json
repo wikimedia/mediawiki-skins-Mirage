@@ -11,6 +11,7 @@
 	"mirage-community-messages-header": "공동체 메시지",
 	"mirage-interface-messages-module-edit-this-message": "이 메시지 편집하기",
 	"mirage-jumptonavigation": "둘러보기로 이동",
+	"mirage-jumptocontent": "본문으로 이동",
 	"mirage-action-addsection": "주제 추가",
 	"mirage-userpage": "{{GENDER:$1|사용자}} 문서",
 	"mirage-footer-places": "장소",
@@ -29,5 +30,6 @@
 	"prefs-mirage-max-width": "최대 문서 너비 무조건 적용",
 	"prefs-mirage-partial-max-width": "본문 글에만 최대 문서 너비 적용",
 	"prefs-mirage-no-max-width": "최대 문서 너비 비활성화",
+	"mirage-toggle-toc": "목차 토글",
 	"mirage-wordmark-file-warning": "이 파일은 현재 Mirage 스킨의 워드마크로 사용 중입니다."
 }
