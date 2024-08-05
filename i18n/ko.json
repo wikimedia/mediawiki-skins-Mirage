@@ -11,6 +11,7 @@
 	"mirage-community-messages-header": "공동체 메시지",
 	"mirage-interface-messages-module-edit-this-message": "이 메시지 편집하기",
 	"mirage-jumptonavigation": "둘러보기로 이동",
+	"mirage-jumptocontent": "본문으로 이동",
 	"mirage-action-addsection": "주제 추가",
 	"mirage-userpage": "{{GENDER:$1|사용자}} 문서",
 	"mirage-footer-places": "장소",
