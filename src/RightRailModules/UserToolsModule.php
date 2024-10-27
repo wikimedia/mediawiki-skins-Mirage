@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
-use ExtensionRegistry;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use function array_fill_keys;
 use function array_intersect_key;

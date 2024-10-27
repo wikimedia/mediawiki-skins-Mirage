@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Unit\RightRailModules;
 
-use ExtensionRegistry;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Skins\Mirage\RightRailModules\UserToolsModule;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWikiUnitTestCase;

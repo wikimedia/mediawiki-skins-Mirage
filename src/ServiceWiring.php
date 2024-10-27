@@ -16,7 +16,7 @@ return [
 	),
 
 	'Mirage.AvatarLookup' => static function ( MediaWikiServices $services ): AvatarLookup {
-		$extensionRegistry = ExtensionRegistry::getInstance();
+		$extensionRegistry = $services->getExtensionRegistry();
 
 		if ( $extensionRegistry->isLoaded( 'Gravatar' ) ) {
 			return new GravatarAvatarLookup( $services->getService( 'GravatarLookup' ) );

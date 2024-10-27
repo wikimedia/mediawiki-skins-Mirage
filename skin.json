@@ -7,7 +7,7 @@
 	"license-name": "MIT",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.41.0"
+		"MediaWiki": ">= 1.43.0"
 	},
 	"ValidSkinNames": {
 		"mirage": {
@@ -72,6 +72,7 @@
 			"class": "MediaWiki\\Skins\\Mirage\\Hook\\Handler",
 			"services": [
 				"ConfigFactory",
+				"ExtensionRegistry",
 				"TitleFactory",
 				"UrlUtils",
 				"UserOptionsLookup",

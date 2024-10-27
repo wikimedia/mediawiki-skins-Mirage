@@ -3,7 +3,6 @@
 namespace MediaWiki\Skins\Mirage\Hook;
 
 use Content;
-use ExtensionRegistry;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
 use MediaWiki\EditPage\EditPage;
@@ -15,6 +14,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
 use MediaWiki\ResourceLoader\Module as ResourceLoaderModule;
 use MediaWiki\ResourceLoader\ResourceLoader;
@@ -56,6 +56,8 @@ class Handler implements
 	public const MIRAGE_TOC_HYBRID = 1;
 	public const MIRAGE_TOC_RIGHT_RAIL_ONLY = 2;
 
+	private ExtensionRegistry $extensionRegistry;
+
 	private TitleFactory $titleFactory;
 
 	private UrlUtils $urlUtils;
@@ -66,8 +68,6 @@ class Handler implements
 
 	private MirageWordmarkLookup $wordmarkLookup;
 
-	private ?ExtensionRegistry $extensionRegistry;
-
 	private Config $config;
 
 	private bool $useInstantCommons;
@@ -76,28 +76,28 @@ class Handler implements
 	 * @codeCoverageIgnore
 	 *
 	 * @param ConfigFactory $configFactory
+	 * @param ExtensionRegistry $extensionRegistry
 	 * @param TitleFactory $titleFactory
 	 * @param UrlUtils $urlUtils
 	 * @param UserOptionsLookup $optionsLookup
 	 * @param AvatarLookup $avatarLookup
 	 * @param MirageWordmarkLookup $wordmarkLookup
-	 * @param ExtensionRegistry|null $extensionRegistry Optional for injection
 	 */
 	public function __construct(
 		ConfigFactory $configFactory,
+		ExtensionRegistry $extensionRegistry,
 		TitleFactory $titleFactory,
 		UrlUtils $urlUtils,
 		UserOptionsLookup $optionsLookup,
 		AvatarLookup $avatarLookup,
-		MirageWordmarkLookup $wordmarkLookup,
-		?ExtensionRegistry $extensionRegistry = null
+		MirageWordmarkLookup $wordmarkLookup
 	) {
+		$this->extensionRegistry = $extensionRegistry;
 		$this->titleFactory = $titleFactory;
 		$this->urlUtils = $urlUtils;
 		$this->optionsLookup = $optionsLookup;
 		$this->avatarLookup = $avatarLookup;
 		$this->wordmarkLookup = $wordmarkLookup;
-		$this->extensionRegistry = $extensionRegistry ?? ExtensionRegistry::getInstance();
 		$this->config = $configFactory->makeConfig( 'Mirage' );
 		$this->useInstantCommons = $configFactory->makeConfig( 'main' )
 			->get( MainConfigNames::UseInstantCommons );

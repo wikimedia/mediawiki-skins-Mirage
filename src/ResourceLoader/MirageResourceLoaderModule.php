@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Skins\Mirage\ResourceLoader;
 
-use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MediaWiki\ResourceLoader\FilePath;
 use MediaWiki\ResourceLoader\SkinModule;
