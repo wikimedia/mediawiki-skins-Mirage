@@ -7,7 +7,7 @@ use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 /**
  * @coversNothing
  */
-class BundleSizeTest extends \MediaWiki\Tests\Structure\BundleSizeTest {
+class BundleSizeTest extends \MediaWiki\Tests\Structure\BundleSizeTestBase {
 	/**
 	 * @before
 	 *
