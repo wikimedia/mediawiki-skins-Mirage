@@ -36,5 +36,10 @@
 	"prefs-mirage-partial-max-width": "تطبيق الحد الأقصى لعرض الصفحة فقط على المقالات",
 	"prefs-mirage-no-max-width": "قم بتعطيل الحد الأقصى لعرض الصفحة",
 	"prefs-mirage-show-right-rail": "اعرض السكة الحديدية اليمنى",
+	"prefs-mirage-toc": "وضع جدول المحتويات:",
+	"prefs-mirage-toc-legacy": "إظهار جدول المحتويات في نص المقالة",
+	"prefs-mirage-toc-hybrid": "إظهار جدول المحتويات في نص المقالة وكنموذج للسكة اليمنى",
+	"prefs-mirage-toc-right-rail-only": "إظهار جدول المحتويات كنموذج للسكك الحديدية اليمنى",
+	"mirage-toggle-toc": "تبديل جدول المحتويات",
 	"mirage-wordmark-file-warning": "هذا الملف قيد الاستخدام حاليًا كعلامة نصية لجلد ميراج."
 }
