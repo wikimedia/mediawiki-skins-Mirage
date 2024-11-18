@@ -3,6 +3,7 @@
 		"authors": [
 			"Amire80",
 			"Mainframe98",
+			"McDutchie",
 			"Robby"
 		]
 	},
@@ -22,7 +23,7 @@
 	"mirage-footer-places": "Header for the places category of the footer. It contains links to the privacy policy, about page and the disclaimer.\n{{identical|Place}}",
 	"mirage-footer-feeds": "Header for the feeds category of the footer. It contains links to the RSS feeds for the page.",
 	"mirage-footer-info": "Header for the footer icons. This header is for screen readers and won't be shown to regular users.",
-	"mirage-expand-submenu": "Display text for the sub menu icon in the site navigation. This message is for screen readers and won't be shown to regular users.",
+	"mirage-expand-submenu": "Display text for the sub menu icon in the site navigation. This message is for screen readers.",
 	"mirage-talkpage": "Text used for the link to the user's talk page.",
 	"mirage-user-tools": "Header for the right rail module containing all user toolbox links.",
 	"mirage-no-new-messages": "Message shown when the user has no new messages.",
