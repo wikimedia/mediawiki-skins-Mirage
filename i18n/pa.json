@@ -5,5 +5,20 @@
 		]
 	},
 	"mirage-community-messages-header": "ਭਾਈਚਾਰਕ ਸੁਨੇਹੇ",
-	"mirage-recent-changes-module": "ਹਾਲੀਆ ਤਬਦੀਲੀਆਂ"
+	"mirage-interface-messages-module-edit-this-message": "ਇਸ ਸੁਨੇਹੇ ਨੂੰ ਸੋਧੋ",
+	"mirage-page-actions": "ਸਫ਼ੇ ਦੀਆਂ ਕਾਰਵਾਈਆਂ",
+	"mirage-jumptocontent": "ਸਮੱਗਰੀ 'ਤੇ ਜਾਓ",
+	"mirage-action-addsection": "ਵਿਸ਼ਾ ਜੋੜੋ",
+	"mirage-userpage": "{{GENDER:$1|ਵਰਤੋਂਕਾਰ}} ਸਫ਼ਾ",
+	"mirage-footer-places": "ਥਾਂਵਾਂ",
+	"mirage-footer-info": "ਸਫ਼ਾ ਜਾਣਕਾਰੀ",
+	"mirage-talkpage": "ਗੱਲਬਾਤ ਸਫ਼ਾ",
+	"mirage-user-tools": "ਵਰਤੋਂਕਾਰ ਸੰਦ",
+	"mirage-no-new-messages": "ਤੁਹਾਡੇ ਲਈ ਕੋਈ ਨਵੇਂ ਸੁਨੇਹੇ ਨਹੀਂ ਹਨ।",
+	"mirage-notifications": "ਸੂਚਨਾਵਾਂ",
+	"mirage-page-tools": "ਸਫ਼ੇ ਦੇ ਸੰਦ",
+	"mirage-hidden-categories": "ਲੁਕਵੀਆਂ ਸ਼੍ਰੇਣੀਆਂ",
+	"mirage-recent-changes-module": "ਹਾਲੀਆ ਤਬਦੀਲੀਆਂ",
+	"mirage-more": "ਹੋਰ",
+	"mirage-more-recent-changes": "ਹੋਰ ਤਬਦੀਲੀਆਂ ਵੇਖੋ"
 }
