@@ -2,9 +2,10 @@
 
 namespace MediaWiki\Skins\Mirage\Hook;
 
-use Content;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Hook\AlternateEditPreviewHook;
 use MediaWiki\Hook\BeforePageDisplayHook;
@@ -13,6 +14,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
+use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
@@ -31,9 +33,7 @@ use MediaWiki\Title\TitleValue;
 use MediaWiki\User\User;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\Utils\UrlUtils;
-use ParserOutput;
 use Skin;
-use WikitextContent;
 use function array_keys;
 use function array_search;
 use function array_slice;

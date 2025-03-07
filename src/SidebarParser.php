@@ -5,12 +5,12 @@ namespace MediaWiki\Skins\Mirage;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Message\Message;
 use MediaWiki\Skins\Mirage\Hook\HookRunner as MirageHookRunner;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\Utils\UrlUtils;
-use Message;
 use MessageCache;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 use function array_diff_key;
 
 class SidebarParser {

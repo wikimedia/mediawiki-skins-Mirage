@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage\Hook;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Skins\Mirage\SkinMirage;
 

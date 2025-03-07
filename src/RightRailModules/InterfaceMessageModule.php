@@ -4,10 +4,10 @@ namespace MediaWiki\Skins\Mirage\RightRailModules;
 
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Message\Message;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Skins\Mirage\SkinMirage;
-use Message;
-use MessageSpecifier;
+use Wikimedia\Message\MessageSpecifier;
 
 class InterfaceMessageModule extends RightRailModule {
 	private LinkRenderer $linkRenderer;

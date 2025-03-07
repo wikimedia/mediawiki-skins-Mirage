@@ -2,16 +2,14 @@
 
 namespace MediaWiki\Skins\Mirage;
 
-use BagOStuff;
-use EmptyBagOStuff;
 use Generator;
-use IContextSource;
-use Language;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
+use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Parser\Sanitizer;
@@ -27,7 +25,9 @@ use MediaWiki\Utils\UrlUtils;
 use MessageCache;
 use SkinMustache;
 use SkinTemplate;
-use WANObjectCache;
+use Wikimedia\ObjectCache\BagOStuff;
+use Wikimedia\ObjectCache\EmptyBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use function array_key_first;
 use function implode;

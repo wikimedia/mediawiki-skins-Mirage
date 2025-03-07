@@ -3,10 +3,10 @@
 namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
 use File;
-use IContextSource;
 use ImagePage;
 use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Registration\ExtensionRegistry;

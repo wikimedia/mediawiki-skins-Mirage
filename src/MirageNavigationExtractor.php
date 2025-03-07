@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Skins\Mirage;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Title\TitleFactory;

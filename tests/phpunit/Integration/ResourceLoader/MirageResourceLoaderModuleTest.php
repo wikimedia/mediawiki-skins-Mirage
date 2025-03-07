@@ -9,7 +9,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\ResourceLoader\SkinModule;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Skins\Mirage\ResourceLoader\MirageResourceLoaderModule;
-use ResourceLoaderTestCase;
+use MediaWiki\Tests\ResourceLoader\ResourceLoaderTestCase;
 use Wikimedia\Minify\CSSMin;
 use function array_pop;
 use function sha1;
