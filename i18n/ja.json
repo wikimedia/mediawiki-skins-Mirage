@@ -3,11 +3,13 @@
 		"authors": [
 			"Chqaz",
 			"LaMagiaaa",
+			"Shirayuki",
 			"しぃ"
 		]
 	},
 	"skinname-mirage": "Mirage",
-	"mirage-skin-desc": "Mirageは、右側のレールでコンテンツを表示することに重点を置いたレスポンシブスキンです",
+	"mirage-skin-desc": "Mirage は、右側にレールを表示してコンテンツを見せることに重点を置いたレスポンシブ対応の外装です",
+	"mirage.js": "/* ここにあるすべてのJavaScriptは、Mirage外装を使用している利用者に対して読み込まれます */",
 	"mirage-userpage": "{{GENDER:$1|利用者}}ページ",
 	"mirage-talkpage": "トークページ",
 	"mirage-notifications": "通知"
