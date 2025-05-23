@@ -4,6 +4,7 @@
 			"Chqaz",
 			"LaMagiaaa",
 			"Shirayuki",
+			"Shulmj",
 			"しぃ"
 		]
 	},
@@ -12,5 +13,6 @@
 	"mirage.js": "/* ここにあるすべてのJavaScriptは、Mirage外装を使用している利用者に対して読み込まれます */",
 	"mirage-userpage": "{{GENDER:$1|利用者}}ページ",
 	"mirage-talkpage": "トークページ",
-	"mirage-notifications": "通知"
+	"mirage-notifications": "通知",
+	"mirage-recent-changes-module": "最近の更新"
 }
