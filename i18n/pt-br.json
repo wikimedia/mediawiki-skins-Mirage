@@ -7,6 +7,8 @@
 		]
 	},
 	"mirage-skin-desc": "Mirage é um tema responsivo que se concentra na exibição de conteúdo com uma grade à direita",
+	"mirage.css": "/* O CSS colocado aqui afetará os usuários da skin Mirage */",
+	"mirage.js": "/* Qualquer JavaScript aqui será carregado para os usuários que usam o tema Mirage */",
 	"mirage-community-messages-header": "Mensagens da comunidade",
 	"mirage-interface-messages-module-edit-this-message": "Editar esta mensagem",
 	"mirage-page-actions": "Ações da página",
