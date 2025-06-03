@@ -7,6 +7,8 @@
 		]
 	},
 	"mirage-skin-desc": "Mirage é um tema responsivo que se concentra na exibição de conteúdo com uma grade à direita",
+	"mirage.css": "/* O CSS colocado aqui afetará os usuários da skin Mirage */",
+	"mirage.js": "/* Qualquer JavaScript aqui será carregado para os usuários que usam o tema Mirage */",
 	"mirage-community-messages-header": "Mensagens da comunidade",
 	"mirage-interface-messages-module-edit-this-message": "Editar esta mensagem",
 	"mirage-page-actions": "Ações da página",
@@ -33,6 +35,9 @@
 	"prefs-mirage-partial-max-width": "Aplicar a largura máxima da página apenas a artigos",
 	"prefs-mirage-no-max-width": "Desativar a largura máxima da página",
 	"prefs-mirage-show-right-rail": "Mostrar a barra da direita",
+	"prefs-mirage-toc": "Colocação do índice:",
+	"prefs-mirage-toc-legacy": "Mostrar o índice no corpo do artigo",
+	"prefs-mirage-toc-hybrid": "Mostrar o índice no corpo do artigo e como um módulo de trilho à direita",
 	"prefs-mirage-toc-right-rail-only": "Mostrar o índice como um módulo de trilho direito",
 	"mirage-toggle-toc": "Alternar índice",
 	"mirage-wordmark-file-warning": "Este arquivo está atualmente em uso como o Wordmark para o tema do Mirage."
