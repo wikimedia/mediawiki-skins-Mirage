@@ -3,11 +3,12 @@
 namespace MediaWiki\Skins\Mirage\Tests\Structure;
 
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
+use MediaWiki\Tests\Structure\BundleSizeTestBase;
 
 /**
  * @coversNothing
  */
-class BundleSizeTest extends \MediaWiki\Tests\Structure\BundleSizeTestBase {
+class BundleSizeTest extends BundleSizeTestBase {
 	/**
 	 * @before
 	 *
@@ -18,7 +19,7 @@ class BundleSizeTest extends \MediaWiki\Tests\Structure\BundleSizeTestBase {
 	}
 
 	/** @inheritDoc */
-	public function getBundleSizeConfig(): string {
+	public static function getBundleSizeConfigData(): string {
 		return __DIR__ . '/../../../bundlesize.config.json';
 	}
 }
