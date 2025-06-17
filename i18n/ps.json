@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"mirage-skin-desc": "ځلوبي يوه ځوابگره پوښۍ ده چې په ښي خوا کې د پټلۍ په توگه د منځپانگې په ښودلو راڅرخي",
+	"mirage-community-messages-header": "د ټولنې پیغامونه",
+	"mirage-interface-messages-module-edit-this-message": "دا پيغام سمول",
+	"mirage-page-actions": "مخ چارې",
+	"mirage-jumptonavigation": "چلند ته ورتلل",
+	"mirage-jumptocontent": "منځپانگې ته ورتلل",
+	"mirage-action-addsection": "سکالو ورگډول",
+	"mirage-userpage": "{{GENDER:$1|کارن}} مخ",
+	"mirage-footer-places": "ځايونه",
+	"mirage-footer-feeds": "خواړه",
+	"mirage-footer-info": "د مخ مالومات",
+	"mirage-expand-submenu": "څنگيزې غوره‌نۍ ته ننوتنې ښودل",
+	"mirage-talkpage": "خبرو اترو مخ",
+	"mirage-user-tools": "کارن توکي",
+	"mirage-no-new-messages": "تاسې نوي پيغامونه نه لرئ.",
+	"mirage-notifications": "خبرتياوې",
+	"mirage-page-tools": "مخ‌ توکي",
+	"mirage-hidden-categories": "پټې وېشنيزې",
+	"mirage-recent-changes-module": "وروستي بدلونونه",
+	"mirage-more": "نور",
+	"mirage-more-recent-changes": "نور بدلونونه وگورئ",
+	"mirage-toggle-right-rail": "ښي پټلۍ بدلول",
+	"prefs-mirage-max-width-label": "ځلوبي منځپانگې پلنوالی:",
+	"prefs-mirage-max-width": "تل د مخ ډېر پلنوالی پلی کړئ",
+	"prefs-mirage-partial-max-width": "د مخ ډېر پلنوالی يوازې په ليکنو کې پلی کړئ",
+	"prefs-mirage-no-max-width": "د مخ ډېر پلنوالی ناچارنول",
+	"prefs-mirage-show-right-rail": "ښي پټلۍ ښکاره‌کول",
+	"prefs-mirage-toc": "د نيوليک ځای‌پرځای کول:",
+	"prefs-mirage-toc-legacy": "نيوليک د ليکنې په بدنه کې وښاياست",
+	"prefs-mirage-toc-hybrid": "نيوليک د ليکنې په بدنه کې د ښي پټلۍ بېلگې په توگه وښاياست",
+	"prefs-mirage-toc-right-rail-only": "نيوليک د ښي پټلۍ بېلگې په توگه وښاياست",
+	"mirage-toggle-toc": "نيوليک بدلول",
+	"mirage-wordmark-file-warning": "دا دوتنه وسمهال د ځلوبي پوښۍ د ويي‌نښې په توگه کارول کېږي."
+}
