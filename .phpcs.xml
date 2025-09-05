@@ -5,7 +5,7 @@
 	<rule ref="Generic.CodeAnalysis.EmptyStatement" />
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
 		<properties>
-			<property name="ignoreList" type="array" value="$IP" />
+			<property name="ignoreList[]" value="$IP" />
 		</properties>
 	</rule>
 	<rule ref="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName">
