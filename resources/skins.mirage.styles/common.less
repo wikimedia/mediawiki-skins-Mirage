@@ -1,5 +1,4 @@
 @import 'mediawiki.mixins';
-@import 'mediawiki.mixins.rotation';
 @import '../mirage.less/mirage.mixins';
 @import '../mirage.less/mirage.variables';
 @import 'animations.less';
@@ -600,10 +599,10 @@ footer.mw-footer {
 
 #mirage-edit-button {
 	.mw-watchlink .loading::before {
-		.rotation( 700ms );
 		outline: 0;
 		cursor: default;
 		pointer-events: none;
+		animation: rotate 700ms infinite linear;
 		transform-origin: 50% 50%;
 	}
 
@@ -809,5 +808,17 @@ figcaption,
 		& a {
 			color: transparent;
 		}
+	}
+}
+
+// Watchlist button animation, see
+// `#mirage-edit-button .mw-watchlink .loading::before` above.
+@keyframes rotate {
+	from {
+		transform: rotate( 0deg );
+	}
+
+	to {
+		transform: rotate( 360deg );
 	}
 }
