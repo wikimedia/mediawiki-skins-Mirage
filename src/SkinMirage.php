@@ -272,7 +272,7 @@ class SkinMirage extends SkinMustache {
 	 * Build the navigation menu for the edit button.
 	 *
 	 * phpcs:ignore Generic.Files.LineLength.TooLong
-	 * @suppress PhanTypeInvalidRightOperand, PhanTypePossiblyInvalidDimOffset, PhanTypeInvalidRightOperandOfAdd, PhanTypeArraySuspicious, PhanTypeMismatchForeach, PhanTypeMismatchArgumentInternal, PhanTypeArrayUnsetSuspicious
+	 * @suppress PhanTypeArraySuspicious, PhanTypeMismatchForeach, PhanTypeMismatchArgumentInternal, PhanTypeArrayUnsetSuspicious
 	 *
 	 * @param array &$content_navigation
 	 */
