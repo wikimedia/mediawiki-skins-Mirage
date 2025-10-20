@@ -4,6 +4,16 @@
 			"Milicevic01"
 		]
 	},
+	"mirage-action-addsection": "Додај тему",
+	"mirage-userpage": "{{GENDER:$1|Корисничка}} страница",
+	"mirage-footer-places": "Места",
+	"mirage-footer-info": "Информације о страници",
+	"mirage-talkpage": "Страница за разговор",
+	"mirage-no-new-messages": "Нема нових порука.",
+	"mirage-notifications": "Обавештења",
+	"mirage-hidden-categories": "Скривене категорије",
+	"mirage-recent-changes-module": "Скорашње измене",
+	"mirage-more": "Више",
 	"prefs-mirage-toc": "Позиција садржаја:",
 	"prefs-mirage-toc-legacy": "У чланку"
 }
