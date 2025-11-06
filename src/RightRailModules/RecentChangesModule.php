@@ -13,10 +13,9 @@ use MWExceptionHandler;
 use RecentChange;
 use stdClass;
 use Wikimedia\Rdbms\DBError;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\SelectQueryBuilder;
-use const DB_REPLICA;
 use const NS_SPECIAL;
 use const NS_USER;
 
@@ -32,7 +31,7 @@ class RecentChangesModule extends RightRailModule {
 	/**
 	 * @param SkinMirage $skin
 	 * @param LinkRenderer $linkRenderer
-	 * @param ILoadBalancer $loadBalancer
+	 * @param IConnectionProvider $connectionProvider
 	 * @param SpecialPageFactory $specialPageFactory
 	 * @param UserFactory $userFactory
 	 * @param int[] $contentNamespaces
@@ -40,7 +39,7 @@ class RecentChangesModule extends RightRailModule {
 	public function __construct(
 		SkinMirage $skin,
 		LinkRenderer $linkRenderer,
-		ILoadBalancer $loadBalancer,
+		IConnectionProvider $connectionProvider,
 		SpecialPageFactory $specialPageFactory,
 		UserFactory $userFactory,
 		array $contentNamespaces
@@ -51,7 +50,7 @@ class RecentChangesModule extends RightRailModule {
 		$this->specialPageFactory = $specialPageFactory;
 		$this->userFactory = $userFactory;
 
-		$queryBuilder = $loadBalancer->getConnectionRef( DB_REPLICA )->newSelectQueryBuilder();
+		$queryBuilder = $connectionProvider->getReplicaDatabase()->newSelectQueryBuilder();
 		$queryBuilder->select( [
 				'rc_actor',
 				'rc_namespace',
