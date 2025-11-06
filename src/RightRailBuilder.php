@@ -123,7 +123,7 @@ class RightRailBuilder {
 				'class' => RecentChangesModule::class,
 				'services' => [
 					'LinkRenderer',
-					'DBLoadBalancer',
+					'ConnectionProvider',
 					'SpecialPageFactory',
 					'UserFactory'
 				],
