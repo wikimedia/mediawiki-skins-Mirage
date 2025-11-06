@@ -119,7 +119,7 @@ class SiteToolsBuilder {
 
 		if ( $this->uploadNavigationUrl ) {
 			$uploadLink['href'] = $this->uploadNavigationUrl;
-		} elseif ( UploadBase::isEnabled() && UploadBase::isAllowed( $authority ) ) {
+		} elseif ( UploadBase::isEnabled() && UploadBase::isAllowed( $authority ) === true ) {
 			$uploadLink['href'] = SpecialPage::getTitleFor( 'Upload' )->getLocalURL();
 		} else {
 			return [];
