@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bennylin"
+		]
+	},
+	"mirage-community-messages-header": "ꦭꦪꦁ​ꦏꦺꦴꦩꦸꦤꦶꦠꦱ꧀",
+	"mirage-interface-messages-module-edit-this-message": "ꦧꦼꦱꦸꦠ꧀ꦭꦪꦁ​ꦲꦶꦏꦶ",
+	"mirage-page-actions": "ꦲꦏ꧀ꦱꦶ​ꦏꦕ",
+	"mirage-jumptonavigation": "ꦩꦼꦚ꧀ꦕꦺꦴꦭꦺꦴꦠ꧀ꦩꦼꦚꦁ​ꦤꦥ꦳ꦶꦒꦱꦶ",
+	"mirage-jumptocontent": "ꦩꦼꦚ꧀ꦕꦺꦴꦭꦺꦴꦠ꧀ꦩꦼꦚꦁ​ꦏꦺꦴꦤ꧀ꦠꦺꦤ꧀",
+	"mirage-action-addsection": "ꦠꦩ꧀ꦧꦃ​ꦠꦺꦴꦥꦶꦏ꧀",
+	"mirage-userpage": "{{GENDER:$1|ꦏꦕꦤꦫꦒꦸꦤ}}",
+	"mirage-footer-places": "ꦥꦁꦒꦺꦴꦤ꧀ꦤꦤ꧀",
+	"mirage-footer-feeds": "ꦌꦏ꧀ꦱ꧀ꦥ꧀ꦭꦺꦴꦫꦱꦶ",
+	"mirage-footer-info": "ꦏꦠꦼꦫꦁꦔꦤ꧀ꦏꦕ",
+	"mirage-talkpage": "ꦏꦕ​ꦉꦩ꧀ꦧꦸꦒ꧀ꦒꦤ꧀",
+	"mirage-user-tools": "ꦥꦶꦫꦤ꧀ꦠꦶ​ꦤꦫꦒꦸꦤ",
+	"mirage-no-new-messages": "ꦱꦩ꧀ꦥꦺꦪꦤ꧀ꦲꦺꦴꦫ​ꦢꦸꦮꦺ​ꦭꦪꦁ​ꦲꦚꦂ꧉",
+	"mirage-notifications": "ꦥꦩ꧀ꦧꦶꦮꦫ",
+	"mirage-page-tools": "ꦥꦶꦫꦤ꧀ꦠꦶ​ꦏꦕ",
+	"mirage-hidden-categories": "ꦏꦠꦼꦒꦺꦴꦫꦶꦤ꧀ꦝꦼꦭꦶꦏ꧀",
+	"mirage-recent-changes-module": "ꦲꦺꦴꦮꦃꦲꦤ꧀ꦲꦚꦂ",
+	"mirage-more": "ꦭꦶꦪꦤꦺ",
+	"mirage-more-recent-changes": "ꦢꦺꦭꦺꦁ​ꦲꦺꦴꦮꦃꦲꦤ꧀ꦭꦶꦪꦤꦺ"
+}
