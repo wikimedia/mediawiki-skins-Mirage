@@ -152,7 +152,7 @@ body,
 }
 
 #mw-navigation {
-	margin-top: @fixed-header-content-height + @standard-margin + 0.25rem;
+	margin-top: (@fixed-header-content-height + @standard-margin + 0.25rem);
 	margin-bottom: 0;
 }
 
@@ -337,7 +337,7 @@ body,
 			// Place the dropdown directly against the header.
 			position: relative;
 			top: 50%;
-			margin-top: -@fixed-header-content-height / 2;
+			margin-top: -( @fixed-header-content-height / 2 );
 			padding: 0;
 			vertical-align: middle;
 		}
@@ -359,7 +359,7 @@ body,
 			vertical-align: middle;
 			position: relative;
 			top: 50%;
-			margin-top: -@fixed-header-content-height / 2;
+			margin-top: -( @fixed-header-content-height / 2 );
 		}
 
 		.skin-mirage-talk-page-icon-link {

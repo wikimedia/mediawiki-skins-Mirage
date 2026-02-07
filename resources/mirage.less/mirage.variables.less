@@ -44,7 +44,7 @@
 // This is 959px with 1rem = 14px, and 1096px with 1rem = 16px, ensuring the effective
 // content width is the same no matter the font-size used.
 @max-content-width: 68.5rem;
-@max-content-width-with-right-rail: @max-content-width + @standard-margin + @right-rail-space;
+@max-content-width-with-right-rail: (@max-content-width + @standard-margin + @right-rail-space);
 
 // Keep this synchronized with skin.json!
 @width-breakpoint-mirage-desktop-small: 1280px;
