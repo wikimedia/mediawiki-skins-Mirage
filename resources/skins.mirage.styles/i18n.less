@@ -1,6 +1,8 @@
 // This file contains all direction related stylings.
 // Most of the contents of this file should be integrated into core.
 
+@import 'mediawiki.mixins.less';
+
 // These classes are used for text depending on the content direction.
 // Content stuff like editsection, ul/ol and TOC depend on this.
 .mw-content-ltr,
@@ -63,4 +65,22 @@ a:lang( mzn ),
 a:lang( ps ),
 a:lang( ur ) {
 	text-decoration: none;
+}
+
+// These styles originate from the deprecated i18n-all-lists-margins feature.
+// The alternative is using the elements feature, but that comes with unwanted changes.
+ul {
+	margin-top: 0.3em;
+	.margin-inline( 1.6em, 0 );
+	padding: 0;
+}
+
+ol {
+	margin-top: 0.3em;
+	.margin-inline( 3.2em, 0 );
+	padding: 0;
+}
+
+dd {
+	.margin-inline( 1.6em, 0 );
 }

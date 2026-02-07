@@ -7,7 +7,7 @@
 	"license-name": "MIT",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.43.0"
+		"MediaWiki": ">= 1.46.0"
 	},
 	"ValidSkinNames": {
 		"mirage": {
@@ -123,13 +123,11 @@
 				"accessibility": true,
 				"content-body": true,
 				"content-tables": true,
-				"i18n-all-lists-margins": true,
 				"i18n-headings": true,
 				"i18n-ordered-lists": true,
 				"interface-core": true,
 				"interface-edit-section-links": true,
 				"interface-indicators": true,
-				"interface-message-box": true,
 				"interface-subtitle": true,
 				"normalize": true
 			},
