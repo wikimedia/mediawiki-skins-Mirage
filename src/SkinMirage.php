@@ -254,7 +254,7 @@ class SkinMirage extends SkinMustache {
 		// updated yet.
 		// This is modified here to prevent the parent method from detecting these changes and
 		// misunderstanding the intent.
-		if ( $content_navigation['associated-pages'] ) {
+		if ( $content_navigation['associated-pages'] && isset( $content_navigation['namespaces'] ) ) {
 			if (
 				array_keys( $content_navigation['namespaces'] ) ===
 				array_keys( $content_navigation['associated-pages'] )
