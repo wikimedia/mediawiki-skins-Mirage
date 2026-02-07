@@ -7,7 +7,7 @@ use MediaWiki\Permissions\Authority;
 use MediaWiki\Skins\Mirage\Hook\HookRunner;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use UploadBase;
+use MediaWiki\Upload\UploadBase;
 use function array_slice;
 use function count;
 

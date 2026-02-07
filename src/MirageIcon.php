@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Skins\Mirage;
 
-use HtmlArmor;
 use MediaWiki\Html\Html;
+use Wikimedia\HtmlArmor\HtmlArmor;
 use function implode;
 
 class MirageIcon {

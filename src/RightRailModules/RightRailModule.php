@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
-use HtmlArmor;
 use MediaWiki\Message\Message;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MessageLocalizer;
+use Wikimedia\HtmlArmor\HtmlArmor;
 use Wikimedia\Message\MessageSpecifier;
 use function implode;
 

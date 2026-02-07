@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Integration\ResourceLoader;
 
-use File;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Config\MultiConfig;
+use MediaWiki\FileRepo\File\File;
 use MediaWiki\MainConfigNames;
 use MediaWiki\ResourceLoader\SkinModule;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;

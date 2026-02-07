@@ -2,15 +2,15 @@
 
 namespace MediaWiki\Skins\Mirage\RightRailModules;
 
+use MediaWiki\Exception\MWExceptionHandler;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Skins\Mirage\SkinMirage;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\TitleValue;
 use MediaWiki\User\UserFactory;
 use MediaWiki\Utils\MWTimestamp;
-use MWExceptionHandler;
-use RecentChange;
 use stdClass;
 use Wikimedia\Rdbms\DBError;
 use Wikimedia\Rdbms\IConnectionProvider;

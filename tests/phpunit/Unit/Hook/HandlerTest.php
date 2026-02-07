@@ -2,15 +2,16 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Unit\Hook;
 
-use File;
-use ImagePage;
 use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\FileRepo\File\File;
 use MediaWiki\Html\Html;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Page\ImagePage;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\ResourceLoader;
+use MediaWiki\Skin\SkinFallback;
 use MediaWiki\Skins\Mirage\Avatars\AvatarLookup;
 use MediaWiki\Skins\Mirage\Avatars\NullAvatarLookup;
 use MediaWiki\Skins\Mirage\Hook\Handler;
@@ -23,7 +24,6 @@ use MediaWiki\User\UserIdentityValue;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\Utils\UrlUtils;
 use MediaWikiUnitTestCase;
-use SkinFallback;
 
 class HandlerTest extends MediaWikiUnitTestCase {
 	/**

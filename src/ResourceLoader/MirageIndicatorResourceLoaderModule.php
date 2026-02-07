@@ -12,15 +12,13 @@ use MediaWiki\ResourceLoader\OOUIImageModule;
 class MirageIndicatorResourceLoaderModule extends OOUIImageModule {
 	/**
 	 * @inheritDoc
-	 * Copied from ResourceLoaderOOUIIconPackModule.
+	 * Copied from ResourceLoader\OOUIIconPackModule.
 	 * We need the indicators provided by core, so have the localBasePath point to $IP.
 	 */
 	public static function extractLocalBasePath( array $options, $localBasePath = null ) {
 		global $IP;
-		if ( $localBasePath === null ) {
-			$localBasePath = $IP;
-		}
 		// Ignore any 'localBasePath' present in $options, this always refers to files in MediaWiki core
-		return $localBasePath;
+		// @phan-suppress-next-line PhanTypeMismatchReturnNullable $IP is not null, phan.
+		return $localBasePath ?? $IP;
 	}
 }

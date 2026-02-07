@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Unit;
 
-use File;
+use MediaWiki\FileRepo\File\File;
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Skins\Mirage\MirageWordmarkLookup;
 use MediaWiki\Title\TitleFactory;
 use MediaWikiUnitTestCase;
-use RepoGroup;
 
 /**
  * @covers \MediaWiki\Skins\Mirage\MirageWordmarkLookup

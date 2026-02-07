@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Skins\Mirage\Tests\Unit;
 
-use HtmlArmor;
 use MediaWiki\Skins\Mirage\MirageIcon;
 use MediaWikiUnitTestCase;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 class MirageIconTest extends MediaWikiUnitTestCase {
 	/**
