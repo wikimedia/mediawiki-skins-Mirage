@@ -231,7 +231,6 @@ class SkinMirage extends SkinMustache {
 			$content_navigation['user-menu']['anontalk']['text'] = $this->msg( 'mirage-talkpage' )->text();
 		}
 
-		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 		foreach ( $content_navigation['user-menu'] as &$personalUrl ) {
 			$icon = MirageIcon::medium(
 				$personalUrl['icon'] ?? MirageIcon::ICON_PLACEHOLDER
