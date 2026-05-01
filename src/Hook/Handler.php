@@ -4,7 +4,6 @@ namespace MediaWiki\Skins\Mirage\Hook;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
-use MediaWiki\Content\Content;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Hook\AlternateEditPreviewHook;
@@ -14,7 +13,6 @@ use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\Hook\ImagePageAfterImageLinksHook;
-use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
@@ -105,12 +103,6 @@ class Handler implements
 
 	/**
 	 * @inheritDoc
-	 *
-	 * @param EditPage $editPage
-	 * @param Content &$content
-	 * @param string &$previewHTML
-	 * @param ParserOutput &$parserOutput
-	 * @return bool
 	 */
 	public function onAlternateEditPreview(
 		$editPage,
