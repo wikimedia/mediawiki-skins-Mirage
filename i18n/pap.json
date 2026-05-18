@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kallmemel"
+		]
+	},
+	"mirage-jumptonavigation": "Salta pa nabegashon",
+	"mirage-jumptocontent": "Salta pa kontenido",
+	"mirage-action-addsection": "Agregá tópiko",
+	"mirage-userpage": "Página di {{GENDER:$1|usadó}}",
+	"mirage-footer-places": "Lugá",
+	"mirage-footer-info": "Informashon di página",
+	"mirage-talkpage": "Página di diskushon",
+	"mirage-user-tools": "Hèrmènt di usadó",
+	"mirage-no-new-messages": "Bo no tin mensahe nobo.",
+	"mirage-notifications": "Notifikashon",
+	"mirage-page-tools": "Hèrmènt di página",
+	"mirage-hidden-categories": "Kategoria skondí",
+	"mirage-recent-changes-module": "Kambionan resien",
+	"mirage-more": "Mas",
+	"mirage-more-recent-changes": "Wak mas kambio",
+	"prefs-mirage-toc": "Lokashon di índise:",
+	"prefs-mirage-toc-legacy": "Mustra índise den kurpa di artíkulo",
+	"mirage-toggle-toc": "Alterná índise"
+}
