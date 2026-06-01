@@ -1,13 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"HakanIST",
 			"Hedda",
 			"Joseph",
 			"Mim.saitkilic",
 			"MuratTheTurkish"
 		]
 	},
+	"skinname-mirage": "Mirage",
 	"mirage-skin-desc": "Mirage, içeriği sağda bir ray ile görüntülemeye odaklanan duyarlı bir temadır.",
+	"mirage.css": "/* CSS placed here will affect users of the Mirage skin */",
+	"mirage.js": "/* Any JavaScript here will be loaded for users using the Mirage skin */",
 	"mirage-community-messages-header": "Topluluk mesajları",
 	"mirage-interface-messages-module-edit-this-message": "Bu mesajı düzenle",
 	"mirage-page-actions": "Sayfa eylemleri",
@@ -34,5 +38,10 @@
 	"prefs-mirage-partial-max-width": "Maksimum sayfa genişliğini yalnızca maddelere uygulayın",
 	"prefs-mirage-no-max-width": "Maksimum sayfa genişliğini devre dışı bırakın",
 	"prefs-mirage-show-right-rail": "Sağ parmaklığı göster",
+	"prefs-mirage-toc": "İçindekiler tablosunun yerleşimi:",
+	"prefs-mirage-toc-legacy": "İçindekiler tablosunu makale gövdesinde göster",
+	"prefs-mirage-toc-hybrid": "İçindekiler tablosunu makale gövdesinde ve sağ panel modülü olarak göster",
+	"prefs-mirage-toc-right-rail-only": "İçindekiler tablosunu sağ panel modülü olarak göster",
+	"mirage-toggle-toc": "İçindekiler tablosunu aç/kapat",
 	"mirage-wordmark-file-warning": "Bu dosya şu anda Mirage görünümü için marka işareti olarak kullanılıyor."
 }
