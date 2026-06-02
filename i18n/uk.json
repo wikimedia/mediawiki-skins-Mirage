@@ -3,6 +3,7 @@
 		"authors": [
 			"DDPAT",
 			"Ice bulldog",
+			"Repakr",
 			"Ата"
 		]
 	},
@@ -36,5 +37,8 @@
 	"prefs-mirage-partial-max-width": "Застосовувати максимальну ширину сторінки лише до статей",
 	"prefs-mirage-no-max-width": "Вимкнути максимальну ширину сторінки",
 	"prefs-mirage-show-right-rail": "Показувати панель праворуч",
+	"prefs-mirage-toc": "Розміщення змісту:",
+	"prefs-mirage-toc-legacy": "Показати зміст у тілі статті",
+	"mirage-toggle-toc": "Сховати/показати зміст",
 	"mirage-wordmark-file-warning": "Цей файл наразі використовується як текстова мітка теми Mirage."
 }
