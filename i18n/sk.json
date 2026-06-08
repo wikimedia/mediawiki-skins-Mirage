@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"skinname-mirage": "Mirage",
+	"mirage-skin-desc": "Mirage je responzívna téma vzhľadu zameraná na zobrazovanie obsahu s panelom vpravo",
+	"mirage.css": "/* CSS umiestnené tu ovplyvní používateľov témy vzhľadu Mirage */",
+	"mirage.js": "/* JavaScript umiestnený tu sa načíta používateľom témy vzhľadu Mirage */",
+	"mirage-community-messages-header": "Správy komunity",
+	"mirage-interface-messages-module-edit-this-message": "Upraviť túto správu",
+	"mirage-page-actions": "Akcie stránky",
+	"mirage-jumptonavigation": "Skočiť na navigáciu",
+	"mirage-jumptocontent": "Skočiť na obsah",
+	"mirage-action-addsection": "Pridať tému",
+	"mirage-userpage": "{{GENDER:$1|Používateľská}} stránka",
+	"mirage-footer-places": "Miesta",
+	"mirage-footer-feeds": "Feedy",
+	"mirage-footer-info": "Informácie o stránke",
+	"mirage-expand-submenu": "Zobraziť položky podmenu",
+	"mirage-talkpage": "Diskusná stránka",
+	"mirage-user-tools": "Nástroje používateľa",
+	"mirage-no-new-messages": "Nemáte žiadne nové správy.",
+	"mirage-notifications": "Upozornenia",
+	"mirage-page-tools": "Nástroje stránky",
+	"mirage-hidden-categories": "Skryté kategórie",
+	"mirage-recent-changes-module": "Nedávne zmeny",
+	"mirage-more": "Viac",
+	"mirage-more-recent-changes": "Zobraziť ďalšie zmeny",
+	"mirage-toggle-right-rail": "Prepnúť pravý panel",
+	"prefs-mirage-max-width-label": "Šírka obsahu Mirage:",
+	"prefs-mirage-max-width": "Vždy použiť maximálnu šírku stránky",
+	"prefs-mirage-partial-max-width": "Použiť maximálnu šírku stránky iba na články",
+	"prefs-mirage-no-max-width": "Vypnúť maximálnu šírku stránky",
+	"prefs-mirage-show-right-rail": "Zobrazovať pravý panel",
+	"prefs-mirage-toc": "Umiestnenie obsahu (TOC):",
+	"prefs-mirage-toc-legacy": "Zobraziť obsah v tele článku",
+	"prefs-mirage-toc-hybrid": "Zobraziť obsah v tele článku aj ako modul pravého panela",
+	"prefs-mirage-toc-right-rail-only": "Zobraziť obsah ako modul pravého panela",
+	"mirage-toggle-toc": "Prepnúť obsah",
+	"mirage-wordmark-file-warning": "Tento súbor sa momentálne používa ako wordmark témy vzhľadu Mirage."
+}
