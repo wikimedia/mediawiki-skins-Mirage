@@ -3,7 +3,8 @@
 		"authors": [
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
-			"Gustavo.moraes"
+			"Gustavo.moraes",
+			"NenhumaFênix"
 		]
 	},
 	"mirage-skin-desc": "Mirage é um tema responsivo que se concentra na exibição de conteúdo com uma grade à direita",
@@ -15,7 +16,7 @@
 	"mirage-jumptonavigation": "Ir para navegação",
 	"mirage-jumptocontent": "Ir para o conteúdo",
 	"mirage-action-addsection": "Adicionar tópico",
-	"mirage-userpage": "Página de {{GENDER:$1|usuário}}",
+	"mirage-userpage": "Página de {{GENDER:$1|usuário|usuária|usuário(a)}}",
 	"mirage-footer-places": "Lugares",
 	"mirage-footer-feeds": "Feeds",
 	"mirage-footer-info": "Informações da página",
