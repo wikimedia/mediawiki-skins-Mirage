@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"mirage-skin-desc": "Mirage هو تصميم (سكين) متجاوب كيركز على عرض المحتوى مع شريط جانبي على اليمين.",
+	"mirage-community-messages-header": "رسائل المجتمع",
+	"mirage-interface-messages-module-edit-this-message": "عدّل هاد الرسالة",
+	"mirage-page-actions": "أكثر خيارات",
+	"mirage-jumptonavigation": "أقفز للتصفح",
+	"mirage-jumptocontent": "أقفز للمحتوى",
+	"mirage-action-addsection": "زيد موضوع",
+	"mirage-userpage": "صفحة {{GENDER:$1|المستخدم|المستخدمة}}",
+	"mirage-footer-places": "أماكن",
+	"mirage-footer-feeds": "يغذي",
+	"mirage-footer-info": "معلومات أساسيه",
+	"mirage-expand-submenu": "بين مدخلات القائمة الفرعية",
+	"mirage-talkpage": "صفحه النقاش",
+	"mirage-user-tools": "أدوات المستخدم",
+	"mirage-no-new-messages": "ما عندكش براوات جدُد.",
+	"mirage-notifications": "تنباهات",
+	"mirage-page-tools": "أدوات الصفحه",
+	"mirage-hidden-categories": "تصنيفات مخبّية",
+	"mirage-recent-changes-module": "التبديلات التوالى",
+	"mirage-more": "زيادة",
+	"mirage-more-recent-changes": "شوف تغييرات أكثر",
+	"mirage-toggle-right-rail": "بدّل الشريط الجانبي الأيمن (شغّل/عطّل)",
+	"prefs-mirage-max-width-label": "عرض المحتوى في Mirage:",
+	"prefs-mirage-max-width": "دايمن طبق أقصى عرض للصفحة",
+	"prefs-mirage-partial-max-width": "طبق أقصى عرض للصفحة فقط على المقالات",
+	"prefs-mirage-no-max-width": "عطّل أقصى عرض للصفحة",
+	"prefs-mirage-show-right-rail": "أظهر الشريط الجانبي الأيمن",
+	"prefs-mirage-toc": "مكان جدول المحتويات:",
+	"prefs-mirage-toc-legacy": "أظهر جدول المحتويات في جسم المقالة",
+	"prefs-mirage-toc-hybrid": "أظهر جدول المحتويات في جسم المقالة وكوحدة في الشريط الجانبي الأيمن",
+	"prefs-mirage-toc-right-rail-only": "أظهر جدول المحتويات كوحدة في الشريط الجانبي الأيمن",
+	"mirage-toggle-toc": "بدّل جدول المحتويات (شغّل/عطّل)",
+	"mirage-wordmark-file-warning": "هاد الملف مستعمل دوك كعلامة نصية (شعار) لتصميم Mirage."
+}
