@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"شاه زمان پټان"
+			"شاه زمان پټان",
+			"باران"
 		]
 	},
 	"mirage-skin-desc": "ځلوبي يوه ځوابگره پوښۍ ده چې په ښي خوا کې د پټلۍ په توگه د منځپانگې په ښودلو راڅرخي",
@@ -13,11 +14,11 @@
 	"mirage-action-addsection": "سکالو ورگډول",
 	"mirage-userpage": "{{GENDER:$1|کارن}} مخ",
 	"mirage-footer-places": "ځايونه",
-	"mirage-footer-feeds": "خواړه",
+	"mirage-footer-feeds": "کتنمخونه",
 	"mirage-footer-info": "د مخ مالومات",
 	"mirage-expand-submenu": "څنگيزې غوره‌نۍ ته ننوتنې ښودل",
 	"mirage-talkpage": "خبرو اترو مخ",
-	"mirage-user-tools": "کارن توکي",
+	"mirage-user-tools": "کارن کارتوکي",
 	"mirage-no-new-messages": "تاسې نوي پيغامونه نه لرئ.",
 	"mirage-notifications": "خبرتياوې",
 	"mirage-page-tools": "مخ‌ توکي",
