@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"mirage-skin-desc": "Mirage waa muuqaal iswaafajinaya oo diiradda saaraya soo bandhigista nuxurka iyadoo dhinaca midig uu ku yaallo tiir.",
+	"mirage-community-messages-header": "Farriimaha bulshada",
+	"mirage-interface-messages-module-edit-this-message": "Wax ka beddel farriintan",
+	"mirage-page-actions": "Falalka bogga",
+	"mirage-jumptonavigation": "U gudub hagidda",
+	"mirage-jumptocontent": "U gudub nuxurka",
+	"mirage-action-addsection": "Ku dar mawduuc",
+	"mirage-userpage": "{{GENDER:$1|Bogga isticmaalaha}}",
+	"mirage-footer-places": "Meelaha",
+	"mirage-footer-feeds": "Quudinnada",
+	"mirage-footer-info": "Macluumaadka bogga",
+	"mirage-expand-submenu": "Muuji gelinnada ku jira liiska-hoosaadka",
+	"mirage-talkpage": "Bogga wadahadalka",
+	"mirage-user-tools": "Qalabka isticmaalaha",
+	"mirage-no-new-messages": "Ma lihid farriimo cusub.",
+	"mirage-notifications": "Ogeysiisyo",
+	"mirage-page-tools": "Qalabka bogga",
+	"mirage-hidden-categories": "Qaybaha qarsoon",
+	"mirage-recent-changes-module": "Isbedelada dhow",
+	"mirage-more": "Dheeraad",
+	"mirage-more-recent-changes": "Arag isbeddello dheeraad ah",
+	"mirage-toggle-right-rail": "Beddel tiirka midig",
+	"prefs-mirage-max-width-label": "Ballaca nuxurka Mirage:",
+	"prefs-mirage-max-width": "Had iyo jeer ku dabaq ballaca ugu badan ee bogga",
+	"prefs-mirage-partial-max-width": "Ku dabaq ballaca ugu badan ee bogga maqaallada oo keliya",
+	"prefs-mirage-no-max-width": "Dami ballaca ugu badan ee bogga",
+	"prefs-mirage-show-right-rail": "Muuji tiirka midig",
+	"prefs-mirage-toc": "Meesha ay ku taallo tusmada nuxurka:",
+	"prefs-mirage-toc-legacy": "Muuji tusmada nuxurka gudaha jirka maqaalka",
+	"prefs-mirage-toc-hybrid": "Muuji tusmada nuxurka gudaha jirka maqaalka iyo sida module ku jirta tiirka midig",
+	"prefs-mirage-toc-right-rail-only": "Muuji tusmada nuxurka sida module ku jirta tiirka midig",
+	"mirage-toggle-toc": "Beddel tusmada nuxurka",
+	"mirage-wordmark-file-warning": "Faylkan hadda waxaa loo isticmaalaa calaamadda magaca ee muuqaalka Mirage."
+}
