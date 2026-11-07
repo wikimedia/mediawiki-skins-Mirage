@@ -174,7 +174,7 @@ class MirageIconResourceLoaderModule extends OOUIIconPackModule {
 		if ( !isset( $data[$theme] ) ) {
 			$data[$theme] = [];
 			// Load and merge the JSON data for all "icons-foo" modules
-			foreach ( self::$knownImagesModules as $module ) {
+			foreach ( self::KNOWN_IMAGES_MODULES as $module ) {
 				if ( substr( $module, 0, 5 ) === 'icons' ) {
 					$moreData = $this->readJSONFile( $this->getThemeImagesPath( $theme, $module ) );
 					if ( $moreData ) {
